@@ -146,4 +146,4 @@ fi
 
 ### Plugins
 . /usr/share/autojump/autojump.sh
-source $HOME/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ${HOME}/.local/share/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
