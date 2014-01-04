@@ -112,8 +112,14 @@ NeoBundle 'Shougo/unite.vim'
 	nnoremap <F5> :Unite -auto-resize -resume -buffer-name=yanks history/yank<CR>
 	nnoremap <F6> :Unite -auto-resize -resume -buffer-name=files file_mru file_rec/async buffer bookmark<CR>
 	nnoremap <F7> :Unite -auto-resize -resume -buffer-name=files grep<CR>
-" Search and jump to characters quickly
-NeoBundle 'Lokaltog/vim-easymotion'
+NeoBundle 'justinmk/vim-sneak'
+	let g:sneak#streak = 1
+	let g:sneak#use_ic_scs = 1
+	nnoremap r s
+	nmap s <Plug>SneakForward
+	nmap S <Plug>SneakBackward
+	xmap s <Plug>VSneakForward
+	xmap S <Plug>VSneakBackward
 " Show a sidebar with the undo tree
 NeoBundle 'sjl/gundo.vim'
 	nnoremap <F9> :GundoToggle<CR>
