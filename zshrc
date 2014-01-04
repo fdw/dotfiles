@@ -1,0 +1,149 @@
+### Load cached status files
+# Cache dir
+ZSH_CACHE="${XDG_CACHE_HOME}/zsh"
+mkdir -p ${ZSH_CACHE}
+# History
+command_oriented_history=1
+HISTCONTROL=ignoreboth
+ulimit -c unlimited
+umask 022
+mesg y
+export HISTFILE="${ZSH_CACHE}/history"
+export HISTSIZE=8192
+export SAVEHIST=8192
+fc -R ${HISTFILE}
+# Directory stack
+DIRSTACKSIZE=15
+DIRSTACKFILE="${ZSH_CACHE}/dirstack"
+if [[ -f $DIRSTACKFILE ]] && [[ $#dirstack -eq 0 ]]; then
+	dirstack=( ${(f)"$(< $DIRSTACKFILE)"} )
+		[[ -d $dirstack[1] ]] && cd $dirstack[1] && cd $OLDPWD
+	fi
+	chpwd() {
+		print -l $PWD ${(u)dirstack} >$DIRSTACKFILE
+	}
+# Loading the compinit
+autoload -U compinit
+compinit -d "${ZSH_CACHE}/zcompdump"
+zstyle ':completion:*' completer _oldlist _expand _force_rehash _complete _match _approximate
+zstyle ':completion:*:match:*' original only
+zstyle ':completion:*:approximate:*' max-errors 1 numeric
+zstyle ':completion:*' verbose yes
+zstyle ':completion:*' menu select
+zstyle ':completion:*' use-cache on
+zstyle ':completion:*' cache-path ${ZSH_CACHE}/autocomplete
+# Forcing the rehash
+_force_rehash() {
+	(( CURRENT == 1 )) && rehash
+	return 1
+}
+
+
+### Aliases
+alias -g ...='../..'
+alias -g ....='../../..'
+alias ls='ls ${=LS_OPTIONS}'
+alias lsa='ls -A'
+alias mkdir='mkdir -p -v'
+alias recentchanges='find . -mtime -7 | sort | less'
+
+### zsh options
+# changing directories
+setopt auto_cd
+setopt auto_pushd
+setopt pushd_ignoredups
+setopt pushd_silent
+setopt pushd_to_home
+# completion
+setopt auto_list
+setopt auto_menu
+setopt auto_remove_slash
+setopt complete_aliases
+setopt complete_in_word
+setopt list_rows_first
+setopt list_types
+# Globbing
+setopt extended_glob
+setopt glob
+# History
+setopt append_history
+setopt hist_ignore_all_dups
+setopt hist_reduce_blanks
+setopt hist_verify
+#setopt share_history
+#I/O
+setopt correct
+setopt print_exit_value
+# Job Control
+setopt autoresume
+setopt nohup
+setopt no_notify
+#Prompting
+setopt prompt_subst
+#Scripts
+setopt multios
+
+### Key bindings
+bindkey '^P' history-incremental-search-backward
+bindkey '^N' history-incremental-search-forward
+bindkey '^D' list-choices
+bindkey '^R' history-incremental-search-backward
+bindkey '^i' expand-or-complete-prefix
+
+### Git/SVN options
+autoload -Uz vcs_info
+zstyle ':vcs_info:*' enable git
+zstyle ':vcs_info:git*:*' get-revision true
+zstyle ':vcs_info:*' check-for-changes true
+zstyle ':vcs_info:*' stagedstr '%{%F{yellow}%}•%{%F{black}%}'
+zstyle ':vcs_info:*' unstagedstr '%{%F{red}%}•%{%F{black}%}'
+zstyle ':vcs_info:git:*' branchformat '%b'
+zstyle ':vcs_info:*' formats ' [%b]%u%c %m'
+zstyle ':vcs_info:*' actionformats ' [%b(%a)]%u%c %m'
+zstyle ':vcs_info:git*+set-message:*' hooks git-st git-stash
+precmd () {
+	vcs_info
+}
+# Show remote ref name and number of commits ahead-of or behind - taken from http://eseth.org/2010/git-in-zsh.html
+function +vi-git-st() {
+	local ahead behind remote
+	local -a gitstatus
+
+	# Are we on a remote-tracking branch?
+	remote=${$(git rev-parse --verify ${hook_com[branch]}@{upstream} --symbolic-full-name 2>/dev/null)/refs\/remotes\/}
+
+	if [[ -n ${remote} ]] ; then
+		ahead=$(git rev-list ${hook_com[branch]}@{upstream}..HEAD 2>/dev/null | wc -l)
+		(( $ahead )) && gitstatus+=( "${c3}+${ahead}${c2}" )
+
+		behind=$(git rev-list HEAD..${hook_com[branch]}@{upstream} 2>/dev/null | wc -l)
+		(( $behind )) && gitstatus+=( "${c4}-${behind}${c2}" )
+
+		hook_com[branch]="${hook_com[branch]}→${remote}${(j:/:)gitstatus}"
+	fi
+}
+# Show count of stashed changes - taken from http://eseth.org/2010/git-in-zsh.html
+function +vi-git-stash() {
+	local -a stashes
+
+	if [[ -s ${hook_com[base]}/.git/refs/stash ]] ; then
+		stashes=$(git stash list 2>/dev/null | wc -l)
+		hook_com[misc]+="(${stashes} stashed)"
+	fi
+}
+
+
+### Prompts
+PROMPT='%{%k%f%}
+%{%K{white}%F{black}%}%n@%m : %~${vcs_info_msg_0_}%E
+%# %{%f%k%b%} '
+
+### Colorful ls
+if [[ -f "${XDG_CONFIG_HOME}/dircolors" ]]
+then
+	eval `dircolors ${XDG_CONFIG_HOME}/dircolors`
+fi
+
+### Plugins
+. /usr/share/autojump/autojump.sh
+source $HOME/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
