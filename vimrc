@@ -126,6 +126,17 @@ NeoBundle 'sjl/gundo.vim'
 " Show a sidebar with the current buffer's tags
 NeoBundle 'majutsushi/tagbar'
 	nnoremap <F10> :TagbarToggle<CR>
+	let g:tagbar_type_markdown = {
+		\ 'ctagstype' : 'markdown',
+		\ 'kinds' : [
+			\ 'h:Heading_L1',
+			\ 'j:Heading_L2',
+			\ 'k:Heading_L3',
+			\ 'i:images',
+			\ 'l:links'
+		\ ]
+		\ }
+
 " Support for surroundings like ",',( etc
 NeoBundle 'tpope/vim-surround', {'depends': 'tpope/vim-repeat'}
 " Toggle commentaries
