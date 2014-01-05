@@ -95,11 +95,11 @@ autoload -Uz vcs_info
 zstyle ':vcs_info:*' enable git
 zstyle ':vcs_info:git*:*' get-revision true
 zstyle ':vcs_info:*' check-for-changes true
-zstyle ':vcs_info:*' stagedstr '%{%F{yellow}%}•%{%F{black}%}'
+zstyle ':vcs_info:*' stagedstr '%{%F{green}%}•%{%F{black}%}'
 zstyle ':vcs_info:*' unstagedstr '%{%F{red}%}•%{%F{black}%}'
 zstyle ':vcs_info:git:*' branchformat '%b'
-zstyle ':vcs_info:*' formats ' [%b]%u%c %m'
-zstyle ':vcs_info:*' actionformats ' [%b(%a)]%u%c %m'
+zstyle ':vcs_info:*' formats ' [%b]%u%c%m'
+zstyle ':vcs_info:*' actionformats ' [%b(%a)]%u%c%m'
 zstyle ':vcs_info:git*+set-message:*' hooks git-st git-stash
 precmd () {
 	vcs_info
@@ -128,10 +128,9 @@ function +vi-git-stash() {
 
 	if [[ -s ${hook_com[base]}/.git/refs/stash ]] ; then
 		stashes=$(git stash list 2>/dev/null | wc -l)
-		hook_com[misc]+="(${stashes} stashed)"
+		hook_com[misc]+="%{%F{yellow}%}•%{%F{black}%}"
 	fi
 }
-
 
 ### Prompts
 PROMPT='%{%k%f%}
