@@ -136,7 +136,6 @@ NeoBundle 'majutsushi/tagbar'
 			\ 'l:links'
 		\ ]
 		\ }
-
 " Support for surroundings like ",',( etc
 NeoBundle 'tpope/vim-surround', {'depends': 'tpope/vim-repeat'}
 " Toggle commentaries
@@ -195,6 +194,8 @@ NeoBundle 'chrisbra/NrrwRgn'
 NeoBundleLazy 'scrooloose/syntastic'
 	autocmd Filetype c,java,javascript,php,python,sh NeoBundleSource syntastic
 	let g:syntastic_auto_loc_list = 0
+" Support for markdown
+NeoBundle 'tpope/vim-markdown'
 
 " Included Macros
 runtime macros/matchit.vim
