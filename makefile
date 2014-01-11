@@ -1,6 +1,6 @@
-all: zsh vim git less
+install: install-zsh install-vim install-git install-less
 
-zsh:
+install-zsh:
 	@echo "Installing .zshrc"
 	@ln -fs $(CURDIR)/zshrc ${HOME}/.zshrc
 	@if [ ! -d "${HOME}/.local/share/zsh" ]; then \
@@ -8,7 +8,7 @@ zsh:
 		git clone "https://github.com/zsh-users/zsh-syntax-highlighting.git" "${HOME}/.local/share/zsh/" ; \
 	fi
 
-vim:
+install-vim:
 	@echo "Installing .vimrc"
 	@ln -fs $(CURDIR)/vimrc ${HOME}/.vimrc
 	@if [ ! -d "${HOME}/.vim/bundle" ]; then \
@@ -17,12 +17,16 @@ vim:
 		"${HOME}/.vim/bundle/neobundle.vim/bin/neoinstall" ; \
 	fi
 
-git:
+install-git:
 	@echo "Installing .gitconfig"
 	@ln -fs $(CURDIR)/gitconfig ${HOME}/.gitconfig
 	@echo "Please insert your name and email address in .gitconfig (possibly in a local git branch)"
 
-less:
+install-less:
 	@echo "Installing .lesskey"
 	@ln -fs $(CURDIR)/lesskey ${HOME}/.lesskey
 	@lesskey ${HOME}/.lesskey
+
+update:
+	@echo "Updating"
+	@git pull --rebase origin master
