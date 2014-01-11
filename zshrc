@@ -144,5 +144,11 @@ then
 fi
 
 ### Plugins
-. /usr/share/autojump/autojump.sh
-source ${HOME}/.local/share/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+if [[ -f /usr/share/autojump/autojump.zsh ]]
+then 
+	. /usr/share/autojump/autojump.sh
+fi
+if [[ -f "${HOME}/.local/share/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]]
+then
+	source ${HOME}/.local/share/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+fi
