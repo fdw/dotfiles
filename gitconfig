@@ -1,0 +1,40 @@
+[user]
+	name = <NAME>
+	email = <EMAIL>
+[core]
+	editor = vim
+	pager = less -R
+	whitespace = -trailing-space,-space-before-tab,-indent-with-non-tab
+	autocrlf = input
+
+[alias]
+	st = status
+	aa = add .
+	ci = commit
+	cim = commit -m
+	co = checkout
+	hist = log --pretty=format:\"%h %ad | %s%d\" --graph --date=short
+	rh = reset --hard HEAD
+	diff = diff --patience
+	amend = commit --amend
+	unstage = reset HEAD --
+	ls = log --pretty=format:"%C(yellow)%h%C(red)%d\\ %C(reset)%s%C(blue)\\ [%cn]" --decorate
+	lsg = log --graph --pretty=format:"%C(yellow)%h%C(red)%d\\ %C(reset)%s%C(blue)\\ [%cn]" --decorate
+	ll = log --pretty=format:"%C(yellow)%h%C(red)%d\\ %C(reset)%s%C(blue)\\ [%cn]" --decorate --numstat
+	filelog = log -u
+	fl = log -u
+	assume = update-index --assume-unchanged
+	unassume = update-index --no-assume-unchanged
+	assumed = "!git ls-files -v | grep ^h | cut -c 3-"
+	sl = stash list
+	sp = stash pop
+	ss = stash save
+
+[color]
+	ui = auto
+[push]
+	default = current
+[diff]
+	tool = meld
+[help]
+	autocorrect = 1
