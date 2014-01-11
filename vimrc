@@ -163,8 +163,6 @@ NeoBundle 'mhinz/vim-startify.git'
 	let g:startify_bookmarks = ['~/.config/dotfiles/vimrc','~/.config/dotfiles/zshrc','~/.config/dotfiles/gitconfig']
 	let g:startify_session_persistence = 1
 	let g:startify_change_to_dir = 1
-" Git integration
-NeoBundle 'tpope/vim-fugitive'
 " Colorful statusline
 NeoBundle 'bling/vim-airline', {'depends': 'tpope/vim-fugitive'}
 	set laststatus=2
@@ -186,10 +184,6 @@ NeoBundle 'altercation/vim-colors-solarized.git'
 " Better LaTeX support, only loaded for latex files
 NeoBundleLazy 'LaTeX-Box-Team/LaTeX-Box'
 	autocmd FileType plaintex,tex NeoBundleSource LaTeX-Box
-" Narrow Region, to edit only a part of a buffer in a separate window
-NeoBundle 'chrisbra/NrrwRgn'
-	let g:nrrw_topbot_leftright = 'botright'
-	xmap <F4> <Plug>NrrwrgnDo
 " Checking for errors, when dealing with a code file
 NeoBundleLazy 'scrooloose/syntastic'
 	autocmd Filetype c,java,javascript,php,python,sh NeoBundleSource syntastic
