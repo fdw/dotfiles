@@ -19,8 +19,8 @@ vim:
 
 git:
 	@echo "Installing .gitconfig"
-	@cp -f $(CURDIR)/gitconfig ${HOME}/.gitconfig
-	@echo "Please insert your name and email address in .gitconfig"
+	@ln -fs $(CURDIR)/gitconfig ${HOME}/.gitconfig
+	@echo "Please insert your name and email address in .gitconfig (possibly in a local git branch)"
 
 less:
 	@echo "Installing .lesskey"
