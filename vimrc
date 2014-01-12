@@ -140,16 +140,12 @@ NeoBundle 'majutsushi/tagbar'
 NeoBundle 'tpope/vim-surround', {'depends': 'tpope/vim-repeat'}
 " Toggle commentaries
 NeoBundle 'tpope/vim-commentary.git', {'depends': 'tpope/vim-repeat'}
-" The last search pattern as a text object
-NeoBundle 'kana/vim-textobj-lastpat.git', {'depends': 'kana/vim-textobj-user'}
 " A text object based on the indentation
 NeoBundle 'kana/vim-textobj-indent.git', {'depends': 'kana/vim-textobj-user'}
 " Search for the visually selected text
 NeoBundle 'nelstrom/vim-visual-star-search.git'
 " Show the level of indentation
 NeoBundle 'nathanaelkane/vim-indent-guides.git'
-" Use tabs only for indentation
-NeoBundle 'IndentTab'
 	let g:indent_guides_guide_size = 1
 	let g:indent_guides_space_guides = 1
 	let g:indent_guides_enable_on_vim_startup = 1
@@ -184,10 +180,6 @@ NeoBundle 'altercation/vim-colors-solarized.git'
 " Better LaTeX support, only loaded for latex files
 NeoBundleLazy 'LaTeX-Box-Team/LaTeX-Box'
 	autocmd FileType plaintex,tex NeoBundleSource LaTeX-Box
-" Checking for errors, when dealing with a code file
-NeoBundleLazy 'scrooloose/syntastic'
-	autocmd Filetype c,java,javascript,php,python,sh NeoBundleSource syntastic
-	let g:syntastic_auto_loc_list = 0
 " Support for markdown
 NeoBundle 'tpope/vim-markdown'
 
