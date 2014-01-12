@@ -34,3 +34,4 @@ install-dircolors:
 update:
 	@echo "Updating"
 	@git pull --rebase origin master
+	@git submodule update
