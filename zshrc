@@ -138,9 +138,9 @@ PROMPT='%{%k%f%}
 %# %{%f%k%b%} '
 
 ### Colorful ls
-if [[ -f "${XDG_CONFIG_HOME}/dircolors" ]]
+if [[ -f "${XDG_CONFIG_HOME}/dir_colors" ]]
 then
-	eval `dircolors ${XDG_CONFIG_HOME}/dircolors`
+	eval `dircolors ${XDG_CONFIG_HOME}/dir_colors`
 fi
 
 ### Plugins

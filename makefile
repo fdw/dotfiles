@@ -1,6 +1,6 @@
 install: install-zsh install-vim install-git install-less
 
-install-zsh:
+install-zsh: install-dircolors
 	@echo "Installing .zshrc"
 	@ln -fs $(CURDIR)/zshrc ${HOME}/.zshrc
 	@if [ ! -d "${HOME}/.local/share/zsh" ]; then \
@@ -26,6 +26,10 @@ install-less:
 	@echo "Installing .lesskey"
 	@ln -fs $(CURDIR)/lesskey ${HOME}/.lesskey
 	@lesskey ${HOME}/.lesskey
+
+install-dircolors:
+	@echo "Installing .dir_colors"
+	@ln -fs ${CURDIR}/dir_colors ${XDG_CONFIG_HOME}/.dir_colors
 
 update:
 	@echo "Updating"
