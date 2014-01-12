@@ -2,7 +2,7 @@ install: install-zsh install-vim install-git install-less
 
 install-zsh: install-dircolors
 	@echo "Installing .zshrc"
-	@ln -fs $(CURDIR)/zshrc ${HOME}/.zshrc
+	@ln -fs ${CURDIR}/zshrc ${HOME}/.zshrc
 	@if [ ! -d "${HOME}/.local/share/zsh" ]; then \
 		mkdir "${HOME}/.local/share/zsh" ; \
 		git clone "https://github.com/zsh-users/zsh-syntax-highlighting.git" "${HOME}/.local/share/zsh/" ; \
@@ -10,7 +10,7 @@ install-zsh: install-dircolors
 
 install-vim:
 	@echo "Installing .vimrc"
-	@ln -fs $(CURDIR)/vimrc ${HOME}/.vimrc
+	@ln -fs ${CURDIR}/vimrc ${HOME}/.vimrc
 	@if [ ! -d "${HOME}/.vim/bundle" ]; then \
 		mkdir "${HOME}/.vim/bundle" ; \
 		git clone "https://github.com/Shougo/neobundle.vim" "${HOME}/.vim/bundle/neobundle.vim" ; \
@@ -19,17 +19,17 @@ install-vim:
 
 install-git:
 	@echo "Installing .gitconfig"
-	@ln -fs $(CURDIR)/gitconfig ${HOME}/.gitconfig
+	@ln -fs ${CURDIR}/gitconfig ${HOME}/.gitconfig
 	@echo "Please insert your name and email address in .gitconfig (possibly in a local git branch)"
 
 install-less:
 	@echo "Installing .lesskey"
-	@ln -fs $(CURDIR)/lesskey ${HOME}/.lesskey
+	@ln -fs ${CURDIR}/lesskey ${HOME}/.lesskey
 	@lesskey ${HOME}/.lesskey
 
 install-dircolors:
 	@echo "Installing .dir_colors"
-	@ln -fs ${CURDIR}/dir_colors ${XDG_CONFIG_HOME}/.dir_colors
+	@ln -fs ${CURDIR}/dir_colors ${HOME}/.dir_colors
 
 update:
 	@echo "Updating"
