@@ -29,7 +29,7 @@ install-less:
 
 install-dircolors:
 	@echo "Installing .dir_colors"
-	@ln -fs ${CURDIR}/dir_colors ${HOME}/.dir_colors
+	@ln -fs ${CURDIR}/dircolors-solarized/dircolors.ansi-universal ${HOME}/.dir_colors
 
 update:
 	@echo "Updating"
