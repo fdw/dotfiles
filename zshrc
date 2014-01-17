@@ -90,13 +90,17 @@ bindkey '^D' list-choices
 bindkey '^R' history-incremental-search-backward
 bindkey '^i' expand-or-complete-prefix
 
-### Git/SVN options
+### Prompt
+# Colors
+FG=white
+BG=black
+# Git options
 autoload -Uz vcs_info
 zstyle ':vcs_info:*' enable git
 zstyle ':vcs_info:git*:*' get-revision true
 zstyle ':vcs_info:*' check-for-changes true
-zstyle ':vcs_info:*' stagedstr '%{%F{green}%}•%{%F{black}%}'
-zstyle ':vcs_info:*' unstagedstr '%{%F{red}%}•%{%F{black}%}'
+zstyle ':vcs_info:*' stagedstr '%{%F{green}%}•'
+zstyle ':vcs_info:*' unstagedstr '%{%F{red}%}•'
 zstyle ':vcs_info:git:*' branchformat '%b'
 zstyle ':vcs_info:*' formats ' [%b]%u%c%m'
 zstyle ':vcs_info:*' actionformats ' [%b(%a)]%u%c%m'
@@ -104,7 +108,7 @@ zstyle ':vcs_info:git*+set-message:*' hooks git-st git-stash
 precmd () {
 	vcs_info
 }
-# Show remote ref name and number of commits ahead-of or behind - taken from http://eseth.org/2010/git-in-zsh.html
+# Show remote ref name and number of commits ahead or behind - taken from http://eseth.org/2010/git-in-zsh.html
 function +vi-git-st() {
 	local ahead behind remote
 	local -a gitstatus
@@ -128,14 +132,13 @@ function +vi-git-stash() {
 
 	if [[ -s ${hook_com[base]}/.git/refs/stash ]] ; then
 		stashes=$(git stash list 2>/dev/null | wc -l)
-		hook_com[misc]+="%{%F{yellow}%}•%{%F{black}%}"
+		hook_com[misc]+="%{%F{yellow}%}•"
 	fi
 }
-
-### Prompts
+# Real prompt config
 PROMPT='%{%k%f%}
-%{%K{white}%F{black}%}%n@%m : %~${vcs_info_msg_0_}%E
-%# %{%f%k%b%} '
+%{%K{${BG}}%F{${FG}}%}%n@%m : %~${vcs_info_msg_0_}%E
+%{%K{${BG}%F{${FG}}%}%# %{%f%k%b%} '
 
 ### Colorful ls
 if [[ -f "$HOME}/dir_colors" ]]
