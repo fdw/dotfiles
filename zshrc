@@ -138,7 +138,7 @@ function +vi-git-stash() {
 # Real prompt config
 PROMPT='%{%k%f%}
 %{%K{${BG}}%F{${FG}}%}%n@%m : %~${vcs_info_msg_0_}%E
-%{%K{${BG}%F{${FG}}%}%# %{%f%k%b%} '
+%(?..%F{red}%?%F{${FG}})%{%K{${BG}%F{${FG}}%}%# %{%f%k%b%} '
 
 ### Colorful ls
 if [[ -f "$HOME}/dir_colors" ]]
