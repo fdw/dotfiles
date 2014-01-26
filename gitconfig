@@ -29,6 +29,7 @@
 	sl = stash list
 	sp = stash pop
 	ss = stash save
+	sc = stash clear
 	sm = submodule
 
 [color]
