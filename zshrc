@@ -1,20 +1,23 @@
-### Load cached status files
+
 # Cache dir
 ZSH_CACHE="${XDG_CACHE_HOME}/zsh"
 mkdir -p ${ZSH_CACHE}
+# Data dir
+ZSH_DATA="${XDG_DATA_HOME}/zsh"
+mkdir -p ${ZSH_DATA}
 # History
 command_oriented_history=1
 HISTCONTROL=ignoreboth
 ulimit -c unlimited
 umask 022
 mesg y
-export HISTFILE="${ZSH_CACHE}/history"
+export HISTFILE="${ZSH_DATA}/history"
 export HISTSIZE=8192
 export SAVEHIST=8192
 fc -R ${HISTFILE}
 # Directory stack
 DIRSTACKSIZE=15
-DIRSTACKFILE="${ZSH_CACHE}/dirstack"
+DIRSTACKFILE="${ZSH_DATA}/dirstack"
 if [[ -f $DIRSTACKFILE ]] && [[ $#dirstack -eq 0 ]]; then
 	dirstack=( ${(f)"$(< $DIRSTACKFILE)"} )
 		[[ -d $dirstack[1] ]] && cd $dirstack[1] && cd $OLDPWD
@@ -151,7 +154,7 @@ if [[ -f /usr/share/autojump/autojump.zsh ]]
 then 
 	. /usr/share/autojump/autojump.sh
 fi
-if [[ -f "${HOME}/.local/share/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]]
+if [[ -f "${ZSH_DATA}/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]]
 then
-	source ${HOME}/.local/share/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+	source ${ZSH_DATA}/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 fi
