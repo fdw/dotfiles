@@ -29,8 +29,8 @@ install-less:
 
 install-dircolors:
 	@echo "Installing .dir_colors"
-	@if [ ! -d "${CURDIR}/dircolors-solarized.git" ]; then \
-		git clone https://github.com/seebi/dircolors-solarized.git "${CURDIR}/dircolors-solarized.git" ; \
+	@if [ ! -d "${CURDIR}/dircolors-solarized" ]; then \
+		git clone "https://github.com/seebi/dircolors-solarized.git" "${CURDIR}/dircolors-solarized" ; \
 	fi
 	@ln -fs ${CURDIR}/dircolors-solarized/dircolors.ansi-universal ${HOME}/.dir_colors
 
