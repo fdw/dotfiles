@@ -8,7 +8,7 @@
 	autocrlf = input
 
 [alias]
-	st = status
+	st = status -sb
 	aa = add .
 	ci = commit
 	cim = commit -m
@@ -16,6 +16,7 @@
 	hist = log --pretty=format:\"%h %ad | %s%d\" --graph --date=short
 	rh = reset --hard HEAD
 	diff = diff --patience
+	ds = diff --staged
 	amend = commit --amend
 	unstage = reset HEAD --
 	ls = log --pretty=format:"%C(yellow)%h%C(red)%d\\ %C(reset)%s%C(blue)\\ [%cn]" --decorate
@@ -35,7 +36,7 @@
 [color]
 	ui = auto
 [push]
-	default = current
+	default = upstream
 [diff]
 	tool = meld
 [help]

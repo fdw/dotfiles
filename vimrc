@@ -136,8 +136,6 @@ NeoBundle 'majutsushi/tagbar'
 			\ 'l:links'
 		\ ]
 		\ }
-" Support for surroundings like ",',( etc
-NeoBundle 'tpope/vim-surround', {'depends': 'tpope/vim-repeat'}
 " Toggle commentaries
 NeoBundle 'tpope/vim-commentary.git', {'depends': 'tpope/vim-repeat'}
 " A text object based on the indentation
