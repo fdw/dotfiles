@@ -89,7 +89,7 @@ NeoBundle 'Shougo/vimproc', {
 	\ },
 	\ }
 " Open files, buffers, previous yanks etc
-NeoBundle 'Shougo/unite.vim'
+NeoBundle 'Shougo/neomru.vim', {'depends': 'Shougo/unite.vim'}
 	let $LC_NUMERIC = 'en_US.utf8'
 	call unite#filters#sorter_default#use(['sorter_rank'])
 	call unite#filters#matcher_default#use(['matcher_fuzzy'])
@@ -244,4 +244,12 @@ nnoremap <silent> [c g;
 nnoremap <silent> ]c g,
 " let Y behave like D
 nnoremap Y y$
+" Sudo write
 cmap W w !sudo tee > /dev/null %
+" Use leader for system clipboard
+vmap <Leader>y "+y
+vmap <Leader>d "+d
+nmap <Leader>p "+p
+nmap <Leader>P "+P
+vmap <Leader>p "+p
+vmap <Leader>P "+P
