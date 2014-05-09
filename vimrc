@@ -179,7 +179,11 @@ NeoBundle 'altercation/vim-colors-solarized.git'
 NeoBundleLazy 'LaTeX-Box-Team/LaTeX-Box'
 	autocmd FileType plaintex,tex NeoBundleSource LaTeX-Box
 " Support for markdown
-NeoBundle 'tpope/vim-markdown'
+NeoBundleLazy 'tpope/vim-markdown'
+	autocmd FileType markdown
+" Emmet for HTML files
+NeoBundleLazy 'mattn/emmet-vim'
+	autocmd FileType html,xhtml NeoBundleSource emmet-vim
 
 " Included Macros
 runtime macros/matchit.vim
