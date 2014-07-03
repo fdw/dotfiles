@@ -1,4 +1,4 @@
-install: install-zsh install-vim install-git install-less
+install: install-zsh install-vim install-git install-less install-tmux
 
 install-zsh: install-dircolors
 	@echo "Installing .zshrc"
@@ -26,6 +26,10 @@ install-less:
 	@echo "Installing .lesskey"
 	@ln -fs ${CURDIR}/lesskey ${HOME}/.lesskey
 	@lesskey ${HOME}/.lesskey
+
+install-tmux:
+	@echo "Installing .tmux.conf"
+	@ln -fs ${CURDIR}/tmux.conf ${HOME}/.tmux.conf
 
 install-dircolors:
 	@echo "Installing .dir_colors"
