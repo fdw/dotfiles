@@ -13,6 +13,7 @@
 	ci = commit
 	cim = commit -m
 	co = checkout
+	rb = rebase
 	hist = log --pretty=format:\"%h %ad | %s%d\" --graph --date=short
 	rh = reset --hard HEAD
 	diff = diff --patience
