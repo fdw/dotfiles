@@ -180,7 +180,7 @@ NeoBundleLazy 'LaTeX-Box-Team/LaTeX-Box'
 	autocmd FileType plaintex,tex NeoBundleSource LaTeX-Box
 " Support for markdown
 NeoBundleLazy 'tpope/vim-markdown'
-	autocmd FileType markdown
+	autocmd FileType markdown NeoBundleSource vim-markdown
 " Emmet for HTML files
 NeoBundleLazy 'mattn/emmet-vim'
 	autocmd FileType html,xhtml NeoBundleSource emmet-vim
