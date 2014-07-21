@@ -62,9 +62,9 @@ set shiftwidth=4
 set tabstop=4
 
 " Folding
-set foldmethod=indent
-set foldnestmax=3
 set foldenable
+set foldmethod=syntax
+set foldnestmax=20
 set foldlevelstart=20
 nnoremap <silent> <Space> @=(foldlevel('.')?'za':"\<Space>")<CR>
 vnoremap <Space> zf
@@ -184,6 +184,9 @@ NeoBundleLazy 'tpope/vim-markdown'
 " Emmet for HTML files
 NeoBundleLazy 'mattn/emmet-vim'
 	autocmd FileType html,xhtml NeoBundleSource emmet-vim
+" Json support
+NeoBundleLazy 'elzr/vim-json'
+	autocmd FileType json NeoBundleSource vim-json
 
 " Included Macros
 runtime macros/matchit.vim
