@@ -1,6 +1,7 @@
 [user]
 	name = <NAME>
 	email = <EMAIL>
+
 [core]
 	editor = vim
 	pager = less -R
@@ -34,11 +35,17 @@
 	sc = stash clear
 	sm = submodule
 
-[color]
-	ui = auto
 [push]
 	default = upstream
+
+[branch]
+	autosetuprebase = always
+
 [diff]
 	tool = meld
+
 [help]
 	autocorrect = 1
+
+[color]
+	ui = auto
