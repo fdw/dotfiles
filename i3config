@@ -43,12 +43,12 @@ workspace_layout tabbed
 bindsym $mod+s split h
 bindsym $mod+v split v
 ## tiling
-bindsym $M1+KP_5 floating enable; move position center
-bindsym $M1+KP_7 floating enable; move position 40 px 30 px
-bindsym $M1+KP_9 floating enable; move position 1520 px 30 px
-bindsym $M1+KP_1 floating enable; move position 40 px 830 px
-bindsym $M1+KP_3 floating enable; move position 1520 px 830 px
-bindsym $M1+KP_0 floating disable
+bindsym $mod+KP_5 floating enable; move position center
+bindsym $mod+KP_7 floating enable; move position 40 px 30 px
+bindsym $mod+KP_9 floating enable; move position 1520 px 30 px
+bindsym $mod+KP_1 floating enable; move position 40 px 830 px
+bindsym $mod+KP_3 floating enable; move position 1520 px 830 px
+bindsym $mod+KP_0 floating disable
 ## fullscreen mode
 bindsym $mod+f fullscreen
 ## toggle tiling / floating
@@ -57,9 +57,9 @@ bindsym $mod+Shift+space floating toggle
 floating_modifier $mod
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+Mod1+q layout stacking
-bindsym $mod+Mod1+w layout tabbed
-bindsym $mod+Mod1+e layout toggle split
+bindsym $mod+F1 layout stacking
+bindsym $mod+F2 layout tabbed
+bindsym $mod+F3 layout toggle split
 
 # workspace movement
 ## switch to workspace
