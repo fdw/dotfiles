@@ -38,6 +38,11 @@ install-dircolors:
 	fi
 	@ln -fs ${CURDIR}/dircolors-solarized/dircolors.ansi-universal ${HOME}/.dir_colors
 
+install-i3:
+	@echo "Installing .config/i3/config"
+	@mkdir -p ${HOME}/.config/i3/
+	@ln -fs ${CURDIR}/i3config ${HOME}/.config/i3/config
+
 update:
 	@echo "Updating"
 	@git pull --rebase origin master

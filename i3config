@@ -1,0 +1,122 @@
+set $mod Mod4
+
+font pango:Roboto 12
+
+# start a terminal
+bindsym Control+Mod1+t exec i3-sensible-terminal
+
+# exits
+## exit focused window
+bindsym $mod+w kill
+## exit i3
+bindsym $mod+Shift+e exec i3-msg exit
+
+# Starter
+bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+
+# focus
+## change focus
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+## move focused window
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+## change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# window placement
+## default workspace layout
+workspace_layout tabbed
+## splits
+bindsym $mod+s split h
+bindsym $mod+v split v
+## tiling
+bindsym $M1+KP_5 floating enable; move position center
+bindsym $M1+KP_7 floating enable; move position 40 px 30 px
+bindsym $M1+KP_9 floating enable; move position 1520 px 30 px
+bindsym $M1+KP_1 floating enable; move position 40 px 830 px
+bindsym $M1+KP_3 floating enable; move position 1520 px 830 px
+bindsym $M1+KP_0 floating disable
+## fullscreen mode
+bindsym $mod+f fullscreen
+## toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+## Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+Mod1+q layout stacking
+bindsym $mod+Mod1+w layout tabbed
+bindsym $mod+Mod1+e layout toggle split
+
+# workspace movement
+## switch to workspace
+bindsym $mod+1 workspace 1
+bindsym $mod+2 workspace 2
+bindsym $mod+3 workspace 3
+bindsym $mod+4 workspace 4
+bindsym $mod+5 workspace 5
+bindsym $mod+6 workspace 6
+bindsym $mod+7 workspace 7
+bindsym $mod+8 workspace 8
+bindsym $mod+9 workspace 9
+bindsym $mod+0 workspace 10
+## move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace 1
+bindsym $mod+Shift+2 move container to workspace 2
+bindsym $mod+Shift+3 move container to workspace 3
+bindsym $mod+Shift+4 move container to workspace 4
+bindsym $mod+Shift+5 move container to workspace 5
+bindsym $mod+Shift+6 move container to workspace 6
+bindsym $mod+Shift+7 move container to workspace 7
+bindsym $mod+Shift+8 move container to workspace 8
+bindsym $mod+Shift+9 move container to workspace 9
+bindsym $mod+Shift+0 move container to workspace 10
+
+# resize window mode
+mode "resize"
+{
+        bindsym h resize shrink width 10 px or 10 ppt
+        bindsym j resize grow height 10 px or 10 ppt
+        bindsym k resize shrink height 10 px or 10 ppt
+        bindsym l resize grow width 10 px or 10 ppt
+
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+bindsym $mod+r mode "resize"
+
+# finds out, if available)
+bar
+{
+	mode hide
+	hidden_state hide
+	modifier $mod
+	workspace_buttons yes
+}
+
+# Autostart
+exec --no-startup-id gnome-settings-daemon
+exec --no-startup-id /usr/lib/x86_64-linux-gnu/indicator-application/indicator-application-service
+exec --no-startup-id /usr/lib/x86_64-linux-gnu/indicator-keyboard-service
+exec --no-startup-id /usr/lib/x86_64-linux-gnu/indicator-session/indicator-session-service
+exec --no-startup-id /usr/lib/x86_64-linux-gnu/indicator-sound/indicator-sound-service
+exec --no-startup-id /usr/lib/x86_64-linux-gnu/indicator-power/indicator-power-service
+exec --no-startup-id nm-applet
