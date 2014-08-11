@@ -1,16 +1,13 @@
 set $mod Mod4
 
-font pango:Roboto 12
+font pango:Roboto 8
+#new_window 1pixel
 
-# start a terminal
-bindsym Control+Mod1+t exec i3-sensible-terminal
-
-# exits
+# program start and exit
 ## exit focused window
 bindsym $mod+w kill
 ## exit i3
 bindsym $mod+Shift+e exec i3-msg exit
-
 # Starter
 bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
@@ -38,17 +35,10 @@ bindsym $mod+space focus mode_toggle
 
 # window placement
 ## default workspace layout
-workspace_layout tabbed
+workspace_layout default
 ## splits
 bindsym $mod+s split h
 bindsym $mod+v split v
-## tiling
-bindsym $mod+KP_5 floating enable; move position center
-bindsym $mod+KP_7 floating enable; move position 40 px 30 px
-bindsym $mod+KP_9 floating enable; move position 1520 px 30 px
-bindsym $mod+KP_1 floating enable; move position 40 px 830 px
-bindsym $mod+KP_3 floating enable; move position 1520 px 830 px
-bindsym $mod+KP_0 floating disable
 ## fullscreen mode
 bindsym $mod+f fullscreen
 ## toggle tiling / floating
@@ -63,27 +53,28 @@ bindsym $mod+F3 layout toggle split
 
 # workspace movement
 ## switch to workspace
-bindsym $mod+1 workspace 1
-bindsym $mod+2 workspace 2
-bindsym $mod+3 workspace 3
-bindsym $mod+4 workspace 4
-bindsym $mod+5 workspace 5
-bindsym $mod+6 workspace 6
-bindsym $mod+7 workspace 7
-bindsym $mod+8 workspace 8
-bindsym $mod+9 workspace 9
-bindsym $mod+0 workspace 10
+bindsym $mod+KP_1 workspace number 1
+bindsym $mod+KP_2 workspace number 2
+bindsym $mod+KP_3 workspace number 3
+bindsym $mod+KP_4 workspace number 4
+bindsym $mod+KP_5 workspace number 5
+bindsym $mod+KP_6 workspace number 6
+bindsym $mod+KP_7 workspace number 7
+bindsym $mod+KP_8 workspace number 8
+bindsym $mod+KP_9 workspace number 9
 ## move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace 1
-bindsym $mod+Shift+2 move container to workspace 2
-bindsym $mod+Shift+3 move container to workspace 3
-bindsym $mod+Shift+4 move container to workspace 4
-bindsym $mod+Shift+5 move container to workspace 5
-bindsym $mod+Shift+6 move container to workspace 6
-bindsym $mod+Shift+7 move container to workspace 7
-bindsym $mod+Shift+8 move container to workspace 8
-bindsym $mod+Shift+9 move container to workspace 9
-bindsym $mod+Shift+0 move container to workspace 10
+bindsym $mod+Shift+KP_1 move container to workspace number 1
+bindsym $mod+Shift+KP_2 move container to workspace number 2
+bindsym $mod+Shift+KP_3 move container to workspace number 3
+bindsym $mod+Shift+KP_4 move container to workspace number 4
+bindsym $mod+Shift+KP_5 move container to workspace number 5
+bindsym $mod+Shift+KP_6 move container to workspace number 6
+bindsym $mod+Shift+KP_7 move container to workspace number 7
+bindsym $mod+Shift+KP_8 move container to workspace number 8
+bindsym $mod+Shift+KP_9 move container to workspace number 9
+## Scratchpad
+bindsym $mod+Shift+KP_0 move container scratchpad
+bindsym $mod+KP_0 scratchpad show
 
 # resize window mode
 mode "resize"
@@ -119,4 +110,15 @@ exec --no-startup-id /usr/lib/x86_64-linux-gnu/indicator-keyboard-service
 exec --no-startup-id /usr/lib/x86_64-linux-gnu/indicator-session/indicator-session-service
 exec --no-startup-id /usr/lib/x86_64-linux-gnu/indicator-sound/indicator-sound-service
 exec --no-startup-id /usr/lib/x86_64-linux-gnu/indicator-power/indicator-power-service
+exec --no-startup-id gnome-keyring-daemon
 exec --no-startup-id nm-applet
+exec --no-startup-id diodon
+
+# Shortcuts
+bindsym $mod+1 exec firefox
+bindsym $mod+2 exec thunderbird
+bindsym $mod+3 exec quodlibet
+bindsym $mod+4 exec gvim
+bindsym $mod+6 exec gthumb
+bindsym $mod+7 exec nicotine
+bindsym Control+Mod1+t exec i3-sensible-terminal
