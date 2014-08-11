@@ -17,6 +17,7 @@ set nowritebackup
 silent !mkdir ~/.cache/vim/undos > /dev/null 2>&1
 set undodir=~/.cache/vim/undos
 set undofile
+set undolevels=150
 
 " Behavior
 set mouse=a
