@@ -18,6 +18,7 @@ silent !mkdir ~/.cache/vim/undos > /dev/null 2>&1
 set undodir=~/.cache/vim/undos
 set undofile
 set undolevels=150
+silent !find	~/.cache/vim/undos/ -mtime +28 -exec rm {} \;
 
 " Behavior
 set mouse=a
@@ -97,6 +98,7 @@ NeoBundle 'Shougo/neomru.vim', {'depends': 'Shougo/unite.vim'}
 	call unite#set_profile('files', 'smartcase', 1)
 	let g:unite_data_directory = '~/.cache/vim/unite'
 	let g:unite_enable_start_insert = 1
+	let g:unite_update_time = 200
 	let g:unite_source_history_yank_enable = 1
 	let g:unite_source_file_mru_filename_format = ':~:.'
 	let g:unite_source_file_mru_limit = 1000
@@ -111,7 +113,7 @@ NeoBundle 'Shougo/neomru.vim', {'depends': 'Shougo/unite.vim'}
 	let g:unite_source_grep_max_candidates = 200
 	"Keymaps
 	nnoremap <F5> :Unite -auto-resize -resume -buffer-name=yanks history/yank<CR>
-	nnoremap <F6> :Unite -auto-resize -resume -buffer-name=files file_mru file_rec/async buffer bookmark<CR>
+	nnoremap <F6> :Unite -auto-resize -resume -buffer-name=files file/async: file_mru file_rec/async:! file_rec/async:$HOME tab buffer bookmark<CR>
 	nnoremap <F7> :Unite -auto-resize -resume -buffer-name=files grep<CR>
 NeoBundle 'justinmk/vim-sneak'
 	let g:sneak#streak = 1
@@ -252,8 +254,6 @@ nnoremap <silent> [c g;
 nnoremap <silent> ]c g,
 " let Y behave like D
 nnoremap Y y$
-" Sudo write
-cmap W w !sudo tee > /dev/null %
 " Use leader for system clipboard
 vmap <Leader>y "+y
 vmap <Leader>d "+d
