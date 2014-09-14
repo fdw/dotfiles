@@ -115,6 +115,9 @@ NeoBundle 'Shougo/neomru.vim', {'depends': 'Shougo/unite.vim'}
 	nnoremap <F5> :Unite -auto-resize -resume -buffer-name=yanks history/yank<CR>
 	nnoremap <F6> :Unite -auto-resize -resume -buffer-name=files file/async: file_mru file_rec/async:! file_rec/async:$HOME tab buffer bookmark<CR>
 	nnoremap <F7> :Unite -auto-resize -resume -buffer-name=files grep<CR>
+" Outline
+NeoBundle 'Shougo/unite-outline', {'depends': 'Shougo/unite.vim'}
+	nnoremap <F8> :Unite -auto-resize -resume -buffer-name=outline outline<CR>
 NeoBundle 'justinmk/vim-sneak'
 	let g:sneak#streak = 1
 	let g:sneak#use_ic_scs = 1
@@ -126,19 +129,6 @@ NeoBundle 'justinmk/vim-sneak'
 " Show a sidebar with the undo tree
 NeoBundle 'sjl/gundo.vim'
 	nnoremap <F9> :GundoToggle<CR>
-" Show a sidebar with the current buffer's tags
-NeoBundle 'majutsushi/tagbar'
-	nnoremap <F10> :TagbarToggle<CR>
-	let g:tagbar_type_markdown = {
-		\ 'ctagstype' : 'markdown',
-		\ 'kinds' : [
-			\ 'h:Heading_L1',
-			\ 'j:Heading_L2',
-			\ 'k:Heading_L3',
-			\ 'i:images',
-			\ 'l:links'
-		\ ]
-		\ }
 " Toggle commentaries
 NeoBundle 'tpope/vim-commentary.git', {'depends': 'tpope/vim-repeat'}
 " A text object based on the indentation
