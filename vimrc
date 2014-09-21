@@ -1,4 +1,3 @@
-" General stuff
 set nocompatible
 set title
 set lines=26 columns=104
@@ -91,7 +90,7 @@ NeoBundle 'Shougo/vimproc', {
 	\ },
 	\ }
 " Open files, buffers, previous yanks etc
-NeoBundle 'Shougo/neomru.vim', {'depends': 'Shougo/unite.vim'}
+NeoBundle 'Shougo/unite.vim', {'depends': 'Shougo/vimproc'}
 	let $LC_NUMERIC = 'en_US.utf8'
 	call unite#filters#sorter_default#use(['sorter_rank'])
 	call unite#filters#matcher_default#use(['matcher_fuzzy'])
@@ -113,19 +112,27 @@ NeoBundle 'Shougo/neomru.vim', {'depends': 'Shougo/unite.vim'}
 	let g:unite_source_grep_max_candidates = 200
 	"Keymaps
 	nnoremap <F5> :Unite -auto-resize -resume -buffer-name=yanks history/yank<CR>
-	nnoremap <F6> :Unite -auto-resize -resume -buffer-name=files file/async: file_mru file_rec/async:! file_rec/async:$HOME tab buffer bookmark<CR>
 	nnoremap <F7> :Unite -auto-resize -resume -buffer-name=files grep<CR>
-" Outline
+" Use most recently used list in unite
+NeoBundle 'Shougo/neomru.vim', {'depends': 'Shougo/unite.vim'}
+	nnoremap <F6> :Unite -auto-resize -resume -buffer-name=files file/async: file_mru file_rec/async:! file_rec/async:$HOME tab buffer bookmark<CR>
+" Outline for unite
 NeoBundle 'Shougo/unite-outline', {'depends': 'Shougo/unite.vim'}
 	nnoremap <F8> :Unite -auto-resize -resume -buffer-name=outline outline<CR>
 NeoBundle 'justinmk/vim-sneak'
 	let g:sneak#streak = 1
 	let g:sneak#use_ic_scs = 1
+	let g:sneak#s_next = 1
+	let g:sneak#textobject_z = 0
 	nnoremap r s
-	nmap s <Plug>SneakForward
-	nmap S <Plug>SneakBackward
-	xmap s <Plug>VSneakForward
-	xmap S <Plug>VSneakBackward
+	nmap s <Plug>Sneak_s
+	nmap S <Plug>Sneak_S
+	xmap s <Plug>Sneak_s
+	xmap S <Plug>Sneak_S
+	omap s <Plug>Sneak_s
+	omap S <Plug>Sneak_S
+	map [s <Plug>SneakNext
+	map ]s <Plug>SneakPrevious
 " Show a sidebar with the undo tree
 NeoBundle 'sjl/gundo.vim'
 	nnoremap <F9> :GundoToggle<CR>
@@ -151,7 +158,7 @@ NeoBundle 'mhinz/vim-startify.git'
 	let g:startify_session_persistence = 1
 	let g:startify_change_to_dir = 1
 " Colorful statusline
-NeoBundle 'bling/vim-airline', {'depends': 'tpope/vim-fugitive'}
+NeoBundle 'bling/vim-airline'
 	set laststatus=2
 	set fillchars+=stl:\ ,stlnc:\
 	let g:airline_symbols = {}
