@@ -1,4 +1,4 @@
-install: install-zsh install-vim install-git install-less install-tmux
+install: install-zsh install-vim install-git install-less install-tmux install-dircolors install-i3 install-ranger
 
 install-zsh: install-dircolors
 	@echo "Installing .zshrc"
@@ -42,6 +42,11 @@ install-i3:
 	@echo "Installing .config/i3/config"
 	@mkdir -p ${HOME}/.config/i3/
 	@ln -fs ${CURDIR}/i3config ${HOME}/.config/i3/config
+
+install-ranger:
+	@echo "Installing .config/ranger/rc.conf"
+	@mkdir -p ${HOME}/.config/ranger/
+	@ln -fs ${CURDIR}/rangerrc.conf ${HOME}/.config/ranger/rc.conf
 
 update:
 	@echo "Updating"
