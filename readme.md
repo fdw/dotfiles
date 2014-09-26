@@ -3,28 +3,41 @@
 ## Content
 
 ### zshrc
-Autocompletion, autojump, and a nice two-line prompt
+* [Autojump](https://github.com/joelthelion/autojump)
+* [Syntax highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
+* Autocompletion configuration
+* a pretty two-line prompt
 
 ### vimrc
 * Keymapping for German keyboards
-* continous undo
+* Continous undo
 * Plugins organized with [NeoBundle](https://github.com/Shougo/neobundle.vim)
 * [Unite](https://github.com/Shougo/unite.vim) configured for async file search and a yank history
-* [Vim-sneak](https://github.com/justinmk/vim-sneak)
+* [Unite outline](https://github.com/Shougo/unite-outline) for showing an outline with ctags in Unite
+* [Vim-Sneak](https://github.com/justinmk/vim-sneak)
 * [Gundo](https://github.com/sjl/gundo.vim/)
-* [Tagbar](https://github.com/majutsushi/tagbar)
 * [Vim-Surround](https://github.com/tpope/vim-surround)
 * [Indent Textobject](https://github.com/kana/vim-textobj-indent/)
 * [Startify](https://github.com/mhinz/vim-startify)
 * [Airline](https://github.com/bling/vim-airline)
-* [Fugitive](https://github.com/tpope/vim-fugitive)
 * [Indent Guidelines](https://github.com/nathanaelkane/vim-indent-guides)
 
 ### lesskey
-Uses the same keymappings as vim
+* Same keymappings as vim (optimized for German keyboards)
 
 ### gitconfig (needs to be configured)
-Some useful aliases
+* Sensible configuration
+* Useful aliases
+
+### tmux
+* Sensible configuration
+
+### i3wm
+* Not so sensible configuration
+
+### ranger
+* Sensible configuration
+* Some useful keybindings
 
 ## Installation
 	git clone https://github.com/fdw/dotfiles.git ~/.config
