@@ -230,6 +230,8 @@ nmap ö [
 nmap ä ]
 nmap ß /
 vmap ß /
+nmap Q @
+vmap Q @
 " Moving through buffer, quickfix, location and tag lists
 nnoremap <silent> [b :bprevious<CR>
 nnoremap <silent> ]b :bnext<CR>

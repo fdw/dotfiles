@@ -1,4 +1,3 @@
-
 # Cache dir
 ZSH_CACHE="${XDG_CACHE_HOME}/zsh"
 mkdir -p ${ZSH_CACHE}
