@@ -94,7 +94,7 @@ NeoBundle 'Shougo/unite.vim', {'depends': 'Shougo/vimproc'}
 	let $LC_NUMERIC = 'en_US.utf8'
 	call unite#filters#sorter_default#use(['sorter_rank'])
 	call unite#filters#matcher_default#use(['matcher_fuzzy'])
-	call unite#set_profile('files', 'smartcase', 1)
+	call unite#custom#profile('files', 'context', {'smartcase': 1})
 	let g:unite_data_directory = '~/.cache/vim/unite'
 	let g:unite_enable_start_insert = 1
 	let g:unite_update_time = 200
