@@ -47,7 +47,7 @@ set smartcase
 set infercase
 set scrolloff=5
 set gdefault
-nnoremap <F3> :set hlsearch!<CR>
+nnoremap <F12> :set hlsearch!<CR>
 
 " Autocomplete
 set wildmenu
@@ -111,14 +111,17 @@ NeoBundle 'Shougo/unite.vim', {'depends': 'Shougo/vimproc'}
 	let g:unite_source_grep_recursive_opt = ''
 	let g:unite_source_grep_max_candidates = 200
 	"Keymaps
-	nnoremap <F5> :Unite -auto-resize -resume -buffer-name=yanks history/yank<CR>
+	nnoremap <F1> :Unite -auto-resize -resume -buffer-name=buffers buffer tab<CR>
+	nnoremap <F2> :Unite -auto-resize -resume -buffer-name=yanks history/yank<CR>
+	nnoremap <F5> :Unite -auto-resize -resume -buffer-name=files file_rec/async:!<CR>
 	nnoremap <F7> :Unite -auto-resize -resume -buffer-name=files grep<CR>
 " Use most recently used list in unite
 NeoBundle 'Shougo/neomru.vim', {'depends': 'Shougo/unite.vim'}
-	nnoremap <F6> :Unite -auto-resize -resume -buffer-name=files file/async: file_mru file_rec/async:! file_rec/async:$HOME tab buffer bookmark<CR>
+	nnoremap <F6> :Unite -auto-resize -resume -buffer-name=files file_mru bookmark file_rec/async:$HOME<CR>
 " Outline for unite
 NeoBundle 'Shougo/unite-outline', {'depends': 'Shougo/unite.vim'}
-	nnoremap <F8> :Unite -auto-resize -resume -buffer-name=outline outline<CR>
+	nnoremap <F4> :Unite -auto-resize -resume -buffer-name=outline outline <CR>
+	"-auto-resize -resume -buffer-name=outline outline<CR>
 NeoBundle 'justinmk/vim-sneak'
 	let g:sneak#streak = 1
 	let g:sneak#use_ic_scs = 1
@@ -135,7 +138,7 @@ NeoBundle 'justinmk/vim-sneak'
 	map ]s <Plug>SneakPrevious
 " Show a sidebar with the undo tree
 NeoBundle 'sjl/gundo.vim'
-	nnoremap <F9> :GundoToggle<CR>
+	nnoremap <F3> :GundoToggle<CR>
 " Toggle commentaries
 NeoBundle 'tpope/vim-commentary.git', {'depends': 'tpope/vim-repeat'}
 " A text object based on the indentation
@@ -154,7 +157,7 @@ NeoBundle 'mhinz/vim-startify.git'
 	silent !mkdir ~/.cache/vim/sessions > /dev/null 2>&1
 	let g:startify_session_dir = '~/.cache/vim/sessions'
 	let g:startify_list_order = ['sessions', 'bookmarks', 'files', 'dir']
-	let g:startify_bookmarks = ['~/.config/dotfiles/zshrc','~/.config/dotfiles/vimrc','~/.config/dotfiles/gitconfig', '~/.config/dotfiles/i3config','~/.config/dotfiles/tmux.conf']
+	let g:startify_bookmarks = ['~/.config/dotfiles/zshrc','~/.config/dotfiles/vimrc','~/.config/dotfiles/rangerrc.conf','~/.config/dotfiles/gitconfig', '~/.config/dotfiles/i3config','~/.config/dotfiles/tmux.conf']
 	let g:startify_session_persistence = 1
 	let g:startify_change_to_dir = 1
 " Colorful statusline
