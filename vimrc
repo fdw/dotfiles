@@ -121,7 +121,6 @@ NeoBundle 'Shougo/neomru.vim', {'depends': 'Shougo/unite.vim'}
 " Outline for unite
 NeoBundle 'Shougo/unite-outline', {'depends': 'Shougo/unite.vim'}
 	nnoremap <F4> :Unite -auto-resize -resume -buffer-name=outline outline <CR>
-	"-auto-resize -resume -buffer-name=outline outline<CR>
 NeoBundle 'justinmk/vim-sneak'
 	let g:sneak#streak = 1
 	let g:sneak#use_ic_scs = 1
@@ -155,9 +154,10 @@ NeoBundle 'kshenoy/vim-signature.git'
 " Nicer start screen with last used buffers
 NeoBundle 'mhinz/vim-startify.git'
 	silent !mkdir ~/.cache/vim/sessions > /dev/null 2>&1
+    let g:startify_custom_indices = map(range(1,100), 'string(v:val)')
 	let g:startify_session_dir = '~/.cache/vim/sessions'
 	let g:startify_list_order = ['sessions', 'bookmarks', 'files', 'dir']
-	let g:startify_bookmarks = ['~/.config/dotfiles/zshrc','~/.config/dotfiles/vimrc','~/.config/dotfiles/rangerrc.conf','~/.config/dotfiles/gitconfig', '~/.config/dotfiles/i3config','~/.config/dotfiles/tmux.conf']
+	let g:startify_bookmarks = ['~/.config/dotfiles/zshrc','~/.config/dotfiles/vimrc','~/.config/dotfiles/rangerrc.conf','~/.config/dotfiles/gitconfig']
 	let g:startify_session_persistence = 1
 	let g:startify_change_to_dir = 1
 " Colorful statusline
