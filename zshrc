@@ -40,6 +40,13 @@ _force_rehash() {
 	return 1
 }
 
+# Predicting
+autoload predict-on
+predict-on
+zle -N predict-off
+bindkey '^Z'   predict-on
+bindkey '^X^Z' predict-off
+zstyle ':completion:predict:*' menu yes
 
 ### Aliases
 alias -g ...='../..'
@@ -149,10 +156,12 @@ then
 fi
 
 ### Plugins
+## Autojump
 if [[ -f /usr/share/autojump/autojump.zsh ]]
 then 
 	. /usr/share/autojump/autojump.sh
 fi
+## Syntax Highlighting
 if [[ -f "${ZSH_DATA}/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]]
 then
 	source ${ZSH_DATA}/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
