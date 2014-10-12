@@ -78,7 +78,7 @@ set spell
 " Plugins
 filetype off
 set rtp+=~/.vim/bundle/neobundle.vim
-call neobundle#rc(expand('~/.vim/bundle/'))
+call neobundle#begin(expand('~/.vim/bundle/'))
 NeoBundleFetch 'Shougo/neobundle.vim'
 " Vimproc - NeoBundle and Unity use this for async
 NeoBundle 'Shougo/vimproc', {
@@ -89,113 +89,86 @@ NeoBundle 'Shougo/vimproc', {
 	\ 'unix' : 'make -f make_unix.mak',
 	\ },
 	\ }
-" Open files, buffers, previous yanks etc
+"" Unite
 NeoBundle 'Shougo/unite.vim', {'depends': 'Shougo/vimproc'}
-	let $LC_NUMERIC = 'en_US.utf8'
-	call unite#filters#sorter_default#use(['sorter_rank'])
-	call unite#filters#matcher_default#use(['matcher_fuzzy'])
-	call unite#custom#profile('files', 'context', {'smartcase': 1})
-	let g:unite_data_directory = '~/.cache/vim/unite'
-	let g:unite_enable_start_insert = 1
-	let g:unite_update_time = 200
-	let g:unite_source_history_yank_enable = 1
-	let g:unite_source_file_mru_filename_format = ':~:.'
-	let g:unite_source_file_mru_limit = 1000
-	let g:unite_source_history_yank_limit = 50
-	" Exit faster
-	au FileType unite nnoremap <silent> <buffer> <ESC><ESC> :q<CR>
-	au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>:q<CR>
-	" Support the Silver Searcher
-	let g:unite_source_grep_command = 'ag'
-	let g:unite_source_grep_default_opts = '--nocolor --nogroup'
-	let g:unite_source_grep_recursive_opt = ''
-	let g:unite_source_grep_max_candidates = 200
-	"Keymaps
-	nnoremap <F1> :Unite -auto-resize -resume -buffer-name=buffers buffer tab<CR>
-	nnoremap <F2> :Unite -auto-resize -resume -buffer-name=yanks history/yank<CR>
-	nnoremap <F5> :Unite -auto-resize -resume -buffer-name=files file_rec/async:!<CR>
-	nnoremap <F7> :Unite -auto-resize -resume -buffer-name=files grep<CR>
-" Use most recently used list in unite
 NeoBundle 'Shougo/neomru.vim', {'depends': 'Shougo/unite.vim'}
-	nnoremap <F6> :Unite -auto-resize -resume -buffer-name=files file_mru bookmark file_rec/async:$HOME<CR>
-" Outline for unite
 NeoBundle 'Shougo/unite-outline', {'depends': 'Shougo/unite.vim'}
-	nnoremap <F4> :Unite -auto-resize -resume -buffer-name=outline outline <CR>
-NeoBundle 'justinmk/vim-sneak'
-	let g:sneak#streak = 1
-	let g:sneak#use_ic_scs = 1
-	let g:sneak#s_next = 1
-	let g:sneak#textobject_z = 0
-	nnoremap r s
-	nmap s <Plug>Sneak_s
-	nmap S <Plug>Sneak_S
-	xmap s <Plug>Sneak_s
-	xmap S <Plug>Sneak_S
-	omap s <Plug>Sneak_s
-	omap S <Plug>Sneak_S
-	map [s <Plug>SneakNext
-	map ]s <Plug>SneakPrevious
-" Show a sidebar with the undo tree
-NeoBundle 'sjl/gundo.vim'
-	nnoremap <F3> :GundoToggle<CR>
-" Toggle commentaries
-NeoBundle 'tpope/vim-commentary.git', {'depends': 'tpope/vim-repeat'}
-" A text object based on the indentation
-NeoBundle 'kana/vim-textobj-indent.git', {'depends': 'kana/vim-textobj-user'}
-" Search for the visually selected text
-NeoBundle 'nelstrom/vim-visual-star-search.git'
-" Show the level of indentation
-NeoBundle 'nathanaelkane/vim-indent-guides.git'
-	let g:indent_guides_guide_size = 1
-	let g:indent_guides_space_guides = 1
-	let g:indent_guides_enable_on_vim_startup = 1
-" Show marks in the gutter
-NeoBundle 'kshenoy/vim-signature.git'
-" Nicer start screen with last used buffers
-NeoBundle 'mhinz/vim-startify.git'
-	silent !mkdir ~/.cache/vim/sessions > /dev/null 2>&1
-    let g:startify_custom_indices = map(range(1,100), 'string(v:val)')
-	let g:startify_session_dir = '~/.cache/vim/sessions'
-	let g:startify_list_order = ['sessions', 'bookmarks', 'files', 'dir']
-	let g:startify_bookmarks = ['~/.config/dotfiles/zshrc','~/.config/dotfiles/vimrc','~/.config/dotfiles/rangerrc.conf','~/.config/dotfiles/gitconfig']
-	let g:startify_session_persistence = 1
-	let g:startify_change_to_dir = 1
-" Colorful statusline
-NeoBundle 'bling/vim-airline'
-	set laststatus=2
-	set fillchars+=stl:\ ,stlnc:\
-	let g:airline_symbols = {}
-	let g:airline_left_sep = ''
-	let g:airline_right_sep = ''
-	let g:airline_symbols.linenr = '¶'
-	let g:airline_symbols.whitespace = 'Ξ'
-	let g:airline#extensions#branch#enabled = 1
-	let g:airline#extensions#tagbar#enabled = 1
-	let g:airline_branch_prefix = '⎇ '
-	let g:airline_theme = 'solarized'
-	let g:airline_inactive_collapse = 1
-" Solarized color scheme
+"" UI
 NeoBundle 'altercation/vim-colors-solarized.git'
-	set background=dark
-	colorscheme solarized
-" Better LaTeX support, only loaded for latex files
-NeoBundleLazy 'LaTeX-Box-Team/LaTeX-Box'
-	autocmd FileType plaintex,tex NeoBundleSource LaTeX-Box
-" Support for markdown
-NeoBundleLazy 'tpope/vim-markdown'
-	autocmd FileType markdown NeoBundleSource vim-markdown
-" Emmet for HTML files
-NeoBundleLazy 'mattn/emmet-vim'
-	autocmd FileType html,xhtml NeoBundleSource emmet-vim
-" Json support
-NeoBundleLazy 'elzr/vim-json'
-	autocmd FileType json NeoBundleSource vim-json
+NeoBundle 'mhinz/vim-startify.git'
+NeoBundle 'bling/vim-airline'
+NeoBundle 'kshenoy/vim-signature.git'
+NeoBundle 'nathanaelkane/vim-indent-guides.git'
+NeoBundle 'sjl/gundo.vim'
+"" Functionality
+NeoBundle 'justinmk/vim-sneak'
+NeoBundle 'tpope/vim-commentary.git', {'depends': 'tpope/vim-repeat'}
+NeoBundle 'kana/vim-textobj-indent.git', {'depends': 'kana/vim-textobj-user'}
+NeoBundle 'nelstrom/vim-visual-star-search.git'
+"" Filetypes
+NeoBundleLazy 'LaTeX-Box-Team/LaTeX-Box', {'autoload': {'filetypes': ['plaintex','tex']}}
+NeoBundleLazy 'elzr/vim-json', {'autoload': {'filetypes': 'json'}}
+
+call neobundle#end()
 
 " Included Macros
 runtime macros/matchit.vim
 
 " Filetype detection
 filetype plugin indent on
+
+" Plugin configuration
+"" Unite
+let $LC_NUMERIC = 'en_US.utf8'
+call unite#filters#sorter_default#use(['sorter_rank'])
+call unite#filters#matcher_default#use(['matcher_fuzzy'])
+call unite#custom#profile('files', 'context', {'smartcase': 1})
+let g:unite_data_directory = '~/.cache/vim/unite'
+let g:unite_enable_start_insert = 1
+let g:unite_update_time = 200
+let g:unite_source_history_yank_enable = 1
+let g:unite_source_file_mru_filename_format = ':~:.'
+let g:unite_source_file_mru_limit = 1000
+let g:unite_source_history_yank_limit = 50
+au FileType unite nnoremap <silent> <buffer> <ESC><ESC> :q<CR>
+au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>:q<CR>
+""" Support the Silver Searcher
+let g:unite_source_grep_command = 'ag'
+let g:unite_source_grep_default_opts = '--nocolor --nogroup'
+let g:unite_source_grep_recursive_opt = ''
+let g:unite_source_grep_max_candidates = 200
+"" Status
+set laststatus=2
+set fillchars+=stl:\ ,stlnc:\
+let g:airline_symbols = {}
+let g:airline_left_sep = ''
+let g:airline_right_sep = ''
+let g:airline_symbols.linenr = '¶'
+let g:airline_symbols.whitespace = 'Ξ'
+let g:airline#extensions#branch#enabled = 1
+let g:airline#extensions#tagbar#enabled = 1
+let g:airline_branch_prefix = '⎇ '
+let g:airline_theme = 'solarized'
+let g:airline_inactive_collapse = 1
+"" Startify
+silent !mkdir ~/.cache/vim/sessions > /dev/null 2>&1
+let g:startify_custom_indices = map(range(1,100), 'string(v:val)')
+let g:startify_session_dir = '~/.cache/vim/sessions'
+let g:startify_list_order = ['sessions', 'bookmarks', 'files', 'dir']
+let g:startify_bookmarks = ['~/.config/dotfiles/zshrc','~/.config/dotfiles/vimrc','~/.config/dotfiles/rangerrc.conf','~/.config/dotfiles/gitconfig']
+let g:startify_session_persistence = 1
+let g:startify_change_to_dir = 1
+"" Indent guides
+let g:indent_guides_guide_size = 1
+let g:indent_guides_space_guides = 1
+let g:indent_guides_enable_on_vim_startup = 1
+let g:sneak#streak = 1
+let g:sneak#use_ic_scs = 1
+let g:sneak#s_next = 1
+let g:sneak#textobject_z = 0
+"" Theme
+set background=dark
+colorscheme solarized
 
 " Printing
 set printoptions+=header:0
@@ -263,3 +236,23 @@ nmap <Leader>p "+p
 nmap <Leader>P "+P
 vmap <Leader>p "+p
 vmap <Leader>P "+P
+" Sneaky
+nnoremap r s
+nmap s <Plug>Sneak_s
+nmap S <Plug>Sneak_S
+xmap s <Plug>Sneak_s
+xmap S <Plug>Sneak_S
+omap s <Plug>Sneak_s
+omap S <Plug>Sneak_S
+nnoremap [s <Plug>SneakNext
+nnoremap ]s <Plug>SneakPrevious
+" Buffer-independent stuff
+nnoremap <F1> :Unite -auto-resize -resume -buffer-name=buffers buffer tab<CR>
+nnoremap <F2> :Unite -auto-resize -resume -buffer-name=yanks history/yank<CR>
+" Buffer dependent stuff
+nnoremap <F3> :GundoToggle<CR>
+nnoremap <F4> :Unite -auto-resize -resume -buffer-name=outline outline <CR>
+" Opening files
+nnoremap <F5> :Unite -auto-resize -resume -buffer-name=files file_rec/async:!<CR>
+nnoremap <F6> :Unite -auto-resize -resume -buffer-name=files file_mru bookmark file_rec/async:$HOME<CR>
+nnoremap <F7> :Unite -auto-resize -resume -buffer-name=files grep<CR>
