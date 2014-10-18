@@ -32,6 +32,7 @@ zstyle ':completion:*:match:*' original only
 zstyle ':completion:*:approximate:*' max-errors 1 numeric
 zstyle ':completion:*' verbose yes
 zstyle ':completion:*' menu select
+## Caching
 zstyle ':completion:*' use-cache on
 zstyle ':completion:*' cache-path ${ZSH_CACHE}/autocomplete
 # Forcing the rehash
@@ -46,7 +47,11 @@ predict-on
 zle -N predict-off
 bindkey '^Z'   predict-on
 bindkey '^X^Z' predict-off
-zstyle ':completion:predict:*' menu yes
+zstyle ':predict:*' verbose yes
+zstyle ':predict:*' toggle yes
+zstyle ':predict:*' menu yes
+zstyle ':predict:*' cursor key
+zstyle ':completion:predict:*' completer _complete
 
 ### Aliases
 alias -g ...='../..'
