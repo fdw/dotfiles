@@ -41,18 +41,6 @@ _force_rehash() {
 	return 1
 }
 
-# Predicting
-autoload predict-on
-predict-on
-zle -N predict-off
-bindkey '^Z'   predict-on
-bindkey '^X^Z' predict-off
-zstyle ':predict:*' verbose yes
-zstyle ':predict:*' toggle yes
-zstyle ':predict:*' menu yes
-zstyle ':predict:*' cursor key
-zstyle ':completion:predict:*' completer _complete
-
 ### Aliases
 alias -g ...='../..'
 alias -g ....='../../..'
