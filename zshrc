@@ -14,6 +14,7 @@ export HISTFILE="${ZSH_DATA}/history"
 export HISTSIZE=8192
 export SAVEHIST=8192
 fc -R ${HISTFILE}
+
 # Directory stack
 DIRSTACKSIZE=15
 DIRSTACKFILE="${ZSH_DATA}/dirstack"
@@ -24,7 +25,8 @@ if [[ -f $DIRSTACKFILE ]] && [[ $#dirstack -eq 0 ]]; then
 	chpwd() {
 		print -l $PWD ${(u)dirstack} >$DIRSTACKFILE
 	}
-# Loading the compinit
+
+# Completion
 autoload -U compinit
 compinit -d "${ZSH_CACHE}/zcompdump"
 zstyle ':completion:*' completer _oldlist _expand _force_rehash _complete _match _approximate
@@ -35,13 +37,13 @@ zstyle ':completion:*' menu select
 ## Caching
 zstyle ':completion:*' use-cache on
 zstyle ':completion:*' cache-path ${ZSH_CACHE}/autocomplete
-# Forcing the rehash
+## Forcing the rehash
 _force_rehash() {
 	(( CURRENT == 1 )) && rehash
 	return 1
 }
 
-### Aliases
+# Aliases
 alias -g ...='../..'
 alias -g ....='../../..'
 alias ls='ls ${=LS_OPTIONS}'
@@ -49,14 +51,14 @@ alias lsa='ls -A'
 alias mkdir='mkdir -p -v'
 alias recentchanges='find . -mtime -7 | sort | less'
 
-### zsh options
-# changing directories
+# zsh options
+## changing directories
 setopt auto_cd
 setopt auto_pushd
 setopt pushd_ignoredups
 setopt pushd_silent
 setopt pushd_to_home
-# completion
+## completion
 setopt auto_list
 setopt auto_menu
 setopt auto_remove_slash
@@ -64,39 +66,38 @@ setopt complete_aliases
 setopt complete_in_word
 setopt list_rows_first
 setopt list_types
-# Globbing
+## Globbing
 setopt extended_glob
 setopt glob
-# History
+## History
 setopt append_history
 setopt hist_ignore_all_dups
 setopt hist_reduce_blanks
 setopt hist_verify
-#setopt share_history
-#I/O
+## I/O
 setopt correct
 setopt print_exit_value
-# Job Control
+## Job Control
 setopt autoresume
 setopt nohup
 setopt no_notify
-#Prompting
+## Prompting
 setopt prompt_subst
-#Scripts
+## Scripts
 setopt multios
 
-### Key bindings
+# Key bindings
 bindkey '^P' history-incremental-search-backward
 bindkey '^N' history-incremental-search-forward
 bindkey '^D' list-choices
 bindkey '^R' history-incremental-search-backward
 bindkey '^i' expand-or-complete-prefix
 
-### Prompt
-# Colors
+# Prompt
+## Colors
 FG=white
 BG=black
-# Git options
+## Git options
 autoload -Uz vcs_info
 zstyle ':vcs_info:*' enable git
 zstyle ':vcs_info:git*:*' get-revision true
@@ -110,7 +111,7 @@ zstyle ':vcs_info:git*+set-message:*' hooks git-st git-stash
 precmd () {
 	vcs_info
 }
-# Show remote ref name and number of commits ahead or behind - taken from http://eseth.org/2010/git-in-zsh.html
+## Show remote ref name and number of commits ahead or behind - taken from http://eseth.org/2010/git-in-zsh.html
 function +vi-git-st() {
 	local ahead behind remote
 	local -a gitstatus
@@ -128,7 +129,7 @@ function +vi-git-st() {
 		hook_com[branch]="${hook_com[branch]}→${remote}${(j:/:)gitstatus}"
 	fi
 }
-# Show count of stashed changes - taken from http://eseth.org/2010/git-in-zsh.html
+## Show count of stashed changes - taken from http://eseth.org/2010/git-in-zsh.html
 function +vi-git-stash() {
 	local -a stashes
 
@@ -137,18 +138,17 @@ function +vi-git-stash() {
 		hook_com[misc]+="%{%F{yellow}%}•"
 	fi
 }
-# Real prompt config
+## Real prompt config
 PROMPT='%{%k%f%}
 %{%K{${BG}}%F{${FG}}%}%n@%m : %~${vcs_info_msg_0_}%E
 %(?..%F{red}%?%F{${FG}})%{%K{${BG}%F{${FG}}%}%# %{%f%k%b%} '
 
-### Colorful ls
+# Plugins
+# Colorful ls
 if [[ -f "${HOME}/.dir_colors" ]]
 then
 	eval `dircolors ${HOME}/.dir_colors`
 fi
-
-### Plugins
 ## Autojump
 if [[ -f /usr/share/autojump/autojump.zsh ]]
 then 
