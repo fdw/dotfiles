@@ -39,6 +39,8 @@
 * Sensible configuration
 * Some useful keybindings
 
+### tig
+
 ## Installation
 	git clone https://github.com/fdw/dotfiles.git ~/.config
 	cd .config/dotfiles
