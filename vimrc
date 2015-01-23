@@ -185,6 +185,9 @@ let g:mapleader="-"
 " Sensible j/k movements
 noremap j gj
 noremap k gk
+" This just makes sense
+nnoremap H 0
+nnoremap L $
 " Keymaps for command line
 cnoremap <C-a> <Home>
 cnoremap <C-b> <Left>
