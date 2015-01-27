@@ -159,3 +159,11 @@ if [[ -f "${ZSH_DATA}/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]]
 then
 	source ${ZSH_DATA}/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 fi
+## Syntax Highlighting
+if [[ -f "${ZSH_DATA}/zsh-history-substring-search/zsh-history-substring-search.zsh" ]]
+then
+	source ${ZSH_DATA}/zsh-history-substring-search/zsh-history-substring-search.zsh
+	zmodload zsh/terminfo
+	bindkey "$terminfo[kcuu1]" history-substring-search-up
+	bindkey "$terminfo[kcud1]" history-substring-search-down
+fi
