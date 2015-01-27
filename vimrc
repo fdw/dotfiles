@@ -108,6 +108,7 @@ NeoBundle 'nelstrom/vim-visual-star-search.git'
 "" Filetypes
 NeoBundleLazy 'LaTeX-Box-Team/LaTeX-Box', {'autoload': {'filetypes': ['plaintex','tex']}}
 NeoBundleLazy 'elzr/vim-json', {'autoload': {'filetypes': 'json'}}
+NeoBundleLazy 'chrisbra/Recover.vim'
 
 call neobundle#end()
 
