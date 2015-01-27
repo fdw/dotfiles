@@ -1,0 +1,7 @@
+set line-graphics = default
+set tab-size = 2
+set ignore-case = false
+set mouse = true
+set refresh-mode = auto
+
+set main-view = line-number:no id:no date:default author:full commit-title:yes,graph,refs,overflow=no
