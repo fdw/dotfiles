@@ -5,8 +5,7 @@ install-zsh: install-dircolors
 	@ln -fs ${CURDIR}/zshrc ${HOME}/.zshrc
 	@if [ ! -d "${HOME}/.local/share/zsh" ]; then \
 		mkdir "${HOME}/.local/share/zsh" ; \
-		git clone "https://github.com/zsh-users/zsh-syntax-highlighting.git" "${HOME}/.local/share/zsh/" ; \
-		git clone "https://github.com/zsh-users/zsh-history-substring-search.git" "${HOME}/.local/share/zsh/"; \
+		git clone https://github.com/zsh-users/antigen.git "${HOME}/.local/share/zsh/antigen"; \
 	fi
 
 install-vim:

@@ -144,7 +144,7 @@ PROMPT='%{%k%f%}
 %(?..%F{red}%?%F{${FG}})%{%K{${BG}%F{${FG}}%}%# %{%f%k%b%} '
 
 # Plugins
-# Colorful ls
+## Colorful ls
 if [[ -f "${HOME}/.dir_colors" ]]
 then
 	eval `dircolors ${HOME}/.dir_colors`
@@ -154,16 +154,11 @@ if [[ -f /usr/share/autojump/autojump.zsh ]]
 then 
 	. /usr/share/autojump/autojump.sh
 fi
-## Syntax Highlighting
-if [[ -f "${ZSH_DATA}/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]]
-then
-	source ${ZSH_DATA}/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-fi
-## Syntax Highlighting
-if [[ -f "${ZSH_DATA}/zsh-history-substring-search/zsh-history-substring-search.zsh" ]]
-then
-	source ${ZSH_DATA}/zsh-history-substring-search/zsh-history-substring-search.zsh
+## Antigen & friends
+ADOTDIR=${ZSH_DATA}
+source ${ZSH_DATA}/antigen/antigen.zsh
+antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle zsh-users/zsh-history-substring-search
 	zmodload zsh/terminfo
 	bindkey "$terminfo[kcuu1]" history-substring-search-up
 	bindkey "$terminfo[kcud1]" history-substring-search-down
-fi
