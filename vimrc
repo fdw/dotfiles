@@ -70,11 +70,6 @@ set foldlevelstart=20
 nnoremap <silent> <Space> @=(foldlevel('.')?'za':"\<Space>")<CR>
 vnoremap <Space> zf
 
-" Spelling
-set spelllang=en,de,es,fr
-set spellfile=~/.local/share/vim/spellfile.utf-8.add
-set spell
-
 " Plugins
 filetype off
 set rtp+=~/.vim/bundle/neobundle.vim
