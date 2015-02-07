@@ -44,10 +44,6 @@ _force_rehash() {
 }
 
 # Aliases
-alias -g ...='../..'
-alias -g ....='../../..'
-alias ls='ls ${=LS_OPTIONS}'
-alias lsa='ls -A'
 alias mkdir='mkdir -p -v'
 alias recentchanges='find . -mtime -7 | sort | less'
 
@@ -87,10 +83,7 @@ setopt prompt_subst
 setopt multios
 
 # Key bindings
-bindkey '^P' history-incremental-search-backward
-bindkey '^N' history-incremental-search-forward
 bindkey '^D' list-choices
-bindkey '^R' history-incremental-search-backward
 bindkey '^i' expand-or-complete-prefix
 
 # Prompt
@@ -157,8 +150,14 @@ fi
 ## Antigen & friends
 ADOTDIR=${ZSH_DATA}
 source ${ZSH_DATA}/antigen/antigen.zsh
+### Syntax Highlighting
 antigen bundle zsh-users/zsh-syntax-highlighting
+### Substring search
 antigen bundle zsh-users/zsh-history-substring-search
-	zmodload zsh/terminfo
-	bindkey "$terminfo[kcuu1]" history-substring-search-up
-	bindkey "$terminfo[kcud1]" history-substring-search-down
+zmodload zsh/terminfo
+bindkey "$terminfo[kcuu1]" history-substring-search-up
+bindkey "$terminfo[kcud1]" history-substring-search-down
+### Tmux
+antigen bundle robbyrussell/oh-my-zsh plugins/tmux
+### Common aliases
+antigen bundle robbyrussell/oh-my-zsh plugins/common-aliases
