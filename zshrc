@@ -15,17 +15,6 @@ export HISTSIZE=8192
 export SAVEHIST=8192
 fc -R ${HISTFILE}
 
-# Directory stack
-DIRSTACKSIZE=15
-DIRSTACKFILE="${ZSH_DATA}/dirstack"
-if [[ -f $DIRSTACKFILE ]] && [[ $#dirstack -eq 0 ]]; then
-	dirstack=( ${(f)"$(< $DIRSTACKFILE)"} )
-		[[ -d $dirstack[1] ]] && cd $dirstack[1] && cd $OLDPWD
-	fi
-	chpwd() {
-		print -l $PWD ${(u)dirstack} >$DIRSTACKFILE
-	}
-
 # Completion
 autoload -U compinit
 compinit -d "${ZSH_CACHE}/zcompdump"
@@ -161,3 +150,7 @@ bindkey "$terminfo[kcud1]" history-substring-search-down
 antigen bundle robbyrussell/oh-my-zsh plugins/tmux
 ### Common aliases
 antigen bundle robbyrussell/oh-my-zsh plugins/common-aliases
+### Color man pages
+antigen bundle robbyrussell/oh-my-zsh plugins/colored-man
+### Directory history with Alt+left/right
+antigen bundle robbyrussell/oh-my-zsh plugins/dirhistory
