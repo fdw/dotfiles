@@ -132,6 +132,8 @@ PROMPT='%{%k%f%}
 if [[ -f "${HOME}/.dir_colors" ]]
 then
 	eval `dircolors ${HOME}/.dir_colors`
+	alias ls='ls --color=auto'
+	zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 fi
 ## Autojump
 if [[ -f /usr/share/autojump/autojump.zsh ]]
