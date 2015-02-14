@@ -1,9 +1,11 @@
-# Cache dir
+# Storage
+## Cache dir
 ZSH_CACHE="${XDG_CACHE_HOME}/zsh"
 mkdir -p ${ZSH_CACHE}
-# Data dir
+## Data dir
 ZSH_DATA="${XDG_DATA_HOME}/zsh"
 mkdir -p ${ZSH_DATA}
+
 # History
 command_oriented_history=1
 HISTCONTROL=ignoreboth
@@ -11,8 +13,8 @@ ulimit -c unlimited
 umask 022
 mesg y
 export HISTFILE="${ZSH_DATA}/history"
-export HISTSIZE=8192
-export SAVEHIST=8192
+export HISTSIZE=250
+export SAVEHIST=500
 fc -R ${HISTFILE}
 
 # Completion
