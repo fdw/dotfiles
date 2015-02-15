@@ -36,7 +36,6 @@ _force_rehash() {
 
 # Aliases
 alias mkdir='mkdir -p -v'
-alias recentchanges='find . -mtime -7 | sort | less'
 
 # zsh options
 ## changing directories
