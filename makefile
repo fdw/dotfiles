@@ -61,3 +61,5 @@ update:
 	@echo "Updating"
 	@git pull --rebase origin master
 	@git submodule update
+	@"${HOME}/.vim/bundle/neobundle.vim/bin/neoinstall"
+
