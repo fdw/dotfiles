@@ -141,9 +141,9 @@ let g:airline_left_sep = ''
 let g:airline_right_sep = ''
 let g:airline_symbols.linenr = '¶'
 let g:airline_symbols.whitespace = 'Ξ'
+let g:airline_symbols.branch = '⎇ '
 let g:airline#extensions#branch#enabled = 1
 let g:airline#extensions#tagbar#enabled = 1
-let g:airline_branch_prefix = '⎇ '
 let g:airline_theme = 'solarized'
 let g:airline_inactive_collapse = 1
 "" Startify
