@@ -52,6 +52,11 @@ install-tig:
 	@echo "Installing .tigrc"
 	@ln -fs ${CURDIR}/tigrc ${HOME}/.tigrc
 
+install-aptitude:
+	@echo "Installing .aptitude/config"
+	@mkdir -p ${HOME}/.aptitude
+	@ln -fs ${CURDIR}/aptitude ${HOME}/.aptitude/config
+
 update:
 	@echo "Updating"
 	@git pull --rebase origin master
