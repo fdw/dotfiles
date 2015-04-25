@@ -139,21 +139,27 @@ if [[ -f /usr/share/autojump/autojump.zsh ]]
 then 
 	. /usr/share/autojump/autojump.sh
 fi
-## Antigen & friends
-ADOTDIR=${ZSH_DATA}
-source ${ZSH_DATA}/antigen/antigen.zsh
-### Syntax Highlighting
-antigen bundle zsh-users/zsh-syntax-highlighting
+## Zgen
+ZGEN_DIR=${ZSH_DATA}
+source ${ZSH_DATA}/zgen/zgen.zsh
+#
+if ! zgen saved; then
+	### Syntax Highlighting
+	zgen load zsh-users/zsh-syntax-highlighting
+	### Substring search
+	zgen load zsh-users/zsh-history-substring-search
+	### Tmux
+	zgen load robbyrussell/oh-my-zsh plugins/tmux
+	### Common aliases
+	zgen load robbyrussell/oh-my-zsh plugins/common-aliases
+	### Color man pages
+	zgen load robbyrussell/oh-my-zsh plugins/colored-man
+	### Directory history with Alt+left/right
+	zgen load robbyrussell/oh-my-zsh plugins/dirhistory
+    zgen save
+fi
+## Config for Zgen plugins
 ### Substring search
-antigen bundle zsh-users/zsh-history-substring-search
 zmodload zsh/terminfo
 bindkey "$terminfo[kcuu1]" history-substring-search-up
 bindkey "$terminfo[kcud1]" history-substring-search-down
-### Tmux
-antigen bundle robbyrussell/oh-my-zsh plugins/tmux
-### Common aliases
-antigen bundle robbyrussell/oh-my-zsh plugins/common-aliases
-### Color man pages
-antigen bundle robbyrussell/oh-my-zsh plugins/colored-man
-### Directory history with Alt+left/right
-antigen bundle robbyrussell/oh-my-zsh plugins/dirhistory
