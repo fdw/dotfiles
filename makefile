@@ -5,7 +5,7 @@ install-zsh: install-dircolors
 	@ln -fs ${CURDIR}/zshrc ${HOME}/.zshrc
 	@if [ ! -d "${HOME}/.local/share/zsh" ]; then \
 		mkdir "${HOME}/.local/share/zsh" ; \
-		git clone https://github.com/zsh-users/antigen.git "${HOME}/.local/share/zsh/antigen"; \
+		git clone https://github.com/tarjoilija/zgen.git "${HOME}/.local/share/zsh/zgen"; \
 	fi
 
 install-vim:
