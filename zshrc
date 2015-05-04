@@ -33,7 +33,13 @@ _force_rehash() {
 }
 
 # Aliases
-alias mkdir='mkdir -p -v'
+alias -g ...='../..'
+alias -g ....='../../..'
+alias ls='ls ${=LS_OPTIONS}'
+alias ll='ls'
+alias la='ls -A'
+alias mkdir='mkdir -p -vi'
+alias grep='grep --color'
 
 # zsh options
 ## changing directories
@@ -129,7 +135,6 @@ PROMPT='%{%k%f%}
 if [[ -f "${HOME}/.dir_colors" ]]
 then
 	eval `dircolors ${HOME}/.dir_colors`
-	alias ls='ls --color=auto'
 	zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 fi
 ## Autojump
@@ -146,10 +151,6 @@ if ! zgen saved; then
 	zgen load zsh-users/zsh-syntax-highlighting
 	### Substring search
 	zgen load zsh-users/zsh-history-substring-search
-	### Tmux
-	zgen load robbyrussell/oh-my-zsh plugins/tmux
-	### Common aliases
-	zgen load robbyrussell/oh-my-zsh plugins/common-aliases
 	### Color man pages
 	zgen load robbyrussell/oh-my-zsh plugins/colored-man
 	### Directory history with Alt+left/right
