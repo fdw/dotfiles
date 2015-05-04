@@ -150,7 +150,7 @@ if ! zgen saved; then
 	### Syntax Highlighting
 	zgen load zsh-users/zsh-syntax-highlighting
 	### Substring search
-	zgen load zsh-users/zsh-history-substring-search
+	zgen load robbyrussell/oh-my-zsh plugins/history-substring-search
 	### Color man pages
 	zgen load robbyrussell/oh-my-zsh plugins/colored-man
 	### Directory history with Alt+left/right
