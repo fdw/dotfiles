@@ -18,8 +18,6 @@ export SAVEHIST=500
 fc -R ${HISTFILE}
 
 # Completion
-autoload -U compinit
-compinit -d "${ZSH_CACHE}/zcompdump"
 zstyle ':completion:*' completer _oldlist _expand _force_rehash _complete _match _approximate
 zstyle ':completion:*:match:*' original only
 zstyle ':completion:*:approximate:*' max-errors 1 numeric
