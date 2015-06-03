@@ -100,6 +100,7 @@ NeoBundle 'justinmk/vim-sneak'
 NeoBundle 'tpope/vim-commentary.git', {'depends': 'tpope/vim-repeat'}
 NeoBundle 'kana/vim-textobj-indent.git', {'depends': 'kana/vim-textobj-user'}
 NeoBundle 'nelstrom/vim-visual-star-search.git'
+NeoBundle 'terryma/vim-expand-region'
 "" Filetypes
 NeoBundleLazy 'LaTeX-Box-Team/LaTeX-Box', {'autoload': {'filetypes': ['plaintex','tex']}}
 NeoBundleLazy 'elzr/vim-json', {'autoload': {'filetypes': 'json'}}
@@ -177,14 +178,16 @@ function! PrintFile(fname)
 endfunc
 
 " Keymaps
-let g:mapleader="-"
-" Sensible j/k movements
+let g:mapleader = "\<Space>"
+"" Most frequent
+nnoremap <Leader>w :w<CR>
+"" Sensible j/k movements
 noremap j gj
 noremap k gk
-" This just makes sense
+"" This just makes sense
 nnoremap H 0
 nnoremap L $
-" Keymaps for command line
+"" Keymaps for command line
 cnoremap <C-a> <Home>
 cnoremap <C-b> <Left>
 cnoremap <C-f> <Right>
@@ -196,7 +199,7 @@ cnoremap <Esc>b <S-Left>
 cnoremap <Esc>f <S-Right>
 cnoremap <Esc>d <S-right><Delete>
 cnoremap <C-g> <C-c>
-" Adapt for qwertz
+"" Adapt for qwertz
 nnoremap , ;
 nnoremap ; ,
 nnoremap g, g;
@@ -207,7 +210,7 @@ nmap ß /
 vmap ß /
 nmap Q @
 vmap Q @
-" Moving through buffer, quickfix, location and tag lists
+"" Moving through buffer, quickfix, location and tag lists
 nnoremap <silent> [b :bprevious<CR>
 nnoremap <silent> ]b :bnext<CR>
 nnoremap <silent> [B :bfirst<CR>
@@ -226,16 +229,19 @@ nnoremap <silent> [T :tfirst<CR>
 nnoremap <silent> ]T :tlast<CR>
 nnoremap <silent> [c g;
 nnoremap <silent> ]c g,
-" let Y behave like D
+"" let Y behave like D
 nnoremap Y y$
-" Use leader for system clipboard
+"" Use leader for system clipboard
 vmap <Leader>y "+y
 vmap <Leader>d "+d
 nmap <Leader>p "+p
 nmap <Leader>P "+P
 vmap <Leader>p "+p
 vmap <Leader>P "+P
-" Sneaky
+"" Jump to end of text after pasting
+vnoremap <silent> p p`]
+nnoremap <silent> p p`]
+"" Sneaky
 nnoremap r s
 nmap s <Plug>Sneak_s
 nmap S <Plug>Sneak_S
@@ -245,13 +251,16 @@ omap s <Plug>Sneak_s
 omap S <Plug>Sneak_S
 nnoremap [s <Plug>SneakNext
 nnoremap ]s <Plug>SneakPrevious
-" Buffer-independent stuff
+"" Buffer-independent stuff
 nnoremap <F1> :Unite -auto-resize -resume -buffer-name=buffers buffer tab<CR>
 nnoremap <F2> :Unite -auto-resize -resume -buffer-name=yanks history/yank<CR>
-" Buffer dependent stuff
+"" Buffer dependent stuff
 nnoremap <F3> :GundoToggle<CR>
 nnoremap <F4> :Unite -auto-resize -resume -buffer-name=outline outline <CR>
-" Opening files
+"" Opening files
 nnoremap <F5> :Unite -auto-resize -resume -buffer-name=files file_rec/async:!<CR>
 nnoremap <F6> :Unite -auto-resize -resume -buffer-name=files file_mru bookmark file_rec/async:$HOME<CR>
 nnoremap <F7> :Unite -auto-resize -resume -buffer-name=files grep<CR>
+"" Expand region
+vmap v <Plug>(expand_region_expand)
+vmap <C-v> <Plug>(expand_region_shrink)
