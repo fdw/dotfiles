@@ -5,6 +5,8 @@
 ### zshrc
 * [Autojump](https://github.com/joelthelion/autojump)
 * [Syntax highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
+* [History-substring-search](https://github.com/zsh-users/zsh-history-substring-search)
+* [Dirhistory](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/dirhistory)
 * Autocompletion configuration
 * a pretty two-line prompt
 
@@ -21,13 +23,15 @@
 * [Startify](https://github.com/mhinz/vim-startify)
 * [Airline](https://github.com/bling/vim-airline)
 * [Indent Guidelines](https://github.com/nathanaelkane/vim-indent-guides)
+* [Expand region](https://github.com/terryma/vim-expand-region)
+* works with [Neovim](http://neovim.io/) too
 
 ### lesskey
 * Same keymappings as vim (optimized for German keyboards)
 
 ### gitconfig (needs to be configured)
 * Sensible configuration
-* Useful aliases
+* Useful aliases (contains assume, unstage)
 
 ### tmux
 * Sensible configuration
