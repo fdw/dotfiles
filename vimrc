@@ -101,10 +101,10 @@ NeoBundle 'tpope/vim-commentary.git', {'depends': 'tpope/vim-repeat'}
 NeoBundle 'kana/vim-textobj-indent.git', {'depends': 'kana/vim-textobj-user'}
 NeoBundle 'nelstrom/vim-visual-star-search.git'
 NeoBundle 'terryma/vim-expand-region'
+NeoBundle 'chrisbra/Recover.vim'
 "" Filetypes
 NeoBundleLazy 'LaTeX-Box-Team/LaTeX-Box', {'autoload': {'filetypes': ['plaintex','tex']}}
 NeoBundleLazy 'elzr/vim-json', {'autoload': {'filetypes': 'json'}}
-NeoBundleLazy 'chrisbra/Recover.vim'
 
 call neobundle#end()
 
