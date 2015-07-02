@@ -1,13 +1,11 @@
 [user]
 	name = <NAME>
 	email = <EMAIL>
-
 [core]
 	editor = nvim
 	pager = less -R
 	whitespace = -trailing-space,-space-before-tab,-indent-with-non-tab
 	autocrlf = input
-
 [alias]
 	# shortcuts
 	st = status -sb
@@ -15,37 +13,39 @@
 	ap = add --patch
 	ci = commit
 	cim = commit -m
+	ca = commit --amend
 	co = checkout
 	rb = rebase
 	rh = reset --hard HEAD
-	diff = diff --patience
 	ds = diff --staged
-	amend = commit --amend
-	unstage = reset HEAD --
 	sm = submodule
+	ch = rebase -i # change history
+	# shortcuts for stash
+	sl = stash list
+	sp = stash pop
+	ss = stash save
+	sc = stash clear
+	# use patient diff
+	diff = diff --patience
+	# to undo add
+	unstage = reset HEAD --
 	# nice log
 	ls = log --pretty=format:"%ad\\ %C(yellow)%h%C(red)%d\\ %C(reset)%s%C(blue)\\ [%cn]" --decorate --date=short --graph --numstat
 	# define files as unchanged
 	assume = update-index --assume-unchanged
 	unassume = update-index --no-assume-unchanged
 	assumed = "!git ls-files -v | grep ^h | cut -c 3-"
-	# shortcuts for stash
-	sl = stash list
-	sp = stash pop
-	ss = stash save
-	sc = stash clear
-
-[push]
-	default = upstream
-
-[branch]
-	autosetuprebase = always
-
-[diff]
-	tool = meld
-
-[help]
-	autocorrect = 1
-
 [color]
 	ui = auto
+[push]
+	default = upstream
+[branch]
+	autosetuprebase = always
+[diff]
+	tool = meld
+[rerere]
+	enabled = true
+[pull]
+	rebase = true
+[help]
+	autocorrect = 1
