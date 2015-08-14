@@ -38,7 +38,7 @@ alias -g ....='../../..'
 alias ls='ls ${=LS_OPTIONS}'
 alias ll='ls'
 alias la='ls -A'
-alias mkdir='mkdir -p -vi'
+alias mkdir='mkdir -p'
 alias grep='grep --color'
 
 # zsh options
