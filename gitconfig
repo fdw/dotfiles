@@ -30,7 +30,7 @@
 	# to undo add
 	unstage = reset HEAD --
 	# nice log
-	ls = log --pretty=format:"%ad\\ %C(yellow)%h%C(red)%d\\ %C(reset)%s%C(blue)\\ [%cn]" --decorate --date=short --graph --numstat
+	l = log --graph --pretty=format:'%C(bold)%h%Creset%C(yellow)%d%Creset %C(red)%s%Creset%n        %ar (%ai)%n        %an <%ae>' --abbrev-commit --date=relative --all
 	# define files as unchanged
 	assume = update-index --assume-unchanged
 	unassume = update-index --no-assume-unchanged
