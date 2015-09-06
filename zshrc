@@ -155,6 +155,8 @@ if ! zgen saved; then
 	zgen load robbyrussell/oh-my-zsh plugins/colored-man
 	### Directory history with Alt+left/right
 	zgen load robbyrussell/oh-my-zsh plugins/dirhistory
+	### Simpler compression handling
+	zgen load robbyrussell/oh-my-zsh plugins/extract
     zgen save
 fi
 ## Config for Zgen plugins
