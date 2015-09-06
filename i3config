@@ -1,11 +1,8 @@
 set $mod Mod4
 
 font pango:Roboto 8
-#new_window 1pixel
 
 # program start and exit
-## exit focused window
-bindsym $mod+w kill
 ## exit i3
 bindsym $mod+Shift+e exec i3-msg exit
 # Starter
@@ -46,36 +43,6 @@ bindsym $mod+Shift+space floating toggle
 ## Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-# change container layout (stacked, tabbed, toggle split)
-bindsym $mod+F1 layout stacking
-bindsym $mod+F2 layout tabbed
-bindsym $mod+F3 layout toggle split
-
-# workspace movement
-## switch to workspace
-bindsym $mod+KP_1 workspace number 1
-bindsym $mod+KP_2 workspace number 2
-bindsym $mod+KP_3 workspace number 3
-bindsym $mod+KP_4 workspace number 4
-bindsym $mod+KP_5 workspace number 5
-bindsym $mod+KP_6 workspace number 6
-bindsym $mod+KP_7 workspace number 7
-bindsym $mod+KP_8 workspace number 8
-bindsym $mod+KP_9 workspace number 9
-## move focused container to workspace
-bindsym $mod+Shift+KP_1 move container to workspace number 1
-bindsym $mod+Shift+KP_2 move container to workspace number 2
-bindsym $mod+Shift+KP_3 move container to workspace number 3
-bindsym $mod+Shift+KP_4 move container to workspace number 4
-bindsym $mod+Shift+KP_5 move container to workspace number 5
-bindsym $mod+Shift+KP_6 move container to workspace number 6
-bindsym $mod+Shift+KP_7 move container to workspace number 7
-bindsym $mod+Shift+KP_8 move container to workspace number 8
-bindsym $mod+Shift+KP_9 move container to workspace number 9
-## Scratchpad
-bindsym $mod+Shift+KP_0 move container scratchpad
-bindsym $mod+KP_0 scratchpad show
-
 # resize window mode
 mode "resize"
 {
@@ -113,12 +80,3 @@ exec --no-startup-id /usr/lib/x86_64-linux-gnu/indicator-power/indicator-power-s
 exec --no-startup-id gnome-keyring-daemon
 exec --no-startup-id nm-applet
 exec --no-startup-id diodon
-
-# Shortcuts
-bindsym $mod+1 exec firefox
-bindsym $mod+2 exec thunderbird
-bindsym $mod+3 exec quodlibet
-bindsym $mod+4 exec gvim
-bindsym $mod+6 exec gthumb
-bindsym $mod+7 exec nicotine
-bindsym Control+Mod1+t exec i3-sensible-terminal
