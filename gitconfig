@@ -2,7 +2,7 @@
 	name = <NAME>
 	email = <EMAIL>
 [core]
-	editor = nvim
+	editor = vim
 	pager = less -R
 	whitespace = -trailing-space,-space-before-tab,-indent-with-non-tab
 	autocrlf = input
