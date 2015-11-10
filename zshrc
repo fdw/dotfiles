@@ -45,7 +45,7 @@ alias grep='grep --color'
 ## changing directories
 setopt auto_cd
 setopt auto_pushd
-setopt pushd_ignoredups
+setopt pushd_ignore_dups
 setopt pushd_silent
 setopt pushd_to_home
 ## completion
@@ -58,12 +58,15 @@ setopt list_rows_first
 setopt list_types
 ## Globbing
 setopt extended_glob
+setopt no_case_glob
+setopt numeric_glob_sort
 setopt glob
 ## History
 setopt append_history
 setopt hist_ignore_all_dups
 setopt hist_reduce_blanks
 setopt hist_verify
+setopt share_history
 ## I/O
 setopt correct
 setopt print_exit_value
