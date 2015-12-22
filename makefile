@@ -11,10 +11,8 @@ install-zsh: install-dircolors
 install-vim:
 	@echo "Installing .vimrc"
 	@ln -fs ${CURDIR}/vimrc ${HOME}/.vimrc
-	@if [ ! -d "${HOME}/.vim/bundle" ]; then \
-		mkdir "${HOME}/.vim/bundle" ; \
-		git clone "https://github.com/Shougo/neobundle.vim" "${HOME}/.vim/bundle/neobundle.vim" ; \
-		"${HOME}/.vim/bundle/neobundle.vim/bin/neoinstall" ; \
+	@if [ ! -f "${HOME}/.vim/autoload/plug.vim" ]; then \
+		curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 	fi
 
 install-git:
@@ -61,5 +59,7 @@ update:
 	@echo "Updating"
 	@git pull --rebase origin master
 	@git submodule update
-	@"${HOME}/.vim/bundle/neobundle.vim/bin/neoinstall"
+	@if [ ! -f "${HOME}/.vim/autoload/plug.vim" ]; then \
+		curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+	fi
 
