@@ -72,31 +72,30 @@ vnoremap <Space> zf
 
 " Plugins
 filetype off
-set rtp+=~/.vim/bundle/neobundle.vim
-call neobundle#begin(expand('~/.vim/bundle/'))
-NeoBundleFetch 'Shougo/neobundle.vim'
+call plug#begin()
 "" Ctrl-P
-NeoBundle 'ctrlpvim/ctrlp.vim'
-"" Ctrl-P Yankring & Co
-NeoBundle 'sgur/ctrlp-extensions.vim', {'depends': 'ctrlpvim/ctrlp.vim'}
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'sgur/ctrlp-extensions.vim'
 "" UI
-NeoBundle 'altercation/vim-colors-solarized.git'
-NeoBundle 'mhinz/vim-startify.git'
-NeoBundle 'bling/vim-airline'
-NeoBundle 'kshenoy/vim-signature.git'
-NeoBundle 'nathanaelkane/vim-indent-guides.git'
+Plug 'altercation/vim-colors-solarized'
+Plug 'mhinz/vim-startify'
+Plug 'bling/vim-airline'
+Plug 'kshenoy/vim-signature'
+Plug 'nathanaelkane/vim-indent-guides'
 "" Functionality
-NeoBundle 'justinmk/vim-sneak'
-NeoBundle 'tpope/vim-commentary.git', {'depends': 'tpope/vim-repeat'}
-NeoBundle 'kana/vim-textobj-indent.git', {'depends': 'kana/vim-textobj-user'}
-NeoBundle 'nelstrom/vim-visual-star-search.git'
-NeoBundle 'terryma/vim-expand-region'
-NeoBundle 'chrisbra/Recover.vim'
+Plug 'justinmk/vim-sneak'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-commentary'
+Plug 'kana/vim-textobj-user'
+Plug 'kana/vim-textobj-indent'
+Plug 'nelstrom/vim-visual-star-search'
+Plug 'terryma/vim-expand-region'
+Plug 'chrisbra/Recover.vim'
 "" Filetypes
-NeoBundleLazy 'LaTeX-Box-Team/LaTeX-Box', {'autoload': {'filetypes': ['plaintex','tex']}}
-NeoBundleLazy 'elzr/vim-json', {'autoload': {'filetypes': 'json'}}
+Plug 'LaTeX-Box-Team/LaTeX-Box', {'for': ['plaintex','tex']}
+Plug 'elzr/vim-json', {'for': 'json'}
 
-call neobundle#end()
+call plug#end()
 
 " Included Macros
 runtime macros/matchit.vim
