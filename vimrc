@@ -75,26 +75,16 @@ filetype off
 set rtp+=~/.vim/bundle/neobundle.vim
 call neobundle#begin(expand('~/.vim/bundle/'))
 NeoBundleFetch 'Shougo/neobundle.vim'
-" Vimproc - NeoBundle and Unity use this for async
-NeoBundle 'Shougo/vimproc', {
-	\ 'build' : {
-	\ 'windows' : 'make -f make_mingw32.mak',
-	\ 'cygwin' : 'make -f make_cygwin.mak',
-	\ 'mac' : 'make -f make_mac.mak',
-	\ 'unix' : 'make -f make_unix.mak',
-	\ },
-	\ }
-"" Unite
-NeoBundle 'Shougo/unite.vim', {'depends': 'Shougo/vimproc'}
-NeoBundle 'Shougo/neomru.vim', {'depends': 'Shougo/unite.vim'}
-NeoBundle 'Shougo/unite-outline', {'depends': 'Shougo/unite.vim'}
+"" Ctrl-P
+NeoBundle 'ctrlpvim/ctrlp.vim'
+"" Ctrl-P Yankring & Co
+NeoBundle 'sgur/ctrlp-extensions.vim', {'depends': 'ctrlpvim/ctrlp.vim'}
 "" UI
 NeoBundle 'altercation/vim-colors-solarized.git'
 NeoBundle 'mhinz/vim-startify.git'
 NeoBundle 'bling/vim-airline'
 NeoBundle 'kshenoy/vim-signature.git'
 NeoBundle 'nathanaelkane/vim-indent-guides.git'
-NeoBundle 'sjl/gundo.vim'
 "" Functionality
 NeoBundle 'justinmk/vim-sneak'
 NeoBundle 'tpope/vim-commentary.git', {'depends': 'tpope/vim-repeat'}
@@ -115,25 +105,13 @@ runtime macros/matchit.vim
 filetype plugin indent on
 
 " Plugin configuration
-"" Unite
-let $LC_NUMERIC = 'en_US.utf8'
-call unite#filters#sorter_default#use(['sorter_rank'])
-call unite#filters#matcher_default#use(['matcher_fuzzy'])
-call unite#custom#profile('files', 'context', {'smartcase': 1})
-let g:unite_data_directory = '~/.cache/vim/unite'
-let g:unite_enable_start_insert = 1
-let g:unite_update_time = 200
-let g:unite_source_history_yank_enable = 1
-let g:unite_source_file_mru_filename_format = ':~:.'
-let g:unite_source_file_mru_limit = 1000
-let g:unite_source_history_yank_limit = 50
-au FileType unite nnoremap <silent> <buffer> <ESC><ESC> :q<CR>
-au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>:q<CR>
-""" Support the Silver Searcher
-let g:unite_source_grep_command = 'ag'
-let g:unite_source_grep_default_opts = '--nocolor --nogroup'
-let g:unite_source_grep_recursive_opt = ''
-let g:unite_source_grep_max_candidates = 200
+"" CtrlP
+let g:ctrlp_match_window = 'top,order:ttb'
+let g:ctrlp_clear_cache_on_exit = 0
+let g:ctrlp_cache_dir = $HOME.'/.cache/vim/ctrlp'
+let g:ctrlp_open_new_file = 't'
+let g:ctrlp_open_multiple_files = 'tj'
+let g:ctrlp_tilde_homedir = 1
 "" Status
 set laststatus=2
 set fillchars+=stl:\ ,stlnc:\
@@ -252,15 +230,14 @@ omap S <Plug>Sneak_S
 nnoremap [s <Plug>SneakNext
 nnoremap ]s <Plug>SneakPrevious
 "" Buffer-independent stuff
-nnoremap <F1> :Unite -auto-resize -resume -buffer-name=buffers buffer tab<CR>
-nnoremap <F2> :Unite -auto-resize -resume -buffer-name=yanks history/yank<CR>
+nnoremap <F1> :CtrlPBuffer<CR>
+nnoremap <F2> :CtrlPYankring<CR>
 "" Buffer dependent stuff
-nnoremap <F3> :GundoToggle<CR>
-nnoremap <F4> :Unite -auto-resize -resume -buffer-name=outline outline <CR>
+nnoremap <F3> :CtrlPUndo<CR>
+nnoremap <F7> :CtrlPTag<CR>
 "" Opening files
-nnoremap <F5> :Unite -auto-resize -resume -buffer-name=files file_rec/async:!<CR>
-nnoremap <F6> :Unite -auto-resize -resume -buffer-name=files file_mru bookmark file_rec/async:$HOME<CR>
-nnoremap <F7> :Unite -auto-resize -resume -buffer-name=files grep<CR>
+nnoremap <F5> :CtrlP<CR>
+nnoremap <F6> :CtrlP ~<CR>
 "" Expand region
 vmap v <Plug>(expand_region_expand)
 vmap <C-v> <Plug>(expand_region_shrink)
