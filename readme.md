@@ -13,11 +13,10 @@
 ### vimrc
 * Keymapping for German keyboards
 * Continous undo
-* Plugins organized with [NeoBundle](https://github.com/Shougo/neobundle.vim)
-* [Unite](https://github.com/Shougo/unite.vim) configured for async file search and a yank history
-* [Unite outline](https://github.com/Shougo/unite-outline) for showing an outline with ctags in Unite
+* Plugins organized with [Vim-Plug](https://github.com/junegunn/vim-plug)
+* [CtrlP](https://github.com/ctrlpvim/ctrlp.vim)
+* [CtrlP Extensions](https://github.com/sgur/ctrlp-extensions.vim)
 * [Vim-Sneak](https://github.com/justinmk/vim-sneak)
-* [Gundo](https://github.com/sjl/gundo.vim/)
 * [Vim-Surround](https://github.com/tpope/vim-surround)
 * [Indent Textobject](https://github.com/kana/vim-textobj-indent/)
 * [Startify](https://github.com/mhinz/vim-startify)
