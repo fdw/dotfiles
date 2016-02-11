@@ -51,3 +51,5 @@
 	assume = update-index --assume-unchanged
 	unassume = update-index --no-assume-unchanged
 	assumed = "!git ls-files -v | grep ^h | cut -c 3-"
+	# set upstream branch
+	pu = !git push -u origin $(git rev-parse --abbrev-ref HEAD)
