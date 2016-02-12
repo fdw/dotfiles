@@ -79,7 +79,9 @@ Plug 'sgur/ctrlp-extensions.vim'
 "" UI
 Plug 'altercation/vim-colors-solarized'
 Plug 'mhinz/vim-startify'
-Plug 'bling/vim-airline'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'bling/vim-bufferline'
 Plug 'kshenoy/vim-signature'
 Plug 'nathanaelkane/vim-indent-guides'
 "" Functionality
@@ -111,16 +113,11 @@ let g:ctrlp_tilde_homedir = 1
 "" Status
 set laststatus=2
 set fillchars+=stl:\ ,stlnc:\
-let g:airline_symbols = {}
-let g:airline_left_sep = ''
-let g:airline_right_sep = ''
-let g:airline_symbols.linenr = '¶'
-let g:airline_symbols.whitespace = 'Ξ'
-let g:airline_symbols.branch = '⎇ '
-let g:airline#extensions#branch#enabled = 1
 let g:airline#extensions#tagbar#enabled = 1
 let g:airline_theme = 'solarized'
 let g:airline_inactive_collapse = 1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
 "" Startify
 silent !mkdir ~/.cache/vim/sessions > /dev/null 2>&1
 let g:startify_custom_indices = map(range(1,100), 'string(v:val)')
