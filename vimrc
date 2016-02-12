@@ -23,7 +23,7 @@ silent !find	~/.cache/vim/undos/ -mtime +28 -exec rm {} \;
 set mouse=a
 set backspace=indent,eol,start
 set hidden
-set viewoptions=cursor,folds,slash,unix 
+set viewoptions=cursor,folds,slash,unix
 set nrformats=hex
 syntax enable
 set lazyredraw
@@ -89,7 +89,6 @@ Plug 'justinmk/vim-sneak'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-commentary'
 Plug 'terryma/vim-expand-region'
-Plug 'chrisbra/Recover.vim'
 "" Filetypes
 Plug 'LaTeX-Box-Team/LaTeX-Box', {'for': ['plaintex','tex']}
 Plug 'elzr/vim-json', {'for': 'json'}
