@@ -1,3 +1,6 @@
+# Prompt
+export TERM="xterm-256color"
+
 # Storage
 ## Cache dir
 ZSH_CACHE="${XDG_CACHE_HOME}/zsh"
@@ -83,56 +86,6 @@ setopt multios
 bindkey '^D' list-choices
 bindkey '^i' expand-or-complete-prefix
 
-# Prompt
-## Colors
-FG=white
-BG=black
-## Git options
-autoload -Uz vcs_info
-zstyle ':vcs_info:*' enable git
-zstyle ':vcs_info:git*:*' get-revision true
-zstyle ':vcs_info:*' check-for-changes true
-zstyle ':vcs_info:*' stagedstr '%{%F{green}%}•'
-zstyle ':vcs_info:*' unstagedstr '%{%F{red}%}•'
-zstyle ':vcs_info:git:*' branchformat '%b'
-zstyle ':vcs_info:*' formats ' [%b]%u%c%m'
-zstyle ':vcs_info:*' actionformats ' [%b(%a)]%u%c%m'
-zstyle ':vcs_info:git*+set-message:*' hooks git-st git-stash
-precmd () {
-	vcs_info
-}
-## Show remote ref name and number of commits ahead or behind - taken from http://eseth.org/2010/git-in-zsh.html
-function +vi-git-st() {
-	local ahead behind remote
-	local -a gitstatus
-
-	# Are we on a remote-tracking branch?
-	remote=${$(git rev-parse --verify ${hook_com[branch]}@{upstream} --symbolic-full-name 2>/dev/null)/refs\/remotes\/}
-
-	if [[ -n ${remote} ]] ; then
-		ahead=$(git rev-list ${hook_com[branch]}@{upstream}..HEAD 2>/dev/null | wc -l)
-		(( $ahead )) && gitstatus+=( "${c3}+${ahead}${c2}" )
-
-		behind=$(git rev-list HEAD..${hook_com[branch]}@{upstream} 2>/dev/null | wc -l)
-		(( $behind )) && gitstatus+=( "${c4}-${behind}${c2}" )
-
-		hook_com[branch]="${hook_com[branch]}→${remote}${(j:/:)gitstatus}"
-	fi
-}
-## Show count of stashed changes - taken from http://eseth.org/2010/git-in-zsh.html
-function +vi-git-stash() {
-	local -a stashes
-
-	if [[ -s ${hook_com[base]}/.git/refs/stash ]] ; then
-		stashes=$(git stash list 2>/dev/null | wc -l)
-		hook_com[misc]+="%{%F{yellow}%}•"
-	fi
-}
-## Real prompt config
-PROMPT='%{%k%f%}
-%{%K{${BG}}%F{${FG}}%}%n@%m : %~${vcs_info_msg_0_}%E
-%(?..%F{red}%?%F{${FG}})%{%K{${BG}%F{${FG}}%}%# %{%f%k%b%} '
-
 # Plugins
 ## Colorful ls
 if [[ -f "${HOME}/.dir_colors" ]]
@@ -142,14 +95,28 @@ then
 fi
 ## Autojump
 if [[ -f /usr/share/autojump/autojump.zsh ]]
-then 
+then
 	. /usr/share/autojump/autojump.sh
 fi
 ## Zgen
 ZGEN_DIR=${ZSH_DATA}
 source ${ZSH_DATA}/zgen/zgen.zsh
-#
+
+# Prompt
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(time context dir vcs)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator load)
+DEFAULT_USER=fdw
+POWERLEVEL9K_SHORTEN_DIR_LENGTH=1
+POWERLEVEL9K_SHORTEN_DELIMITER=""
+POWERLEVEL9K_SHORTEN_STRATEGY="truncate_from_right"
+POWERLEVEL9K_STATUS_VERBOSE=false
+POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX=""
+POWERLEVEL9K_MULTILINE_SECOND_PROMPT_PREFIX=""
+
+# Plugins
 if ! zgen saved; then
+	### Theme
+	zgen load bhilburn/powerlevel9k powerlevel9k
 	### Syntax Highlighting
 	zgen load zsh-users/zsh-syntax-highlighting
 	### Substring search
