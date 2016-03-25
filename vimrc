@@ -126,7 +126,7 @@ let g:startify_list_order = [['Sessions'], 'sessions', ['Bookmarks'], 'bookmarks
 let g:startify_bookmarks = ['~/.config/dotfiles/zshrc','~/.config/dotfiles/vimrc','~/.config/dotfiles/rangerrc.conf','~/.config/dotfiles/gitconfig']
 let g:startify_session_persistence = 1
 let g:startify_change_to_dir = 1
-let g:statify_custom_header = ''
+let g:startify_custom_header = ['']
 let g:startify_session_autoload = 1
 "" Indent guides
 let g:indent_guides_guide_size = 1
