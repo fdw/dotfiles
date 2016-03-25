@@ -122,10 +122,12 @@ let g:airline_powerline_fonts = 1
 silent !mkdir ~/.cache/vim/sessions > /dev/null 2>&1
 let g:startify_custom_indices = map(range(1,100), 'string(v:val)')
 let g:startify_session_dir = '~/.cache/vim/sessions'
-let g:startify_list_order = ['sessions', 'bookmarks', 'files', 'dir']
+let g:startify_list_order = [['Sessions'], 'sessions', ['Bookmarks'], 'bookmarks', ['MRUs'], 'files', ['Directory'], 'dir']
 let g:startify_bookmarks = ['~/.config/dotfiles/zshrc','~/.config/dotfiles/vimrc','~/.config/dotfiles/rangerrc.conf','~/.config/dotfiles/gitconfig']
 let g:startify_session_persistence = 1
 let g:startify_change_to_dir = 1
+let g:statify_custom_header = ''
+let g:startify_session_autoload = 1
 "" Indent guides
 let g:indent_guides_guide_size = 1
 let g:indent_guides_space_guides = 1
