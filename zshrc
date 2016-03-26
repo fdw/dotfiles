@@ -43,6 +43,9 @@ alias ll='ls'
 alias la='ls -A'
 alias mkdir='mkdir -p'
 alias grep='grep --color'
+alias g='git'
+alias r='ranger'
+alias v='vim'
 
 # zsh options
 ## changing directories
