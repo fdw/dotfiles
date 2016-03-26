@@ -125,8 +125,6 @@ if ! zgen saved; then
 	zgen load robbyrussell/oh-my-zsh plugins/extract
 	### Substring search
 	zgen load robbyrussell/oh-my-zsh plugins/history-substring-search
-	### pass integration
-	zgen load robbyrussell/oh-my-zsh plugins/pass
 	zgen save
 fi
 ## Config for Zgen plugins
@@ -134,5 +132,3 @@ fi
 zmodload zsh/terminfo
 bindkey "$terminfo[kcuu1]" history-substring-search-up
 bindkey "$terminfo[kcud1]" history-substring-search-down
-
-export PASSWORD_STORE_DIR=${XDG_DATA_HOME}/pass
