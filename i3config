@@ -1,7 +1,6 @@
+# Basics
 set $mod Mod4
 set $alt Mod1
-
-font pango:Roboto 8
 
 bindsym $mod+e exec i3-msg exit
 bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
@@ -35,6 +34,7 @@ bindsym $mod+f fullscreen
 ## Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
+## change layout etc of workspace
 mode "meta_workspace"
 {
 	# splits
@@ -61,7 +61,11 @@ mode "meta_workspace"
 }
 bindsym $mod+w mode "meta_workspace"
 
-# Colors
+# Appearence
+## font
+font pango:Roboto 8
+
+## define colors
 set $black		#002B36
 set $white		#839496
 set $gray			#CCCCCC
@@ -74,14 +78,14 @@ set $orange		#E59847
 set $cyan			#2AA198
 set $dark			#00252E
 
-# Window colors					border	backgr. text		indicator
+## window colors				border	backgr. text		indicator
 client.focused					$black	$white  $dark		$dark
 client.unfocused				$dark  	$dark   $white	$white
 client.focused_inactive	$dark  	$dark   $white	$dark
 client.urgent						$orange	$orange $dark		$white
 
-bar
-{
+## bar
+bar {
 	mode hide
 	hidden_state hide
 	modifier $mod
@@ -99,18 +103,6 @@ bar
 		urgent_workspace  	$orange	$orange	$dark
 	}
 }
-
-# Autostart
-exec --no-startup-id gnome-settings-daemon
-exec --no-startup-id /usr/lib/x86_64-linux-gnu/indicator-application/indicator-application-service
-exec --no-startup-id /usr/lib/x86_64-linux-gnu/indicator-keyboard-service
-exec --no-startup-id /usr/lib/x86_64-linux-gnu/indicator-session/indicator-session-service
-exec --no-startup-id /usr/lib/x86_64-linux-gnu/indicator-sound/indicator-sound-service
-exec --no-startup-id /usr/lib/x86_64-linux-gnu/indicator-power/indicator-power-service
-exec --no-startup-id gnome-keyring-daemon
-exec --no-startup-id nm-applet
-exec --no-startup-id diodon
-exec --no-startup-id udiskie
 
 # Workspaces
 ## define workspaces
@@ -160,3 +152,15 @@ mode "shortcuts"
 	bindsym Escape mode "default"
 }
 bindsym $mod+space mode "shortcuts"
+
+# Autostart
+exec --no-startup-id gnome-settings-daemon
+exec --no-startup-id /usr/lib/x86_64-linux-gnu/indicator-application/indicator-application-service
+exec --no-startup-id /usr/lib/x86_64-linux-gnu/indicator-keyboard-service
+exec --no-startup-id /usr/lib/x86_64-linux-gnu/indicator-session/indicator-session-service
+exec --no-startup-id /usr/lib/x86_64-linux-gnu/indicator-sound/indicator-sound-service
+exec --no-startup-id /usr/lib/x86_64-linux-gnu/indicator-power/indicator-power-service
+exec --no-startup-id gnome-keyring-daemon
+exec --no-startup-id nm-applet
+exec --no-startup-id diodon
+exec --no-startup-id udiskie
