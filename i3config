@@ -49,29 +49,17 @@ mode "meta_workspace"
 	# toggle tiling / floating
 	bindsym f floating toggle
 
-	# exit
-	bindsym Return mode "default"
-	bindsym Escape mode "default"
-}
-bindsym $mod+w mode "meta_workspace"
-
-# resize window mode
-mode "resize"
-{
-	bindsym h resize shrink width 10 px or 10 ppt
-	bindsym j resize grow height 10 px or 10 ppt
-	bindsym k resize shrink height 10 px or 10 ppt
-	bindsym l resize grow width 10 px or 10 ppt
-
+	# resizing
 	bindsym Left resize shrink width 10 px or 10 ppt
 	bindsym Down resize grow height 10 px or 10 ppt
 	bindsym Up resize shrink height 10 px or 10 ppt
 	bindsym Right resize grow width 10 px or 10 ppt
 
+	# exit
 	bindsym Return mode "default"
 	bindsym Escape mode "default"
 }
-bindsym $mod+r mode "resize"
+bindsym $mod+w mode "meta_workspace"
 
 bar
 {
