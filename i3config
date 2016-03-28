@@ -1,12 +1,11 @@
 set $mod Mod4
+set $alt Mod1
 
 font pango:Roboto 8
 
-# program start and exit
-## exit i3
-bindsym $mod+Shift+e exec i3-msg exit
-# Starter
+bindsym $mod+e exec i3-msg exit
 bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+bindsym $mod+x kill
 
 # focus
 ## change focus
@@ -27,47 +26,60 @@ bindsym $mod+Shift+Left move left
 bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
-## change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
 
 # window placement
 ## default workspace layout
 workspace_layout default
-## splits
-bindsym $mod+s split h
-bindsym $mod+v split v
 ## fullscreen mode
 bindsym $mod+f fullscreen
-## toggle tiling / floating
-bindsym $mod+Shift+space floating toggle
 ## Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
+
+mode "meta_workspace"
+{
+	# splits
+	bindsym s split h
+	bindsym v split v
+
+	# workspace layout
+	bindsym d layout default
+	bindsym t layout tabbed
+	bindsym q layout stacked
+
+	# toggle tiling / floating
+	bindsym f floating toggle
+
+	# exit
+	bindsym Return mode "default"
+	bindsym Escape mode "default"
+}
+bindsym $mod+w mode "meta_workspace"
 
 # resize window mode
 mode "resize"
 {
-        bindsym h resize shrink width 10 px or 10 ppt
-        bindsym j resize grow height 10 px or 10 ppt
-        bindsym k resize shrink height 10 px or 10 ppt
-        bindsym l resize grow width 10 px or 10 ppt
+	bindsym h resize shrink width 10 px or 10 ppt
+	bindsym j resize grow height 10 px or 10 ppt
+	bindsym k resize shrink height 10 px or 10 ppt
+	bindsym l resize grow width 10 px or 10 ppt
 
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
+	bindsym Left resize shrink width 10 px or 10 ppt
+	bindsym Down resize grow height 10 px or 10 ppt
+	bindsym Up resize shrink height 10 px or 10 ppt
+	bindsym Right resize grow width 10 px or 10 ppt
 
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
+	bindsym Return mode "default"
+	bindsym Escape mode "default"
 }
 bindsym $mod+r mode "resize"
 
-# finds out, if available)
 bar
 {
 	mode hide
 	hidden_state hide
 	modifier $mod
 	workspace_buttons yes
+	position bottom
 }
 
 # Autostart
@@ -80,3 +92,37 @@ exec --no-startup-id /usr/lib/x86_64-linux-gnu/indicator-power/indicator-power-s
 exec --no-startup-id gnome-keyring-daemon
 exec --no-startup-id nm-applet
 exec --no-startup-id diodon
+exec --no-startup-id udiskie
+
+# Workspace
+bindsym $mod+1 workspace 1
+bindsym $mod+2 workspace 2
+bindsym $mod+3 workspace 3
+bindsym $mod+4 workspace 4
+bindsym $mod+5 workspace 5
+bindsym $mod+6 workspace 6
+bindsym $mod+7 workspace 7
+bindsym $mod+8 workspace 8
+bindsym $mod+9 workspace 9
+
+bindsym $mod+Shift+1 move container to workspace 1
+bindsym $mod+Shift+2 move container to workspace 2
+bindsym $mod+Shift+3 move container to workspace 3
+bindsym $mod+Shift+4 move container to workspace 4
+bindsym $mod+Shift+5 move container to workspace 5
+bindsym $mod+Shift+6 move container to workspace 6
+bindsym $mod+Shift+7 move container to workspace 7
+bindsym $mod+Shift+8 move container to workspace 8
+bindsym $mod+Shift+9 move container to workspace 9
+
+# Shortcuts
+mode "shortcuts"
+{
+	bindsym t exec i3-sensible-terminal;mode "default"
+	bindsym f exec firefox;mode "default"
+	bindsym v exec gvim;mode "default"
+
+	bindsym Return mode "default"
+	bindsym Escape mode "default"
+}
+bindsym $mod+space mode "shortcuts"
