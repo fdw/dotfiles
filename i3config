@@ -61,13 +61,43 @@ mode "meta_workspace"
 }
 bindsym $mod+w mode "meta_workspace"
 
+# Colors
+set $black		#002B36
+set $white		#839496
+set $gray			#CCCCCC
+set $darkgray	#666666
+set $green		#799F26
+set $blue			#4D73AA
+set $purple		#8473A7
+set $red			#B58900
+set $orange		#E59847
+set $cyan			#2AA198
+set $dark			#00252E
+
+# Window colors					border	backgr. text		indicator
+client.focused					$black	$white  $dark		$dark
+client.unfocused				$dark  	$dark   $white	$white
+client.focused_inactive	$dark  	$dark   $white	$dark
+client.urgent						$orange	$orange $dark		$white
+
 bar
 {
 	mode hide
 	hidden_state hide
 	modifier $mod
 	workspace_buttons yes
-	position bottom
+	position top
+
+	colors {
+		statusline	#999999
+		background	$black
+
+		# Colors						border	backgr.	text
+		focused_workspace		$white	$white	$black
+		active_workspace		#073642	#073642	#696f89
+		inactive_workspace	#073642	#073642	$white
+		urgent_workspace  	$orange	$orange	$dark
+	}
 }
 
 # Autostart
