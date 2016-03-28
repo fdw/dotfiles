@@ -7,8 +7,8 @@
 * [Syntax highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
 * [History-substring-search](https://github.com/zsh-users/zsh-history-substring-search)
 * [Dirhistory](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/dirhistory)
+* [Powerline9k Theme](https://github.com/bhilburn/powerlevel9k)
 * Autocompletion configuration
-* a pretty two-line prompt
 
 ### vimrc
 * Keymapping for German keyboards
@@ -20,6 +20,7 @@
 * [Vim-Surround](https://github.com/tpope/vim-surround)
 * [Indent Textobject](https://github.com/kana/vim-textobj-indent/)
 * [Startify](https://github.com/mhinz/vim-startify)
+* [Devicons](https://github.com/ryanoasis/vim-devicons)
 * [Airline](https://github.com/bling/vim-airline)
 * [Indent Guidelines](https://github.com/nathanaelkane/vim-indent-guides)
 * [Expand region](https://github.com/terryma/vim-expand-region)
@@ -36,13 +37,14 @@
 * Sensible configuration
 
 ### i3wm
-* Not so sensible configuration
+* Here, too, a sensible configuration
 
 ### ranger
 * Sensible configuration
 * Some useful keybindings
 
 ### tig
+* Nothing much
 
 ## Installation
 	git clone https://github.com/fdw/dotfiles.git ~/.config
