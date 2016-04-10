@@ -38,13 +38,14 @@ floating_modifier $mod
 mode "meta_workspace"
 {
 	# splits
-	bindsym s split h
-	bindsym v split v
+	bindsym s split h;mode "default"
+	bindsym v split v;mode "default"
 
 	# workspace layout
-	bindsym d layout default
-	bindsym t layout tabbed
-	bindsym q layout stacked
+	bindsym d layout default;mode "default"
+	bindsym t layout tabbed;mode "default"
+	bindsym q layout stacked;mode "default"
+
 
 	# toggle tiling / floating
 	bindsym f floating toggle
@@ -63,7 +64,11 @@ bindsym $mod+w mode "meta_workspace"
 
 # Appearence
 ## font
-font pango:Roboto 8
+font pango:Source Code Pro 10
+## no title bars
+new_window 1pixel
+## no unused borders
+hide_edge_borders both
 
 ## define colors
 set $black		#002B36
@@ -79,7 +84,7 @@ set $cyan			#2AA198
 set $dark			#00252E
 
 ## window colors				border	backgr. text		indicator
-client.focused					$black	$white  $dark		$dark
+client.focused					$white	$white  $black	$black
 client.unfocused				$dark  	$dark   $white	$white
 client.focused_inactive	$dark  	$dark   $white	$dark
 client.urgent						$orange	$orange $dark		$white
@@ -91,6 +96,8 @@ bar {
 	modifier $mod
 	workspace_buttons yes
 	position top
+	tray_output primary
+	status_command i3status
 
 	colors {
 		statusline	#999999

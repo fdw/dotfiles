@@ -40,6 +40,8 @@ install-i3:
 	@echo "Installing .config/i3/config"
 	@mkdir -p ${HOME}/.config/i3/
 	@ln -fs ${CURDIR}/i3config ${HOME}/.config/i3/config
+	@mkdir -p ${HOME}/.config/i3status/
+	@ln -fs ${CURDIR}/i3status ${HOME}/.config/i3status/config
 
 install-ranger:
 	@echo "Installing .config/ranger/rc.conf"
