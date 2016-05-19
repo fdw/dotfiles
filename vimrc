@@ -155,8 +155,8 @@ let g:mapleader = "\<Space>"
 "" Most frequent
 nnoremap <Leader>w :w<CR>
 "" Sensible j/k movements
-noremap j gj
-noremap k gk
+noremap <silent> <expr> j (v:count == 0 ? 'gj' : 'j')
+noremap <silent> <expr> k (v:count == 0 ? 'gk' : 'k')
 "" This just makes sense
 nnoremap H 0
 nnoremap L $
