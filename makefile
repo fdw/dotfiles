@@ -3,7 +3,8 @@ install: install-zsh install-vim install-git install-less install-tmux install-d
 install-zsh: install-dircolors
 	@echo "Installing .zshrc"
 	@ln -fs ${CURDIR}/zshrc ${HOME}/.zshrc
-	@if [ ! -d "${HOME}/.local/share/zsh" ]; then \
+	@ln -fs ${CURDIR}/zshenv ${HOME}/.zshenv
+	@if [ ! -d "${HOME}/.local/share/zsh/zgen" ]; then \
 		mkdir "${HOME}/.local/share/zsh" ; \
 		git clone https://github.com/tarjoilija/zgen.git "${HOME}/.local/share/zsh/zgen"; \
 	fi
