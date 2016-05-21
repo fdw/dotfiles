@@ -25,7 +25,7 @@
 [alias]
 	# shortcuts
 	st = status -sb
-	aa = add .
+	aa = add -A
 	ap = add --patch
 	ci = commit
 	cim = commit -m
