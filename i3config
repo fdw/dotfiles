@@ -163,7 +163,7 @@ exec --no-startup-id /usr/lib/x86_64-linux-gnu/indicator-session/indicator-sessi
 exec --no-startup-id /usr/lib/x86_64-linux-gnu/indicator-sound/indicator-sound-service
 exec --no-startup-id /usr/lib/x86_64-linux-gnu/indicator-power/indicator-power-service
 exec --no-startup-id gnome-keyring-daemon
-exec --no-startup-id nm-applet
+exec --no-startup-id dbus-launch nm-applet
 exec --no-startup-id parcellite
 exec --no-startup-id udiskie
 exec --no-startup-id kupfer --no-splash
