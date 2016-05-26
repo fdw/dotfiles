@@ -48,6 +48,7 @@ install-ranger:
 	@echo "Installing .config/ranger/rc.conf"
 	@mkdir -p ${HOME}/.config/ranger/
 	@ln -fs ${CURDIR}/rangerrc.conf ${HOME}/.config/ranger/rc.conf
+	@ln -fs ${CURDIR}/rangercommands ${HOME}/.config/ranger/commands.py
 
 install-tig:
 	@echo "Installing .tigrc"
