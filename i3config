@@ -158,7 +158,6 @@ for_window [title="Kupfer"] border none
 # Autostart
 exec --no-startup-id gnome-settings-daemon
 exec --no-startup-id /usr/lib/x86_64-linux-gnu/indicator-application/indicator-application-service
-exec --no-startup-id /usr/lib/x86_64-linux-gnu/indicator-keyboard-service
 exec --no-startup-id /usr/lib/x86_64-linux-gnu/indicator-session/indicator-session-service
 exec --no-startup-id /usr/lib/x86_64-linux-gnu/indicator-sound/indicator-sound-service
 exec --no-startup-id /usr/lib/x86_64-linux-gnu/indicator-power/indicator-power-service
