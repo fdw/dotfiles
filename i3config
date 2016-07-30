@@ -76,7 +76,7 @@ mode $meta_workspace
 
 # Appearence
 ## font
-font pango:Source Code Pro 10
+font pango:Source Code Pro Medium 10
 ## no title bars
 new_window 1pixel
 ## no unused borders
@@ -164,16 +164,26 @@ bindsym $mod+Shift+0 move container to workspace $WS0
 bindsym $mod+Tab workspace next
 bindsym $mod+Shift+Tab workspace prev
 
+# Pulse Audio controls
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume alsa_output.pci-0000_00_1b.0.analog-stereo +5% #increase sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume alsa_output.pci-0000_00_1b.0.analog-stereo -5% #decrease sound volume
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute alsa_output.pci-0000_00_1b.0.analog-stereo toggle # mute sound
+# Media player controls
+bindsym XF86AudioPlay exec mpris-remote play
+bindsym XF86AudioPause exec mpris-remote pause
+bindsym XF86AudioNext exec mpris-remote next
+bindsym XF86AudioPrev exec mpris-remote previous
+# Sreen brightness controls
+bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
+bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
+
 # Window-specific logic
 for_window [title="Kupfer"] border none
 
 # Autostart
-exec --no-startup-id gnome-settings-daemon
-exec --no-startup-id /usr/lib/x86_64-linux-gnu/indicator-application/indicator-application-service
+exec --no-startup-id gpgconf --launch gpg-agent
 exec --no-startup-id /usr/lib/x86_64-linux-gnu/indicator-session/indicator-session-service
-exec --no-startup-id /usr/lib/x86_64-linux-gnu/indicator-sound/indicator-sound-service
 exec --no-startup-id /usr/lib/x86_64-linux-gnu/indicator-power/indicator-power-service
-exec --no-startup-id gnome-keyring-daemon
 exec --no-startup-id dbus-launch nm-applet
 exec --no-startup-id parcellite
 exec --no-startup-id udiskie -NsF
