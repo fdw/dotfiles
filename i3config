@@ -5,15 +5,16 @@ set $alt Mod1
 bindsym $mod+x kill
 
 # Power menu
-set $sysmenu "  [<b>r</b>]estart - [<b>l</b>]ogout - [<b>s</b>]uspend - re[<b>b</b>]oot - [<b>p</b>]oweroff  "
+set $sysmenu "  [<b>r</b>]estart - [<b>l</b>]ock - lo[<b>g</b>] out - [<b>s</b>]uspend - re[<b>b</b>]oot - [<b>p</b>]oweroff  "
 bindsym $mod+e mode $sysmenu
 mode $sysmenu
 { 
 	bindsym r restart
-	bindsym l exit
+	bindsym g exit
 	bindsym p exec "systemctl poweroff"
 	bindsym b exec "systemctl reboot"
 	bindsym s exec "systemctl suspend"
+	bindsym l exec "i3lock --dpms";mode "default"
 	bindsym Return mode "default"
 	bindsym Escape mode "default"
 }
@@ -45,7 +46,7 @@ workspace_layout tabbed
 floating_modifier $mod
 
 ## change layout etc of workspace
-set $meta_workspace "  [<b>s</b>]plit horizontally - split [<b>v</b>]vertically - [<b>d</b>] tiling mode - [<b>t</b>]abbed mode - [<b>q</b>] stacked mode - [<b>f</b>]loat  "
+set $meta_workspace "  [<b>s</b>]plit horizontally - split [<b>v</b>]vertically - [<b>g</b>]rid mode - [<b>t</b>]abbed mode - [<b>l</b>]ist mode - [<b>f</b>]loat  "
 bindsym $mod+w mode $meta_workspace
 mode $meta_workspace
 {
@@ -54,9 +55,9 @@ mode $meta_workspace
 	bindsym v split v;mode "default"
 
 	# workspace layout
-	bindsym d layout default;mode "default"
+	bindsym g layout default;mode "default"
 	bindsym t layout tabbed;mode "default"
-	bindsym q layout stacked;mode "default"
+	bindsym l layout stacked;mode "default"
 
 
 	# toggle tiling / floating
@@ -169,10 +170,9 @@ bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume alsa_out
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume alsa_output.pci-0000_00_1b.0.analog-stereo -5% #decrease sound volume
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute alsa_output.pci-0000_00_1b.0.analog-stereo toggle # mute sound
 # Media player controls
-bindsym XF86AudioPlay exec mpris-remote play
-bindsym XF86AudioPause exec mpris-remote pause
-bindsym XF86AudioNext exec mpris-remote next
-bindsym XF86AudioPrev exec mpris-remote previous
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
 # Sreen brightness controls
 bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
@@ -182,9 +182,8 @@ for_window [title="Kupfer"] border none
 
 # Autostart
 exec --no-startup-id gpgconf --launch gpg-agent
-exec --no-startup-id /usr/lib/x86_64-linux-gnu/indicator-session/indicator-session-service
-exec --no-startup-id /usr/lib/x86_64-linux-gnu/indicator-power/indicator-power-service
 exec --no-startup-id dbus-launch nm-applet
+exec --no-startup-id setxkbmap de -variant sundeadkeys
 exec --no-startup-id parcellite
 exec --no-startup-id udiskie -NsF
 exec --no-startup-id kupfer --no-splash
