@@ -44,8 +44,16 @@ alias la='ls -A'
 alias mkdir='mkdir -p'
 alias grep='grep --color'
 alias g='git'
-alias r='ranger'
 alias v='vim'
+
+function r() {
+	if [ "$1" != "" ]
+	then
+		ranger "$(autojump $1)"
+	else
+		ranger
+	fi
+}
 
 # zsh options
 ## changing directories
