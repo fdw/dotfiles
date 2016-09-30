@@ -47,9 +47,12 @@ alias g='git'
 alias v='vim'
 
 function r() {
-	if [ "$1" != "" ]
-	then
-		ranger "$(autojump $1)"
+	if [ "$1" != "" ]; then
+		if [ -d "$1" ]; then
+			ranger "$1"
+		else
+			ranger "$(autojump $1)"
+		fi
 	else
 		ranger
 	fi
