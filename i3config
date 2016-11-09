@@ -5,7 +5,7 @@ set $alt Mod1
 bindsym $mod+x kill
 
 # Power menu
-set $sysmenu "  [<b>r</b>]estart - [<b>l</b>]ock - lo[<b>g</b>] out - [<b>s</b>]uspend - re[<b>b</b>]oot - [<b>p</b>]oweroff  "
+set $sysmenu "  [r]estart - [l]ock - lo[g] out - [s]uspend - re[b]oot - [p]oweroff  "
 bindsym $mod+e mode $sysmenu
 mode $sysmenu
 { 
@@ -46,7 +46,7 @@ workspace_layout tabbed
 floating_modifier $mod
 
 ## change layout etc of workspace
-set $meta_workspace "  [<b>s</b>]plit horizontally - split [<b>v</b>]vertically - [<b>g</b>]rid mode - [<b>t</b>]abbed mode - [<b>l</b>]ist mode - [<b>f</b>]loat  "
+set $meta_workspace "  [s]plit horizontally - split [v]vertically - [g]rid mode - [t]abbed mode - [l]ist mode - [f]loat  "
 bindsym $mod+w mode $meta_workspace
 mode $meta_workspace
 {
