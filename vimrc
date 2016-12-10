@@ -1,6 +1,5 @@
 set encoding=utf-8
 set title
-set lines=26 columns=104
 set history=1000
 set noerrorbells
 set novisualbell
