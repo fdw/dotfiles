@@ -59,6 +59,11 @@ install-aptitude:
 	@mkdir -p ${HOME}/.aptitude
 	@ln -fs ${CURDIR}/aptitude ${HOME}/.aptitude/config
 
+install-htop:
+	@echo "Installing htoprc"
+	@mkdir -p "${XDG_CONFIG_HOME}/htop"
+	@ln -fs "${CURDIR}/htoprc" "${XDG_CONFIG_HOME}/htop/htoprc"
+
 update:
 	@echo "Updating"
 	@git pull --rebase origin master
