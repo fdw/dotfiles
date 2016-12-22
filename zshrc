@@ -44,7 +44,7 @@ alias la='ls -A'
 alias mkdir='mkdir -p'
 alias grep='grep --color'
 alias g='git'
-alias v='vim'
+alias v='nvim'
 
 function r() {
 	if [ "$1" != "" ]; then
