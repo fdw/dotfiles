@@ -16,6 +16,14 @@ install-vim:
 		curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim; \
 	fi
 
+install-nvim:
+	@echo "Installing Neovim initrc"
+	@mkdir -p ${XDG_CONFIG_HOME}/nvim
+	@ln -fs ${CURDIR}/nvimrc ${XDG_CONFIG_HOME}/nvim/init.vim
+	@if [ ! -f "${XDG_DATA_HOME}/nvim/site/autoload/plug.vim" ]; then \
+		curl -fLo "${XDG_DATA_HOME}/nvim/site/autoload/plug.vim" --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim; \
+	fi
+
 install-git:
 	@echo "Installing .gitconfig"
 	@ln -fs ${CURDIR}/gitconfig ${HOME}/.gitconfig
@@ -68,7 +76,3 @@ update:
 	@echo "Updating"
 	@git pull --rebase origin master
 	@git submodule update
-	@if [ ! -f "${HOME}/.vim/autoload/plug.vim" ]; then \
-		curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim ; \
-	fi
-
