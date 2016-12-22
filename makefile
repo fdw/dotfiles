@@ -47,16 +47,16 @@ install-dircolors:
 
 install-i3:
 	@echo "Installing .config/i3/config"
-	@mkdir -p ${HOME}/.config/i3/
-	@ln -fs ${CURDIR}/i3config ${HOME}/.config/i3/config
-	@mkdir -p ${HOME}/.config/i3status/
-	@ln -fs ${CURDIR}/i3status ${HOME}/.config/i3status/config
+	@mkdir -p ${XDG_CONFIG_HOME}/i3/
+	@ln -fs ${CURDIR}/i3config ${XDG_CONFIG_HOME}/i3/config
+	@mkdir -p ${XDG_CONIFG_HOME}/i3status/
+	@ln -fs ${CURDIR}/i3status ${XDG_CONFIG_HOME}/i3status/config
 
 install-ranger:
 	@echo "Installing .config/ranger/rc.conf"
-	@mkdir -p ${HOME}/.config/ranger/
-	@ln -fs ${CURDIR}/rangerrc.conf ${HOME}/.config/ranger/rc.conf
-	@ln -fs ${CURDIR}/rangercommands ${HOME}/.config/ranger/commands.py
+	@mkdir -p ${XDG_CONFIG_HOME}/ranger/
+	@ln -fs ${CURDIR}/rangerrc.conf ${XDG_CONFIG_HOME}/ranger/rc.conf
+	@ln -fs ${CURDIR}/rangercommands ${XDG_CONFIG_HOME}/ranger/commands.py
 
 install-tig:
 	@echo "Installing .tigrc"
