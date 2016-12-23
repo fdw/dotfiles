@@ -133,10 +133,6 @@ if ! zgen saved; then
 	zgen load zsh-users/zsh-syntax-highlighting
 	### Color man pages
 	zgen load robbyrussell/oh-my-zsh plugins/colored-man-pages
-	### Directory history with Alt+left/right
-	zgen load robbyrussell/oh-my-zsh plugins/dirhistory
-	### Simpler compression handling
-	zgen load robbyrussell/oh-my-zsh plugins/extract
 	### Substring search
 	zgen load robbyrussell/oh-my-zsh plugins/history-substring-search
 	zgen save
