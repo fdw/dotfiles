@@ -74,12 +74,10 @@ Plug 'nathanaelkane/vim-indent-guides'
 "" Functionality
 Plug 'justinmk/vim-sneak'
 Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-commentary'
 Plug 'terryma/vim-expand-region'
 "" Git
 Plug 'tpope/vim-fugitive'
 "" Filetypes
-Plug 'LaTeX-Box-Team/LaTeX-Box', {'for': ['plaintex','tex']}
 Plug 'elzr/vim-json', {'for': 'json'}
 
 call plug#end()
