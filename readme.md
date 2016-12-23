@@ -6,7 +6,6 @@
 * [Autojump](https://github.com/joelthelion/autojump)
 * [Syntax highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
 * [History-substring-search](https://github.com/zsh-users/zsh-history-substring-search)
-* [Dirhistory](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/dirhistory)
 * [Powerline9k Theme](https://github.com/bhilburn/powerlevel9k)
 * Autocompletion configuration
 
@@ -18,13 +17,15 @@
 * [CtrlP Extensions](https://github.com/sgur/ctrlp-extensions.vim)
 * [Vim-Sneak](https://github.com/justinmk/vim-sneak)
 * [Vim-Surround](https://github.com/tpope/vim-surround)
-* [Indent Textobject](https://github.com/kana/vim-textobj-indent/)
 * [Startify](https://github.com/mhinz/vim-startify)
 * [Devicons](https://github.com/ryanoasis/vim-devicons)
 * [Airline](https://github.com/bling/vim-airline)
 * [Indent Guidelines](https://github.com/nathanaelkane/vim-indent-guides)
 * [Expand region](https://github.com/terryma/vim-expand-region)
-* works with [Neovim](http://neovim.io/) too
+
+### Neovim init.vim
+* Same as the vimrc, but based on Neovim's defaults and directories
+* Neovim is the default editor
 
 ### lesskey
 * Same keymappings as vim (optimized for German keyboards)
@@ -45,6 +46,9 @@
 
 ### tig
 * Nothing much
+
+### htop
+* styled for my taste
 
 ## Installation
 	git clone https://github.com/fdw/dotfiles.git ~/.config
