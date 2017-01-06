@@ -14,7 +14,7 @@ mode $sysmenu
 	bindsym p exec "systemctl poweroff"
 	bindsym b exec "systemctl reboot"
 	bindsym s exec "systemctl suspend"
-	bindsym l exec "i3lock --dpms";mode "default"
+	bindsym l exec "i3lock -c 000000"; mode "default"
 	bindsym Return mode "default"
 	bindsym Escape mode "default"
 }
