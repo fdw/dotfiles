@@ -22,6 +22,7 @@
 * [Airline](https://github.com/bling/vim-airline)
 * [Indent Guidelines](https://github.com/nathanaelkane/vim-indent-guides)
 * [Expand region](https://github.com/terryma/vim-expand-region)
+* [EasyAlign](https://github.com/junegunn/vim-easy-align)
 
 ### Neovim init.vim
 * Same as the vimrc, but based on Neovim's defaults and directories
