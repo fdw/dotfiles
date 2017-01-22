@@ -75,6 +75,7 @@ Plug 'nathanaelkane/vim-indent-guides'
 Plug 'justinmk/vim-sneak'
 Plug 'tpope/vim-repeat'
 Plug 'terryma/vim-expand-region'
+Plug 'junegunn/vim-easy-align'
 "" Git
 Plug 'tpope/vim-fugitive'
 "" Filetypes
@@ -221,3 +222,6 @@ nnoremap <F6> :CtrlP ~<CR>
 "" Expand region
 vmap v <Plug>(expand_region_expand)
 vmap <C-v> <Plug>(expand_region_shrink)
+"" Easy alignment
+vmap ga <Plug>(EasyAlign)
+nmap ga <Plug>(EasyAlign)
