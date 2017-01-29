@@ -2,14 +2,18 @@
 
 ## Content
 
-### zshrc
+### zshrc for [ZSH](http://zsh.org/)
 * [Autojump](https://github.com/joelthelion/autojump)
 * [Syntax highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
 * [History-substring-search](https://github.com/zsh-users/zsh-history-substring-search)
 * [Powerline9k Theme](https://github.com/bhilburn/powerlevel9k)
 * Autocompletion configuration
+* Some nice aliases
+	* `r` asks Autojump for the best directory and opens Ranger there
+	* `g` is short for git
+	* `v` opens Neovim
 
-### vimrc
+### vimrc/nvimrc for [Vim](http://www.vim.org/)/[Neovim](https://neovim.io/)
 * Keymapping for German keyboards
 * Continous undo
 * Plugins organized with [Vim-Plug](https://github.com/junegunn/vim-plug)
@@ -20,20 +24,19 @@
 * [Startify](https://github.com/mhinz/vim-startify)
 * [Devicons](https://github.com/ryanoasis/vim-devicons)
 * [Airline](https://github.com/bling/vim-airline)
+* [Bufferline](https://github.com/bling/vim-bufferline)
 * [Indent Guidelines](https://github.com/nathanaelkane/vim-indent-guides)
 * [Expand region](https://github.com/terryma/vim-expand-region)
 * [EasyAlign](https://github.com/junegunn/vim-easy-align)
-
-### Neovim init.vim
-* Same as the vimrc, but based on Neovim's defaults and directories
 * Neovim is the default editor
 
 ### lesskey
 * Same keymappings as vim (optimized for German keyboards)
 
-### gitconfig (needs to be configured)
+### gitconfig
 * Sensible configuration
-* Useful aliases (contains assume, unstage)
+* Useful aliases (contains assume, unstage and shortcuts for the most often used commands)
+* needs to be configured with your own name and email
 
 ### tmux
 * Sensible configuration
@@ -44,6 +47,7 @@
 ### ranger
 * Sensible configuration
 * Some useful keybindings
+* Easy extraction and compression with [atool](http://www.nongnu.org/atool/)
 
 ### tig
 * Nothing much
