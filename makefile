@@ -1,4 +1,4 @@
-install: install-zsh install-vim install-git install-less install-tmux install-dircolors install-i3 install-ranger install-tig
+install: install-zsh install-vim install-git install-less install-tmux install-dircolors install-i3 install-ranger install-tig install-htop
 
 install-zsh: install-dircolors
 	@echo "Installing .zshrc"
