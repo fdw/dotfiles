@@ -25,6 +25,14 @@
 	tool = meld
 [alias]
 	# shortcuts
+	a = add
+	c = commit
+	d = diff
+	f = commit --fixup
+	g = pull # get
+	p = push
+	s = checkout # switch
+	# helper functions
 	st = status -sb
 	aa = add -A
 	ap = add --patch
