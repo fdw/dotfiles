@@ -69,7 +69,6 @@ setopt pushd_to_home
 setopt auto_list
 setopt auto_menu
 setopt auto_remove_slash
-setopt complete_aliases
 setopt complete_in_word
 setopt list_rows_first
 setopt list_types
