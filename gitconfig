@@ -35,10 +35,9 @@
 	# helper functions
 	st = status -sb
 	aa = add -A
+	am = commit --amend
 	ap = add --patch
-	ci = commit
 	cim = commit --message
-	ca = commit --amend
 	co = checkout
 	rb = rebase
 	rbi = rebase --interactive
@@ -50,6 +49,7 @@
 	sp = stash pop
 	ss = stash save
 	sc = stash clear
+	fixup = commit --fixup
 	# use patient diff
 	diff = diff --patience
 	# to undo add
