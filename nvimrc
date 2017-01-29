@@ -64,7 +64,7 @@ call plug#begin()
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'sgur/ctrlp-extensions.vim'
 "" UI
-Plug 'altercation/vim-colors-solarized'
+Plug 'lifepillar/vim-solarized8'
 Plug 'mhinz/vim-startify'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -124,7 +124,7 @@ let g:sneak#s_next = 1
 let g:sneak#textobject_z = 0
 "" Theme
 set background=dark
-colorscheme solarized
+colorscheme solarized8_dark_flat
 
 " Printing
 set printoptions+=header:0
