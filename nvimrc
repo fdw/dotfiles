@@ -77,7 +77,6 @@ Plug 'justinmk/vim-sneak'
 Plug 'tpope/vim-repeat'
 Plug 'terryma/vim-expand-region'
 Plug 'junegunn/vim-easy-align'
-"" Git
 Plug 'tpope/vim-fugitive'
 "" Filetypes
 Plug 'elzr/vim-json', {'for': 'json'}
@@ -216,7 +215,7 @@ nnoremap <F1> :CtrlPBuffer<CR>
 nnoremap <F2> :CtrlPYankring<CR>
 "" Buffer dependent stuff
 nnoremap <F3> :CtrlPUndo<CR>
-nnoremap <F7> :CtrlPTag<CR>
+nnoremap <F4> :CtrlPTag<CR>
 "" Opening files
 nnoremap <F5> :CtrlP<CR>
 nnoremap <F6> :CtrlP ~<CR>
