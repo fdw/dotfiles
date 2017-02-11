@@ -3,6 +3,7 @@ set $mod Mod4
 set $alt Mod1
 
 bindsym $mod+x kill
+bindsym $mod+space exec "rofi -show drun"
 
 # Power menu
 set $sysmenu "  [r]estart - [l]ock - lo[g] out - [s]uspend - re[b]oot - [p]oweroff  "
@@ -177,13 +178,9 @@ bindsym XF86AudioPrev exec playerctl previous
 bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
 
-# Window-specific logic
-for_window [title="Kupfer"] border none
-
 # Autostart
 exec --no-startup-id gpgconf --launch gpg-agent
 exec --no-startup-id dbus-launch nm-applet
 exec --no-startup-id setxkbmap de -variant sundeadkeys
 exec --no-startup-id parcellite
 exec --no-startup-id udiskie -NsF
-exec --no-startup-id kupfer --no-splash
