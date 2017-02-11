@@ -32,6 +32,7 @@
 	g = pull # get
 	p = push
 	s = checkout # switch
+	u = fetch # update
 	# helper functions
 	st = status -sb
 	aa = add -A
@@ -39,10 +40,13 @@
 	ap = add --patch
 	cim = commit --message
 	co = checkout
+	ds = diff --staged
+	nb = checkout -b
 	rb = rebase
+	rbc = rebase --continue
+	rbs = rebase --skip
 	rbi = rebase --interactive
 	rh = reset --hard HEAD
-	ds = diff --staged
 	sm = submodule
 	# shortcuts for stash
 	sl = stash list
