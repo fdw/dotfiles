@@ -55,6 +55,11 @@
 ### htop
 * styled for my taste
 
+### [Rofi](https://davedavenport.github.io/rofi/)
+* Solarized
+* Uses a combi mode for drun, windows and ssh
+* Sidebar offers each of these modi seperately
+
 ## Installation
 	git clone https://github.com/fdw/dotfiles.git ~/.config
 	cd .config/dotfiles
