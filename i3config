@@ -3,7 +3,7 @@ set $mod Mod4
 set $alt Mod1
 
 bindsym $mod+x kill
-bindsym $mod+space exec "rofi -show drun"
+bindsym $mod+space exec "rofi -show combi"
 
 # Power menu
 set $sysmenu "  [r]estart - [l]ock - lo[g] out - [s]uspend - re[b]oot - [p]oweroff  "

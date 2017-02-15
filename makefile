@@ -1,4 +1,4 @@
-install: install-zsh install-vim install-git install-less install-tmux install-dircolors install-i3 install-ranger install-tig install-htop
+install: install-zsh install-vim install-git install-less install-tmux install-dircolors install-i3 install-ranger install-tig install-htop install-rofi
 
 install-zsh: install-dircolors
 	@echo "Installing .zshrc"
@@ -71,6 +71,11 @@ install-htop:
 	@echo "Installing htoprc"
 	@mkdir -p "${XDG_CONFIG_HOME}/htop"
 	@ln -fs "${CURDIR}/htoprc" "${XDG_CONFIG_HOME}/htop/htoprc"
+
+install-rofi:
+	@echo "Installing rofi/config"
+	@mkdir -p "${XDG_CONFIG_HOME}/rofi"
+	@ln -fs "${CURDIR}/rofi" "${XDG_CONFIG_HOME}/rofi/config"
 
 update:
 	@echo "Updating"
