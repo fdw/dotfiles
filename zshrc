@@ -37,12 +37,11 @@ _force_rehash() {
 
 # Aliases
 alias -g ...='../..'
-alias -g ....='../../..'
 alias ls='ls ${=LS_OPTIONS}'
-alias ll='ls'
+alias -g ll='ls'
 alias la='ls -A'
-alias mkdir='mkdir -p'
-alias grep='grep --color'
+alias -g mkdir='mkdir -p'
+alias -g grep='grep --color'
 alias g='git'
 alias v='nvim'
 
