@@ -35,8 +35,6 @@ set showcmd
 set showmatch
 set relativenumber
 set ttyfast
-au InsertEnter * set cursorline
-au InsertLeave * set nocursorline
 
 " Search
 set incsearch

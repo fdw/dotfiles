@@ -30,8 +30,6 @@ set linebreak
 set showcmd
 set showmatch
 set relativenumber
-au InsertEnter * set cursorline
-au InsertLeave * set nocursorline
 let $NVIM_TUI_ENABLE_CURSOR_SHAPE = 0
 
 " Search
