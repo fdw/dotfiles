@@ -42,6 +42,7 @@
 	co = checkout
 	ds = diff --staged
 	nb = checkout -b
+	pf = push --force
 	rb = rebase
 	rbc = rebase --continue
 	rbs = rebase --skip
