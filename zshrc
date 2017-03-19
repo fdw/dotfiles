@@ -115,6 +115,7 @@ ZGEN_DIR=${ZSH_DATA}
 source ${ZSH_DATA}/zgen/zgen.zsh
 
 # Prompt
+POWERLEVEL9K_MODE='awesome-fontconfig'
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(status context dir vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(root_indicator load time)
 DEFAULT_USER=fdw
