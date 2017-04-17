@@ -29,6 +29,7 @@ set showmode
 set linebreak
 set showcmd
 set showmatch
+set number
 set relativenumber
 let $NVIM_TUI_ENABLE_CURSOR_SHAPE = 0
 
