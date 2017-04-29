@@ -16,7 +16,7 @@ ulimit -c unlimited
 umask 022
 mesg y
 export HISTFILE="${ZSH_DATA}/history"
-export HISTSIZE=500
+export HISTSIZE=1000
 export SAVEHIST=1000
 fc -R ${HISTFILE}
 
