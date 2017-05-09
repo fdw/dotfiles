@@ -134,6 +134,11 @@ if ! zgen saved; then
 	zgen load robbyrussell/oh-my-zsh plugins/colored-man-pages
 	### Substring search
 	zgen load robbyrussell/oh-my-zsh plugins/history-substring-search
+	### fzf
+	if whence fzf >/dev/null; then
+		zgen load junegunn/fzf shell/completion.zsh
+		zgen load junegunn/fzf shell/key-bindings.zsh
+	fi
 	zgen save
 fi
 ## Config for Zgen plugins
