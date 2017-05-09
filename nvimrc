@@ -92,7 +92,7 @@ filetype plugin indent on
 "" CtrlP
 let g:ctrlp_match_window = 'top,order:ttb'
 let g:ctrlp_clear_cache_on_exit = 0
-let g:ctrlp_cache_dir = $HOME.'/.cache/vim/ctrlp'
+let g:ctrlp_cache_dir = $HOME.'/.cache/nvim/ctrlp'
 let g:ctrlp_open_new_file = 't'
 let g:ctrlp_open_multiple_files = 'tj'
 let g:ctrlp_tilde_homedir = 1
