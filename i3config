@@ -179,7 +179,6 @@ bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
 
 # Autostart
-exec --no-startup-id gpgconf --launch gpg-agent
 exec --no-startup-id dbus-launch nm-applet
 exec --no-startup-id setxkbmap de -variant sundeadkeys
 exec --no-startup-id parcellite
