@@ -3,8 +3,8 @@ export TERM="xterm-256color"
 
 # Storage
 ## Cache dir
-ZSH_CACHE="${XDG_CACHE_HOME}/zsh"
-mkdir -p ${ZSH_CACHE}
+ZSH_CACHE_DIR="${XDG_CACHE_HOME}/zsh"
+mkdir -p ${ZSH_CACHE_DIR}
 ## Data dir
 ZSH_DATA="${XDG_DATA_HOME}/zsh"
 mkdir -p ${ZSH_DATA}
@@ -28,7 +28,7 @@ zstyle ':completion:*' verbose yes
 zstyle ':completion:*' menu select
 ## Caching
 zstyle ':completion:*' use-cache on
-zstyle ':completion:*' cache-path ${ZSH_CACHE}/autocomplete
+zstyle ':completion:*' cache-path ${ZSH_CACHE_DIR}/autocomplete
 ## Forcing the rehash
 _force_rehash() {
 	(( CURRENT == 1 )) && rehash
@@ -146,3 +146,5 @@ fi
 zmodload zsh/terminfo
 bindkey "$terminfo[kcuu1]" history-substring-search-up
 bindkey "$terminfo[kcud1]" history-substring-search-down
+### fzf
+export FZF_DEFAULT_OPTS="--height=40% --preview '(highlight -O ansi -l {} 2> /dev/null || cat {} || tree -C {}) 2> /dev/null | head -200'"

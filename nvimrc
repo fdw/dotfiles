@@ -59,9 +59,9 @@ vnoremap <Space> zf
 " Plugins
 filetype off
 call plug#begin()
-"" Ctrl-P
-Plug 'ctrlpvim/ctrlp.vim'
-Plug 'sgur/ctrlp-extensions.vim'
+"" FZF
+Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
 "" UI
 Plug 'lifepillar/vim-solarized8'
 Plug 'mhinz/vim-startify'
@@ -89,13 +89,6 @@ runtime macros/matchit.vim
 filetype plugin indent on
 
 " Plugin configuration
-"" CtrlP
-let g:ctrlp_match_window = 'top,order:ttb'
-let g:ctrlp_clear_cache_on_exit = 0
-let g:ctrlp_cache_dir = $HOME.'/.cache/nvim/ctrlp'
-let g:ctrlp_open_new_file = 't'
-let g:ctrlp_open_multiple_files = 'tj'
-let g:ctrlp_tilde_homedir = 1
 "" Airline
 set fillchars+=stl:\ ,stlnc:\
 let g:airline#extensions#tagbar#enabled = 1
@@ -210,14 +203,11 @@ omap S <Plug>Sneak_S
 nnoremap [s <Plug>SneakNext
 nnoremap ]s <Plug>SneakPrevious
 "" Buffer-independent stuff
-nnoremap <F1> :CtrlPBuffer<CR>
-nnoremap <F2> :CtrlPYankring<CR>
+nnoremap <F1> :Buffers<CR>
 "" Buffer dependent stuff
-nnoremap <F3> :CtrlPUndo<CR>
-nnoremap <F4> :CtrlPTag<CR>
 "" Opening files
-nnoremap <F5> :CtrlP<CR>
-nnoremap <F6> :CtrlP ~<CR>
+nnoremap <F5> :Files ~<CR>
+nnoremap <F6> :Files .<CR>
 "" Expand region
 vmap v <Plug>(expand_region_expand)
 vmap <C-v> <Plug>(expand_region_shrink)
