@@ -4,9 +4,10 @@ install-zsh: install-dircolors
 	@echo "Installing .zshrc"
 	@ln -fs ${CURDIR}/zshrc ${HOME}/.zshrc
 	@ln -fs ${CURDIR}/zshenv ${HOME}/.zshenv
-	@if [ ! -d "${HOME}/.local/share/zsh/zgen" ]; then \
+	@if [ ! -d "${HOME}/.local/share/zsh/zplug" ]; then \
 		mkdir "${HOME}/.local/share/zsh" ; \
-		git clone https://github.com/tarjoilija/zgen.git "${HOME}/.local/share/zsh/zgen"; \
+		export ZPLUG_HOME=.local/share/zsh/zplug \
+		git clone https://github.com/zplug/zplug $ZPLUG_HOME
 	fi
 
 install-vim:

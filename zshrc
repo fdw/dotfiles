@@ -110,9 +110,9 @@ if [[ -f /usr/share/autojump/autojump.zsh ]]
 then
 	. /usr/share/autojump/autojump.sh
 fi
-### Zgen
-ZGEN_DIR=${ZSH_DATA_DIR}
-source ${ZSH_DATA_DIR}/zgen/zgen.zsh
+## Zplug
+ZPLUG_HOME=${ZSH_DATA_DIR}/zplug
+source ${ZPLUG_HOME}/init.zsh
 
 # Prompt
 POWERLEVEL9K_MODE='awesome-fontconfig'
@@ -125,27 +125,18 @@ POWERLEVEL9K_SHORTEN_STRATEGY="truncate_from_right"
 POWERLEVEL9K_STATUS_VERBOSE=false
 
 # Plugins
-if ! zgen saved; then
-	### Theme
-	zgen load bhilburn/powerlevel9k powerlevel9k
-	### Syntax Highlighting
-	zgen load zsh-users/zsh-syntax-highlighting
-	### Color man pages
-	zgen load robbyrussell/oh-my-zsh plugins/colored-man-pages
-	### Substring search
-	zgen load robbyrussell/oh-my-zsh plugins/history-substring-search
-	### fzf
-	if whence fzf >/dev/null; then
-		zgen load junegunn/fzf shell/completion.zsh
-		zgen load junegunn/fzf shell/key-bindings.zsh
-	fi
-	zgen save
-fi
-## Config for Zgen plugins
-### Substring search
-zmodload zsh/terminfo
-bindkey "$terminfo[kcuu1]" history-substring-search-up
-bindkey "$terminfo[kcud1]" history-substring-search-down
+### ZPlug
+zplug 'zplug/zplug', hook-build:'zplug --self-manage'
+### Theme
+zplug "bhilburn/powerlevel9k", as:theme
+### Syntax Highlighting
+zplug "zsh-users/zsh-syntax-highlighting", defer:2
+### Color man pages
+zplug "plugins/colored-man-pages", from:oh-my-zsh
+### fzf
+zplug "junegunn/fzf", use:"shell/*.zsh"
+zplug load
+## Config for plugins
 ### fzf
 export FZF_DEFAULT_COMMAND="rg --files --no-ignore --follow --ignore-case"
 export FZF_DEFAULT_OPTS="--height=40% --preview '(highlight -O ansi -l {} 2> /dev/null || cat {} || tree -C {}) 2> /dev/null | head -200'"
