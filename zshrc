@@ -6,8 +6,8 @@ export TERM="xterm-256color"
 ZSH_CACHE_DIR="${XDG_CACHE_HOME}/zsh"
 mkdir -p ${ZSH_CACHE_DIR}
 ## Data dir
-ZSH_DATA="${XDG_DATA_HOME}/zsh"
-mkdir -p ${ZSH_DATA}
+ZSH_DATA_DIR="${XDG_DATA_HOME}/zsh"
+mkdir -p ${ZSH_DATA_DIR}
 
 # History
 command_oriented_history=1
@@ -15,7 +15,7 @@ HISTCONTROL=ignoreboth
 ulimit -c unlimited
 umask 022
 mesg y
-export HISTFILE="${ZSH_DATA}/history"
+export HISTFILE="${ZSH_DATA_DIR}/history"
 export HISTSIZE=1000
 export SAVEHIST=1000
 fc -R ${HISTFILE}
@@ -110,9 +110,9 @@ if [[ -f /usr/share/autojump/autojump.zsh ]]
 then
 	. /usr/share/autojump/autojump.sh
 fi
-## Zgen
-ZGEN_DIR=${ZSH_DATA}
-source ${ZSH_DATA}/zgen/zgen.zsh
+### Zgen
+ZGEN_DIR=${ZSH_DATA_DIR}
+source ${ZSH_DATA_DIR}/zgen/zgen.zsh
 
 # Prompt
 POWERLEVEL9K_MODE='awesome-fontconfig'
@@ -147,4 +147,5 @@ zmodload zsh/terminfo
 bindkey "$terminfo[kcuu1]" history-substring-search-up
 bindkey "$terminfo[kcud1]" history-substring-search-down
 ### fzf
+export FZF_DEFAULT_COMMAND="rg --files --no-ignore --follow --ignore-case"
 export FZF_DEFAULT_OPTS="--height=40% --preview '(highlight -O ansi -l {} 2> /dev/null || cat {} || tree -C {}) 2> /dev/null | head -200'"
