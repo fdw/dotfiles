@@ -1,6 +1,6 @@
 rofi.modi: combi,drun,window,ssh
 rofi.combi-modi: drun,window,ssh
-rofi.font: SauceCodePro Nerd Font 10
+rofi.font: FuraCode Nerd Font Regular 10
 rofi.sidebar-mode: true
 rofi.fuzzy: true
 rofi.color-enabled: true
