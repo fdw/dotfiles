@@ -116,7 +116,7 @@ source ${ZPLUG_HOME}/init.zsh
 
 # Prompt
 POWERLEVEL9K_MODE='awesome-fontconfig'
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(status context dir vcs)
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(vi_mode status context dir vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(root_indicator load time)
 DEFAULT_USER=fdw
 POWERLEVEL9K_SHORTEN_DIR_LENGTH=1
@@ -135,8 +135,7 @@ zplug "zsh-users/zsh-syntax-highlighting", defer:2
 zplug "plugins/colored-man-pages", from:oh-my-zsh
 ### fzf
 zplug "junegunn/fzf", use:"shell/*.zsh"
+export FZF_DEFAULT_COMMAND="rg --files --no-ignore --ignore-case"
+export FZF_CTRL_T_COMMAND="${FZF_DEFAULT_COMMAND} --hidden"
+export FZF_CTRL_T_OPTS="--preview '(highlight -O ansi -l {} 2> /dev/null || cat {} || tree -C {}) 2> /dev/null | head -200'"
 zplug load
-## Config for plugins
-### fzf
-export FZF_DEFAULT_COMMAND="rg --files --no-ignore --follow --ignore-case"
-export FZF_DEFAULT_OPTS="--height=40% --preview '(highlight -O ansi -l {} 2> /dev/null || cat {} || tree -C {}) 2> /dev/null | head -200'"
