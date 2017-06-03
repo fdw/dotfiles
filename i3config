@@ -180,6 +180,6 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightne
 
 # Autostart
 exec --no-startup-id dbus-launch nm-applet
-exec --no-startup-id setxkbmap de -variant sundeadkeys
+exec --no-startup-id setxkbmap de -variant sundeadkeys -option caps:escape
 exec --no-startup-id parcellite
 exec --no-startup-id udiskie -NsF
