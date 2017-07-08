@@ -38,24 +38,12 @@ _force_rehash() {
 # Aliases
 alias -g ...='../..'
 alias ls='ls ${=LS_OPTIONS}'
-alias -g ll='ls'
+alias ll='ls'
 alias la='ls -A'
 alias -g mkdir='mkdir -p'
 alias -g grep='grep --color'
 alias g='git'
 alias v='nvim'
-
-function r() {
-	if [ "$1" != "" ]; then
-		if [ -d "$1" ]; then
-			ranger "$1"
-		else
-			ranger "$(autojump $1)"
-		fi
-	else
-		ranger
-	fi
-}
 
 # zsh options
 ## changing directories
@@ -139,3 +127,4 @@ export FZF_DEFAULT_COMMAND="rg --files --no-ignore --ignore-case"
 export FZF_CTRL_T_COMMAND="${FZF_DEFAULT_COMMAND} --hidden"
 export FZF_CTRL_T_OPTS="--preview '(highlight -O ansi -l {} 2> /dev/null || cat {} || tree -C {}) 2> /dev/null | head -200'"
 zplug load
+source ${ZSH_DATA_DIR}/aliases.zsh

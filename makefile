@@ -4,6 +4,7 @@ install-zsh: install-dircolors
 	@echo "Installing .zshrc"
 	@ln -fs ${CURDIR}/zshrc ${HOME}/.zshrc
 	@ln -fs ${CURDIR}/zshenv ${HOME}/.zshenv
+	@ln -fs ${CURDIR}/aliases.zsh ${HOME}/.local/share/zsh/aliases.zsh
 	@if [ ! -d "${HOME}/.local/share/zsh/zplug" ]; then \
 		mkdir "${HOME}/.local/share/zsh" ; \
 		export ZPLUG_HOME=.local/share/zsh/zplug \
