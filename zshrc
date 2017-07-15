@@ -75,16 +75,8 @@ setopt correct
 setopt print_exit_value
 ## Job Control
 setopt autoresume
-setopt nohup
-setopt no_notify
-## Prompting
-setopt prompt_subst
 ## Scripts
 setopt multios
-
-# Key bindings
-bindkey '^D' list-choices
-bindkey '^i' expand-or-complete-prefix
 
 # Plugins
 ## Colorful ls
