@@ -90,13 +90,13 @@ if [[ -f /usr/share/autojump/autojump.zsh ]]
 then
 	. /usr/share/autojump/autojump.sh
 fi
-## Zplug
-ZPLUG_HOME=${ZSH_DATA_DIR}/zplug
-source ${ZPLUG_HOME}/init.zsh
+## Zgen
+ZGEN_HOME=${ZSH_DATA_DIR}/zgen
+source ${ZGEN_HOME}/zgen.zsh
 
 # Prompt
 POWERLEVEL9K_MODE='awesome-fontconfig'
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(vi_mode status context dir vcs)
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(status context dir vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(root_indicator load time)
 DEFAULT_USER=fdw
 POWERLEVEL9K_SHORTEN_DIR_LENGTH=1
@@ -105,18 +105,24 @@ POWERLEVEL9K_SHORTEN_STRATEGY="truncate_from_right"
 POWERLEVEL9K_STATUS_VERBOSE=false
 
 # Plugins
-### ZPlug
-zplug 'zplug/zplug', hook-build:'zplug --self-manage'
-### Theme
-zplug "bhilburn/powerlevel9k", as:theme
-### Syntax Highlighting
-zplug "zsh-users/zsh-syntax-highlighting", defer:2
-### Color man pages
-zplug "plugins/colored-man-pages", from:oh-my-zsh
-### fzf
-zplug "junegunn/fzf", use:"shell/*.zsh"
-export FZF_DEFAULT_COMMAND="rg --files --no-ignore --ignore-case"
-export FZF_CTRL_T_COMMAND="${FZF_DEFAULT_COMMAND} --hidden"
-export FZF_CTRL_T_OPTS="--preview '(highlight -O ansi -l {} 2> /dev/null || cat {} || tree -C {}) 2> /dev/null | head -200'"
-zplug load
-source ${ZSH_DATA_DIR}/aliases.zsh
+if ! zgen saved; then
+	### Theme
+	zgen load "bhilburn/powerlevel9k" powerlevel9k
+	### Substring search
+	zgen load robbyrussell/oh-my-zsh plugins/history-substring-search	### Syntax Highlighting
+	zmodload zsh/terminfo
+	bindkey "$terminfo[kcuu1]" history-substring-search-up
+	bindkey "$terminfo[kcud1]" history-substring-search-down
+	### Syntax Highlighting
+	zgen load "zdharma/fast-syntax-highlighting"
+	### Color man pages
+	zgen oh-my-zsh "plugins/colored-man-pages"
+	### fzf
+	zgen load "junegunn/fzf" "shell"
+	export FZF_DEFAULT_COMMAND="rg --files --no-ignore --ignore-case"
+	export FZF_CTRL_T_COMMAND="${FZF_DEFAULT_COMMAND} --hidden"
+	export FZF_CTRL_T_OPTS="--preview '(highlight -O ansi -l {} 2> /dev/null || cat {} || tree -C {}) 2> /dev/null | head -200'"
+	### local aliases
+	zgen load ${ZSH_DATA_DIR}/aliases.zsh
+	zgen save
+fi

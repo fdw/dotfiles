@@ -7,8 +7,7 @@ install-zsh: install-dircolors
 	@ln -fs ${CURDIR}/aliases.zsh ${HOME}/.local/share/zsh/aliases.zsh
 	@if [ ! -d "${HOME}/.local/share/zsh/zplug" ]; then \
 		mkdir "${HOME}/.local/share/zsh" ; \
-		export ZPLUG_HOME=.local/share/zsh/zplug \
-		git clone https://github.com/zplug/zplug $ZPLUG_HOME
+		git clone https://github.com/tarjoilija/zgen.git "${HOME}/.local/share/zsh/zgen"; \
 	fi
 
 install-vim:
