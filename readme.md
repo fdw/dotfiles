@@ -4,10 +4,11 @@
 
 ### zshrc for [ZSH](http://zsh.org/)
 * Autocompletion configuration
-* Plugins organized with [ZPlug](https://github.com/zplug/zplug)
+* Plugins organized with [zgen](https://github.com/tarjoilija/zgen)
 * [Autojump](https://github.com/joelthelion/autojump)
 * [fzf](https://github.com/junegunn/fzf) with [ripgrep](https://github.com/BurntSushi/ripgrep) for file and history search
-* [Syntax highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
+* [Fast Syntax highlighting](https://github.com/zdharma/fast-syntax-highlighting)
+* [History-substring-search](https://github.com/zsh-users/zsh-history-substring-search)
 * [Powerline9k Theme](https://github.com/bhilburn/powerlevel9k)
 * Some nice aliases
 	* `r` asks Autojump for the best directory and opens Ranger there
