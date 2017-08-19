@@ -85,11 +85,7 @@ then
 	eval `dircolors ${HOME}/.dir_colors`
 	zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 fi
-## Autojump
-if [[ -f /usr/share/autojump/autojump.zsh ]]
-then
-	. /usr/share/autojump/autojump.sh
-fi
+#
 ## Zgen
 ZGEN_HOME=${ZSH_DATA_DIR}/zgen
 source ${ZGEN_HOME}/zgen.zsh
@@ -106,23 +102,28 @@ POWERLEVEL9K_STATUS_VERBOSE=false
 
 # Plugins
 if ! zgen saved; then
-	### Theme
-	zgen load "bhilburn/powerlevel9k" powerlevel9k
-	### Substring search
-	zgen load robbyrussell/oh-my-zsh plugins/history-substring-search	### Syntax Highlighting
-	zmodload zsh/terminfo
-	bindkey "$terminfo[kcuu1]" history-substring-search-up
-	bindkey "$terminfo[kcud1]" history-substring-search-down
-	### Syntax Highlighting
-	zgen load "zdharma/fast-syntax-highlighting"
-	### Color man pages
-	zgen oh-my-zsh "plugins/colored-man-pages"
-	### fzf
-	zgen load "junegunn/fzf" "shell"
-	export FZF_DEFAULT_COMMAND="rg --files --no-ignore --ignore-case"
-	export FZF_CTRL_T_COMMAND="${FZF_DEFAULT_COMMAND} --hidden"
-	export FZF_CTRL_T_OPTS="--preview '(highlight -O ansi -l {} 2> /dev/null || cat {} || tree -C {}) 2> /dev/null | head -200'"
-	### local aliases
+	zgen load bhilburn/powerlevel9k powerlevel9k
+	zgen load /usr/share/autojump/autojump.zsh 
+	zgen load zdharma/fast-syntax-highlighting
+	# oh-my-zsh
+	zgen oh-my-zsh
+	zgen oh-my-zsh plugins/history-substring-search
+	zgen oh-my-zsh plugins/colored-man-pages
+	zgen oh-my-zsh plugins/pass
+	# fzf
+	zgen load junegunn/fzf shell/completion.zsh
+	zgen load junegunn/fzf shell/key-bindings.zsh
+	# local
 	zgen load ${ZSH_DATA_DIR}/aliases.zsh
 	zgen save
 fi
+
+# Plugin config
+## History substring search
+zmodload zsh/terminfo
+bindkey "$terminfo[kcuu1]" history-substring-search-up
+bindkey "$terminfo[kcud1]" history-substring-search-down
+## fzf
+export FZF_DEFAULT_COMMAND="rg --files --no-ignore --ignore-case"
+export FZF_CTRL_T_COMMAND="${FZF_DEFAULT_COMMAND} --hidden"
+export FZF_CTRL_T_OPTS="--preview '(highlight -O ansi -l {} 2> /dev/null || cat {} || tree -C {}) 2> /dev/null | head -200'"
