@@ -4,6 +4,8 @@ set $alt Mod1
 
 bindsym $mod+x kill
 bindsym $mod+space exec "rofi -show combi"
+bindsym $mod+c exec "roficlip"
+bindsym $mod+p exec "rofi-pass"
 
 # Power menu
 set $sysmenu "  [r]estart - [l]ock - lo[g] out - [s]uspend - re[b]oot - [p]oweroff  "
@@ -180,5 +182,5 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightne
 
 # Autostart
 exec --no-startup-id dbus-launch nm-applet
-exec --no-startup-id parcellite
+exec --no-startup-id clipster -d
 exec --no-startup-id udiskie -NsF
