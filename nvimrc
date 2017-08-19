@@ -30,7 +30,6 @@ set linebreak
 set showcmd
 set showmatch
 set number
-set relativenumber
 :set guicursor=
 
 " Search
@@ -76,7 +75,7 @@ Plug 'justinmk/vim-sneak'
 Plug 'tpope/vim-repeat'
 Plug 'terryma/vim-expand-region'
 Plug 'junegunn/vim-easy-align'
-Plug 'tpope/vim-fugitive'
+Plug 'pbrisbin/vim-mkdir'
 "" Filetypes
 Plug 'elzr/vim-json', {'for': 'json'}
 
