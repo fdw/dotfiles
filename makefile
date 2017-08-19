@@ -28,6 +28,7 @@ install-nvim:
 install-git:
 	@echo "Installing .gitconfig"
 	@ln -fs ${CURDIR}/gitconfig ${HOME}/.gitconfig
+	@ln -fs ${CURDIR}/gitignore ${HOME}/.gitignore
 	@echo "Please insert your name and email address in .gitconfig (possibly in a local git branch)"
 
 install-less:
