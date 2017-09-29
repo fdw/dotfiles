@@ -1,8 +1,7 @@
-function recentchanges() {
-	find . -mtime -7 | grep -v ".cache" | sort | less
-}
+alias g='git'
+alias v='nvim'
 
-function gs() {
+function gswitch() {
   local branches branch
   branches=$(git branch --all | grep -v HEAD) &&
   branch=$(echo "$branches" | fzf -d $(( 2 + $(wc -l <<< "$branches") )) +m) && 
