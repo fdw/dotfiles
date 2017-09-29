@@ -87,9 +87,12 @@ fi
 ZGEN_HOME=${ZSH_DATA_DIR}/zgen
 source ${ZGEN_HOME}/zgen.zsh
 
+# Direnv
+eval "$(direnv hook zsh)"
+
 # Prompt
 POWERLEVEL9K_MODE='awesome-fontconfig'
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(status context dir vcs)
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(status context dir pyenv vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(root_indicator load time)
 DEFAULT_USER=fdw
 POWERLEVEL9K_SHORTEN_DIR_LENGTH=1
