@@ -36,14 +36,11 @@ _force_rehash() {
 }
 
 # Aliases
-alias -g ...='../..'
 alias ls='ls ${=LS_OPTIONS}'
 alias ll='ls'
 alias la='ls -A'
 alias -g mkdir='mkdir -p'
 alias -g grep='grep --color'
-alias g='git'
-alias v='nvim'
 
 # zsh options
 ## changing directories
