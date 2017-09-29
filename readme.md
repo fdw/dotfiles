@@ -14,6 +14,7 @@
 	* `r` asks Autojump for the best directory and opens Ranger there
 	* `g` is short for git
 	* `v` opens Neovim
+* Supports [Direnv](https://github.com/direnv/direnv)
 
 ### vimrc/nvimrc for [Vim](http://www.vim.org/)/[Neovim](https://neovim.io/)
 * Keymapping for German keyboards
@@ -52,6 +53,7 @@
 * Sensible configuration
 * Useful aliases (contains assume, unstage and shortcuts for the most often used commands)
 * needs to be configured with your own name and email
+* Always ignores direnv files
 
 ### lesskey
 * Same keymappings as vim (optimized for German keyboards)
