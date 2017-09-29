@@ -9,7 +9,7 @@ bindsym $mod+p exec "rofi-pass"
 
 # Power menu
 set $sysmenu "  [r]estart - [l]ock - lo[g] out - [s]uspend - re[b]oot - [p]oweroff  "
-bindsym $mod+e mode $sysmenu
+bindsym $mod+s mode $sysmenu
 mode $sysmenu
 { 
 	bindsym r restart
@@ -140,7 +140,7 @@ set $WS8 8
 set $WS9 9
 set $WS0 0
 
-# switch to workspace
+## switch to workspace
 bindsym $mod+1 workspace $WS1
 bindsym $mod+2 workspace $WS2
 bindsym $mod+3 workspace $WS3
@@ -152,7 +152,7 @@ bindsym $mod+8 workspace $WS8
 bindsym $mod+9 workspace $WS9
 bindsym $mod+0 workspace $WS0
 
-# move to workspace
+## move to workspace
 bindsym $mod+Shift+1 move container to workspace $WS1
 bindsym $mod+Shift+2 move container to workspace $WS2
 bindsym $mod+Shift+3 move container to workspace $WS3
