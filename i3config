@@ -48,13 +48,13 @@ workspace_layout tabbed
 ## Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-## change layout etc of workspace
-set $meta_workspace "  [s]plit horizontally - split [v]vertically - [g]rid mode - [t]abbed mode - [l]ist mode - [f]loat  "
+## change layout etc of workspaces, windows & containers
+set $meta_workspace "  split [h]orizontally - split [v]vertically - [g]rid mode - [t]abbed mode - [l]ist mode - [f]loat  "
 bindsym $mod+w mode $meta_workspace
 mode $meta_workspace
 {
 	# splits
-	bindsym s split h;mode "default"
+	bindsym h split h;mode "default"
 	bindsym v split v;mode "default"
 
 	# workspace layout
