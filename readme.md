@@ -48,6 +48,7 @@
 * Sensible configuration
 * Some useful keybindings
 * Easy extraction and compression with [atool](http://www.nongnu.org/atool/)
+* [Devicons](https://github.com/alexanderjeurissen/ranger_devicons/)
 
 ### gitconfig
 * Sensible configuration
