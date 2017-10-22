@@ -82,15 +82,13 @@ then
 	eval `dircolors ${HOME}/.dir_colors`
 	zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 fi
-#
-## Zgen
-ZGEN_HOME=${ZSH_DATA_DIR}/zgen
-source ${ZGEN_HOME}/zgen.zsh
 
-# Direnv
+## Direnv
 eval "$(direnv hook zsh)"
 
-# Prompt
+## Zgen
+### Config (pre)
+#### Prompt
 POWERLEVEL9K_MODE='awesome-fontconfig'
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(status context dir pyenv vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(root_indicator load time)
@@ -100,7 +98,13 @@ POWERLEVEL9K_SHORTEN_DELIMITER=""
 POWERLEVEL9K_SHORTEN_STRATEGY="truncate_from_right"
 POWERLEVEL9K_STATUS_VERBOSE=false
 
-# Plugins
+#### oh-my-zsh
+DISABLE_AUTO_UPDATE="true"
+
+### Loading
+ZGEN_HOME=${ZSH_DATA_DIR}/zgen
+source ${ZGEN_HOME}/zgen.zsh
+
 if ! zgen saved; then
 	zgen load bhilburn/powerlevel9k powerlevel9k
 	zgen load /usr/share/autojump/autojump.zsh 
@@ -118,12 +122,12 @@ if ! zgen saved; then
 	zgen save
 fi
 
-# Plugin config
-## History substring search
+### Config (post)
+#### History substring search
 zmodload zsh/terminfo
 bindkey "$terminfo[kcuu1]" history-substring-search-up
 bindkey "$terminfo[kcud1]" history-substring-search-down
-## fzf
+#### fzf
 export FZF_DEFAULT_COMMAND="rg --files --no-ignore --ignore-case"
 export FZF_CTRL_T_COMMAND="${FZF_DEFAULT_COMMAND} --hidden"
 export FZF_CTRL_T_OPTS="--preview '(highlight -O ansi -l {} 2> /dev/null || cat {} || tree -C {}) 2> /dev/null | head -200'"
