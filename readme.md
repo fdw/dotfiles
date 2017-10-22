@@ -16,7 +16,7 @@
 	* `v` opens Neovim
 * Supports [Direnv](https://github.com/direnv/direnv)
 
-### vimrc/nvimrc for [Vim](http://www.vim.org/)/[Neovim](https://neovim.io/)
+### vimrc/nvimrc for [Neovim](https://neovim.io/)
 * Keymapping for German keyboards
 * Continous undo
 * Plugins organized with [Vim-Plug](https://github.com/junegunn/vim-plug)
@@ -31,9 +31,9 @@
 * [Expand region](https://github.com/terryma/vim-expand-region)
 * [EasyAlign](https://github.com/junegunn/vim-easy-align)
 * [Solarized Dark theme](https://github.com/lifepillar/vim-solarized8)
-* Neovim is the default editor
+* Neovim is set as the default editor
 
-### i3wm
+### [i3wm](https://i3wm.org/)
 * Here, too, a sensible configuration
 * Solarized Dark theme
 * Nice window and session modes with helpful status bar hints and shortcuts
@@ -44,7 +44,7 @@
 * Uses a combi mode for drun, windows and ssh
 * Sidebar offers each of these modi seperately
 
-### ranger
+### [ranger](http://ranger.nongnu.org/)
 * Sensible configuration
 * Some useful keybindings
 * Easy extraction and compression with [atool](http://www.nongnu.org/atool/)
@@ -68,9 +68,16 @@
 * styled for my taste
 
 ## Installation
-	git clone https://github.com/fdw/dotfiles.git ~/.config
+	`git clone --recursive https://github.com/fdw/dotfiles.git ~/.config/dotfiles`
 	cd .config/dotfiles
 	make install
 
 ## Updating
 	make update
+
+# Helpful Programs
+* [fzf](https://github.com/junegunn/fzf)
+* [ripgrep](https://github.com/BurntSushi/ripgrep)
+* [rofi](https://github.com/DaveDavenport/rofi)
+	* [clipster](https://github.com/mrichar1/clipster) & [roficlip](https://github.com/gilbertw1/roficlip)
+	* [rofi-pass](https://github.com/carnager/rofi-pass)
