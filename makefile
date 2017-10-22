@@ -42,9 +42,6 @@ install-tmux:
 
 install-dircolors:
 	@echo "Installing .dir_colors"
-	@if [ ! -d "${CURDIR}/dircolors-solarized" ]; then \
-		git clone "https://github.com/seebi/dircolors-solarized.git" "${CURDIR}/dircolors-solarized" ; \
-	fi
 	@ln -fs ${CURDIR}/dircolors-solarized/dircolors.ansi-universal ${HOME}/.dir_colors
 
 install-i3:
@@ -56,9 +53,11 @@ install-i3:
 
 install-ranger:
 	@echo "Installing .config/ranger/rc.conf"
-	@mkdir -p ${XDG_CONFIG_HOME}/ranger/
+	@mkdir -p ${XDG_CONFIG_HOME}/ranger/plugins
 	@ln -fs ${CURDIR}/rangerrc.conf ${XDG_CONFIG_HOME}/ranger/rc.conf
 	@ln -fs ${CURDIR}/rangercommands ${XDG_CONFIG_HOME}/ranger/commands.py
+	@ln -fs ${CURDIR}/ranger_devicons/devicons.py ${XDG_CONFIG_HOME}/ranger/devicons.py
+	@ln -fs ${CURDIR}/ranger_devicons/devicons_linemode.py ${XDG_CONFIG_HOME}/ranger/plugins/devicons_linemode.py
 
 install-tig:
 	@echo "Installing .tigrc"
