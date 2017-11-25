@@ -62,7 +62,7 @@ call plug#begin()
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 "" UI
-Plug 'lifepillar/vim-solarized8'
+Plug 'iCyMind/NeoSolarized'
 Plug 'mhinz/vim-startify'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -115,7 +115,7 @@ let g:sneak#s_next = 1
 let g:sneak#textobject_z = 0
 "" Theme
 set background=dark
-colorscheme solarized8_dark_flat
+colorscheme NeoSolarized
 
 " Printing
 set printoptions+=header:0
