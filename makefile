@@ -4,10 +4,10 @@ install-zsh: install-dircolors
 	@echo "Installing .zshrc"
 	@ln -fs ${CURDIR}/zshrc ${HOME}/.zshrc
 	@ln -fs ${CURDIR}/zshenv ${HOME}/.zshenv
-	@ln -fs ${CURDIR}/aliases.zsh ${HOME}/.local/share/zsh/aliases.zsh
-	@if [ ! -d "${HOME}/.local/share/zsh/zplug" ]; then \
-		mkdir "${HOME}/.local/share/zsh" ; \
-		git clone https://github.com/tarjoilija/zgen.git "${HOME}/.local/share/zsh/zgen"; \
+	@ln -fs ${CURDIR}/aliases.zsh ${XDG_DATA_HOME}/zsh/aliases.zsh
+	@if [ ! -d "${XDG_DATA_HOME}/zsh/zplug" ]; then \
+		mkdir "${XDG_DATA_HOME}/zsh" ; \
+		git clone https://github.com/tarjoilija/zgen.git "${XDG_DATA_HOME}/zsh/zgen"; \
 	fi
 
 install-vim:
@@ -40,7 +40,7 @@ install-tmux:
 	@echo "Installing .tmux.conf"
 	@ln -fs ${CURDIR}/tmux.conf ${HOME}/.tmux.conf
 
-install-dircolors:
+install-dircolors: prepare-submodules
 	@echo "Installing .dir_colors"
 	@ln -fs ${CURDIR}/dircolors-solarized/dircolors.ansi-universal ${HOME}/.dir_colors
 
@@ -48,10 +48,10 @@ install-i3:
 	@echo "Installing .config/i3/config"
 	@mkdir -p ${XDG_CONFIG_HOME}/i3/
 	@ln -fs ${CURDIR}/i3config ${XDG_CONFIG_HOME}/i3/config
-	@mkdir -p ${XDG_CONIFG_HOME}/i3status/
+	@mkdir -p ${XDG_CONFIG_HOME}/i3status/
 	@ln -fs ${CURDIR}/i3status ${XDG_CONFIG_HOME}/i3status/config
 
-install-ranger:
+install-ranger: prepare-submodules
 	@echo "Installing .config/ranger/rc.conf"
 	@mkdir -p ${XDG_CONFIG_HOME}/ranger/plugins
 	@ln -fs ${CURDIR}/rangerrc.conf ${XDG_CONFIG_HOME}/ranger/rc.conf
@@ -82,3 +82,7 @@ update:
 	@echo "Updating"
 	@git pull --rebase origin master
 	@git submodule update
+
+prepare-submodules:
+	git submodule init
+	git submodule update
