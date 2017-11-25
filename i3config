@@ -6,6 +6,7 @@ bindsym $mod+x kill
 bindsym $mod+space exec "rofi -show combi"
 bindsym $mod+c exec "roficlip"
 bindsym $mod+p exec "rofi-pass"
+bindsym $mod+e exec "rofimoji"
 
 # Power menu
 set $sysmenu "  [r]estart - [l]ock - lo[g] out - [s]uspend - re[b]oot - [p]oweroff  "

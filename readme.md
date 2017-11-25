@@ -82,3 +82,4 @@
 * [rofi](https://github.com/DaveDavenport/rofi)
 	* [clipster](https://github.com/mrichar1/clipster) & [roficlip](https://github.com/gilbertw1/roficlip)
 	* [rofi-pass](https://github.com/carnager/rofi-pass)
+	* [rofimoji](https://github.com/fdw/rofimoji)
