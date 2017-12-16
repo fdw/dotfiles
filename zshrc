@@ -16,8 +16,8 @@ ulimit -c unlimited
 umask 022
 mesg y
 export HISTFILE="${ZSH_DATA_DIR}/history"
-export HISTSIZE=2000
-export SAVEHIST=2000
+export HISTSIZE=5000
+export SAVEHIST=5000
 fc -R ${HISTFILE}
 
 # Completion
@@ -97,7 +97,6 @@ POWERLEVEL9K_SHORTEN_DIR_LENGTH=1
 POWERLEVEL9K_SHORTEN_DELIMITER=""
 POWERLEVEL9K_SHORTEN_STRATEGY="truncate_from_right"
 POWERLEVEL9K_STATUS_VERBOSE=false
-
 #### oh-my-zsh
 DISABLE_AUTO_UPDATE="true"
 
@@ -112,11 +111,12 @@ if ! zgen saved; then
 	# oh-my-zsh
 	zgen oh-my-zsh
 	zgen oh-my-zsh plugins/history-substring-search
-	zgen oh-my-zsh plugins/colored-man-pages
 	zgen oh-my-zsh plugins/pass
 	# fzf
 	zgen load junegunn/fzf shell/completion.zsh
 	zgen load junegunn/fzf shell/key-bindings.zsh
+	# autosuggestions
+	zgen load zsh-users/zsh-autosuggestions
 	# local
 	zgen load ${ZSH_DATA_DIR}/aliases.zsh
 	zgen save
@@ -131,3 +131,6 @@ bindkey "$terminfo[kcud1]" history-substring-search-down
 export FZF_DEFAULT_COMMAND="rg --files --no-ignore --ignore-case"
 export FZF_CTRL_T_COMMAND="${FZF_DEFAULT_COMMAND} --hidden"
 export FZF_CTRL_T_OPTS="--preview '(highlight -O ansi -l {} 2> /dev/null || cat {} || tree -C {}) 2> /dev/null | head -200'"
+#### autosuggestions
+export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=cyan"
+bindkey '^\n' autosuggest-execute
