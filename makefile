@@ -1,4 +1,4 @@
-install: install-zsh install-vim install-git install-less install-tmux install-dircolors install-i3 install-ranger install-tig install-htop install-rofi
+install: install-zsh install-nvim install-git install-less install-dircolors install-i3 install-ranger install-tig install-htop install-rofi
 
 install-zsh: install-dircolors
 	@echo "Installing .zshrc"
@@ -8,13 +8,6 @@ install-zsh: install-dircolors
 	@if [ ! -d "${XDG_DATA_HOME}/zsh/zplug" ]; then \
 		mkdir "${XDG_DATA_HOME}/zsh" ; \
 		git clone https://github.com/tarjoilija/zgen.git "${XDG_DATA_HOME}/zsh/zgen"; \
-	fi
-
-install-vim:
-	@echo "Installing .vimrc"
-	@ln -fs ${CURDIR}/vimrc ${HOME}/.vimrc
-	@if [ ! -f "${HOME}/.vim/autoload/plug.vim" ]; then \
-		curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim; \
 	fi
 
 install-nvim:
@@ -35,10 +28,6 @@ install-less:
 	@echo "Installing .lesskey"
 	@ln -fs ${CURDIR}/lesskey ${HOME}/.lesskey
 	@lesskey ${HOME}/.lesskey
-
-install-tmux:
-	@echo "Installing .tmux.conf"
-	@ln -fs ${CURDIR}/tmux.conf ${HOME}/.tmux.conf
 
 install-dircolors: prepare-submodules
 	@echo "Installing .dir_colors"
