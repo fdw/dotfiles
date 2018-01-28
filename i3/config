@@ -1,24 +1,37 @@
 # Basics
 set $mod Mod4
 set $alt Mod1
+set $term termite
 
 bindsym $mod+x kill
+bindsym $mod+Return exec $term
 bindsym $mod+space exec "rofi -show combi"
 bindsym $mod+c exec "roficlip"
 bindsym $mod+p exec "rofi-pass"
 bindsym $mod+e exec "rofimoji"
 
+# Terminal menu
+set $termmenu "  n[v]im - [r]anger  "
+bindsym $mod+t mode $termmenu
+mode $termmenu
+{
+	bindsym r exec "$term -e ranger"; mode "default"
+	bindsym v exec "$term -e nvim"; mode "default"
+	bindsym Return exec $term; mode "default"
+}
+
 # Power menu
-set $sysmenu "  [r]estart - [l]ock - lo[g] out - [s]uspend - re[b]oot - [p]oweroff  "
+set $sysmenu "  [r]estart - [l]ock - lo[g] out - [s]uspend - [h]ibernate - re[b]oot - [p]oweroff  "
 bindsym $mod+s mode $sysmenu
 mode $sysmenu
-{ 
+{
 	bindsym r restart
 	bindsym g exit
-	bindsym p exec "systemctl poweroff"
-	bindsym b exec "systemctl reboot"
-	bindsym s exec "systemctl suspend"
-	bindsym l exec "i3lock -c 000000"; mode "default"
+	bindsym p exec --no-startup-id "systemctl poweroff"; mode "default"
+	bindsym b exec --no-startup-id "systemctl reboot"; mode "default"
+	bindsym h exec --no-startup-id i3exit hibernate, mode "default"
+	bindsym s exec --no-startup-id "systemctl suspend"; mode "default"
+	bindsym l exec --no-startup-id "i3lock -c 000000"; mode "default"
 	bindsym Return mode "default"
 	bindsym Escape mode "default"
 }
@@ -65,7 +78,7 @@ mode $meta_workspace
 
 
 	# toggle tiling / floating
-	bindsym f floating toggle
+	bindsym f floating toggle;mode "default"
 
 	# resizing
 	bindsym Left resize shrink width 10 px or 10 ppt
@@ -154,16 +167,16 @@ bindsym $mod+9 workspace $WS9
 bindsym $mod+0 workspace $WS0
 
 ## move to workspace
-bindsym $mod+Shift+1 move container to workspace $WS1
-bindsym $mod+Shift+2 move container to workspace $WS2
-bindsym $mod+Shift+3 move container to workspace $WS3
-bindsym $mod+Shift+4 move container to workspace $WS4
-bindsym $mod+Shift+5 move container to workspace $WS5
-bindsym $mod+Shift+6 move container to workspace $WS6
-bindsym $mod+Shift+7 move container to workspace $WS7
-bindsym $mod+Shift+8 move container to workspace $WS8
-bindsym $mod+Shift+9 move container to workspace $WS9
-bindsym $mod+Shift+0 move container to workspace $WS0
+bindsym $mod+Shift+1 move container to workspace $WS1; workspace $WS1
+bindsym $mod+Shift+2 move container to workspace $WS2; workspace $WS2
+bindsym $mod+Shift+3 move container to workspace $WS3; workspace $WS3
+bindsym $mod+Shift+4 move container to workspace $WS4; workspace $WS4
+bindsym $mod+Shift+5 move container to workspace $WS5; workspace $WS5
+bindsym $mod+Shift+6 move container to workspace $WS6; workspace $WS6
+bindsym $mod+Shift+7 move container to workspace $WS7; workspace $WS7
+bindsym $mod+Shift+8 move container to workspace $WS8; workspace $WS8
+bindsym $mod+Shift+9 move container to workspace $WS9; workspace $WS9
+bindsym $mod+Shift+0 move container to workspace $WS0; workspace $WS0
 
 # cycle between workspaces
 bindsym $mod+Tab workspace next
@@ -182,9 +195,7 @@ bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
 
 # Autostart
-exec --no-startup-id dbus-launch nm-applet
-exec --no-startup-id clipster -d
-exec --no-startup-id udiskie -NsF
-exec --no-startup-id (dbus-launch nm-applet) &
 exec --no-startup-id (clipster -d) &
 exec --no-startup-id (udiskie -NsF) &
+exec --no-startup-id nm-applet
+
