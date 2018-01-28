@@ -61,6 +61,7 @@ install-ranger: prepare-submodules
 	@mkdir -p ${XDG_CONFIG_HOME}/ranger/plugins
 	@ln -fs ${CURDIR}/ranger/rc.conf ${XDG_CONFIG_HOME}/ranger/rc.conf
 	@ln -fs ${CURDIR}/ranger/commands ${XDG_CONFIG_HOME}/ranger/commands.py
+	@ln -fs ${CURDIR}/ranger/rifle.conf ${XDG_CONFIG_HOME}/ranger/rifle.conf
 	@ln -fs ${CURDIR}/ranger_devicons/devicons.py ${XDG_CONFIG_HOME}/ranger/devicons.py
 	@ln -fs ${CURDIR}/ranger_devicons/devicons_linemode.py ${XDG_CONFIG_HOME}/ranger/plugins/devicons_linemode.py
 
