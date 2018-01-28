@@ -2,9 +2,9 @@ install: install-zsh install-nvim install-git install-less install-dircolors ins
 
 install-zsh: install-dircolors
 	@echo "Installing .zshrc"
-	@ln -fs ${CURDIR}/zshrc ${HOME}/.zshrc
-	@ln -fs ${CURDIR}/zshenv ${HOME}/.zshenv
-	@ln -fs ${CURDIR}/aliases.zsh ${XDG_DATA_HOME}/zsh/aliases.zsh
+	@ln -fs ${CURDIR}/zsh/rc ${HOME}/.zshrc
+	@ln -fs ${CURDIR}/zsh/env ${HOME}/.zshenv
+	@ln -fs ${CURDIR}/zsh/aliases.zsh ${XDG_DATA_HOME}/zsh/aliases.zsh
 	@if [ ! -d "${XDG_DATA_HOME}/zsh/zplug" ]; then \
 		mkdir "${XDG_DATA_HOME}/zsh" ; \
 		git clone https://github.com/tarjoilija/zgen.git "${XDG_DATA_HOME}/zsh/zgen"; \
@@ -20,8 +20,8 @@ install-nvim:
 
 install-git:
 	@echo "Installing .gitconfig"
-	@ln -fs ${CURDIR}/gitconfig ${HOME}/.gitconfig
-	@ln -fs ${CURDIR}/gitignore ${HOME}/.gitignore
+	@ln -fs ${CURDIR}/git/config ${HOME}/.gitconfig
+	@ln -fs ${CURDIR}/git/ignore ${HOME}/.gitignore
 	@echo "Please insert your name and email address in .gitconfig (possibly in a local git branch)"
 
 install-less:
@@ -36,15 +36,15 @@ install-dircolors: prepare-submodules
 install-i3:
 	@echo "Installing .config/i3/config"
 	@mkdir -p ${XDG_CONFIG_HOME}/i3/
-	@ln -fs ${CURDIR}/i3config ${XDG_CONFIG_HOME}/i3/config
+	@ln -fs ${CURDIR}/i3/config ${XDG_CONFIG_HOME}/i3/config
 	@mkdir -p ${XDG_CONFIG_HOME}/i3status/
-	@ln -fs ${CURDIR}/i3status ${XDG_CONFIG_HOME}/i3status/config
+	@ln -fs ${CURDIR}/i3/status ${XDG_CONFIG_HOME}/i3status/config
 
 install-ranger: prepare-submodules
 	@echo "Installing .config/ranger/rc.conf"
 	@mkdir -p ${XDG_CONFIG_HOME}/ranger/plugins
-	@ln -fs ${CURDIR}/rangerrc.conf ${XDG_CONFIG_HOME}/ranger/rc.conf
-	@ln -fs ${CURDIR}/rangercommands ${XDG_CONFIG_HOME}/ranger/commands.py
+	@ln -fs ${CURDIR}/ranger/rc.conf ${XDG_CONFIG_HOME}/ranger/rc.conf
+	@ln -fs ${CURDIR}/ranger/commands ${XDG_CONFIG_HOME}/ranger/commands.py
 	@ln -fs ${CURDIR}/ranger_devicons/devicons.py ${XDG_CONFIG_HOME}/ranger/devicons.py
 	@ln -fs ${CURDIR}/ranger_devicons/devicons_linemode.py ${XDG_CONFIG_HOME}/ranger/plugins/devicons_linemode.py
 
