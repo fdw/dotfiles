@@ -31,7 +31,6 @@ install-git:
 	@mkdir -p ${XDG_CONFIG_HOME}/git
 	@ln -fs ${CURDIR}/git/config ${XDG_CONFIG_HOME}/git/config
 	@ln -fs ${CURDIR}/git/ignore ${XDG_CONFIG_HOME}/git/ignore
-	@echo "Please insert your name and email address in .gitconfig (possibly in a local git branch)"
 
 install-less:
 	@echo "Installing .lesskey"

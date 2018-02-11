@@ -1,6 +1,6 @@
 [user]
-	name = <NAME>
-	email = <EMAIL>
+	name=Fabian Winter
+	useConfigOnly=true
 [core]
 	editor = nvim
 	pager = less -R
