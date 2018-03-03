@@ -1,6 +1,12 @@
 # Dotfiles
 
-## Content
+## Screenshot & Overview
+
+![Screenshot](screenshot.png)
+
+This repo contains dotfiles for my workspace that is focused on terminal based apps (Nvim, ranger, autojump) and a lightweight window manager (i3, rofi, polybar). Everything is meant to integrate with everything else, starting from the theme: Solarized Dark.
+
+## Detailed Content
 
 ### zshrc for [ZSH](http://zsh.org/)
 * Autocompletion configuration
