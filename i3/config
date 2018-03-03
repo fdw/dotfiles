@@ -120,27 +120,6 @@ client.unfocused				$dark  	$dark   $white	$white
 client.focused_inactive	$dark  	$dark   $white	$dark
 client.urgent						$orange	$orange $dark		$white
 
-## bar
-bar {
-	mode hide
-	hidden_state hide
-	modifier $mod
-	workspace_buttons yes
-	position top
-	status_command i3status
-
-	colors {
-		statusline	#999999
-		background	$black
-
-		# Colors						border	backgr.	text
-		focused_workspace		$white	$white	$black
-		active_workspace		#073642	#073642	#696f89
-		inactive_workspace	#073642	#073642	$white
-		urgent_workspace  	$orange	$orange	$dark
-	}
-}
-
 # Workspaces
 ## define workspaces
 set $WS1 1
@@ -195,6 +174,7 @@ bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
 
 # Autostart
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec --no-startup-id (clipster -d) &
 exec --no-startup-id (udiskie -NsF) &
 exec --no-startup-id nm-applet

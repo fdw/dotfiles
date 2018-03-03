@@ -37,7 +37,12 @@
 * Here, too, a sensible configuration
 * Solarized Dark theme
 * Nice window and session modes with helpful status bar hints and shortcuts
+* Polybar integration
 * Rofi integration
+
+### [Polybar](https://github.com/jaagr/polybar/)
+* Solarized Dark theme
+* Styled after Powerline
 
 ### [Rofi](https://davedavenport.github.io/rofi/)
 * Solarized
