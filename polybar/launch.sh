@@ -6,9 +6,10 @@ killall -q polybar
 # Wait until the processes have been shut down
 while pgrep -x polybar >/dev/null; do sleep 1; done
 
-# Launch bar1 and bar2
-MONITOR=eDP-1 polybar mybar &
-MONITOR=HDMI-1 polybar mybar &
-MONITOR=VGA-1 polybar mybar
-
-echo "Bars launched..."
+if type "xrandr"; then
+  for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
+    MONITOR=$m polybar --reload powerbar &
+  done
+else
+  polybar --reload powerbar &
+fi

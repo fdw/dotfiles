@@ -1,6 +1,7 @@
 [colors]
 background           = #002b36
 background-highlight = #073642
+secondary-content    = #586e75
 foreground           = #839496
 foreground-highlight = #93a1a1
 yellow               = #b58900
@@ -15,7 +16,7 @@ green                = #859900
 [global/wm]
 margin-bottom = 0
 
-[bar/mybar]
+[bar/powerbar]
 monitor = ${env:MONITOR}
 dpi = 192
 width = 100%
@@ -32,9 +33,8 @@ border-bottom-size = 0
 override-redirect = false
 font-0 = SauceCodePro Nerd Font:size=10;4
 
-
 modules-left = date arrowleft1 i3 arrowleft2 xwindow arrowleft3
-modules-right = arrowright7 player arrowright6 pulseaudio arrowright5 memory arrowright4 cpu arrowright3 temperature arrowright2 wlan arrowright1 battery arrowright0
+modules-right = arrowright3 player pulseaudio arrowright2 vpn wlan arrowright1 battery arrowright0
 
 tray-position = right
 tray-padding = 5
@@ -43,10 +43,13 @@ tray-maxsize = 32
 tray-transparent = false
 enable-ipc = false
 
-[module/xwindow]
-type = internal/xwindow
-label-maxlen = 65
-format-background = ${colors.green}
+[module/date]
+type = custom/script
+exec = date +"  %a, %d %b  %H:%M"
+scroll-up = light -A 5
+scroll-down = light -U 5
+interval = 60
+format-background = ${colors.yellow}
 format-foreground = ${colors.background}
 
 [module/i3]
@@ -55,15 +58,95 @@ index-sort = true
 pin-workspaces = true
 enable-scroll = true
 enable-click = true
-format = <label-state><label-mode>
-format-background = ${colors.cyan}
 
-label-focused = %index%
+format = <label-state> <label-mode>
+format-background = ${colors.cyan}
+label-focused = "%index% "
 label-focused-foreground = ${colors.background}
-label-unfocused = %index%
-label-urgent = %index%!
-label-visible = %index%
-label-separator = "  "
+label-unfocused = "%index% "
+label-unfocused-foreground = ${colors.secondary-content}
+label-urgent = "%index%! "
+label-urgent-foreground = ${colors.red}
+label-visible = "%index% "
+label-separator = " "
+label-mode-foreground = ${colors.background}
+
+[module/xwindow]
+type = internal/xwindow
+label-maxlen = 65
+format-background = ${colors.green}
+format-foreground = ${colors.background}
+
+[module/player]
+type = custom/script
+exec = ~/.config/polybar/player-mpris-simple.sh
+interval = 3
+click-left = playerctl play-pause
+format-background = ${colors.magenta}
+format-foreground = ${colors.background}
+
+[module/pulseaudio]
+type = internal/pulseaudio
+
+sink = bluez_sink.70_26_05_29_74_E5.a2dp_sink
+
+format-volume = <ramp-volume> <label-volume>
+label-muted = "  0%"
+label-volume = %percentage%%
+ramp-volume-0 = " "
+ramp-volume-1 = " "
+ramp-volume-2 = " "
+format-muted-background = ${colors.magenta}
+format-muted-foreground = ${colors.background}
+format-volume-background = ${colors.magenta}
+format-volume-foreground = ${colors.background}
+
+[module/vpn]
+type = custom/script
+exec = echo 
+exec-if = pgrep -x openvpn
+interval = 5
+
+format-foreground = ${colors.background}
+format-background = ${colors.orange}
+
+[module/wlan]
+type = internal/network
+interface = wlp2s0
+interval = 3
+
+label-connected = "  %essid%"
+label-disconnected = %ifname%
+format-connected-background = ${colors.orange}
+format-disconnected-background = ${colors.orange}
+format-connected-foreground = ${colors.background}
+format-disconnected-backgroforegroundund = ${colors.background}
+
+[module/battery]
+type = internal/battery
+battery = BAT0
+adapter = AC0
+full-at = 95
+
+format-discharging = " <ramp-capacity> <label-discharging>"
+label-discharging = "%time% (%percentage%%)"
+format-discharging-background = ${colors.red}
+format-discharging-foreground = ${colors.background}
+
+format-charging = ︇︇︆︌  <label-charging>
+label-charging = %percentage%%
+format-charging-background = ${colors.red}
+format-charging-foreground = ${colors.background}
+
+format-full = " "
+format-full-background = ${colors.red}
+format-full-foreground = ${colors.background}
+
+ramp-capacity-0 = " "
+ramp-capacity-1 = " "
+ramp-capacity-2 = " "
+ramp-capacity-3 = " "
+ramp-capacity-4 = " "
 
 [module/cpu]
 type = internal/cpu
@@ -79,6 +162,21 @@ label = "  %percentage_used%%"
 format-background = ${colors.violet}
 format-foreground = ${colors.background}
 
+[module/filesystem]
+type = internal/fs
+interval = 25
+
+mount-0 = /
+mount-1 = /run/media/fdw/Bellatrix
+
+format-mounted = "  <label-mounted>"
+label-mounted = %percentage_used%%
+format-mounted-background = ${colors.blue}
+format-mounted-foreground = ${colors.background}
+format-unmounted =
+format-unmounted-background = ${colors.blue}
+format-unmounted-foreground = ${colors.background}
+
 [module/temperature]
 type = internal/temperature
 thermal-zone = 0
@@ -90,65 +188,6 @@ ramp-0 = 
 ramp-1 = 
 ramp-2 = 
 format-background = ${colors.yellow}
-format-foreground = ${colors.background}
-
-[module/wlan]
-type = internal/network
-interface = wlp2s0
-interval = 3
-
-label-connected = "  %essid%"
-label-disconnected = %ifname%
-format-connected-background = ${colors.orange}
-format-disconnected-background = ${colors.orange}
-format-connected-foreground = ${colors.background}
-format-disconnected-backgroforegroundund = ${colors.background}
-
-[module/date]
-type = custom/script
-exec = date +"  %a, %d %b  %H:%M"
-scroll-up = light -A 5
-scroll-down = light -U 5
-interval = 60
-format-background = ${colors.yellow}
-format-foreground = ${colors.background}
-
-[module/pulseaudio]
-type = internal/pulseaudio
-
-format-volume = <ramp-volume> <label-volume>
-label-muted = "  0%"
-label-volume = %percentage%%
-ramp-volume-0 = " "
-ramp-volume-1 = " "
-ramp-volume-2 = " "
-format-muted-background = ${colors.blue}
-format-muted-foreground = ${colors.background}
-format-volume-background = ${colors.blue}
-format-volume-foreground = ${colors.background}
-
-[module/battery]
-type = internal/battery
-battery = BAT0
-adapter = AC0
-full-at = 95
-
-format-charging = ︇︇︆︌"  <label-charging>"
-format-discharging = "  <label-discharging>"
-format-full = " "
-format-discharging-background = ${colors.red}
-format-discharging-foreground = ${colors.background}
-format-charging-background = ${colors.red}
-format-charging-foreground = ${colors.background}
-format-full-background = ${colors.red}
-format-full-foreground = ${colors.background}
-
-[module/player]
-type = custom/script
-exec = ~/.config/polybar/player-mpris-simple.sh
-interval = 3
-click-left = playerctl play-pause
-format-background = ${colors.cyan}
 format-foreground = ${colors.background}
 
 [module/arrowleft1]
@@ -185,34 +224,11 @@ content-background = ${colors.orange}
 type = custom/text
 content = " "
 content-foreground = ${colors.orange}
-content-background = ${colors.yellow}
+content-background = ${colors.magenta}
 
 [module/arrowright3]
 type = custom/text
 content = " "
-content-foreground = ${colors.yellow}
-content-background = ${colors.magenta}
-
-[module/arrowright4]
-type = custom/text
-content = " "
 content-foreground = ${colors.magenta}
-content-background = ${colors.violet}
-
-[module/arrowright5]
-type = custom/text
-content = " "
-content-foreground = ${colors.violet}
-content-background = ${colors.blue}
-
-[module/arrowright6]
-type = custom/text
-content = " "
-content-foreground = ${colors.blue}
-content-background = ${colors.cyan}
-
-[module/arrowright7]
-type = custom/text
-content = " "
-content-foreground = ${colors.cyan}
 content-background = ${colors.background}
+
