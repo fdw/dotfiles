@@ -179,6 +179,8 @@ nnoremap <silent> [T :tfirst<CR>
 nnoremap <silent> ]T :tlast<CR>
 nnoremap <silent> [c g;
 nnoremap <silent> ]c g,
+nnoremap <silent> [p {<CR>
+nnoremap <silent> ]p }<CR>
 "" let Y behave like D
 nnoremap Y y$
 "" Use leader for system clipboard
