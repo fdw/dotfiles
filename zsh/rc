@@ -1,6 +1,3 @@
-# Prompt
-export TERM="xterm-256color"
-
 # Storage
 ## Cache dir
 ZSH_CACHE_DIR="${XDG_CACHE_HOME}/zsh"
@@ -133,4 +130,4 @@ export FZF_CTRL_T_COMMAND="${FZF_DEFAULT_COMMAND} --hidden"
 export FZF_CTRL_T_OPTS="--preview '(highlight -O ansi -l {} 2> /dev/null || cat {} || tree -C {}) 2> /dev/null | head -200'"
 #### autosuggestions
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=cyan"
-bindkey '^\n' autosuggest-execute
+#bindkey '^M' autosuggest-execute
