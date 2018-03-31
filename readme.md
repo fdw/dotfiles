@@ -70,9 +70,6 @@ This repo contains dotfiles for my workspace that is focused on terminal based a
 ### lesskey
 * Same keymappings as vim (optimized for German keyboards)
 
-### tmux
-* Sensible configuration
-
 ### tig
 * Nothing much
 
