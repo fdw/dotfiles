@@ -69,7 +69,6 @@ label-urgent = "%index%! "
 label-urgent-foreground = ${colors.red}
 label-visible = "%index% "
 label-separator = " "
-label-mode-foreground = ${colors.background}
 
 [module/xwindow]
 type = internal/xwindow
