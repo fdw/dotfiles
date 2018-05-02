@@ -2,7 +2,7 @@ define check_installed
   @command -v $(1) &> /dev/null || (echo "$(2) is not installed, but is necessary" && exit 10)
 endef
 
-install: install-zsh install-nvim install-git install-less install-dircolors install-i3 install-ranger install-tig install-htop install-rofi
+install: install-zsh install-nvim install-git install-less install-dircolors install-i3 install-ranger install-tig install-htop install-rofi install-urxvt
 
 install-aptitude:
 	@echo "Installing .aptitude/config"
@@ -79,6 +79,10 @@ install-rofi:
 install-tig:
 	@echo "Installing .tigrc"
 	@ln -fs ${CURDIR}/tigrc ${HOME}/.tigrc
+
+install-urxvt:
+	@echo "Installing .Xresources for URxvt"
+	@grep -q 'urxvt.xresources' ${HOME}/.Xresources || echo "#include \"${CURDIR}/urxvt.xresources\"" >> ${HOME}/.Xresources
 
 install-zsh: install-dircolors
 	@echo "Installing .zshrc"

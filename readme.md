@@ -15,6 +15,7 @@ This repo contains dotfiles for my workspace that is focused on terminal based a
 * [fzf](https://github.com/junegunn/fzf) with [ripgrep](https://github.com/BurntSushi/ripgrep) for file and history search
 * [Fast Syntax highlighting](https://github.com/zdharma/fast-syntax-highlighting)
 * [History-substring-search](https://github.com/zsh-users/zsh-history-substring-search)
+* [Autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
 * [Powerline9k Theme](https://github.com/bhilburn/powerlevel9k)
 * Some nice aliases
 	* `r` asks Autojump for the best directory and opens Ranger there
@@ -60,6 +61,10 @@ This repo contains dotfiles for my workspace that is focused on terminal based a
 * Some useful keybindings
 * Easy extraction and compression with [atool](http://www.nongnu.org/atool/)
 * [Devicons](https://github.com/alexanderjeurissen/ranger_devicons/)
+
+### URxvt
+* Solarized Dark theme
+* Separate escape code for ctrl+enter that works with zsh's autosuggestions
 
 ### gitconfig
 * Sensible configuration
