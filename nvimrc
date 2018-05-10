@@ -57,7 +57,7 @@ vnoremap <Space> zf
 
 " Plugins
 filetype off
-call plug#begin()
+call plug#begin('~/.local/share/nvim/plugged')
 "" FZF
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
