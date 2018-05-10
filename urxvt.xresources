@@ -38,7 +38,7 @@ URxvt.color14:                S_base1
 URxvt.color7:                 S_base2
 URxvt.color15:                S_base3
 URxvt.transparent:            false
-URxvt.font:                   xft:SauceCodePro Nerd Font Mono:size=11
+URxvt.font:                   xft:FuraCode Nerd Font Mono:size=11
 URxvt.keysym.Shift-Control-V: eval:paste_clipboard
 URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
 URxvt.saveLines:              20000

@@ -94,7 +94,7 @@ mode $meta_workspace
 
 # Appearence
 ## font
-font pango:FuraCode Nerd Font Medium 10
+font pango:FuraCode Nerd Font 10
 ## no title bars
 new_window 1pixel
 ## no unused borders
@@ -180,4 +180,4 @@ exec --no-startup-id (udiskie -NsF) &
 exec --no-startup-id (/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1) &
 exec --no-startup-id (nitrogen --restore) &
 exec --no-startup-id (nm-applet) &
-exec --no-startup-id (urxvtd)&
+exec --no-startup-id (urxvtd -f)&
