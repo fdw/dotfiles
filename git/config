@@ -14,6 +14,7 @@
 [push]
 	default = upstream
 [rebase]
+	stat = true
 	autostash = true
 	autosquash = true
 [rerere]
@@ -53,7 +54,8 @@
 	# shortcuts for stash
 	sl = stash list
 	sp = stash pop
-	ss = stash save
+	ss = stash push
+	ssu = stash push -k
 	sc = stash clear
 	fixup = commit --fixup
 	# use patient diff
