@@ -9,9 +9,9 @@ install-aptitude:
 	@mkdir -p ${HOME}/.aptitude
 	@ln -fs ${CURDIR}/aptitude ${HOME}/.aptitude/config
 
-install-dircolors: prepare-submodules
+install-dircolors:
 	@echo "Installing .dir_colors"
-	@ln -fs ${CURDIR}/dircolors-solarized/dircolors.ansi-universal ${HOME}/.dir_colors
+	@ln -fs ${CURDIR}/dircolors/dircolors.ansi-universal ${HOME}/.dir_colors
 
 install-git:
 	$(call check_installed,git,git)
@@ -58,7 +58,7 @@ install-polybar:
 	@ln -fs ${CURDIR}/polybar/launch.sh ${XDG_CONFIG_HOME}/polybar/launch.sh
 	@ln -fs ${CURDIR}/polybar/player-mpris-simple.sh ${XDG_CONFIG_HOME}/polybar/player-mpris-simple.sh
 
-install-ranger: prepare-submodules
+install-ranger:
 	$(call check_installed,ranger,ranger)
 	$(call check_installed,w3m,w3m)
 	$(call check_installed,aunpack,atools)
@@ -67,8 +67,8 @@ install-ranger: prepare-submodules
 	@ln -fs ${CURDIR}/ranger/rc.conf ${XDG_CONFIG_HOME}/ranger/rc.conf
 	@ln -fs ${CURDIR}/ranger/commands ${XDG_CONFIG_HOME}/ranger/commands.py
 	@ln -fs ${CURDIR}/ranger/rifle.conf ${XDG_CONFIG_HOME}/ranger/rifle.conf
-	@ln -fs ${CURDIR}/ranger_devicons/devicons.py ${XDG_CONFIG_HOME}/ranger/devicons.py
-	@ln -fs ${CURDIR}/ranger_devicons/devicons_linemode.py ${XDG_CONFIG_HOME}/ranger/plugins/devicons_linemode.py
+	@ln -fs ${CURDIR}/ranger/devicons/devicons.py ${XDG_CONFIG_HOME}/ranger/devicons.py
+	@ln -fs ${CURDIR}/ranger/devicons/devicons_linemode.py ${XDG_CONFIG_HOME}/ranger/plugins/devicons_linemode.py
 
 install-rofi:
 	$(call check_installed,rofi,rofi)
@@ -97,9 +97,3 @@ install-zsh: install-dircolors
 update:
 	@echo "Updating"
 	@git pull --rebase origin master
-	@git submodule update
-
-prepare-submodules:
-	$(call check_install,git,git)
-	git submodule init
-	git submodule update
