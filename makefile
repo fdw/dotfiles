@@ -40,6 +40,16 @@ install-less:
 	@ln -fs ${CURDIR}/lesskey ${HOME}/.lesskey
 	@lesskey ${HOME}/.lesskey
 
+install-neomutt:
+	$(call check_installed,neomutt,neomutt)
+	$(call check_installed,msmtp,msmtp)
+	@echo "Installing Neomutt rc"
+	@mkdir -p "${XDG_CONFIG_HOME}/neomutt"
+	@ln -fs "${CURDIR}/neomutt/neomuttrc" ${XDG_CONFIG_HOME}/neomutt/neomuttrc
+	@ln -fs "${CURDIR}/neomutt/gpg.rc" ${XDG_CONFIG_HOME}/neomutt/gpg.rc
+	@ln -fs "${CURDIR}/neomutt/colors/mutt-colors-solarized-dark-16.muttrc" ${XDG_CONFIG_HOME}/neomutt/theme.rc
+	@echo "Remember to put your information in ${CDG_CONFIG_HOME}/neomutt/account.rc"
+
 install-nvim:
 	$(call check_installed,nvim,neovim)
 	$(call check_installed,fzf,fzf)

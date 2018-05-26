@@ -62,6 +62,10 @@ This repo contains dotfiles for my workspace that is focused on terminal based a
 * Easy extraction and compression with [atool](http://www.nongnu.org/atool/)
 * [Devicons](https://github.com/alexanderjeurissen/ranger_devicons/)
 
+### [neomutt](https://neomutt.org/)
+* Solarized, of course
+* Vim-inspired shortcuts
+
 ### URxvt
 * Solarized Dark theme
 * Separate escape code for ctrl+enter that works with zsh's autosuggestions
