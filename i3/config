@@ -19,6 +19,7 @@ mode $termmenu
 	bindsym r exec "$term -e ranger"; mode "default"
 	bindsym v exec "$term -e nvim"; mode "default"
 	bindsym Return exec $term; mode "default"
+	bindsym Escape mode "default"
 }
 
 # Power menu
