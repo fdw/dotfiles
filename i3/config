@@ -9,6 +9,7 @@ bindsym $mod+space exec "rofi -show combi"
 bindsym $mod+c exec "roficlip"
 bindsym $mod+p exec "rofi-pass"
 bindsym $mod+e exec "rofimoji"
+bindsym $mod+m exec "rofi -show calc -modi calc -no-show-match -no-sort"
 
 # Terminal menu
 set $termmenu "  [t]erminal - n[v]im - [r]anger  "

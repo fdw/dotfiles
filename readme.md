@@ -101,3 +101,4 @@ This repo contains dotfiles for my workspace that is focused on terminal based a
 	* [clipster](https://github.com/mrichar1/clipster) & [roficlip](https://github.com/gilbertw1/roficlip)
 	* [rofi-pass](https://github.com/carnager/rofi-pass)
 	* [rofimoji](https://github.com/fdw/rofimoji)
+	* [rofi-calc](https://github.com/svenstaro/rofi-calc)
