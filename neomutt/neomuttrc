@@ -40,20 +40,20 @@ bind attach,index,pager   \CU  previous-page
 bind pager,index          d    noop
 bind pager,index          dd   delete-message
 bind browser,pager,index  N    search-opposite
-bind pager,index          dT   delete-thread
-bind pager,index          dt   delete-subthread
-bind pager,index          gt   next-thread
-bind pager,index          gT   previous-thread
+bind pager,index          r    noop
+bind pager,index          rr   reply
+bind pager,index          rg   group-reply
 bind index                za   collapse-thread
 bind index                zA   collapse-all
 ### Index
 bind index                e    mail
-bind index                r    noop
-bind index                rr   reply
-bind index                rg   group-reply
 bind index                du   undelete-message
 bind index                m    save-message
 bind index                \t   next-unread
+bind index                dT   delete-thread
+bind index                dt   delete-subthread
+bind index                gt   next-thread
+bind index                gT   previous-thread
 ### Sidebar
 bind index,pager          \Cp  sidebar-prev
 bind index,pager          \Cn  sidebar-next
