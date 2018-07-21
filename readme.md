@@ -96,6 +96,7 @@ This repo contains dotfiles for my workspace that is focused on terminal based a
 # Helpful Programs
 * [fzf](https://github.com/junegunn/fzf)
 * [ripgrep](https://github.com/BurntSushi/ripgrep)
+* [fd](https://github.com/sharkdp/fd)
 * [rofi](https://github.com/DaveDavenport/rofi)
 	* [clipster](https://github.com/mrichar1/clipster) & [roficlip](https://github.com/gilbertw1/roficlip)
 	* [rofi-pass](https://github.com/carnager/rofi-pass)
