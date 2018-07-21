@@ -96,6 +96,8 @@ POWERLEVEL9K_SHORTEN_STRATEGY="truncate_from_right"
 POWERLEVEL9K_STATUS_VERBOSE=false
 #### oh-my-zsh
 DISABLE_AUTO_UPDATE="true"
+#### per-directory-history
+HISTORY_BASE=${ZSH_DATA_DIR}/histories
 
 ### Loading
 ZGEN_HOME=${ZSH_DATA_DIR}/zgen
@@ -109,6 +111,7 @@ if ! zgen saved; then
 	zgen oh-my-zsh
 	zgen oh-my-zsh plugins/history-substring-search
 	zgen oh-my-zsh plugins/pass
+	zgen oh-my-zsh plugins/per-directory-history
 	# fzf
 	zgen load junegunn/fzf shell/completion.zsh
 	zgen load junegunn/fzf shell/key-bindings.zsh
