@@ -117,6 +117,8 @@ if ! zgen saved; then
 	zgen load junegunn/fzf shell/key-bindings.zsh
 	# autosuggestions
 	zgen load zsh-users/zsh-autosuggestions
+	# completion
+	zgen load zsh-users/zsh-completions
 	# local
 	zgen load ${ZSH_DATA_DIR}/aliases.zsh
 	zgen save
