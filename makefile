@@ -35,6 +35,11 @@ install-i3: install-polybar
 	@mkdir -p ${XDG_CONFIG_HOME}/i3/
 	@ln -fs ${CURDIR}/i3/config ${XDG_CONFIG_HOME}/i3/config
 
+install-kitty:
+	@echo "Installing kitty config"
+	@mkdir -p "${XDG_CONFIG_HOME}/kitty"
+	@ln -fs ${CURDIR}/kitty.conf ${XDG_CONFIG_HOME}/kitty/kitty.conf
+
 install-less:
 	@echo "Installing .lesskey"
 	@ln -fs ${CURDIR}/lesskey ${HOME}/.lesskey
