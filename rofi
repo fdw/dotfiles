@@ -6,3 +6,4 @@ rofi.sidebar-mode: true
 rofi.fuzzy: true
 rofi.color-enabled: true
 rofi.theme: solarized_alternate
+rofi.terminal: kitty

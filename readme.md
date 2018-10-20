@@ -66,9 +66,10 @@ This repo contains dotfiles for my workspace that is focused on terminal based a
 * Solarized, of course
 * Vim-inspired shortcuts
 
-### URxvt
+### [kitty](https://github.com/kovidgoyal/kitty)
 * Solarized Dark theme
 * Separate escape code for ctrl+enter that works with zsh's autosuggestions
+* Supports ranger's image previews
 
 ### gitconfig
 * Sensible configuration

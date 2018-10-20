@@ -1,7 +1,7 @@
 # Basics
 set $mod Mod4
 set $alt Mod1
-set $term urxvtc
+set $term kitty
 
 bindsym $mod+x kill
 bindsym $mod+Return exec $term
@@ -183,4 +183,4 @@ exec --no-startup-id (udiskie -NsF) &
 exec --no-startup-id (/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1) &
 exec --no-startup-id (nitrogen --restore) &
 exec --no-startup-id (nm-applet) &
-exec --no-startup-id (urxvtd -f)&
+exec --no-startup-id (kitty -i)&
