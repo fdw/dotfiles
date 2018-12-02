@@ -61,6 +61,7 @@ This repo contains dotfiles for my workspace that is focused on terminal based a
 * Some useful keybindings
 * Easy extraction and compression with [atool](http://www.nongnu.org/atool/)
 * [Devicons](https://github.com/alexanderjeurissen/ranger_devicons/)
+* [Autojump-Support](https://github.com/fdw/ranger_autojump)
 
 ### [neomutt](https://neomutt.org/)
 * Solarized, of course
