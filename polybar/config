@@ -33,7 +33,7 @@ border-bottom-size = 0
 override-redirect = false
 font-0 = FuraCode Nerd Font:size=10;4
 
-modules-left = date arrowleft1 i3 arrowleft2 xwindow arrowleft3
+modules-left = date arrowleft1 i3 arrowleft2
 modules-right = arrowright3 player pulseaudio arrowright2 vpn wlan arrowright1 battery arrowright0
 
 tray-position = right
@@ -199,12 +199,6 @@ content-background = ${colors.cyan}
 type = custom/text
 content = " "
 content-foreground = ${colors.cyan}
-content-background = ${colors.green}
-
-[module/arrowleft3]
-type = custom/text
-content = " "
-content-foreground = ${colors.green}
 content-background = ${colors.background}
 
 [module/arrowright0]
