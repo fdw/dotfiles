@@ -12,13 +12,13 @@ This repo contains dotfiles for my workspace that is focused on terminal based a
 * Autocompletion configuration
 * Plugins organized with [zgen](https://github.com/tarjoilija/zgen)
 * [Autojump](https://github.com/joelthelion/autojump)
+	* `r` asks Autojump for the best directory and opens Ranger there, thanks to [ranger+autojump](https://github.com/fdw/ranger_autojump)
 * [fzf](https://github.com/junegunn/fzf) with [ripgrep](https://github.com/BurntSushi/ripgrep) for file and history search
 * [Fast Syntax highlighting](https://github.com/zdharma/fast-syntax-highlighting)
 * [History-substring-search](https://github.com/zsh-users/zsh-history-substring-search)
 * [Autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
 * [Powerline9k Theme](https://github.com/bhilburn/powerlevel9k)
 * Some nice aliases
-	* `r` asks Autojump for the best directory and opens Ranger there
 	* `g` is short for git
 	* `v` opens Neovim
 * Supports [Direnv](https://github.com/direnv/direnv)
