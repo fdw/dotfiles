@@ -46,6 +46,7 @@
 	nb = checkout -b
 	pf = push --force
 	rb = rebase
+	rba = rebase --abort
 	rbc = rebase --continue
 	rbs = rebase --skip
 	rbi = rebase --interactive
