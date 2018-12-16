@@ -3,8 +3,11 @@ set $mod Mod4
 set $alt Mod1
 set $term kitty
 
+# Shortcuts
+## generic
 bindsym $mod+x kill
 bindsym $mod+Return exec $term
+## rofi
 bindsym $mod+space exec "rofi -show combi"
 bindsym $mod+c exec "roficlip"
 bindsym $mod+p exec "rofi-pass"
@@ -164,7 +167,7 @@ bindsym XF86AudioPrev exec playerctl previous
 bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
 #print key
-bindsym Print exec scrot -s
+bindsym --release Print exec "scrot"
 
 # Autostart
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
