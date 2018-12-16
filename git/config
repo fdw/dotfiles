@@ -23,8 +23,6 @@
 	ui = auto
 [help]
 	autocorrect = 1
-[diff]
-	tool = meld
 [alias]
 	# shortcuts
 	a = add
