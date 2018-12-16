@@ -100,8 +100,8 @@ DISABLE_AUTO_UPDATE="true"
 HISTORY_BASE=${ZSH_DATA_DIR}/histories
 
 ### Loading
-ZGEN_HOME=${ZSH_DATA_DIR}/zgen
-source ${ZGEN_HOME}/zgen.zsh
+ZGEN_DIR=${ZSH_DATA_DIR}/plugins
+source ${ZGEN_DIR}/zgen/zgen.zsh
 
 if ! zgen saved; then
 	zgen load bhilburn/powerlevel9k powerlevel9k
