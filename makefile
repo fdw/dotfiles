@@ -13,6 +13,7 @@ install-dircolors:
 
 install-git:
 	$(call check_installed,git,git)
+	$(call check_installed,diff-so-fancy,diff-so-fancy)
 	@echo "Installing .gitconfig"
 	@mkdir -p "$(XDG_CONFIG_HOME)/git"
 	@ln -fs "${CURDIR}/git/config" "$(XDG_CONFIG_HOME)/git/config"
