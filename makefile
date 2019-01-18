@@ -7,11 +7,6 @@ XDG_DATA_HOME ?= "${HOME}/.local/share"
 
 install: install-zsh install-nvim install-git install-less install-dircolors install-i3 install-ranger install-tig install-htop install-rofi install-kitty
 
-install-aptitude:
-	@echo "Installing .aptitude/config"
-	@mkdir -p ${HOME}/.aptitude
-	@ln -fs ${CURDIR}/aptitude ${HOME}/.aptitude/config
-
 install-dircolors:
 	@echo "Installing .dir_colors"
 	@ln -fs "${CURDIR}/dircolors/dircolors.ansi-universal" "${HOME}/.dir_colors"
