@@ -104,11 +104,14 @@ ZGEN_DIR=${ZSH_DATA_DIR}/plugins
 source ${ZGEN_DIR}/zgen/zgen.zsh
 
 if ! zgen saved; then
+	# UI
 	zgen load bhilburn/powerlevel9k powerlevel9k
-	zgen load /usr/share/autojump/autojump.zsh 
-	# ranger + autojump
-	zgen load fdw/ranger_autojump
 	zgen load zdharma/fast-syntax-highlighting
+	# autosuggestions
+	zgen load zsh-users/zsh-autosuggestions
+	# autojump
+	zgen load /usr/share/autojump/autojump.zsh 
+	zgen load fdw/ranger_autojump
 	# oh-my-zsh
 	zgen oh-my-zsh
 	zgen oh-my-zsh plugins/history-substring-search
@@ -117,12 +120,11 @@ if ! zgen saved; then
 	# fzf
 	zgen load junegunn/fzf shell/completion.zsh
 	zgen load junegunn/fzf shell/key-bindings.zsh
-	# autosuggestions
-	zgen load zsh-users/zsh-autosuggestions
 	# completion
 	zgen load zsh-users/zsh-completions
 	# local
 	zgen load ${ZSH_DATA_DIR}/aliases.zsh
+	zgen load ${ZSH_DATA_DIR}/completions
 	zgen save
 fi
 
