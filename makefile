@@ -94,6 +94,12 @@ install-tig:
 	@echo "Installing .tigrc"
 	@ln -fs "${CURDIR}/tigrc" "${HOME}/.tigrc"
 
+install-yay:
+	$(call check_installed,yay,yay)
+	@echo "Installing yay config"
+	@mkdir -p "$(XDG_CONFIG_HOME)/yay"
+	@ln -fs "${CURDIR}/yay.json" "$(XDG_CONFIG_HOME)/yay/config.json"
+
 install-zsh: install-dircolors
 	@echo "Installing .zshrc"
 	@ln -fs "${CURDIR}/zsh/rc" "${HOME}/.zshrc"
