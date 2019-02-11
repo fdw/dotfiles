@@ -30,6 +30,7 @@ install-i3: install-polybar
 	$(call check_installed,rofi-pass,rofi-pass)
 	$(call check_installed,clipster,clipster)
 	$(call check_installed,roficlip,roficlip)
+	$(call check_installed,xautolock,xautolock)
 	@echo "Installing .config/i3/config"
 	@mkdir -p "$(XDG_CONFIG_HOME)/i3/"
 	@ln -fs "${CURDIR}/i3/config" "$(XDG_CONFIG_HOME)/i3/config"
