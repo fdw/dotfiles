@@ -108,7 +108,7 @@ install-zsh: install-dircolors
 	@ln -fs "${CURDIR}/zsh/env" "${HOME}/.zshenv"
 	@if [ ! -d "$(XDG_DATA_HOME)/zsh/" ]; then \
 		mkdir "$(XDG_DATA_HOME)/zsh" ; \
-		git clone https://github.com/tarjoilija/zgen.git "$(XDG_DATA_HOME)/zsh/zgen/plugins/"; \
+		git clone https://github.com/tarjoilija/zgen.git "$(XDG_DATA_HOME)/zsh/zgen/"; \
 	fi
 	@ln -fs "${CURDIR}/zsh/aliases.zsh" "$(XDG_DATA_HOME)/zsh/aliases.zsh"
 

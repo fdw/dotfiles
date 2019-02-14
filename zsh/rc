@@ -101,7 +101,7 @@ HISTORY_BASE=${ZSH_DATA_DIR}/histories
 
 ### Loading
 ZGEN_DIR=${ZSH_DATA_DIR}/plugins
-source ${ZGEN_DIR}/zgen/zgen.zsh
+source ${ZSH_DATA_DIR}/zgen/zgen.zsh
 
 if ! zgen saved; then
 	# UI
