@@ -177,4 +177,3 @@ exec --no-startup-id (/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1)
 exec --no-startup-id (nitrogen --restore) &
 exec --no-startup-id (nm-applet) &
 exec --no-startup-id (kitty -i)&
-exec --no-startup-id (xautolock -time 5 -corners 0-00 -locker "i3lock -c 000000" -cornerdelay 0 -detectsleep -secure ) &
