@@ -7,6 +7,8 @@
 	whitespace = -trailing-space,-space-before-tab,-indent-with-non-tab
 	autocrlf = input
 	excludesfile = /home/fdw/.gitignore
+[protocol]
+	version = 2
 [fetch]
 	prune = true
 [pull]
