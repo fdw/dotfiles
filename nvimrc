@@ -73,9 +73,10 @@ Plug 'nathanaelkane/vim-indent-guides'
 "" Functionality
 Plug 'justinmk/vim-sneak'
 Plug 'tpope/vim-repeat'
-Plug 'terryma/vim-expand-region'
 Plug 'junegunn/vim-easy-align'
 Plug 'pbrisbin/vim-mkdir'
+Plug 'tpope/vim-sleuth'
+Plug 'wellle/targets.vim'
 "" Filetypes
 Plug 'elzr/vim-json', {'for': 'json'}
 

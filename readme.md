@@ -35,8 +35,9 @@ This repo contains dotfiles for my workspace that is focused on terminal based a
 * [Airline](https://github.com/bling/vim-airline)
 * [Bufferline](https://github.com/bling/vim-bufferline)
 * [Indent Guidelines](https://github.com/nathanaelkane/vim-indent-guides)
-* [Expand region](https://github.com/terryma/vim-expand-region)
+* [Sleuth.vim](https://github.com/tpope/vim-sleuth)
 * [EasyAlign](https://github.com/junegunn/vim-easy-align)
+* [targets.vim](https://github.com/wellle/targets.vim)
 * [Solarized Dark theme](https://github.com/lifepillar/vim-solarized8)
 * Neovim is set as the default editor
 
