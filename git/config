@@ -38,10 +38,10 @@
 	# helper functions
 	st = status -sb
 	aa = add -A
-	am = commit --amend
+	ai = add --interactive
 	ap = add --patch
 	cim = commit --message
-	co = checkout
+	ca = commit --amend
 	ds = diff --staged
 	nb = checkout -b
 	pf = push --force
@@ -69,7 +69,7 @@
 	assume = update-index --assume-unchanged
 	unassume = update-index --no-assume-unchanged
 	assumed = "!git ls-files -v | grep ^h | cut -c 3-"
-	# set upstream branch
+	# create upstream branch and push
 	pu = !git push -u origin $(git rev-parse --abbrev-ref HEAD)
 	# Remove old (merged) branches
 	cb = "!git branch --merged | grep  -v '\\*\\|master\\|develop' | xargs -r -n 1 git branch -d"
