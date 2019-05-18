@@ -5,7 +5,7 @@ endef
 XDG_CONFIG_HOME ?= "${HOME}/.config"
 XDG_DATA_HOME ?= "${HOME}/.local/share"
 
-install: install-zsh install-nvim install-git install-less install-dircolors install-i3 install-ranger install-tig install-htop install-rofi install-kitty
+install: install-profile install-zsh install-nvim install-git install-less install-dircolors install-i3 install-polybar install-ranger install-tig install-htop install-rofi install-kitty
 
 install-dircolors:
 	@echo "Installing .dir_colors"
@@ -31,7 +31,7 @@ install-i3: install-polybar
 	$(call check_installed,clipster,clipster)
 	$(call check_installed,roficlip,roficlip)
 	$(call check_installed,xautolock,xautolock)
-	@echo "Installing .config/i3/config"
+	@echo "Installing i3 config"
 	@mkdir -p "$(XDG_CONFIG_HOME)/i3/"
 	@ln -fs "${CURDIR}/i3/config" "$(XDG_CONFIG_HOME)/i3/config"
 
@@ -68,10 +68,15 @@ install-nvim:
 
 install-polybar:
 	$(call check_installed,polybar,polybar)
+	@echo "Installing polybar"
 	@mkdir -p "$(XDG_CONFIG_HOME)/polybar/"
 	@ln -fs "${CURDIR}/polybar/config" "$(XDG_CONFIG_HOME)/polybar/config"
 	@ln -fs "${CURDIR}/polybar/launch.sh" "$(XDG_CONFIG_HOME)/polybar/launch.sh"
 	@ln -fs "${CURDIR}/polybar/player-mpris-simple.sh" "$(XDG_CONFIG_HOME)/polybar/player-mpris-simple.sh"
+
+install-profile:
+	@echo "Installing .profile"
+	@ln -ffs "${CURDIR}/profile" "${HOME}/.profile"
 
 install-ranger:
 	$(call check_installed,ranger,ranger)
