@@ -89,7 +89,7 @@ install-ranger:
 	@ln -fs "${CURDIR}/ranger/rifle.conf" "$(XDG_CONFIG_HOME)/ranger/rifle.conf"
 	@ln -fs "${CURDIR}/ranger/autojump/autojump.py" "$(XDG_CONFIG_HOME)/ranger/plugins/autojump.py"
 	@ln -fs "${CURDIR}/ranger/devicons/devicons.py" "$(XDG_CONFIG_HOME)/ranger/plugins/devicons.py"
-	@ln -fs "${CURDIR}/ranger/devicons/devicons_linemode.py" "$(XDG_CONFIG_HOME)/ranger/plugins/devicons_linemode.py"
+	@ln -fs "${CURDIR}/ranger/devicons/__init__.py" "$(XDG_CONFIG_HOME)/ranger/plugins/devicons_linemode.py"
 
 install-rofi:
 	$(call check_installed,rofi,rofi)
