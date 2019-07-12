@@ -4,6 +4,5 @@ rofi.combi-modi: drun,window,ssh
 rofi.font: FuraCode Nerd Font 10
 rofi.sidebar-mode: true
 rofi.fuzzy: true
-rofi.color-enabled: true
 rofi.theme: solarized_alternate
 rofi.terminal: kitty

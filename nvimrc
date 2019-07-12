@@ -219,9 +219,6 @@ nnoremap <F1> :Buffers<CR>
 "" Opening files
 nnoremap <F5> :Files ~<CR>
 nnoremap <F6> :Files .<CR>
-"" Expand region
-vmap v <Plug>(expand_region_expand)
-vmap <C-v> <Plug>(expand_region_shrink)
 "" Easy alignment
 vmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)

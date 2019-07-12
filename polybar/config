@@ -40,7 +40,6 @@ tray-position = right
 tray-padding = 5
 tray-detached = false
 tray-maxsize = 32
-tray-transparent = false
 enable-ipc = false
 
 [module/date]
