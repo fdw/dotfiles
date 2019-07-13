@@ -54,6 +54,8 @@ install-neomutt:
 	@ln -fs "${CURDIR}/neomutt/gpg.rc" "$(XDG_CONFIG_HOME)/neomutt/gpg.rc"
 	@ln -fs "${CURDIR}/neomutt/colors/mutt-colors-solarized-dark-16.muttrc" "$(XDG_CONFIG_HOME)/neomutt/theme.rc"
 	@echo "Remember to put your information in $(XDG_CONFIG_HOME)/neomutt/account.rc"
+	@mkdir -p "${XDG_CONFIG_HOME}/khard"
+	@ln -fs "${CURDIR}/neomutt/khard.conf" "${XDG_CONFIG_HOME}/khard/khard.conf"
 
 install-nvim:
 	$(call check_installed,nvim,neovim)

@@ -26,6 +26,10 @@ set sidebar_indent_string="  "
 set sort=threads
 set sort_aux=reverse-date-sent
 
+set query_command = "echo %s | xargs khard email --parsable --"
+bind editor <Tab> complete-query
+bind editor ^T    complete
+
 ## Key bindings
 bind attach,browser,index g    noop
 bind attach,browser,index gg   first-entry

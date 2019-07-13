@@ -67,6 +67,7 @@ This repo contains dotfiles for my workspace that is focused on terminal based a
 ### [neomutt](https://neomutt.org/)
 * Solarized, of course
 * Vim-inspired shortcuts
+* Set up to use [khard](https://github.com/scheibler/khard) as an address book
 
 ### [kitty](https://github.com/kovidgoyal/kitty)
 * Solarized Dark theme
