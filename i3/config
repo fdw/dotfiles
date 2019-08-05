@@ -37,7 +37,7 @@ mode $sysmenu
 	bindsym b exec --no-startup-id "systemctl reboot"; mode "default"
 	bindsym h exec --no-startup-id i3exit hibernate, mode "default"
 	bindsym s exec --no-startup-id "systemctl suspend"; mode "default"
-	bindsym l exec --no-startup-id "i3lock -c 000000"; mode "default"
+	bindsym l exec --no-startup-id "loginctl lock-session"; mode "default"
 	bindsym Return mode "default"
 	bindsym Escape mode "default"
 }
@@ -178,3 +178,5 @@ exec --no-startup-id (/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1)
 exec --no-startup-id (nitrogen --restore) &
 exec --no-startup-id (nm-applet) &
 exec --no-startup-id (kitty -i)&
+exec --no-startup-id (xss-lock -l -n /usr/local/bin/dim-screen.sh -- i3lock -n -c 000000)&
+exec --no-startup-id (xset s 180 120)
