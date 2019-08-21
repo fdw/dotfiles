@@ -73,3 +73,8 @@
 	pu = !git push -u origin $(git rev-parse --abbrev-ref HEAD)
 	# Remove old (merged) branches
 	cb = "!git branch --merged | grep  -v '\\*\\|master\\|develop' | xargs -r -n 1 git branch -d"
+[filter "lfs"]
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
