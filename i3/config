@@ -11,7 +11,7 @@ bindsym $mod+Return exec $term
 bindsym $mod+space exec "rofi -show combi"
 bindsym $mod+c exec "roficlip"
 bindsym $mod+p exec "rofi-pass"
-bindsym $mod+e exec "rofimoji"
+bindsym $mod+e exec "rofimoji -s neutral --rofi-args='-columns 3'"
 bindsym $mod+m exec "rofi -show calc -modi calc -no-show-match -no-sort"
 
 # Terminal menu
