@@ -37,6 +37,10 @@ install-i3: install-polybar
 	@mkdir -p "$(XDG_CONFIG_HOME)/i3/"
 	@ln -fs "${CURDIR}/i3/config" "$(XDG_CONFIG_HOME)/i3/config"
 
+install-intellij:
+	@echo "Installing ideavimrc"
+	@ln -fs "${CURDIR}/nvim/ideavimrc" "${HOME}/.ideavimrc"
+
 install-kitty:
 	@echo "Installing kitty config"
 	@mkdir -p "$(XDG_CONFIG_HOME)/kitty"
@@ -65,7 +69,11 @@ install-nvim:
 	$(call check_installed,rg,ripgrep)
 	@echo "Installing Neovim initrc"
 	@mkdir -p "$(XDG_CONFIG_HOME)/nvim"
-	@ln -fs "${CURDIR}/nvimrc" "$(XDG_CONFIG_HOME)/nvim/init.vim"
+	@ln -fs "${CURDIR}/nvim/init.vim" "$(XDG_CONFIG_HOME)/nvim/init.vim"
+	@ln -fs "${CURDIR}/nvim/common.vim" "$(XDG_CONFIG_HOME)/nvim/common.vim"
+	@ln -fs "${CURDIR}/nvim/keys.vim" "$(XDG_CONFIG_HOME)/nvim/keys.vim"
+	@ln -fs "${CURDIR}/nvim/nvim.vim" "$(XDG_CONFIG_HOME)/nvim/nvim.vim"
+	@ln -fs "${CURDIR}/nvim/plugins.vim" "$(XDG_CONFIG_HOME)/nvim/plugins.vim"
 	@if [ ! -f "$(XDG_DATA_HOME)/nvim/site/autoload/plug.vim" ]; then \
 		curl -fLo "$(XDG_DATA_HOME)/nvim/site/autoload/plug.vim" --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim; \
 	fi
