@@ -16,7 +16,7 @@
 	"answerupgrade": "",
 	"gitbin": "git",
 	"gpgbin": "gpg",
-	"gpgflags": "--keyserver pgp.mit.edu",
+	"gpgflags": "--keyserver hkp://pool.sks-keyservers.net",
 	"mflags": "",
 	"sortby": "votes",
 	"gitflags": "",
