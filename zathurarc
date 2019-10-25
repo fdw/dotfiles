@@ -29,3 +29,5 @@ set highlight-color             "#657b83"
 set highlight-active-color      "#268bd2"
 
 set font "FuraCode Nerd Font Mono 11"
+
+set selection-clipboard clipboard
