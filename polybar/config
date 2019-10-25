@@ -1,3 +1,6 @@
+[settings]
+screenchange-reload = true
+
 [colors]
 background           = #002b36
 background-highlight = #073642
