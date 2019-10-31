@@ -17,7 +17,7 @@ This repo contains dotfiles for my workspace that is focused on terminal based a
 * [Fast Syntax highlighting](https://github.com/zdharma/fast-syntax-highlighting)
 * [History-substring-search](https://github.com/zsh-users/zsh-history-substring-search)
 * [Autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
-* [Powerline9k Theme](https://github.com/bhilburn/powerlevel9k)
+* [Powerline10k Theme](https://github.com/romkatv/powerlevel10k)
 * Some nice aliases
 	* `g` is short for git
 	* `v` opens Neovim

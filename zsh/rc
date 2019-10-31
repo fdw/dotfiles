@@ -1,9 +1,13 @@
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # Storage
 ## Cache dir
-ZSH_CACHE_DIR="${XDG_CACHE_HOME}/zsh"
+ZSH_CACHE_DIR="${XDG_CACHE_HOME:-$HOME/.cache}/zsh"
 mkdir -p ${ZSH_CACHE_DIR}
 ## Data dir
-ZSH_DATA_DIR="${XDG_DATA_HOME}/zsh"
+ZSH_DATA_DIR="${XDG_DATA_HOME:-$HOME/.local/share}/zsh"
 mkdir -p ${ZSH_DATA_DIR}
 
 # History
@@ -86,14 +90,7 @@ eval "$(direnv hook zsh)"
 ## Zgen
 ### Config (pre)
 #### Prompt
-POWERLEVEL9K_MODE='awesome-fontconfig'
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(status context dir pyenv vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(root_indicator load time)
 DEFAULT_USER=fdw
-POWERLEVEL9K_SHORTEN_DIR_LENGTH=1
-POWERLEVEL9K_SHORTEN_DELIMITER=""
-POWERLEVEL9K_SHORTEN_STRATEGY="truncate_from_right"
-POWERLEVEL9K_STATUS_VERBOSE=false
 #### oh-my-zsh
 DISABLE_AUTO_UPDATE="true"
 #### per-directory-history
@@ -105,7 +102,7 @@ source ${ZSH_DATA_DIR}/zgen/zgen.zsh
 
 if ! zgen saved; then
 	# UI
-	zgen load bhilburn/powerlevel9k powerlevel9k
+	zgen load romkatv/powerlevel10k powerlevel10k
 	zgen load zdharma/fast-syntax-highlighting
 	# autosuggestions
 	zgen load zsh-users/zsh-autosuggestions
@@ -129,6 +126,8 @@ if ! zgen saved; then
 fi
 
 ### Config (post)
+#### P10K
+source ${ZSH_DATA_DIR}/p10k.zsh
 #### History substring search
 zmodload zsh/terminfo
 bindkey "$terminfo[kcuu1]" history-substring-search-up
@@ -141,3 +140,5 @@ export FZF_CTRL_T_OPTS="--preview '(highlight -O ansi -l {} 2> /dev/null || cat 
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=cyan"
 bindkey '^[<CR>' autosuggest-execute
 bindkey '^[_KreX^[\' autosuggest-execute
+
+(( ! ${+functions[p10k-instant-prompt-finalize]} )) || p10k-instant-prompt-finalize

@@ -134,6 +134,7 @@ install-zsh: install-dircolors
 		git clone https://github.com/tarjoilija/zgen.git "$(XDG_DATA_HOME)/zsh/zgen/"; \
 	fi
 	@ln -fs "${CURDIR}/zsh/aliases.zsh" "$(XDG_DATA_HOME)/zsh/aliases.zsh"
+	@ln -fs "${CURDIR}/zsh/p10k.zsh" "$(XDG_DATA_HOME)/zsh/p10k.zsh"
 
 update:
 	@echo "Updating"
