@@ -47,6 +47,10 @@ let g:airline_theme = 'solarized'
 let g:airline_inactive_collapse = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
+let g:airline_left_sep = ''
+let g:airline_right_sep = ''
+let g:airline_left_alt_sep = ''
+let g:airline_right_alt_sep = ''
 "" Startify
 silent !mkdir ~/.cache/vim/sessions > /dev/null 2>&1
 let g:startify_custom_indices = map(range(1,100), 'string(v:val)')
