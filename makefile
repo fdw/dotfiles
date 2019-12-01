@@ -37,7 +37,7 @@ install-i3: install-polybar
 	@mkdir -p "$(XDG_CONFIG_HOME)/i3/"
 	@ln -fs "${CURDIR}/i3/config" "$(XDG_CONFIG_HOME)/i3/config"
 
-install-intellij:
+install-intellij: install-nvim
 	@echo "Installing ideavimrc"
 	@ln -fs "${CURDIR}/nvim/ideavimrc" "${HOME}/.ideavimrc"
 
