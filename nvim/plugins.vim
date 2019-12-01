@@ -32,14 +32,54 @@ filetype plugin indent on
 
 " Plugin configuration
 "" fzf
+autocmd! FileType fzf
+autocmd  FileType fzf set noshowmode noruler nonu
+let g:fzf_colors = {
+  \ 'fg':      ['fg', 'Normal'],
+  \ 'bg':      ['bg', 'Normal'],
+  \ 'hl':      ['fg', 'Comment'],
+  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+  \ 'hl+':     ['fg', 'Statement'],
+  \ 'info':    ['fg', 'PreProc'],
+  \ 'border':  ['fg', 'Ignore'],
+  \ 'prompt':  ['fg', 'Conditional'],
+  \ 'pointer': ['fg', 'Exception'],
+  \ 'marker':  ['fg', 'Keyword'],
+  \ 'spinner': ['fg', 'Label'],
+  \ 'header':  ['fg', 'Comment']
+  \}
+"let $FZF_DEFAULT_OPTS=' --color dark,hl:33,hl+:37,fg+:235,bg+:136,fg+:254 --color info:254,prompt:37,spinner:108,pointer:235,marker:235 --layout=reverse  --margin=1,4'
+let g:fzf_layout = { 'window': 'call FloatingFZF()' }
+
+function! FloatingFZF()
+  let buf = nvim_create_buf(v:false, v:true)
+  call setbufvar(buf, '&signcolumn', 'no')
+
+  let height = float2nr(15)
+  let width = float2nr(160)
+  let horizontal = float2nr((&columns - width) / 2)
+  let vertical = 1
+
+  let opts = {
+    \ 'relative': 'editor',
+    \ 'row': vertical,
+    \ 'col': horizontal,
+    \ 'width': width,
+    \ 'height': height,
+    \ 'style': 'minimal'
+    \ }
+
+  call nvim_open_win(buf, v:true, opts)
+endfunction
 command! -bang -nargs=* Rg
-			\ call fzf#vim#grep(
-			\   'rg --column --line-number --no-heading --color=always --smart-case '.shellescape(<q-args>), 1,
-			\   <bang>0 ? fzf#vim#with_preview('up:60%')
-			\           : fzf#vim#with_preview('right:50%:hidden', '?'),
-			\   <bang>0)
+      \ call fzf#vim#grep(
+      \   'rg --column --line-number --no-heading --smart-case '.shellescape(<q-args>), 1,
+      \   <bang>0 ? fzf#vim#with_preview('up:60%')
+      \           : fzf#vim#with_preview('right:50%:hidden', '?'),
+      \   <bang>0)
 command! -bang -nargs=? -complete=dir Files
-			\ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
+      \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
 "" Airline
 set fillchars+=stl:\ ,stlnc:\
 let g:airline#extensions#tagbar#enabled = 1
