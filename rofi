@@ -1,7 +1,7 @@
 rofi.modi: combi,drun,window,ssh
 rofi.drun-match-fields: name
 rofi.combi-modi: drun,window,ssh
-rofi.font: FuraCode Nerd Font 10
+rofi.font: FiraCode Nerd Font 10
 rofi.sidebar-mode: true
 rofi.fuzzy: true
 rofi.theme: solarized_alternate
