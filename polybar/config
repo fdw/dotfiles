@@ -37,7 +37,7 @@ override-redirect = false
 font-0 = FuraCode Nerd Font:size=10;4
 
 modules-left = date separatorleft i3 arrowleft
-modules-right = arrowright player pulseaudio separatorright vpn wlan separatorright battery separatorright
+modules-right = arrowright player pulseaudio separatorright vpn ethernet wlan separatorright battery separatorright
 
 tray-position = right
 tray-padding = 5
@@ -112,7 +112,19 @@ interface = wlp2s0
 interval = 3
 
 label-connected = "  %essid%"
-label-disconnected = %ifname%
+label-disconnected =
+format-connected-background = ${colors.secondary-content}
+format-disconnected-background = ${colors.secondary-content}
+format-connected-foreground = ${colors.orange}
+format-disconnected-backgroforegroundund = ${colors.orange}
+
+[module/ethernet]
+type = internal/network
+interface = enp62s0u1
+interval = 3
+
+label-connected = " "
+label-disconnected =
 format-connected-background = ${colors.secondary-content}
 format-disconnected-background = ${colors.secondary-content}
 format-connected-foreground = ${colors.orange}
