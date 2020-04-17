@@ -107,7 +107,6 @@ new_window 1pixel
 ## no unused borders
 hide_edge_borders both
 
-
 ## define colors
 set $black		#002B36
 set $white		#839496
@@ -171,12 +170,11 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightne
 bindsym --release Print exec "scrot"
 
 # Autostart
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+exec_always --no-startup-id ($HOME/.config/polybar/launch.sh)&
 exec --no-startup-id (clipster -d) &
 exec --no-startup-id (udiskie -NsF) &
 exec --no-startup-id (/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1) &
 exec --no-startup-id (nitrogen --restore) &
 exec --no-startup-id (nm-applet) &
-exec --no-startup-id (kitty -i)&
 exec --no-startup-id (xss-lock -l -n /usr/local/bin/dim-screen.sh -- i3lock -n -c 000000)&
 exec --no-startup-id (xset s 180 120)
