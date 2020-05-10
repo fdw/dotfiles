@@ -39,7 +39,7 @@ font-0 = FuraCode Nerd Font:size=10;4
 modules-left = date separatorleft i3 arrowleft
 modules-right = arrowright player pulseaudio separatorright vpn ethernet wlan separatorright battery separatorright
 
-tray-position = right
+tray-position = ${env:TRAY_POSITION:right}
 tray-padding = 5
 tray-detached = false
 tray-maxsize = 32
