@@ -24,12 +24,10 @@ This repo contains dotfiles for my workspace that is focused on terminal based a
 * Supports [Direnv](https://github.com/direnv/direnv)
 
 ### vimrc/nvimrc for [Neovim](https://neovim.io/)
-* Keymapping for German keyboards
 * Continous undo
 * Plugins organized with [Vim-Plug](https://github.com/junegunn/vim-plug)
 * [fzf](https://github.com/junegunn/fzf) [for vim](https://github.com/junegunn/fzf.vim)
 * [Vim-Sneak](https://github.com/justinmk/vim-sneak)
-* [Vim-Surround](https://github.com/tpope/vim-surround)
 * [Startify](https://github.com/mhinz/vim-startify)
 * [Devicons](https://github.com/ryanoasis/vim-devicons)
 * [Airline](https://github.com/bling/vim-airline)
@@ -47,6 +45,8 @@ This repo contains dotfiles for my workspace that is focused on terminal based a
 * Nice window and session modes with helpful status bar hints and shortcuts
 * Polybar integration
 * Rofi integration
+* Works with multiple monitors
+* Integrates [autotiling](https://github.com/nwg-piotr/autotiling)
 
 ### [Polybar](https://github.com/jaagr/polybar/)
 * Solarized Dark theme
@@ -54,8 +54,12 @@ This repo contains dotfiles for my workspace that is focused on terminal based a
 
 ### [Rofi](https://davedavenport.github.io/rofi/)
 * Solarized
-* Uses a combi mode for drun, windows and ssh
+* Uses a combi mode for drun and ssh
 * Sidebar offers each of these modi seperately
+* [clipster](https://github.com/mrichar1/clipster) & [roficlip](https://github.com/gilbertw1/roficlip)
+* [rofi-pass](https://github.com/carnager/rofi-pass)
+* [rofimoji](https://github.com/fdw/rofimoji)
+* [rofi-calc](https://github.com/svenstaro/rofi-calc)
 
 ### [ranger](http://ranger.nongnu.org/)
 * Sensible configuration
@@ -93,19 +97,17 @@ This repo contains dotfiles for my workspace that is focused on terminal based a
 * styled for my taste
 
 ## Installation
-	`git clone --recursive https://github.com/fdw/dotfiles.git ~/.config/dotfiles`
-	cd .config/dotfiles
-	make install
+```
+git clone --recursive https://github.com/fdw/dotfiles.git ~/.config/dotfiles
+cd .config/dotfiles
+make install
+```
 
 ## Updating
-	make update
+```
+make update
+```
 
-# Helpful Programs
-* [fzf](https://github.com/junegunn/fzf)
+# Other helpful Programs
 * [ripgrep](https://github.com/BurntSushi/ripgrep)
 * [fd](https://github.com/sharkdp/fd)
-* [rofi](https://github.com/DaveDavenport/rofi)
-	* [clipster](https://github.com/mrichar1/clipster) & [roficlip](https://github.com/gilbertw1/roficlip)
-	* [rofi-pass](https://github.com/carnager/rofi-pass)
-	* [rofimoji](https://github.com/fdw/rofimoji)
-	* [rofi-calc](https://github.com/svenstaro/rofi-calc)
