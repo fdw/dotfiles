@@ -1,6 +1,6 @@
-rofi.modi: combi,drun,window,ssh
+rofi.modi: combi,drun,ssh
 rofi.drun-match-fields: name
-rofi.combi-modi: drun,window,ssh
+rofi.combi-modi:drun,ssh
 rofi.font: FiraCode Nerd Font 10
 rofi.sidebar-mode: true
 rofi.fuzzy: true
