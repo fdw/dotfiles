@@ -11,8 +11,8 @@ bindsym $mod+Return exec $term
 bindsym $mod+space exec "rofi -show combi"
 bindsym $mod+c exec "roficlip"
 bindsym $mod+p exec "rofi-pass"
-bindsym $mod+e exec "rofimoji -s neutral --rofi-args='-columns 3'"
-bindsym $mod+m exec "rofi -show calc -modi calc -no-show-match -no-sort"
+bindsym $mod+e exec "rofimoji"
+bindsym $mod+m exec "LC_NUMERIC=en_US.UTF-8 rofi -show calc -modi calc -no-show-match -no-sort"
 
 # Terminal menu
 set $termmenu "  [t]erminal - n[v]im - [r]anger  "
@@ -170,7 +170,8 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightne
 bindsym --release Print exec "scrot"
 
 # Autostart
-exec_always --no-startup-id ($HOME/.config/polybar/launch.sh)&
+exec --no-startup-id ($HOME/.config/polybar/launch.sh)&
+exec --no-startup-id (autotiling)&
 exec --no-startup-id (clipster -d) &
 exec --no-startup-id (udiskie -NsF) &
 exec --no-startup-id (/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1) &
