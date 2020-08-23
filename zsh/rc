@@ -27,6 +27,8 @@ zstyle ':completion:*:match:*' original only
 zstyle ':completion:*:approximate:*' max-errors 1 numeric
 zstyle ':completion:*' verbose yes
 zstyle ':completion:*' menu select
+zstyle ':completion:complete:git-checkout:argument-rest' sort false
+zstyle ':completion:complete:git-commit:option--fixup-1' sort false
 ## Caching
 zstyle ':completion:*' use-cache on
 zstyle ':completion:*' cache-path ${ZSH_CACHE_DIR}/autocomplete
@@ -101,11 +103,8 @@ ZGEN_DIR=${ZSH_DATA_DIR}/plugins
 source ${ZSH_DATA_DIR}/zgen/zgen.zsh
 
 if ! zgen saved; then
-	# UI
+	# Theme
 	zgen load romkatv/powerlevel10k powerlevel10k
-	zgen load zdharma/fast-syntax-highlighting
-	# autosuggestions
-	zgen load zsh-users/zsh-autosuggestions
 	# autojump
 	zgen load /usr/share/autojump/autojump.zsh 
 	zgen load fdw/ranger_autojump
@@ -122,6 +121,10 @@ if ! zgen saved; then
 	# local
 	zgen load ${ZSH_DATA_DIR}/aliases.zsh
 	zgen load ${ZSH_DATA_DIR}/completions
+	#
+	zgen load Aloxaf/fzf-tab
+	zgen load zdharma/fast-syntax-highlighting
+	zgen load zsh-users/zsh-autosuggestions
 	zgen save
 fi
 

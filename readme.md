@@ -9,11 +9,11 @@ This repo contains dotfiles for my workspace that is focused on terminal based a
 ## Detailed Content
 
 ### zshrc for [ZSH](http://zsh.org/)
-* Autocompletion configuration
 * Plugins organized with [zgen](https://github.com/tarjoilija/zgen)
 * [Autojump](https://github.com/joelthelion/autojump)
 	* `r` asks Autojump for the best directory and opens Ranger there, thanks to [ranger+autojump](https://github.com/fdw/ranger_autojump)
-* [fzf](https://github.com/junegunn/fzf) with [ripgrep](https://github.com/BurntSushi/ripgrep) for file and history search
+* Autocompletion configuration with [fzf](https://github.com/junegunn/fzf) thanks to [fzf-tab](https://github.com/Aloxaf/fzf-tab)
+  * fzf also with [ripgrep](https://github.com/BurntSushi/ripgrep) for file and history search
 * [Fast Syntax highlighting](https://github.com/zdharma/fast-syntax-highlighting)
 * [History-substring-search](https://github.com/zsh-users/zsh-history-substring-search)
 * [Autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
