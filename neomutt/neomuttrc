@@ -8,8 +8,6 @@ source gpg.rc
 
 # Sending
 set sendmail="/usr/bin/msmtp"
-set envelope_from=yes
-set edit_hdrs
 set send_charset="utf-8"
 
 # UI
