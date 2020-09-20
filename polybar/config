@@ -37,7 +37,7 @@ override-redirect = false
 font-0 = FuraCode Nerd Font:size=10;4
 
 modules-left = date separatorleft i3 arrowleft
-modules-right = arrowright player pulseaudio separatorright vpn ethernet wlan separatorright battery separatorright
+modules-right = arrowright pulseaudio separatorright vpn ethernet wlan separatorright battery separatorright
 
 tray-position = ${env:TRAY_POSITION:right}
 tray-padding = 5
@@ -70,14 +70,6 @@ label-urgent = "%index%!"
 label-urgent-foreground = ${colors.red}
 label-visible = "%index%"
 label-separator = ""
-
-[module/player]
-type = custom/script
-exec = ~/.config/polybar/player-mpris-simple.sh
-interval = 3
-click-left = playerctl play-pause
-format-background = ${colors.background-highlight}
-format-foreground = ${colors.green}
 
 [module/pulseaudio]
 type = internal/pulseaudio
@@ -133,6 +125,7 @@ type = internal/battery
 battery = BAT0
 adapter = AC0
 full-at = 95
+poll-interval = 1
 
 format-discharging = " <ramp-capacity> <label-discharging>"
 label-discharging = "%time% (%percentage%%)"

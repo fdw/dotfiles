@@ -26,9 +26,7 @@ install-htop:
 	@mkdir -p "$(XDG_CONFIG_HOME)/htop"
 	@ln -fs "${CURDIR}/htoprc" "$(XDG_CONFIG_HOME)/htop/htoprc"
 
-install-i3: install-polybar
-	$(call check_installed,rofi,rofi)
-	$(call check_installed,rofi-pass,rofi-pass)
+install-i3: install-polybar install-rofi
 	$(call check_installed,clipster,clipster)
 	$(call check_installed,roficlip,roficlip)
 	$(call check_installed,xss-lock,xss-lock)
@@ -86,7 +84,6 @@ install-polybar:
 	@mkdir -p "$(XDG_CONFIG_HOME)/polybar/"
 	@ln -fs "${CURDIR}/polybar/config" "$(XDG_CONFIG_HOME)/polybar/config"
 	@ln -fs "${CURDIR}/polybar/launch.sh" "$(XDG_CONFIG_HOME)/polybar/launch.sh"
-	@ln -fs "${CURDIR}/polybar/player-mpris-simple.sh" "$(XDG_CONFIG_HOME)/polybar/player-mpris-simple.sh"
 
 install-profile:
 	@echo "Installing .profile"
