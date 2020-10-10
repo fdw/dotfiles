@@ -106,7 +106,7 @@ install-rofi:
 	$(call check_installed,rofi,rofi)
 	@echo "Installing rofi/config"
 	@mkdir -p "$(XDG_CONFIG_HOME)/rofi"
-	@ln -fs "${CURDIR}/rofi" "$(XDG_CONFIG_HOME)/rofi/config"
+	@ln -fs "${CURDIR}/rofi.rasi" "$(XDG_CONFIG_HOME)/rofi/config.rasi"
 	@ln -fs "${CURDIR}/rofimoji.rc" "$(XDG_CONFIG_HOME)/rofimoji.rc"
 
 install-tig:
