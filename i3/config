@@ -12,7 +12,7 @@ bindsym $mod+space exec "rofi -show combi"
 bindsym $mod+c exec "roficlip"
 bindsym $mod+p exec "rofi-pass"
 bindsym $mod+e exec "rofimoji"
-bindsym $mod+m exec "LC_NUMERIC=en_US.UTF-8 rofi -show calc -modi calc -no-show-match -no-sort"
+bindsym $mod+m exec LC_NUMERIC=en_US.UTF-8 rofi -show calc -modi calc -no-show-match -no-sort -calc-command "echo -n '{result}' | xsel -b"
 
 # Terminal menu
 set $termmenu "  [t]erminal - n[v]im - [r]anger  "
