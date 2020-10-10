@@ -126,16 +126,10 @@ install-zathura:
 	@ln -fs "${CURDIR}/zathurarc" "${XDG_CONFIG_HOME}/zathura/zathurarc"
 
 install-zsh: install-dircolors
+	$(call check_installed,antibody,antibody)
 	@echo "Installing .zshrc"
 	@ln -fs "${CURDIR}/zsh/rc" "${HOME}/.zshrc"
 	@ln -fs "${CURDIR}/zsh/env" "${HOME}/.zshenv"
-	@if [ ! -d "$(XDG_DATA_HOME)/zsh/" ]; then \
-		mkdir "$(XDG_DATA_HOME)/zsh" ; \
-		git clone https://github.com/tarjoilija/zgen.git "$(XDG_DATA_HOME)/zsh/zgen/"; \
-	fi
 	@ln -fs "${CURDIR}/zsh/aliases.zsh" "$(XDG_DATA_HOME)/zsh/aliases.zsh"
 	@ln -fs "${CURDIR}/zsh/p10k.zsh" "$(XDG_DATA_HOME)/zsh/p10k.zsh"
-
-update:
-	@echo "Updating"
-	@git pull --rebase origin master
+	@antibody bundle < ${CURDIR}/zsh/plugins.rc > $(XDG_DATA_HOME)/zsh/antibody/plugins.sh

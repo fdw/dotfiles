@@ -9,7 +9,7 @@ This repo contains dotfiles for my workspace that is focused on terminal based a
 ## Detailed Content
 
 ### zshrc for [ZSH](http://zsh.org/)
-* Plugins organized with [zgen](https://github.com/tarjoilija/zgen)
+* Plugins organized with [antibody](https://getantibody.github.io/)
 * [Autojump](https://github.com/joelthelion/autojump)
 	* `r` asks Autojump for the best directory and opens Ranger there, thanks to [ranger+autojump](https://github.com/fdw/ranger_autojump)
 * Autocompletion configuration with [fzf](https://github.com/junegunn/fzf) thanks to [fzf-tab](https://github.com/Aloxaf/fzf-tab)
