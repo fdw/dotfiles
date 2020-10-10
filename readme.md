@@ -18,6 +18,7 @@ This repo contains dotfiles for my workspace that is focused on terminal based a
 * [History-substring-search](https://github.com/zsh-users/zsh-history-substring-search)
 * [Autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
 * [Powerline10k Theme](https://github.com/romkatv/powerlevel10k)
+* Vim mode with [zsh-vim-mode](https://github.com/softmoth/zsh-vim-mode)
 * Some nice aliases
 	* `g` is short for git
 	* `v` opens Neovim
