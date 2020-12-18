@@ -1,4 +1,3 @@
-insert-with-clipboard = false
 files = [emojis, hebrew]
 skin-tone = neutral
 rofi-args = -columns 3 -font "FiraCode 10"

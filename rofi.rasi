@@ -6,5 +6,4 @@ configuration {
 	sidebar-mode: true;
 	combi-modi: "drun,ssh";
 	theme: "solarized_alternate";
-	matching: "fuzzy";
 }
