@@ -7,6 +7,7 @@
 	whitespace = -trailing-space,-space-before-tab,-indent-with-non-tab
 	autocrlf = input
 	excludesfile = /home/fdw/.gitignore
+	ignorecase = true
 [protocol]
 	version = 2
 [fetch]
@@ -25,6 +26,8 @@
 	ui = auto
 [help]
 	autocorrect = 1
+[init]
+	defaultBranch = main
 [alias]
 	# shortcuts
 	a = add
@@ -72,7 +75,7 @@
 	# create upstream branch and push
 	pu = !git push -u origin $(git rev-parse --abbrev-ref HEAD)
 	# Remove old (merged) branches
-	cb = "!git branch --merged | grep  -v '\\*\\|master\\|develop|main' | xargs -r -n 1 git branch -d"
+	cb = "!git branch --merged | egrep -v '(^\\*|main|master|develop)' | xargs -r -n 1 git branch -d"
 [filter "lfs"]
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
