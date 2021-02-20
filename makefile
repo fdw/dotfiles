@@ -132,4 +132,5 @@ install-zsh: install-dircolors
 	@ln -fs "${CURDIR}/zsh/env" "${HOME}/.zshenv"
 	@ln -fs "${CURDIR}/zsh/aliases.zsh" "$(XDG_DATA_HOME)/zsh/aliases.zsh"
 	@ln -fs "${CURDIR}/zsh/p10k.zsh" "$(XDG_DATA_HOME)/zsh/p10k.zsh"
+	@mkdir -p $(XDG_DATA_HOME)/zsh/antibody
 	@antibody bundle < ${CURDIR}/zsh/plugins.rc > $(XDG_DATA_HOME)/zsh/antibody/plugins.sh
