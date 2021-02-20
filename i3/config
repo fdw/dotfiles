@@ -167,7 +167,7 @@ bindsym XF86AudioPrev exec playerctl previous
 bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
 #print key
-bindsym --release Print exec "maim -su ~/Downloads/$(date +%Y-%m-%eT%H:%M:%S).png"
+bindsym --release Print exec "maim -su ~/Downloads/$(date +%Y-%m-%dT%H:%M:%S).png"
 
 # Autostart
 exec --no-startup-id ($HOME/.config/polybar/launch.sh)&
