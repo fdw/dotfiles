@@ -53,6 +53,7 @@ install-less:
 install-neomutt:
 	$(call check_installed,neomutt,neomutt)
 	$(call check_installed,msmtp,msmtp)
+	$(call check_installed,w3m,w3m)
 	@echo "Installing Neomutt rc"
 	@mkdir -p "$(XDG_CONFIG_HOME)/neomutt"
 	@ln -fs "${CURDIR}/neomutt/neomuttrc" "$(XDG_CONFIG_HOME)/neomutt/neomuttrc"

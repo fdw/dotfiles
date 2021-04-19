@@ -13,6 +13,9 @@ set send_charset="utf-8"
 # UI
 source theme.rc
 set ts_enabled=yes
+## HTML
+auto_view text/html
+alternative_order text/enriched text/plain text/html text
 ## Sidebar
 set sidebar_visible
 set mail_check_stats
