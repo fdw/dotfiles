@@ -42,6 +42,10 @@ _force_rehash() {
 alias ls='ls ${=LS_OPTIONS}'
 alias ll='ls'
 alias la='ls -A'
+alias ee="exa -l --icons --group-directories-first --group --header"
+alias et="ee -TR --level"
+alias eg="ee --git"
+alias egt="eg -TR --level"
 alias -g mkdir='mkdir -p'
 alias -g grep='grep --color'
 

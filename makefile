@@ -128,6 +128,7 @@ install-zathura:
 
 install-zsh: install-dircolors
 	$(call check_installed,antibody,antibody)
+	$(call check_installed,exa,exa)
 	@echo "Installing .zshrc"
 	@ln -fs "${CURDIR}/zsh/rc" "${HOME}/.zshrc"
 	@ln -fs "${CURDIR}/zsh/env" "${HOME}/.zshenv"
