@@ -106,7 +106,7 @@ fi
 
 ### Load plugins
 export ANTIBODY_HOME=${ZSH_DATA_DIR}/antibody
-source /usr/share/autojump/autojump.zsh 
+eval "$(zoxide init zsh)"
 source ${ZSH_DATA_DIR}/p10k.zsh
 source ${ZSH_DATA_DIR}/completions
 source ${ZSH_DATA_DIR}/aliases.zsh
