@@ -36,7 +36,8 @@
 	f = commit --fixup
 	g = pull # get
 	p = push
-	s = checkout # switch
+	s = switch
+	r = restore
 	u = fetch # update
 	# helper functions
 	st = status -sb
@@ -46,7 +47,7 @@
 	cim = commit --message
 	ca = commit --amend
 	ds = diff --staged
-	nb = checkout -b
+	nb = switch -c
 	pf = push --force
 	rb = rebase
 	rba = rebase --abort
