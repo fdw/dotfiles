@@ -46,7 +46,7 @@ This repo contains dotfiles for my workspace that is focused on terminal based a
 * Nice window and session modes with helpful status bar hints and shortcuts
 * Polybar integration
 * Rofi integration
-* Works with multiple monitors
+* Works with multiple monitors by using [autorandr](https://github.com/phillipberndt/autorandr)
 * Integrates [autotiling](https://github.com/nwg-piotr/autotiling)
 
 ### [Polybar](https://github.com/jaagr/polybar/)

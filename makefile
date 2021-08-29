@@ -32,9 +32,12 @@ install-i3: install-polybar install-rofi
 	$(call check_installed,xss-lock,xss-lock)
 	$(call check_installed,xset,xorg-xset)
 	$(call check_installed,autotiling,autotiling)
+	$(call check_installed,autorandr,autorandr)
+	$(call check_installed,nitrogen,nitrogen)
 	@echo "Installing i3 config"
 	@mkdir -p "$(XDG_CONFIG_HOME)/i3/"
 	@ln -fs "${CURDIR}/i3/config" "$(XDG_CONFIG_HOME)/i3/config"
+	@ln -fs "${CURDIR}/i3/autorandr-postswitch" "$(XDG_CONFIG_HOME)/autorandr/postswitch"
 
 install-intellij: install-nvim
 	@echo "Installing ideavimrc"
