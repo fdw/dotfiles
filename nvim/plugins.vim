@@ -19,7 +19,6 @@ Plug 'junegunn/vim-easy-align'
 Plug 'pbrisbin/vim-mkdir'
 Plug 'tpope/vim-sleuth'
 Plug 'wellle/targets.vim'
-Plug 'jkramer/vim-checkbox'
 " Filetypes
 Plug 'elzr/vim-json', {'for': 'json'}
 Plug 'plasticboy/vim-markdown', {'for': 'markdown'}
