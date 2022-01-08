@@ -10,8 +10,8 @@ This repo contains dotfiles for my workspace that is focused on terminal based a
 
 ### zshrc for [ZSH](http://zsh.org/)
 * Plugins organized with [antibody](https://getantibody.github.io/)
-* [Autojump](https://github.com/joelthelion/autojump)
-	* `r` asks Autojump for the best directory and opens Ranger there, thanks to [ranger+autojump](https://github.com/fdw/ranger_autojump)
+* [Zoxide](https://github.com/ajeetdsouza/zoxide)
+  * `r` asks Zoxide for the best directory and opens Ranger there, thanks to [ranger+zoxide](https://github.com/fdw/ranger_zoxide)
 * Autocompletion configuration with [fzf](https://github.com/junegunn/fzf) thanks to [fzf-tab](https://github.com/Aloxaf/fzf-tab)
   * fzf also with [ripgrep](https://github.com/BurntSushi/ripgrep) for file and history search
 * [Fast Syntax highlighting](https://github.com/zdharma/fast-syntax-highlighting)
@@ -67,7 +67,7 @@ This repo contains dotfiles for my workspace that is focused on terminal based a
 * Some useful keybindings
 * Easy extraction and compression with [atool](http://www.nongnu.org/atool/)
 * [Devicons](https://github.com/alexanderjeurissen/ranger_devicons/)
-* [Autojump-Support](https://github.com/fdw/ranger_autojump)
+* [Zoxide-Support](https://github.com/jchook/ranger-zoxide/)
 
 ### [neomutt](https://neomutt.org/)
 * Solarized, of course
