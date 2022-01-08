@@ -5,5 +5,5 @@ configuration {
 	drun-match-fields: "name";
 	sidebar-mode: true;
 	combi-modi: "drun,ssh";
-	theme: "solarized_alternate";
 }
+@theme "solarized_alternate"
