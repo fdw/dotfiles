@@ -85,6 +85,10 @@ This repo contains dotfiles for my workspace that is focused on terminal based a
 * needs to be configured with your own name and email
 * Always ignores direnv files
 
+### [Intellij](https://www.jetbrains.com/idea/)
+* Ideavim configuration matching the one for Neovim
+* A nice color scheme based on Solarized Dark
+
 ### [Zathura](https://github.com/pwmt/zathura)
 * Solarized colors
 

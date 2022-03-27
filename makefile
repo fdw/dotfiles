@@ -43,7 +43,7 @@ install-i3: install-polybar install-rofi
 
 install-intellij: install-nvim
 	@echo "Installing ideavimrc"
-	@ln -fs "${CURDIR}/nvim/ideavimrc" "${HOME}/.ideavimrc"
+	@ln -fs "${CURDIR}/intellij/ideavimrc" "${HOME}/.ideavimrc"
 
 install-kitty:
 	@echo "Installing kitty config"

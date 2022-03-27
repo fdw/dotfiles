@@ -29,3 +29,12 @@ nnoremap ]c :action GotoNextError<CR>
 nnoremap [c :action GotoPreviousError<CR>
 nnoremap ]h :action VcsShowNextChangeMarker<CR>
 nnoremap [h :action VcsShowPrevChangeMarker<CR>
+
+" IDE Shortcuts
+sethandler <C-C> a:ide
+sethandler <C-V> a:ide
+sethandler <C-X> a:ide
+sethandler <C-F> a:ide
+sethandler <C-R> a:ide
+sethandler <C-O> a:ide
+
