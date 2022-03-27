@@ -129,13 +129,14 @@ install-zathura:
 	@mkdir -p "${XDG_CONFIG_HOME}/zathura"
 	@ln -fs "${CURDIR}/zathurarc" "${XDG_CONFIG_HOME}/zathura/zathurarc"
 
-install-zsh: install-dircolors
-	$(call check_installed,antibody,antibody)
+install-zsh: install-dircolors install-git
 	$(call check_installed,exa,exa)
 	@echo "Installing .zshrc"
 	@ln -fs "${CURDIR}/zsh/rc" "${HOME}/.zshrc"
 	@ln -fs "${CURDIR}/zsh/env" "${HOME}/.zshenv"
 	@ln -fs "${CURDIR}/zsh/aliases.zsh" "$(XDG_DATA_HOME)/zsh/aliases.zsh"
 	@ln -fs "${CURDIR}/zsh/p10k.zsh" "$(XDG_DATA_HOME)/zsh/p10k.zsh"
-	@mkdir -p $(XDG_DATA_HOME)/zsh/antibody
-	@antibody bundle < ${CURDIR}/zsh/plugins.rc > $(XDG_DATA_HOME)/zsh/antibody/plugins.sh
+	@if [ ! -f "$(XDG_DATA_HOME)/zsh/antidote/antidote.zsh" ]; then \
+		git clone https://github.com/mattmc3/antidote.git $(XDG_DATA_HOME)/zsh/antidote; \
+	fi
+	@/bin/zsh -c "source $(XDG_DATA_HOME)/zsh/antidote/antidote.zsh && antidote bundle < ${CURDIR}/zsh/plugins.rc > $(XDG_DATA_HOME)/zsh/plugins.zsh"

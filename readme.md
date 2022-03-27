@@ -9,7 +9,7 @@ This repo contains dotfiles for my workspace that is focused on terminal based a
 ## Detailed Content
 
 ### zshrc for [ZSH](http://zsh.org/)
-* Plugins organized with [antibody](https://getantibody.github.io/)
+* Plugins organized with [antidote](https://getantidote.github.io/)
 * [Zoxide](https://github.com/ajeetdsouza/zoxide)
   * `r` asks Zoxide for the best directory and opens Ranger there, thanks to [ranger+zoxide](https://github.com/fdw/ranger_zoxide)
 * Autocompletion configuration with [fzf](https://github.com/junegunn/fzf) thanks to [fzf-tab](https://github.com/Aloxaf/fzf-tab)

@@ -109,16 +109,16 @@ else
 fi
 
 ### Load plugins
-export ANTIBODY_HOME=${ZSH_DATA_DIR}/antibody
 eval "$(zoxide init zsh)"
 source ${ZSH_DATA_DIR}/p10k.zsh
 source ${ZSH_DATA_DIR}/completions
 source ${ZSH_DATA_DIR}/aliases.zsh
-source ${ANTIBODY_HOME}/plugins.sh
+source ${ZSH_DATA_DIR}/plugins.zsh
 
 ### Config (post)
+#### Prompt
+autoload -Uz promptinit && promptinit && prompt powerlevel10k
 #### History substring search
-# zmodload zsh/terminfo
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
 #### fzf

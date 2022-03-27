@@ -1,4 +1,4 @@
-romkatv/powerlevel10k powerlevel10k
+romkatv/powerlevel10k kind:fpath
 fdw/ranger-zoxide
 zsh-users/zsh-history-substring-search
 jimhester/per-directory-history
