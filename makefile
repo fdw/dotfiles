@@ -29,6 +29,8 @@ install-htop:
 install-i3: install-polybar install-rofi
 	$(call check_installed,clipster,clipster)
 	$(call check_installed,roficlip,roficlip)
+	$(call check_installed,rofi-rbw,rofi-rbw)
+	$(call check_installed,rofimoji,rofimoji)
 	$(call check_installed,xss-lock,xss-lock)
 	$(call check_installed,xset,xorg-xset)
 	$(call check_installed,autotiling,autotiling)
