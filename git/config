@@ -60,7 +60,7 @@
 	sl = stash list
 	sp = stash pop
 	ss = stash push
-	ssu = stash push -k
+	sss = stash push --staged
 	sc = stash clear
 	fixup = commit --fixup
 	# use patient diff
