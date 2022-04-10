@@ -1,0 +1,119 @@
+{
+  "settings": [
+    {
+      "name": "activeMode",
+      "value": true
+    },
+    {
+      "name": "delayBeforeClean",
+      "value": "60"
+    },
+    {
+      "name": "statLogging",
+      "value": false
+    },
+    {
+      "name": "showNumOfCookiesInIcon",
+      "value": false
+    },
+    {
+      "name": "showNotificationAfterCleanup",
+      "value": false
+    },
+    {
+      "name": "cleanCookiesFromOpenTabsOnStartup",
+      "value": false
+    },
+    {
+      "name": "contextualIdentities",
+      "value": true
+    },
+    {
+      "id": "DEPRECATED - use localStorageCleanup",
+      "name": "localstorageCleanup",
+      "value": true
+    },
+    {
+      "name": "notificationOnScreen",
+      "value": 3
+    },
+    {
+      "name": "domainChangeCleanup",
+      "value": true
+    },
+    {
+      "id": "DEPRECATED - use default expressions",
+      "name": "greyCleanLocalstorage",
+      "value": false
+    },
+    {
+      "id": "DEPRECATED - use default expressions",
+      "name": "whiteCleanLocalstorage",
+      "value": false
+    },
+    {
+      "name": "enableNewVersionPopup",
+      "value": false
+    },
+    {
+      "name": "debugMode",
+      "value": false
+    },
+    {
+      "name": "enableGreyListCleanup",
+      "value": true
+    },
+    {
+      "name": "keepDefaultIcon",
+      "value": false
+    },
+    {
+      "name": "sizePopup",
+      "value": 16
+    },
+    {
+      "name": "sizeSetting",
+      "value": 16
+    },
+    {
+      "name": "contextMenus",
+      "value": false
+    },
+    {
+      "name": "discardedCleanup",
+      "value": false
+    },
+    {
+      "name": "cacheCleanup",
+      "value": false
+    },
+    {
+      "name": "cleanExpiredCookies",
+      "value": true
+    },
+    {
+      "name": "indexedDBCleanup",
+      "value": true
+    },
+    {
+      "name": "localStorageCleanup",
+      "value": true
+    },
+    {
+      "name": "manualNotifications",
+      "value": true
+    },
+    {
+      "name": "pluginDataCleanup",
+      "value": false
+    },
+    {
+      "name": "serviceWorkersCleanup",
+      "value": true
+    },
+    {
+      "name": "contextualIdentitiesAutoRemove",
+      "value": true
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"); /* set default namespace to XUL */
+
+#context-openlink,
+#context-openlinkprivate,
+#context-bookmarklink,
+#context-sendlink,
+#context-copyimage-contents,
+#context-sep-copyimage,
+#context-sendimage,
+#context-setWallpaper,
+#context-setDesktopBackground,
+#context-blockimage,
+#context-back,
+#context-back image,
+#context-forward,
+#context-forward image,
+#context-stop,
+#context-stop image,
+#context-reload,
+#context-reload image,
+#context-sep-stop,
+#context-bookmarkpage,
+#context-bookmarkpage image
+#context-savepage,
+#context-sendpage,
+#context-sep-viewbgimage,
+#context-undo,
+#context-sep-undo,
+#context-cut,
+#context-copy,
+#context-paste,
+#context-delete,
+#context-sep-paste,
+#context-selectall,
+#context-sep-selectall,
+#context-keywordfield,
+#context-searchselect,
+#context-vielpartialsource-selection,
+#context-viewpartialsource-mathml,
+#context-sep-bidi,
+#context-bidi-text-direction-toggle,
+#context-bidi-page-direction-toggle
+{
+	display:none !important;
+}
+
+#context-navigation .menu-iconic-left {
+   -moz-margin-start:0px !important;
+}
+
+#context-back:after,
+#context-forward:after,
+#context-reload:after,
+#context-stop:after,
+#context-bookmarkpage:after{
+   content: attr(aria-label) !important;
+}
+
+#context-navigation{
+   -moz-box-orient: vertical !important;
+}
+
+#context-navigation > .menuitem-iconic {
+  -moz-box-pack: start !important;
+}
+
+#TabsToolbar {
+	visibility: collapse !important;
+}
+#sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"] #sidebar-header {
+  display: none;
+}
+.newtab-button-box {
+  display: none;
+}
+#tabbar {
+  bottom: 0 !important; /* Eliminate dead space on bottom */
+}

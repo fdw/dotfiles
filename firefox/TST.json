@@ -1,0 +1,45 @@
+{
+  "autoCollapseExpandSubtreeOnAttach": false,
+  "autoCollapseExpandSubtreeOnSelect": false,
+  "autoGroupNewTabsFromPinned": false,
+  "chunkedUserStyleRules0": "LyogU2hvdyB0aXRsZSBvZiB1bnJlYWQgdGFicyB3aXRoIHJlZCBhbmQgaXRhbGljIGZvbnQgKi8KLnRhYi51bnJlYWQgLmxhYmVsIHsKICBjb2xvcjogcmVkICFpbXBvcnRhbnQ7CiAgZm9udC1zdHlsZTogaXRhbGljICFpbXBvcnRhbnQ7Cn0KLyogTm8gbmV3IHRhYiBidXR0b24gKi8KLm5ld3RhYi1idXR0b24tYm94IHsKICBkaXNwbGF5OiBub25lOwp9CiN0YWJiYXIgewogIGJvdHRvbTogMCAhaW1wb3J0YW50OyAvKiBFbGltaW5hdGUgZGVhZCBzcGFjZSBvbiBib3R0b20gKi8KfQ==",
+  "closeParentBehavior": 0,
+  "closeParentBehaviorMode": 1,
+  "closeParentBehavior_insideSidebar_expanded": 0,
+  "collapseExpandSubtreeByDblClick": true,
+  "configsVersion": 25,
+  "context_bookmarkTree": false,
+  "context_collapseAll": false,
+  "context_collapseTreeRecursively": false,
+  "context_expandAll": false,
+  "context_expandTreeRecursively": false,
+  "context_reloadTree": false,
+  "context_topLevel_sendTreeToDevice": false,
+  "fakeContextMenu": false,
+  "faviconizePinnedTabs": false,
+  "labelOverflowStyle": "crop",
+  "notifiedFeaturesVersion": 9,
+  "optionsExpandedSections": [
+    "section-addons",
+    "section-debug"
+  ],
+  "parentTabOperationBehaviorMode": 1,
+  "promoteFirstChildForClosedRoot": false,
+  "sidebarPositionRighsideNotificationShown": true,
+  "simulateSelectOwnerOnClose": false,
+  "style": "photon",
+  "successorTabControlLevel": 0,
+  "syncDevices": {
+    "device-1604930722675-51631": {
+      "id": "device-1604930722675-51631",
+      "name": "Taygeta",
+      "icon": "device-desktop",
+      "timestamp": 1645265748826
+    }
+  },
+  "treeDoubleClickBehavior": 1,
+  "userStyleRules": "",
+  "userStyleRulesFieldHeight": "133.33334350585938px",
+  "warnOnCloseTabs": false,
+  "workaroundForBug1548949DroppedTabs": ""
+}
