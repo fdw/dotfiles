@@ -89,7 +89,7 @@ install-polybar:
 	$(call check_installed,wedder,wedder)
 	@echo "Installing polybar"
 	@mkdir -p "$(XDG_CONFIG_HOME)/polybar/"
-	@ln -fs "${CURDIR}/polybar/config" "$(XDG_CONFIG_HOME)/polybar/config"
+	@ln -fs "${CURDIR}/polybar/config.ini" "$(XDG_CONFIG_HOME)/polybar/config.ini"
 	@ln -fs "${CURDIR}/polybar/launch.sh" "$(XDG_CONFIG_HOME)/polybar/launch.sh"
 
 install-profile:

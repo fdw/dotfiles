@@ -1,15 +1,20 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
 # Terminate already running bar instances
 killall -q polybar
 
-# Wait until the processes have been shut down
 while pgrep -x polybar >/dev/null; do sleep 1; done
 
-for m in $(polybar --list-monitors | cut -d":" -f1); do
-    export TRAY_POSITION=none
-    if [[ $m == "eDP1" ]]; then
-        TRAY_POSITION=right
-    fi
-    MONITOR=$m polybar --reload powerbar &
+IFS=$'\n'
+for entry in $(xrandr --query | grep " connected"); do
+  mon=$(cut -d" " -f1 <<< "$entry")
+  status=$(cut -d" " -f3 <<< "$entry")
+
+  tray_pos=""
+  if [ "$status" == "primary" ]; then
+    tray_pos="right"
+  fi
+
+  MONITOR=$mon TRAY_POSITION=$tray_pos polybar --reload powerbar &
 done
+unset IFS
