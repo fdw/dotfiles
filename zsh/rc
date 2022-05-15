@@ -124,9 +124,10 @@ bindkey '^[[B' history-substring-search-down
 #### fzf
 source /usr/share/fzf/key-bindings.zsh
 source /usr/share/fzf/completion.zsh
-export FZF_DEFAULT_COMMAND="fd --type file --no-ignore"
-export FZF_CTRL_T_COMMAND="${FZF_DEFAULT_COMMAND} --hidden"
-export FZF_CTRL_T_OPTS="--preview '(highlight -O ansi -l {} 2> /dev/null || cat {} || tree -C {}) 2> /dev/null | head -200'"
+export FZF_DEFAULT_OPTS="--ansi"
+export FZF_DEFAULT_COMMAND="fd --type file --no-ignore-vcs --color always"
+export FZF_CTRL_T_COMMAND="${FZF_DEFAULT_COMMAND}"
+export FZF_CTRL_T_OPTS="--preview 'command bat --color=always --line-range :500 {}'"
 #### autosuggestions
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=cyan"
 bindkey '^[<CR>' autosuggest-execute
