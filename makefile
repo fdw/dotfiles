@@ -5,7 +5,11 @@ endef
 XDG_CONFIG_HOME ?= "${HOME}/.config"
 XDG_DATA_HOME ?= "${HOME}/.local/share"
 
-install: install-profile install-zsh install-nvim install-git install-less install-dircolors install-i3 install-polybar install-ranger install-tig install-htop install-rofi install-kitty install-zathura
+install: install-profile install-zsh install-nvim install-git install-less install-dircolors install-i3 install-polybar install-ranger install-tig install-htop install-rofi install-kitty install-zathura install-btop
+
+install-btop:
+	@echo "Installing btop"
+	@ln -fs "${CURDIR}/btop.conf" "${HOME}/.config/btop/btop.conf"
 
 install-dircolors:
 	@echo "Installing .dir_colors"

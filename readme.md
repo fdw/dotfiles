@@ -98,8 +98,11 @@ This repo contains dotfiles for my workspace that is focused on terminal based a
 ### tig
 * Nothing much
 
+### [btop](https://github.com/aristocratos/btop)
+* Styled for my taste and needs
+
 ### htop
-* styled for my taste
+* Styled for my taste
 
 ## Installation
 ```
