@@ -1,3 +1,0 @@
-files = [emojis, hebrew]
-skin-tone = neutral
-selector-args = -columns 3 -font "FiraCode 10"
