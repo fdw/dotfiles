@@ -1,7 +1,10 @@
 source ${XDG_CONFIG_HOME}/nvim/common.vim
 source ${XDG_CONFIG_HOME}/nvim/keys.vim
 
+set ideajoin
 set surround
+set relativenumber
+set idearefactormode keep
 
 let mapleader = " "
 
@@ -37,4 +40,5 @@ sethandler <C-X> a:ide
 sethandler <C-F> a:ide
 sethandler <C-R> a:ide
 sethandler <C-O> a:ide
+sethandler <C-A> a:ide
 
