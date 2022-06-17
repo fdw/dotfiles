@@ -104,6 +104,9 @@ This repo contains dotfiles for my workspace that is focused on terminal based a
 ### htop
 * Styled for my taste
 
+### [Dunst](https://github.com/dunst-project/dunst)
+* Styled in solarized
+
 ## Installation
 ```
 git clone --recursive https://github.com/fdw/dotfiles.git ~/.config/dotfiles

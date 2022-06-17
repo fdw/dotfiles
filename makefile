@@ -5,7 +5,7 @@ endef
 XDG_CONFIG_HOME ?= "${HOME}/.config"
 XDG_DATA_HOME ?= "${HOME}/.local/share"
 
-install: install-profile install-zsh install-nvim install-git install-less install-dircolors install-i3 install-polybar install-ranger install-tig install-htop install-rofi install-kitty install-zathura install-btop
+install: install-profile install-zsh install-nvim install-git install-less install-dircolors install-i3 install-polybar install-ranger install-tig install-htop install-rofi install-kitty install-zathura install-btop install-dunst
 
 install-btop:
 	@echo "Installing btop"
@@ -14,6 +14,10 @@ install-btop:
 install-dircolors:
 	@echo "Installing .dir_colors"
 	@ln -fs "${CURDIR}/dircolors/dircolors.ansi-universal" "${HOME}/.dir_colors"
+
+install-dunst:
+	@echo "Installing dunstrc"
+	@ln -fs "${CURDIR}/dunstrc" "$(XDG_CONFIG_HOME)/dunst/dunstrc"
 
 install-git:
 	$(call check_installed,git,git)
