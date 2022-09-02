@@ -101,7 +101,7 @@ mode $meta_workspace
 
 # Appearence
 ## font
-font pango:FuraCode Nerd Font 10
+font pango:FiraCode Nerd Font Mono 10
 ## no title bars
 new_window 1pixel
 ## no unused borders
