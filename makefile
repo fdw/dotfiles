@@ -107,8 +107,8 @@ install-profile:
 
 install-ranger:
 	$(call check_installed,ranger,ranger)
-	$(call check_installed,w3m,w3m)
-	$(call check_installed,aunpack,atools)
+	$(call check_installed,patool,patool)
+	$(call check_installed,highlight,highlight)
 	@echo "Installing .config/ranger/rc.conf"
 	@mkdir -p "$(XDG_CONFIG_HOME)/ranger/plugins"
 	@ln -fs "${CURDIR}/ranger/rc.conf" "$(XDG_CONFIG_HOME)/ranger/rc.conf"

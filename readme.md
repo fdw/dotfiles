@@ -65,7 +65,7 @@ This repo contains dotfiles for my workspace that is focused on terminal based a
 ### [ranger](http://ranger.nongnu.org/)
 * Sensible configuration
 * Some useful keybindings
-* Easy extraction and compression with [atool](http://www.nongnu.org/atool/)
+* Easy extraction and compression with [patool](https://wummel.github.io/patool/)
 * [Devicons](https://github.com/alexanderjeurissen/ranger_devicons/)
 * [Zoxide-Support](https://github.com/jchook/ranger-zoxide/)
 
