@@ -3,7 +3,7 @@
 	useConfigOnly=true
 [core]
 	editor = nvim
-	pager = diff-so-fancy | less --tabs=4 -RFX
+	pager = delta
 	whitespace = -trailing-space,-space-before-tab,-indent-with-non-tab
 	autocrlf = input
 	excludesfile = ~/.config/git/ignore
@@ -22,6 +22,19 @@
 	autosquash = true
 [rerere]
 	enabled = true
+[interactive]
+	diffFilter = delta --color-only --features=interactive
+[diff]
+	tool = difftastic
+	colorMoved = default
+[merge]
+	conflictstyle = diff3
+[difftool]
+	prompt = false
+[difftool "difftastic"]
+	cmd = difft "$LOCAL" "$REMOTE"
+[pager]
+	difftool = true
 [color]
 	ui = auto
 [help]
@@ -82,3 +95,8 @@
 	process = git-lfs filter-process
 	required = true
 	clean = git-lfs clean -- %f
+[delta]
+	navigate = true
+	light = false
+	side-by-side = true
+	line-numbers = true

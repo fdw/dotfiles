@@ -82,7 +82,8 @@ This repo contains dotfiles for my workspace that is focused on terminal based a
 ### gitconfig
 * Sensible configuration
 * Useful aliases (contains assume, unstage and shortcuts for the most often used commands)
-* needs to be configured with your own name and email
+* Diffs with [difftastic](https://github.com/Wilfred/difftastic/) and [delta](https://github.com/dandavison/delta/)
+* Needs to be configured with your own name and email
 * Always ignores direnv files
 
 ### [Intellij](https://www.jetbrains.com/idea/)

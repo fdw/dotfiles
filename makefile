@@ -21,7 +21,8 @@ install-dunst:
 
 install-git:
 	$(call check_installed,git,git)
-	$(call check_installed,diff-so-fancy,diff-so-fancy)
+	$(call check_installed,delta,git-delta)
+	$(call check_installed,difft,git-difftastic)
 	$(call check_installed,git-lfs,git-lfs)
 	@echo "Installing .gitconfig"
 	@mkdir -p "$(XDG_CONFIG_HOME)/git"
