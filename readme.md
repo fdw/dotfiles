@@ -4,7 +4,7 @@
 
 ![Screenshot](screenshot.png)
 
-This repo contains dotfiles for my workspace that is focused on terminal based apps (Nvim, ranger, autojump) and a lightweight window manager (i3, rofi, polybar). Everything is meant to integrate with everything else, starting from the theme: Solarized Dark.
+This repo contains dotfiles for my workspace that is focused on terminal based apps (neovim, ranger, zoxide) and a lightweight window manager (i3, rofi, polybar). Everything is meant to integrate with everything else, starting from the theme: Solarized Dark.
 
 ## Detailed Content
 
@@ -20,8 +20,8 @@ This repo contains dotfiles for my workspace that is focused on terminal based a
 * [Powerline10k Theme](https://github.com/romkatv/powerlevel10k)
 * Vim mode with [zsh-vim-mode](https://github.com/softmoth/zsh-vim-mode)
 * Some nice aliases
-	* `g` is short for git
-	* `v` opens Neovim
+  * `g` is short for git
+  * `v` opens Neovim
 * Supports [Direnv](https://github.com/direnv/direnv)
 
 ### vimrc/nvimrc for [Neovim](https://neovim.io/)
@@ -52,15 +52,16 @@ This repo contains dotfiles for my workspace that is focused on terminal based a
 ### [Polybar](https://github.com/jaagr/polybar/)
 * Solarized Dark theme
 * Styled after Powerline
+* Shows the current weather using [wedder](https://github.com/awersching/wedder)
 
 ### [Rofi](https://davedavenport.github.io/rofi/)
 * Solarized
 * Uses a combi mode for drun and ssh
 * Sidebar offers each of these modi seperately
 * [clipster](https://github.com/mrichar1/clipster) & [roficlip](https://github.com/gilbertw1/roficlip)
-* [rofi-pass](https://github.com/carnager/rofi-pass)
-* [rofimoji](https://github.com/fdw/rofimoji)
+* [rofimoji](https://github.com/fdw/rofimoji) for some emoji goodness
 * [rofi-calc](https://github.com/svenstaro/rofi-calc)
+* [rofi-rbw](https://github.com/fdw/rofi-rbw) to integrate with Bitwarden (via [rbw](https://github.com/doy/rbw))
 
 ### [ranger](http://ranger.nongnu.org/)
 * Sensible configuration
@@ -81,12 +82,12 @@ This repo contains dotfiles for my workspace that is focused on terminal based a
 
 ### gitconfig
 * Sensible configuration
-* Useful aliases (contains assume, unstage and shortcuts for the most often used commands)
+* Useful aliases (contains assume, unstage and very short shortcuts for the most often used commands)
 * Diffs with [difftastic](https://github.com/Wilfred/difftastic/) and [delta](https://github.com/dandavison/delta/)
 * Needs to be configured with your own name and email
 * Always ignores direnv files
 
-### [Intellij](https://www.jetbrains.com/idea/)
+### [Intellij](https://www.jetbrains.com/idea/) and its siblings
 * Ideavim configuration matching the one for Neovim
 * A nice color scheme based on Solarized Dark
 
@@ -102,9 +103,6 @@ This repo contains dotfiles for my workspace that is focused on terminal based a
 ### [btop](https://github.com/aristocratos/btop)
 * Styled for my taste and needs
 
-### htop
-* Styled for my taste
-
 ### [Dunst](https://github.com/dunst-project/dunst)
 * Styled in solarized
 
@@ -113,11 +111,6 @@ This repo contains dotfiles for my workspace that is focused on terminal based a
 git clone --recursive https://github.com/fdw/dotfiles.git ~/.config/dotfiles
 cd .config/dotfiles
 make install
-```
-
-## Updating
-```
-make update
 ```
 
 # Other helpful Programs
