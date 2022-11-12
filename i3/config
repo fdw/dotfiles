@@ -31,11 +31,11 @@ set $sysmenu "  [r]estart - [l]ock - lo[g] out - [s]uspend - [h]ibernate - re[b]
 bindsym $mod+s mode $sysmenu
 mode $sysmenu
 {
-	bindsym r restart
+	bindsym r reload; exec pkill -USR1 polybar;
 	bindsym g exit
 	bindsym p exec --no-startup-id "systemctl poweroff"; mode "default"
 	bindsym b exec --no-startup-id "systemctl reboot"; mode "default"
-	bindsym h exec --no-startup-id i3exit hibernate, mode "default"
+	bindsym h exec --no-startup-id "systemctl hibernate"; mode "default"
 	bindsym s exec --no-startup-id "systemctl suspend"; mode "default"
 	bindsym l exec --no-startup-id "loginctl lock-session"; mode "default"
 	bindsym Return mode "default"
