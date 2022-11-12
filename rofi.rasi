@@ -1,9 +1,8 @@
 configuration {
-	modi: "combi,drun,ssh";
 	font: "FiraCode Nerd Font 10";
 	terminal: "kitty";
 	drun-match-fields: "name";
 	sidebar-mode: true;
-	combi-modi: "drun,ssh";
+	dpi: 192;
 }
 @theme "solarized_alternate"

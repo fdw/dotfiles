@@ -8,7 +8,7 @@ set $term kitty
 bindsym $mod+x kill
 bindsym $mod+Return exec $term
 ## rofi
-bindsym $mod+space exec "rofi -show combi"
+bindsym $mod+space exec "rofi -show combi -modes combi,drun,ssh -combi-modes drun,ssh"
 bindsym $mod+c exec "roficlip"
 bindsym $mod+p exec "rofi-rbw"
 bindsym $mod+e exec "rofimoji"
