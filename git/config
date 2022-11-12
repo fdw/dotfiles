@@ -89,7 +89,7 @@
 	# create upstream branch and push
 	pu = !git push -u origin $(git rev-parse --abbrev-ref HEAD)
 	# Remove old (merged) branches
-	cb = "!git branch --merged | egrep -v '(^\\*|main|master|develop)' | xargs -r -n 1 git branch -d"
+	cb = "!git branch --merged | grep -E -v '(^\\*|main|master|develop)' | xargs -r -n 1 git branch -d"
 [filter "lfs"]
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
