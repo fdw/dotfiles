@@ -60,8 +60,9 @@
 	cim = commit --message
 	ca = commit --amend
 	ds = diff --staged
+	dt = difftool
 	nb = switch -c
-	pf = push --force
+	pf = push --force-with-lease
 	rb = rebase
 	rba = rebase --abort
 	rbc = rebase --continue
