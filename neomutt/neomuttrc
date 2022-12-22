@@ -6,6 +6,9 @@ set message_cachedir = "${XDG_CACHE_HOME}/neomutt/messages"
 unset imap_passive
 source gpg.rc
 
+# Receiving
+set rfc2047_parameters = yes
+
 # Sending
 set sendmail="/usr/bin/msmtp"
 set send_charset="utf-8"
