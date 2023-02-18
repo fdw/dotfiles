@@ -95,7 +95,6 @@ install-nvim:
 
 install-polybar:
 	$(call check_installed,polybar,polybar)
-	$(call check_installed,wedder,wedder)
 	@echo "Installing polybar"
 	@mkdir -p "$(XDG_CONFIG_HOME)/polybar/"
 	@ln -fs "${CURDIR}/polybar/config.ini" "$(XDG_CONFIG_HOME)/polybar/config.ini"

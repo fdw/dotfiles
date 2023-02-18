@@ -52,7 +52,6 @@ This repo contains dotfiles for my workspace that is focused on terminal based a
 ### [Polybar](https://github.com/jaagr/polybar/)
 * Solarized Dark theme
 * Styled after Powerline
-* Shows the current weather using [wedder](https://github.com/awersching/wedder)
 
 ### [Rofi](https://davedavenport.github.io/rofi/)
 * Solarized
