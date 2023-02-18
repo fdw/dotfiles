@@ -114,6 +114,7 @@ install-ranger:
 	@ln -fs "${CURDIR}/ranger/rc.conf" "$(XDG_CONFIG_HOME)/ranger/rc.conf"
 	@ln -fs "${CURDIR}/ranger/commands" "$(XDG_CONFIG_HOME)/ranger/commands.py"
 	@ln -fs "${CURDIR}/ranger/rifle.conf" "$(XDG_CONFIG_HOME)/ranger/rifle.conf"
+	@ln -fs "${CURDIR}/ranger/scope.sh" "$(XDG_CONFIG_HOME)/ranger/scope.sh"
 	@ln -fs "${CURDIR}/ranger/zoxide/" "$(XDG_CONFIG_HOME)/ranger/plugins/"
 	@ln -fs "${CURDIR}/ranger/devicons/" "$(XDG_CONFIG_HOME)/ranger/plugins/"
 
