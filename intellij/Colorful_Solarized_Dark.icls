@@ -1,10 +1,10 @@
 <scheme name="Colorful Solarized Dark" version="142" parent_scheme="Default">
-  <option name="FONT_SCALE" value="2.0" />
+  <option name="FONT_SCALE" value="1.0" />
   <metaInfo>
-    <property name="created">2021-12-22T10:46:08</property>
+    <property name="created">2023-03-30T11:13:57</property>
     <property name="ide">idea</property>
-    <property name="ideVersion">2021.3.0.0</property>
-    <property name="modified">2021-12-22T10:46:12</property>
+    <property name="ideVersion">2023.1.0.0</property>
+    <property name="modified">2023-03-30T11:13:59</property>
     <property name="originalScheme">Colorful Solarized Dark</property>
   </metaInfo>
   <option name="CONSOLE_FONT_NAME" value="JetBrains Mono" />
@@ -173,7 +173,7 @@
     </option>
     <option name="DEFAULT_BLOCK_COMMENT">
       <value>
-        <option name="FOREGROUND" value="5c5c5c" />
+        <option name="FOREGROUND" value="859900" />
         <option name="FONT_TYPE" value="2" />
       </value>
     </option>
@@ -348,7 +348,7 @@
     </option>
     <option name="DEFAULT_STRING">
       <value>
-        <option name="FOREGROUND" value="1e5f57" />
+        <option name="FOREGROUND" value="458383" />
         <option name="FONT_TYPE" value="2" />
       </value>
     </option>
@@ -484,6 +484,17 @@
         <option name="FOREGROUND" value="e0e2e4" />
       </value>
     </option>
+    <option name="JS.GLOBAL_VARIABLE">
+      <value>
+        <option name="FOREGROUND" value="6c71c4" />
+        <option name="FONT_TYPE" value="3" />
+      </value>
+    </option>
+    <option name="JS.LOCAL_VARIABLE">
+      <value>
+        <option name="FOREGROUND" value="859900" />
+      </value>
+    </option>
     <option name="JS.PARAMETER" baseAttributes="DEFAULT_PARAMETER" />
     <option name="LOG_ERROR_OUTPUT">
       <value>
@@ -533,7 +544,6 @@
         <option name="FOREGROUND" value="d33682" />
       </value>
     </option>
-    <option name="PY.KEYWORD_ARGUMENT" baseAttributes="DEFAULT_PARAMETER" />
     <option name="SEARCH_RESULT_ATTRIBUTES">
       <value>
         <option name="BACKGROUND" value="73642" />

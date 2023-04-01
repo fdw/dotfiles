@@ -3,7 +3,6 @@ source ${XDG_CONFIG_HOME}/nvim/keys.vim
 
 set ideajoin
 set surround
-set relativenumber
 set idearefactormode keep
 
 let mapleader = " "
