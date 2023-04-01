@@ -1,12 +1,11 @@
 [global]
   monitor = 0
-  frame_color = "#073642"
   follow = none
 
   width = 400
   height = 200
-  origin = top-right
-  offset = 30x30
+  origin = top-center
+  offset = 0x30
 
   indicate_hidden = true
   separator_height = 4
@@ -51,14 +50,17 @@ per_monitor_dpi = true
 [urgency_low]
   background = "#002b36"
   foreground = "#586e75"
+  frame_color = "#586e75"
   timeout = 10
 
 [urgency_normal]
   background = "#002b36"
   foreground = "#839496"
+  frame_color = "#839496"
   timeout = 10
 
 [urgency_critical]
   background = "#002b36"
   foreground = "#93a1a1"
+  frame_color = "#93a1a1"
   timeout = 0
