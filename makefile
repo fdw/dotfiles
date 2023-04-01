@@ -7,6 +7,13 @@ XDG_DATA_HOME ?= "${HOME}/.local/share"
 
 install: install-profile install-zsh install-nvim install-git install-less install-dircolors install-i3 install-polybar install-ranger install-tig install-htop install-rofi install-kitty install-zathura install-btop install-dunst
 
+install-autorandr:
+	$(call check_installed,autorandr,autorandr)
+	@echo "Installing generic autorandr config"
+	@mkdir -p "$(XDG_CONFIG_HOME)/autorandr/postswitch.d"
+	@ln -s "${CURDIR}/autorandr/postswitch.d/10-background" "$(XDG_CONFIG_HOME)/autorandr/postswitch.d/10-background"
+	@ln -s "${CURDIR}/autorandr/postswitch.d/10-polybar" "$(XDG_CONFIG_HOME)/autorandr/postswitch.d/10-polybar"
+
 install-btop:
 	@echo "Installing btop"
 	@ln -fs "${CURDIR}/btop.conf" "${HOME}/.config/btop/btop.conf"
