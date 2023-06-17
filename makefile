@@ -52,10 +52,12 @@ install-i3: install-polybar install-rofi
 	$(call check_installed,autotiling-rs,autotiling-rs)
 	$(call check_installed,autorandr,autorandr)
 	$(call check_installed,feh,feh)
+	$(call check_installed,i3icons2,i3icons2)
 	@echo "Installing i3 config"
 	@mkdir -p "$(XDG_CONFIG_HOME)/i3/"
 	@ln -fs "${CURDIR}/i3/config" "$(XDG_CONFIG_HOME)/i3/config"
 	@ln -fs "${CURDIR}/i3/autorandr-postswitch" "$(XDG_CONFIG_HOME)/autorandr/postswitch"
+	@ln -fs "${CURDIR}/i3/i3icons2.config" "$(XDG_CONFIG_HOME)/i3icons/i3icons2.config"
 
 install-intellij: install-nvim
 	@echo "Installing ideavimrc"
