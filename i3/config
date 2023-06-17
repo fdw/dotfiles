@@ -171,10 +171,10 @@ bindsym --release Print exec "maim -su ~/Downloads/$(date +%Y-%m-%dT%H:%M:%S).pn
 
 # Autostart
 exec --no-startup-id (autorandr --change)&
-exec --no-startup-id (autotiling)&
-exec --no-startup-id (clipster -d) &
-exec --no-startup-id (udiskie -NsF) &
-exec --no-startup-id (/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1) &
-exec --no-startup-id (nm-applet) &
+exec --no-startup-id (autotiling-rs)&
+exec --no-startup-id (clipster -d)&
+exec --no-startup-id (udiskie -NsF)&
+exec --no-startup-id (/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1)&
+exec --no-startup-id (nm-applet)&
 exec --no-startup-id (xss-lock -l -n /usr/local/bin/dim-screen.sh -- i3lock -n -c 000000)&
-exec --no-startup-id (xset s 180 120)
+exec --no-startup-id (xset s 180 120)&

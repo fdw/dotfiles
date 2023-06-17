@@ -47,7 +47,7 @@ This repo contains dotfiles for my workspace that is focused on terminal based a
 * Polybar integration
 * Rofi integration
 * Works with multiple monitors by using [autorandr](https://github.com/phillipberndt/autorandr)
-* Integrates [autotiling](https://github.com/nwg-piotr/autotiling)
+* Integrates [autotiling-rs](https://github.com/ammgws/autotiling-rs)
 
 ### [Polybar](https://github.com/jaagr/polybar/)
 * Solarized Dark theme
