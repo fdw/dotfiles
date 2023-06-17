@@ -59,6 +59,8 @@
 	ap = add --patch
 	cim = commit --message
 	ca = commit --amend
+	cp = cherry-pick
+	cpc = cherry-pick --continue
 	ds = diff --staged
 	dt = difftool
 	nb = switch -c
