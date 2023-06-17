@@ -99,14 +99,7 @@ eval "$(direnv hook zsh)"
 DEFAULT_USER=fdw
 #### per-directory-history
 HISTORY_BASE=${ZSH_DATA_DIR}/histories
-
-### compinit
 autoload -Uz compinit
-if [[ -n ${ZDOTDIR}/.zcompdump(#qN.mh+24) ]]; then
-  compinit
-else
-  compinit -C
-fi
 
 ### Load plugins
 eval "$(zoxide init zsh)"

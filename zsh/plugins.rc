@@ -7,3 +7,4 @@ Aloxaf/fzf-tab
 softmoth/zsh-vim-mode 
 zdharma-continuum/fast-syntax-highlighting
 zsh-users/zsh-autosuggestions
+belak/zsh-utils path:completion
