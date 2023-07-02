@@ -57,10 +57,6 @@ setopt pushd_ignore_dups
 setopt pushd_silent
 setopt pushd_to_home
 ## completion
-setopt auto_list
-setopt auto_menu
-setopt auto_remove_slash
-setopt complete_in_word
 setopt list_rows_first
 setopt list_types
 ## Globbing
@@ -70,7 +66,7 @@ setopt numeric_glob_sort
 setopt glob
 ## History
 setopt append_history
-setopt hist_ignore_all_dups
+setopt hist_save_no_dups
 setopt hist_reduce_blanks
 setopt hist_verify
 setopt share_history
