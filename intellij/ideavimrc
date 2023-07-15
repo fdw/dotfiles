@@ -27,8 +27,8 @@ nnoremap <leader>gs :action ActivateStructureToolWindow<CR>
 nnoremap <leader>sp :action ParameterInfo<CR>
 
 " Navigation
-nnoremap ]c :action GotoNextError<CR>
-nnoremap [c :action GotoPreviousError<CR>
+nnoremap ]e :action GotoNextError<CR>
+nnoremap [e :action GotoPreviousError<CR>
 nnoremap ]h :action VcsShowNextChangeMarker<CR>
 nnoremap [h :action VcsShowPrevChangeMarker<CR>
 
@@ -42,4 +42,4 @@ sethandler <C-O> a:ide
 sethandler <C-A> a:ide
 sethandler <C-N> a:ide
 sethandler <C-P> a:ide
-sethandler <C-W> a:vim
+sethandler <C-W> a:ide
