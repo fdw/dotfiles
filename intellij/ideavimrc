@@ -2,8 +2,10 @@ source ${XDG_CONFIG_HOME}/nvim/common.vim
 source ${XDG_CONFIG_HOME}/nvim/keys.vim
 
 set ideajoin
+set sneak
 set surround
 set idearefactormode keep
+set ignorecase smartcase
 
 let mapleader = " "
 
