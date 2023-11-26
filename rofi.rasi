@@ -1,5 +1,5 @@
 configuration {
-	font: "FiraCode Nerd Font 10";
+	font: "JetBrainsMonoNL NFM 10";
 	terminal: "kitty";
 	drun-match-fields: "name";
 	sidebar-mode: true;
