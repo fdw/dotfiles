@@ -103,7 +103,7 @@ mode $meta_workspace
 ## font
 font pango:FiraCode Nerd Font Mono 10
 ## no title bars
-new_window 1pixel
+default_border pixel 1
 ## no unused borders
 hide_edge_borders both
 
@@ -178,4 +178,5 @@ exec --no-startup-id (/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1)
 exec --no-startup-id (nm-applet)&
 exec --no-startup-id (xss-lock -l -n /usr/local/bin/dim-screen.sh -- i3lock -n -c 000000)&
 exec --no-startup-id (xset s 180 120)&
-exec --no-startup-id (i3icons2)&
+exec --no-startup-id (workstyle)&
+exec --no-startup-id (picom)&
