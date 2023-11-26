@@ -12,9 +12,10 @@ for entry in $(xrandr --query | grep " connected"); do
 
   tray_pos=""
   if [ "$status" == "primary" ]; then
-    tray_pos="right"
+    MONITOR=$mon polybar --reload primary &
+  else
+    MONITOR=$mon polybar --reload secondary &
   fi
 
-  MONITOR=$mon TRAY_POSITION=$tray_pos polybar --reload powerbar &
 done
 unset IFS
