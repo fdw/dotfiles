@@ -46,7 +46,7 @@ This repo contains dotfiles for my workspace that is focused on terminal based a
 * Nice window and session modes with helpful status bar hints and shortcuts
 * Polybar integration
 * Rofi integration
-* Nice workspace names with [i3icons](https://github.com/nwhirschfeld/i3icons2)
+* Nice workspace names with [workstyle](https://github.com/pierrechevalier83/workstyle)
 * Works with multiple monitors by using [autorandr](https://github.com/phillipberndt/autorandr)
 * Integrates [autotiling-rs](https://github.com/ammgws/autotiling-rs)
 
