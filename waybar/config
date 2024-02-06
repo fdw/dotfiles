@@ -1,0 +1,43 @@
+{
+  "layer": "top",
+  "modules-left": [
+    "clock",
+    "sway/workspaces"
+  ],
+  "modules-right": [
+    "wireplumber", "network#wifi", "network#lan", "battery", "tray"
+  ],
+  "clock": {
+    "format": "{:%a, %d %b %H:%M}",
+    "tooltip-format": "<tt><small>{calendar}</small></tt>",
+    "calendar": {
+      "mode": "month",
+      "weeks-pos": "left"
+    },
+    "actions": {
+      "on-scroll-up": "shift_up",
+      "on-scroll-down": "shift_down"
+    }
+  },
+  "wireplumber": {
+    "format": "{icon} {volume}% {node_name}",
+    "format-icons": ["", "", ""],
+  },
+  "network#wifi": {
+    "interface": "wlp0s20f3",
+    "format": "  {essid}",
+    "format-tooltip": "{ipaddr}"
+  },
+  "network#lan": {
+    "interface": "enp5s0u2u4",
+    "format": " 󰈁",
+    "tooltip-format": "{ipaddr}"
+  },
+  "battery": {
+    "format-discharging": "{icon} {time} ({capacity})",
+    "format-charging": " {capacity}",
+    "format-full": "",
+    "format-icons": ["", "", "", "", ""],
+    "tooltip-format": "{power}"
+  }
+}

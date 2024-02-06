@@ -132,9 +132,32 @@ install-rofi:
 	@ln -fs "${CURDIR}/rofi.rasi" "$(XDG_CONFIG_HOME)/rofi/config.rasi"
 	@ln -fs "${CURDIR}/rofimoji.rc" "$(XDG_CONFIG_HOME)/rofimoji.rc"
 
+install-sway: install-waybar install-workstyle
+	$(call check_installed,sway,sway)
+	$(call check_installed,wpaperd,wpaperd)
+	$(call check_installed,kanshi,kanshi)
+	@echo "Installing sway config"
+	@mkdir -p "$(XDG_CONFIG_HOME)/sway"
+	@ln -fs "${CURDIR}/sway/sway" "$(XDG_CONFIG_HOME)/sway/config"
+	@mkdir -p "$(XDG_CONFIG_HOME)/wpaperd"
+	@ln -fs "${CURDIR}/sway/wallpaper.toml" "$(XDG_CONFIG_HOME)/wpaperd/wallpaper.toml"
+
 install-tig:
 	@echo "Installing .tigrc"
 	@ln -fs "${CURDIR}/tigrc" "${HOME}/.tigrc"
+
+install-waybar:
+	$(call check_installed,waybar,waybar)
+	@echo "Installing waybar config"
+	@mkdir -p "$(XDG_CONFIG_HOME)/waybar"
+	@ln -fs "${CURDIR}/waybar/config" "$(XDG_CONFIG_HOME)/waybar/config"
+	@ln -fs "${CURDIR}/waybar/style.css" "$(XDG_CONFIG_HOME)/waybar/style.css"
+
+install-workstyle:
+	$(call check_installed,workstyle,workstyle)
+	@echo "Installing workstyle config"
+	@mkdir -p "$(XDG_CONFIG_HOME)/workstyle"
+	@ln -fs "${CURDIR}/workstyle.toml" "$(XDG_CONFIG_HOME)/workstyle/config.toml"
 
 install-yay:
 	$(call check_installed,yay,yay)

@@ -1,0 +1,45 @@
+* {
+  /*font-family: "JetBrainsMonoNL NFM";*/
+  font-family: "CaskaydiaCove Nerd Font";
+  font-size: 14px;
+}
+
+window#waybar {
+  background-color: #002b36;
+}
+
+button {
+  box-shadow: inset 0 -3px transparent;
+  border: none;
+  border-radius: 0;
+}
+
+#clock, #workspaces, #wireplumber, #network, #battery, #tray {
+  margin-left: 2px;
+  min-width: 16px;
+}
+
+#clock {
+  color: #b58900;
+}
+
+#workspaces button {
+  padding: 0 5px;
+}
+
+#workspaces button.focused {
+  box-shadow: inset 0 -3px #2aa198;
+  color: #2aa198
+}
+
+#wireplumber {
+  color: #859900;
+}
+
+#network {
+  color: #cb4b16;
+}
+
+#battery {
+  color: #268bd2;
+}

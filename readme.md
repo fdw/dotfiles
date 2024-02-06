@@ -54,6 +54,14 @@ This repo contains dotfiles for my workspace that is focused on terminal based a
 * Solarized Dark theme
 * Styled after Powerline
 
+### [Sway](https://swaywm.org/)
+* Similar configuration to i3
+* Waybar integration
+* Rofi integration
+* Nice workspace names with [workstyle](https://github.com/pierrechevalier83/workstyle)
+* Works with multiple monitors by using [kanshi](https://sr.ht/~emersion/kanshi/)
+* Integrates [autotiling](https://github.com/nwg-piotr/autotiling)
+
 ### [Rofi](https://davedavenport.github.io/rofi/)
 * Solarized
 * Uses a combi mode for drun and ssh
