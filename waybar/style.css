@@ -14,7 +14,7 @@ button {
   border-radius: 0;
 }
 
-#clock, #workspaces, #wireplumber, #network, #battery, #tray {
+#clock, #workspaces, #mode, #wireplumber, #network, #battery, #tray {
   margin-left: 2px;
   min-width: 16px;
 }

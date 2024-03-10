@@ -23,9 +23,9 @@ bindsym {
 }
 
 # Terminal menu
-set $termmenu "  [t]erminal - n[v]im - [r]anger  "
+set $termmenu "<u>t</u>erminal | n<u>v</u>im | <r>r</u>anger"
 bindsym $mod+t mode $termmenu
-mode $termmenu
+mode --pango_markup $termmenu
 {
 	bindsym t exec "$term"; mode "default"
 	bindsym r exec "$term -e ranger"; mode "default"
@@ -35,9 +35,9 @@ mode $termmenu
 }
 
 # Power menu
-set $sysmenu "  [r]estart - [l]ock - lo[g] out - [s]uspend - [h]ibernate - re[b]oot - [p]oweroff  "
+set $sysmenu "<u>r</u>estart | <u>l</u>ock | lo<u>g</u> out | <u>s</u>uspend | <u>h</u>ibernate | re<u>b</u>oot | <u>p</u>oweroff"
 bindsym $mod+s mode $sysmenu
-mode $sysmenu
+mode --pango_markup $sysmenu
 {
 	bindsym r reload; exec pkill -USR1 polybar;
 	bindsym g exit
@@ -80,16 +80,16 @@ workspace_layout tabbed
 floating_modifier $mod
 
 ## change layout etc of workspaces, windows & containers
-set $meta_workspace "  split [h]orizontally - split [v]vertically - [g]rid mode - [t]abbed mode - [l]ist mode - [f]loat  "
+set $meta_workspace "split <u>h</u>orizontally | split <u>v</u>vertically | <u>g</u>rid mode | <u>t</u>abbed mode | <u>l</u>ist mode | <u>f</u>loat"
 bindsym $mod+w mode $meta_workspace
-mode $meta_workspace
+mode --pango_markup $meta_workspace
 {
 	# splits
-	bindsym h split h;mode "default"
-	bindsym v split v;mode "default"
+	bindsym h splith;mode "default"
+	bindsym v splitv;mode "default"
 
 	# workspace layout
-	bindsym g layout default;mode "default"
+	bindsym g layout splith;mode "default"
 	bindsym t layout tabbed;mode "default"
 	bindsym l layout stacked;mode "default"
 

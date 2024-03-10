@@ -2,7 +2,8 @@
   "layer": "top",
   "modules-left": [
     "clock",
-    "sway/workspaces"
+    "sway/workspaces",
+    "sway/mode"
   ],
   "modules-right": [
     "wireplumber", "network#wifi", "network#lan", "battery", "tray"
