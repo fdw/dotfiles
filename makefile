@@ -5,7 +5,7 @@ endef
 XDG_CONFIG_HOME ?= "${HOME}/.config"
 XDG_DATA_HOME ?= "${HOME}/.local/share"
 
-install: install-profile install-zsh install-nvim install-git install-less install-dircolors install-i3 install-polybar install-ranger install-tig install-htop install-rofi install-kitty install-zathura install-btop install-dunst
+install: install-profile install-zsh install-nvim install-git install-less install-dircolors install-i3 install-polybar install-ranger install-tig install-rofi install-kitty install-zathura install-btop install-dunst
 
 install-autorandr:
 	$(call check_installed,autorandr,autorandr)
@@ -35,12 +35,6 @@ install-git:
 	@mkdir -p "$(XDG_CONFIG_HOME)/git"
 	@ln -fs "${CURDIR}/git/config" "$(XDG_CONFIG_HOME)/git/config"
 	@ln -fs "${CURDIR}/git/ignore" "$(XDG_CONFIG_HOME)/git/ignore"
-
-install-htop:
-	$(call check_installed,htop,htop)
-	@echo "Installing htoprc"
-	@mkdir -p "$(XDG_CONFIG_HOME)/htop"
-	@ln -fs "${CURDIR}/htoprc" "$(XDG_CONFIG_HOME)/htop/htoprc"
 
 install-i3: install-polybar install-rofi
 	$(call check_installed,clipster,clipster)
