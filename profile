@@ -9,3 +9,5 @@ export SSH_AUTH_SOCK="${XDG_RUNTIME_DIR}/gnupg/S.gpg-agent.ssh"
 
 export DOCKER_CONFIG="${XDG_CACHE_HOME}/docker"
 export GRADLE_USER_HOME="${XDG_CACHE_HOME}/gradle"
+
+export _ZO_EXCLUDE_DIRS=$HOME:${XDG_DATA_HOME}/zsh/histories
