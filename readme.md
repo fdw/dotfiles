@@ -22,7 +22,6 @@ This repo contains dotfiles for my workspace that is focused on terminal based a
 * Some nice aliases
   * `g` is short for git
   * `v` opens Neovim
-* Supports [Direnv](https://github.com/direnv/direnv)
 
 ### vimrc/nvimrc for [Neovim](https://neovim.io/)
 * Continous undo

@@ -78,9 +78,6 @@ then
   zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 fi
 
-## Direnv
-eval "$(direnv hook zsh)"
-
 ## Plugins
 ### Config (pre)
 #### Prompt
