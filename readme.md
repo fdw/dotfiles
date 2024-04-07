@@ -24,19 +24,9 @@ This repo contains dotfiles for my workspace that is focused on terminal based a
   * `v` opens Neovim
 
 ### vimrc/nvimrc for [Neovim](https://neovim.io/)
-* Continous undo
-* Plugins organized with [Vim-Plug](https://github.com/junegunn/vim-plug)
-* [fzf](https://github.com/junegunn/fzf) [for vim](https://github.com/junegunn/fzf.vim)
+* Based on [Kickstart](https://github.com/nvim-lua/kickstart.nvim)
 * [Vim-Sneak](https://github.com/justinmk/vim-sneak)
-* [Startify](https://github.com/mhinz/vim-startify)
-* [Devicons](https://github.com/ryanoasis/vim-devicons)
-* [Airline](https://github.com/bling/vim-airline)
-* [Bufferline](https://github.com/bling/vim-bufferline)
-* [Indent Guidelines](https://github.com/nathanaelkane/vim-indent-guides)
-* [Sleuth.vim](https://github.com/tpope/vim-sleuth)
-* [EasyAlign](https://github.com/junegunn/vim-easy-align)
-* [targets.vim](https://github.com/wellle/targets.vim)
-* [Solarized Dark theme](https://github.com/lifepillar/vim-solarized8)
+* [Solarized Dark theme](https://github.com/maxmx03/solarized.nvim)
 * Neovim is set as the default editor
 
 ### [i3wm](https://i3wm.org/)

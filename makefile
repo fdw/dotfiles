@@ -81,19 +81,9 @@ install-neomutt:
 
 install-nvim:
 	$(call check_installed,nvim,neovim)
-	$(call check_installed,fzf,fzf)
-	$(call check_installed,rg,ripgrep)
 	@echo "Installing Neovim initrc"
 	@mkdir -p "$(XDG_CONFIG_HOME)/nvim"
-	@ln -fs "${CURDIR}/nvim/init.vim" "$(XDG_CONFIG_HOME)/nvim/init.vim"
-	@ln -fs "${CURDIR}/nvim/common.vim" "$(XDG_CONFIG_HOME)/nvim/common.vim"
-	@ln -fs "${CURDIR}/nvim/keys.vim" "$(XDG_CONFIG_HOME)/nvim/keys.vim"
-	@ln -fs "${CURDIR}/nvim/nvim.vim" "$(XDG_CONFIG_HOME)/nvim/nvim.vim"
-	@ln -fs "${CURDIR}/nvim/plugins.vim" "$(XDG_CONFIG_HOME)/nvim/plugins.vim"
-	@ln -fs "${CURDIR}/nvim/filetypes.vim" "$(XDG_CONFIG_HOME)/nvim/filetypes.vim"
-	@if [ ! -f "$(XDG_DATA_HOME)/nvim/site/autoload/plug.vim" ]; then \
-		curl -fLo "$(XDG_DATA_HOME)/nvim/site/autoload/plug.vim" --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim; \
-	fi
+	@ln -fs "${CURDIR}/nvim/init.lua" "$(XDG_CONFIG_HOME)/nvim/init.lua"
 
 install-polybar:
 	$(call check_installed,polybar,polybar)
