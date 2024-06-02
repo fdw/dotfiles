@@ -67,6 +67,10 @@ This repo contains dotfiles for my workspace that is focused on terminal based a
 * [Devicons](https://github.com/alexanderjeurissen/ranger_devicons/)
 * [Zoxide-Support](https://github.com/jchook/ranger-zoxide/)
 
+### [yazi](https://github.com/sxyazi/yazi/)
+* Sensible configuration
+* Enable zoxide plugin
+
 ### [neomutt](https://neomutt.org/)
 * Solarized, of course
 * Vim-inspired shortcuts

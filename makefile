@@ -148,6 +148,13 @@ install-yay:
 	@mkdir -p "$(XDG_CONFIG_HOME)/yay"
 	@ln -fs "${CURDIR}/yay.json" "$(XDG_CONFIG_HOME)/yay/config.json"
 
+install-yazi:
+	$(call check_installed,yazi,yazi)
+	@echo "Installing yazi config"
+	@mkdir -p "$(XDG_CONFIG_HOME)/yazi"
+	@ln -fs "${CURDIR}/yazi/yazi.toml" "$(XDG_CONFIG_HOME)/yazi/yazi.toml"
+	@ln -fs "${CURDIR}/yazi/init.lua" "$(XDG_CONFIG_HOME)/yazi/init.lua"
+
 install-zathura:
 	$(call check_installed,zathura,zahtura)
 	@echo "Installing zathura config"
