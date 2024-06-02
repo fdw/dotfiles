@@ -118,23 +118,23 @@ default_border none
 hide_edge_borders --i3 both
 
 ## define colors
-set $black		#002B36
-set $white		#839496
-set $gray			#CCCCCC
+set $black	#002B36
+set $white	#839496
+set $gray	#CCCCCC
 set $darkgray	#666666
-set $green		#799F26
-set $blue			#4D73AA
-set $purple		#8473A7
-set $red			#B58900
-set $orange		#E59847
-set $cyan			#2AA198
-set $dark			#00252E
+set $green	#799F26
+set $blue	#4D73AA
+set $purple	#8473A7
+set $red	#B58900
+set $orange	#E59847
+set $cyan	#2AA198
+set $dark	#00252E
 
-## window colors				border	backgr. text		indicator
-client.focused					$white	$white  $black	$black
-client.unfocused				$dark  	$dark   $white	$white
-client.focused_inactive	$dark  	$dark   $white	$dark
-client.urgent						$orange	$orange $dark		$white
+## window colors	border	backgr. text	indicator
+client.focused		$white	$white  $black	$black
+client.unfocused	$dark	$dark	$white	$white
+client.focused_inactive	$dark	$dark	$white	$dark
+client.urgent		$orange	$orange $dark	$white
 
 # Workspaces
 set $monitor_large DP-4
