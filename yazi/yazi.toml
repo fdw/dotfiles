@@ -17,3 +17,26 @@ prepend_previewers = [
   { mime = "application/x-rar",           run = "ouch" },
   { mime = "application/x-xz",            run = "ouch" },
 ]
+
+[opener]
+generic_open = [
+  { run = 'xdg-open "$@"', desc = "Open" }
+]
+edit = [
+    { run = 'nvim "$@"', block = true }
+]
+extract = [
+  { run = 'ouch d -y "$@"', desc = "Extract here with ouch" }
+]
+display = [
+  { run = 'zathura "$@"', desc = "Show in Zathura" }
+]
+
+[open]
+prepend_rules = [
+  { name = "*.epub", use = "display" },
+  { name = "*.pdf", use = "display" }
+]
+append_rules = [
+  { name = "*", use = "generic_open" },
+]
