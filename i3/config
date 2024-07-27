@@ -179,5 +179,4 @@ exec --no-startup-id nm-applet
 exec --no-startup-id xss-lock -l -n /usr/local/bin/dim-screen.sh -- i3lock -n -c 000000
 exec --no-startup-id xset s 180 120
 exec --no-startup-id workstyle
-exec --no-startup-id picom
 exec --no-startup-id redshift
