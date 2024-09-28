@@ -4,14 +4,14 @@
 
 ![Screenshot](screenshot.png)
 
-This repo contains dotfiles for my workspace that is focused on terminal based apps (neovim, ranger, zoxide) and a lightweight window manager (i3, rofi, polybar). Everything is meant to integrate with everything else, starting from the theme: Solarized Dark.
+This repo contains dotfiles for my workspace that is focused on terminal based apps (neovim, yazi, zoxide) and a lightweight window manager (i3, rofi, polybar or sway, rofi, waybar). Everything is meant to integrate with everything else, starting from the theme: Solarized Dark.
 
 ## Detailed Content
 
 ### zshrc for [ZSH](http://zsh.org/)
 * Plugins organized with [antidote](https://getantidote.github.io/)
 * [Zoxide](https://github.com/ajeetdsouza/zoxide)
-  * `r` asks Zoxide for the best directory and opens Ranger there, thanks to [ranger+zoxide](https://github.com/fdw/ranger_zoxide)
+  * `y` asks Zoxide for the best directory and opens Yazi there, thanks to [yazi-zoxide-zsh](https://github.com/fdw/yazi-zoxide-zsh)
 * Autocompletion configuration with [fzf](https://github.com/junegunn/fzf) thanks to [fzf-tab](https://github.com/Aloxaf/fzf-tab)
   * fzf also with [ripgrep](https://github.com/BurntSushi/ripgrep) for file and history search
 * [Fast Syntax highlighting](https://github.com/zdharma/fast-syntax-highlighting)
@@ -60,13 +60,6 @@ This repo contains dotfiles for my workspace that is focused on terminal based a
 * [rofi-calc](https://github.com/svenstaro/rofi-calc)
 * [rofi-rbw](https://github.com/fdw/rofi-rbw) to integrate with Bitwarden (via [rbw](https://github.com/doy/rbw))
 
-### [ranger](http://ranger.nongnu.org/)
-* Sensible configuration
-* Some useful keybindings
-* Easy extraction and compression with [patool](https://wummel.github.io/patool/)
-* [Devicons](https://github.com/alexanderjeurissen/ranger_devicons/)
-* [Zoxide-Support](https://github.com/jchook/ranger-zoxide/)
-
 ### [yazi](https://github.com/sxyazi/yazi/)
 * Sensible configuration
 * Enable zoxide plugin
@@ -79,7 +72,6 @@ This repo contains dotfiles for my workspace that is focused on terminal based a
 ### [kitty](https://github.com/kovidgoyal/kitty)
 * Solarized Dark theme
 * Separate escape code for ctrl+enter that works with zsh's autosuggestions
-* Supports ranger's image previews
 
 ### gitconfig
 * Sensible configuration

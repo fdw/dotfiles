@@ -5,7 +5,7 @@ endef
 XDG_CONFIG_HOME ?= "${HOME}/.config"
 XDG_DATA_HOME ?= "${HOME}/.local/share"
 
-install: install-profile install-zsh install-nvim install-git install-less install-dircolors install-i3 install-polybar install-ranger install-tig install-rofi install-kitty install-zathura install-btop install-dunst
+install: install-profile install-zsh install-nvim install-git install-less install-dircolors install-i3 install-polybar install-tig install-rofi install-kitty install-yazi install-zathura install-btop install-dunst
 
 install-autorandr:
 	$(call check_installed,autorandr,autorandr)
@@ -95,18 +95,6 @@ install-polybar:
 install-profile:
 	@echo "Installing .profile"
 	@ln -ffs "${CURDIR}/profile" "${HOME}/.profile"
-
-install-ranger:
-	$(call check_installed,ranger,ranger)
-	$(call check_installed,patool,patool)
-	$(call check_installed,highlight,highlight)
-	@echo "Installing .config/ranger/rc.conf"
-	@mkdir -p "$(XDG_CONFIG_HOME)/ranger/plugins"
-	@ln -fs "${CURDIR}/ranger/rc.conf" "$(XDG_CONFIG_HOME)/ranger/rc.conf"
-	@ln -fs "${CURDIR}/ranger/commands" "$(XDG_CONFIG_HOME)/ranger/commands.py"
-	@ln -fs "${CURDIR}/ranger/rifle.conf" "$(XDG_CONFIG_HOME)/ranger/rifle.conf"
-	@ln -fs "${CURDIR}/ranger/zoxide/" "$(XDG_CONFIG_HOME)/ranger/plugins/"
-	@ln -fs "${CURDIR}/ranger/devicons/" "$(XDG_CONFIG_HOME)/ranger/plugins/"
 
 install-rofi:
 	$(call check_installed,rofi,rofi)
