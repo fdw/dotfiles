@@ -142,6 +142,7 @@ install-yazi:
 	@mkdir -p "$(XDG_CONFIG_HOME)/yazi"
 	@ln -fs "${CURDIR}/yazi/yazi.toml" "$(XDG_CONFIG_HOME)/yazi/yazi.toml"
 	@ln -fs "${CURDIR}/yazi/init.lua" "$(XDG_CONFIG_HOME)/yazi/init.lua"
+	@ln -fs "${CURDIR}/yazi/keymap.toml" "$(XDG_CONFIG_HOME)/yazi/keymap.toml"
 
 install-zathura:
 	$(call check_installed,zathura,zahtura)
