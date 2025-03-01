@@ -1,4 +1,5 @@
 files = [emojis_smileys_emotion, emojis_people_body, emojis_food_drink, emojis_animals_nature, emojis_activities, emojis]
 skin-tone = neutral
-selector-args = -theme /usr/lib/python3.12/site-packages/picker/contrib/grid.rasi -kb-row-left Left -kb-row-right Right -kb-move-char-back Control+b -kb-move-char-forward Control+f -no-custom
+selector-args = -theme /usr/lib/python3.13/site-packages/picker/contrib/grid-icons-only.rasi -kb-row-left Left -kb-row-right Right -kb-move-char-back Control+b -kb-move-char-forward Control+f -no-custom
 hidden-descriptions = true
+use-icons = true
