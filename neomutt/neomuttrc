@@ -2,7 +2,8 @@
 source account.rc
 
 set header_cache = "${XDG_CACHE_HOME}/neomutt/headers"
-set message_cachedir = "${XDG_CACHE_HOME}/neomutt/messages"
+set message_cache_dir = "${XDG_CACHE_HOME}/neomutt/messages"
+set message_cache_clean = "yes"
 unset imap_passive
 source gpg.rc
 

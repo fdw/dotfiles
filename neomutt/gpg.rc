@@ -8,6 +8,7 @@ set crypt_verify_sig = "yes"
 set crypt_replysign = "yes"
 set crypt_replyencrypt = "yes"
 set crypt_replysignencrypted = "yes"
+set crypt_protected_headers_write = "no"
 
 set pgp_use_gpg_agent = "yes"
 set pgp_check_gpg_decrypt_status_fd = "yes"
