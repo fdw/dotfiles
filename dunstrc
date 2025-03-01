@@ -3,9 +3,9 @@
   follow = none
 
   width = 400
-  height = 200
+  height = (0, 200)
   origin = top-center
-  offset = 0x30
+  offset = (0, 30)
 
   indicate_hidden = true
   separator_height = 4
