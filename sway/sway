@@ -205,6 +205,7 @@ for_window [class="(.*join\?action\=join.*|.*zoom.*)"] floating enable
 for_window [class="(.*join\?action\=join.*|.*zoom.*)" title="Zoom - Licensed Account"] floating disable
 for_window [class="(.*join\?action\=join.*|.*zoom.*)" title="Zoom Meeting"] floating disable
 no_focus [title="^zoom\s?$"]
+for_window [title="udiskie"] floating enable
 
 # Autostart
 exec --no-startup-id {
