@@ -52,6 +52,7 @@
 	s = switch
 	r = restore
 	u = fetch # update
+	z = zoxide
 	# helper functions
 	st = status -sb
 	aa = add -A
