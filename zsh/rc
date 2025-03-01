@@ -71,45 +71,37 @@ setopt autoresume
 setopt multios
 
 # Plugins
-## Colorful ls
-if [[ -f "${HOME}/.dir_colors" ]]
-then
-  eval `dircolors ${HOME}/.dir_colors`
-  zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
-fi
-
-## Plugins
-### Config (pre)
-#### Prompt
+## Config (pre)
+### Prompt
 DEFAULT_USER=fdw
-#### per-directory-history
+### per-directory-history
 HISTORY_BASE=${ZSH_DATA_DIR}/histories
 
-### Load plugins
+## Load plugins
 eval "$(zoxide init zsh)"
 source ${ZSH_DATA_DIR}/p10k.zsh
 source ${ZSH_DATA_DIR}/completions
 source ${ZSH_DATA_DIR}/aliases.zsh
 source ${ZSH_DATA_DIR}/plugins.zsh
 
-### Config (post)
-#### Prompt
+## Config (post)
+### Prompt
 autoload -Uz promptinit && promptinit && prompt powerlevel10k
-#### History substring search
+### History substring search
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
-#### fzf
+### fzf
 source /usr/share/fzf/key-bindings.zsh
 source /usr/share/fzf/completion.zsh
 export FZF_DEFAULT_OPTS="--ansi"
 export FZF_DEFAULT_COMMAND="fd --type file --no-ignore-vcs --color always"
 export FZF_CTRL_T_COMMAND="${FZF_DEFAULT_COMMAND}"
 export FZF_CTRL_T_OPTS="--preview 'command bat --color=always --line-range :500 {}'"
-#### autosuggestions
+### autosuggestions
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=cyan"
 bindkey '^[<CR>' autosuggest-execute
 bindkey '^[_KreX^[\' autosuggest-execute
-#### fzf-tab
+### fzf-tab
 zstyle ':fzf-tab:*' switch-group '<' '>'
 
 (( ! ${+functions[p10k-instant-prompt-finalize]} )) || p10k-instant-prompt-finalize
