@@ -44,6 +44,7 @@
 [alias]
 	# shortcuts
 	a = add
+	b = branch
 	c = commit
 	d = diff
 	f = commit --fixup
