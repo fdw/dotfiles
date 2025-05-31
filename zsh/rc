@@ -34,9 +34,6 @@ zstyle ':completion:complete:git-checkout:argument-rest' sort false
 zstyle ':completion:complete:git-commit:option--fixup-1' sort false
 
 # Aliases
-alias ls='ls ${=LS_OPTIONS}'
-alias ll='ls'
-alias la='ls -A'
 alias ee="exa -l --icons --group-directories-first --group --header"
 alias et="ee -TR --level"
 alias eg="ee --git"
