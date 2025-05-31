@@ -1,4 +1,10 @@
-[[manager.prepend_keymap]]
-on   = [ "e" ]
-run  = 'shell "$SHELL" --block --confirm'
-desc = "Open shell here"
+[manager]
+prepend_keymap = [
+  { on = "e", run  = 'shell "$SHELL" --block --confirm', desc = "Open shell here" },
+  { on = "*", run = "plugin fzf" },
+  { on = "z", run = "plugin zoxide" },
+  { on = "k", run = "arrow -1" },
+  { on = "j", run = "arrow 1" },
+  { on = "<Up>", run = "arrow -1" },
+  { on = "<Down>", run = "arrow 1" },
+]
