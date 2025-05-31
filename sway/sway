@@ -136,20 +136,8 @@ client.unfocused	$dark	$dark	$white	$white
 client.focused_inactive	$dark	$dark	$white	$dark
 client.urgent		$orange	$orange $dark	$white
 
-# Workspaces
-set $monitor_large DP-4
-set $monitor_laptop eDP-1
-
-workspace 1 output $monitor_large
-workspace 2 output $monitor_large
-workspace 3 output $monitor_large
-workspace 4 output $monitor_large
-workspace 5 output $monitor_large
-workspace 6 output $monitor_large
-workspace 7 output $monitor_laptop
-workspace 8 output $monitor_laptop
-workspace 9 output $monitor_laptop
-workspace 0 output $monitor_laptop
+include ~/.config/sway/outputs
+include ~/.config/sway/workspaces
 
 ## switch to workspace
 bindsym {
@@ -162,7 +150,7 @@ bindsym {
 	$mod+7 workspace number 7
 	$mod+8 workspace number 8
 	$mod+9 workspace number 9
-	$mod+0 workspace number 0
+	$mod+0 workspace number 10
 }
 
 ## move to workspace
@@ -176,7 +164,7 @@ bindsym {
  	$mod+Shift+7 move container to workspace number 7; workspace number 7
  	$mod+Shift+8 move container to workspace number 8; workspace number 8
  	$mod+Shift+9 move container to workspace number 9; workspace number 9
- 	$mod+Shift+0 move container to workspace number 0; workspace number 0
+ 	$mod+Shift+0 move container to workspace number 0; workspace number 10
 }
 
 # cycle between workspaces
@@ -209,7 +197,8 @@ for_window [title="udiskie"] floating enable
 
 # Autostart
 exec --no-startup-id {
-	kanshi
+	waybar
+	wpaperd
 	autotiling
 	wl-paste --watch cliphist store
 	udiskie -NsF
@@ -217,6 +206,7 @@ exec --no-startup-id {
 	nm-applet
 	workstyle
 	gammastep
+	swayidle -w timeout 300 'swaylock -f -c 000000' timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' before-sleep 'swaylock -f -c 000000'
 }
 
 include /etc/sway/config.d/*
