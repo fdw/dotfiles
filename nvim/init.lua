@@ -55,7 +55,6 @@ vim.opt.rtp:prepend(lazypath)
 -- [[ Configure and install plugins ]]
 require('lazy').setup({
   { 'tpope/vim-sleuth',      {} },        -- Detect tabstop and shiftwidth automatically
-  { 'numToStr/Comment.nvim', opts = {} }, -- comment regions with gc
   {                                       -- Adds git related signs to the gutter, as well as utilities for managing changes
     'lewis6991/gitsigns.nvim',
     opts = {
@@ -70,18 +69,20 @@ require('lazy').setup({
   },
   { -- Useful plugin to show you pending keybinds.
     'folke/which-key.nvim',
-    event = 'VimEnter',
-    config = function()
-      require('which-key').setup()
-
-      require('which-key').register {
-        ['<leader>c'] = { name = '[C]ode', _ = 'which_key_ignore' },
-        ['<leader>d'] = { name = '[D]ocument', _ = 'which_key_ignore' },
-        ['<leader>r'] = { name = '[R]ename', _ = 'which_key_ignore' },
-        ['<leader>s'] = { name = '[S]earch', _ = 'which_key_ignore' },
-        ['<leader>w'] = { name = '[W]orkspace', _ = 'which_key_ignore' },
+    event = 'VeryLazy',
+    opts = {},
+    keys =  {
+        { "<leader>c", group = "[C]ode" },
+        { "<leader>c_", hidden = true },
+        { "<leader>d", group = "[D]ocument" },
+        { "<leader>d_", hidden = true },
+        { "<leader>r", group = "[R]ename" },
+        { "<leader>r_", hidden = true },
+        { "<leader>s", group = "[S]earch" },
+        { "<leader>s_", hidden = true },
+        { "<leader>w", group = "[W]orkspace" },
+        { "<leader>w_", hidden = true },
       }
-    end,
   },
   { -- Fuzzy Finder (files, lsp, etc)
     'nvim-telescope/telescope.nvim',
@@ -271,7 +272,7 @@ require('lazy').setup({
           -- Accept ([y]es) the completion.
           --  This will auto-import if your LSP supports it.
           --  This will expand snippets if the LSP sent a snippet.
-          ['<C-y>'] = cmp.mapping.confirm { select = true },
+          ['<CR>'] = cmp.mapping.confirm { select = true },
 
           -- Manually trigger a completion from nvim-cmp.
           --  Generally you don't need this, because nvim-cmp will display
@@ -377,6 +378,14 @@ require('lazy').setup({
       vim.keymap.set({'x', 'o'}, 's', '<Plug>(leap-forward)')
       vim.keymap.set({'x', 'o'}, 'S', '<Plug>(leap-backward)')
     end,
+  },
+  {
+    'gbprod/cutlass.nvim',
+    opts = {
+      cut_key = 'x',
+      override_del = true,
+      exclude = { "ns", "nS" },
+    }
   }
 }, {
   ui = {
