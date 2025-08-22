@@ -71,8 +71,6 @@ setopt multios
 ## Config (pre)
 ### Prompt
 DEFAULT_USER=fdw
-### per-directory-history
-HISTORY_BASE=${ZSH_DATA_DIR}/histories
 
 ## Load plugins
 eval "$(zoxide init zsh)"
@@ -80,6 +78,7 @@ source ${ZSH_DATA_DIR}/p10k.zsh
 source ${ZSH_DATA_DIR}/completions
 source ${ZSH_DATA_DIR}/aliases.zsh
 source ${ZSH_DATA_DIR}/plugins.zsh
+eval "$(mcfly init zsh)"
 
 ## Config (post)
 ### Prompt
@@ -88,12 +87,12 @@ autoload -Uz promptinit && promptinit && prompt powerlevel10k
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
 ### fzf
-source /usr/share/fzf/key-bindings.zsh
-source /usr/share/fzf/completion.zsh
 export FZF_DEFAULT_OPTS="--ansi"
-export FZF_DEFAULT_COMMAND="fd --type file --no-ignore-vcs --color always"
-export FZF_CTRL_T_COMMAND="${FZF_DEFAULT_COMMAND}"
-export FZF_CTRL_T_OPTS="--preview 'command bat --color=always --line-range :500 {}'"
+### McFly
+export MCFLY_KEY_SCHEME=vim
+export MCFLY_FUZZY=2
+export MCFLY_INTERFACE_VIEW=BOTTOM
+export MCFLY_RESULTS_FILTER=DIRECTORY
 ### autosuggestions
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=cyan"
 bindkey '^[<CR>' autosuggest-execute
