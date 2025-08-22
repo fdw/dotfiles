@@ -2,6 +2,8 @@
 source account.rc
 
 set header_cache = "${XDG_CACHE_HOME}/neomutt/headers"
+set header_cache_compress_method = "zstd"
+set header_cache_compress_level = 10
 set message_cache_dir = "${XDG_CACHE_HOME}/neomutt/messages"
 set message_cache_clean = "yes"
 unset imap_passive

@@ -3,6 +3,11 @@ set sneak
 set surround
 set idearefactormode keep
 set ignorecase smartcase
+set matchedpairs=(:),[:],{:},<:>
+
+Plug 'chrisbra/matchit'
+Plug 'vimscripts/argtextobj.vim'
+let g:argtextobj_pairs="[:],(:),<:>"
 
 let mapleader = " "
 
@@ -26,6 +31,8 @@ nnoremap <leader>gs :action ActivateStructureToolWindow<CR>
 nnoremap <leader>sp :action ParameterInfo<CR>
 
 " Navigation
+map [[ <Action>(MethodUp)
+map ]] <Action>(MethodDown)
 nnoremap ]e :action GotoNextError<CR>
 nnoremap [e :action GotoPreviousError<CR>
 nnoremap ]h :action VcsShowNextChangeMarker<CR>
