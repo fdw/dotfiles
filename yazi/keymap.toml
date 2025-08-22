@@ -1,4 +1,4 @@
-[manager]
+[mgr]
 prepend_keymap = [
   { on = "e", run  = 'shell "$SHELL" --block --confirm', desc = "Open shell here" },
   { on = "*", run = "plugin fzf" },

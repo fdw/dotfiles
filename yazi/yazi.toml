@@ -1,4 +1,4 @@
-[manager]
+[mgr]
 ratio = [1, 2, 2]
 sort_by = "natural"
 sort_dir_first = true
