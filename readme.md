@@ -17,6 +17,7 @@ This repo contains dotfiles for my workspace that is focused on terminal based a
 * [Fast Syntax highlighting](https://github.com/zdharma/fast-syntax-highlighting)
 * [History-substring-search](https://github.com/zsh-users/zsh-history-substring-search)
 * [Autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
+* [McFly](https://github.com/cantino/mcfly)
 * [Powerline10k Theme](https://github.com/romkatv/powerlevel10k)
 * Vim mode with [zsh-vim-mode](https://github.com/softmoth/zsh-vim-mode)
 * Some nice aliases

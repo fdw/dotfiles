@@ -1,7 +1,6 @@
 romkatv/powerlevel10k kind:fpath
 fdw/yazi-zoxide-zsh
 zsh-users/zsh-history-substring-search
-jimhester/per-directory-history
 zsh-users/zsh-completions
 Aloxaf/fzf-tab
 softmoth/zsh-vim-mode 
