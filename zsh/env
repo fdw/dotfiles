@@ -1,6 +1,7 @@
 skip_global_compinit=1
 
-PAGER=/usr/bin/less
+export PAGER=moor
+export MOOR="--no-linenumbers --no-statusbar --style=solarized-dark"
 
 export EDITOR=nvim
 export TERMINAL=kitty
