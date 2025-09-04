@@ -4,9 +4,7 @@
 [core]
 	editor = nvim
 	pager = delta
-	whitespace = -trailing-space,-space-before-tab,-indent-with-non-tab
 	autocrlf = input
-	excludesfile = ~/.config/git/ignore
 	ignorecase = true
 [protocol]
 	version = 2
@@ -16,12 +14,15 @@
 	rebase = true
 [push]
 	default = upstream
+	autoSetupRemote = true
 [rebase]
 	stat = true
 	autostash = true
 	autosquash = true
+	updateRefs = true
 [rerere]
 	enabled = true
+	autoUpdate = true
 [interactive]
 	diffFilter = delta --color-only --features=interactive
 [diff]
@@ -29,6 +30,9 @@
 	colorMoved = default
 [merge]
 	conflictstyle = diff3
+[maintenance]
+	auto = true
+	strategy = incremental
 [difftool]
 	prompt = false
 [difftool "difftastic"]
@@ -41,6 +45,8 @@
 	autocorrect = 1
 [init]
 	defaultBranch = main
+[tag]
+	sort = -version:refname
 [alias]
 	# shortcuts
 	a = add
