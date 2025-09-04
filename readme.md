@@ -50,7 +50,7 @@ This repo contains dotfiles for my workspace that is focused on terminal based a
 * Rofi integration
 * Nice workspace names with [workstyle](https://github.com/pierrechevalier83/workstyle)
 * Works with multiple monitors by using [`nwg-displays`](https://github.com/nwg-piotr/nwg-displays)
-* Integrates [autotiling](https://github.com/nwg-piotr/autotiling)
+* Integrates [autotiling-rs](https://github.com/ammgws/autotiling-rs)
 
 ### [Rofi](https://davedavenport.github.io/rofi/)
 * Solarized
