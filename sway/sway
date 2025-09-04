@@ -17,8 +17,9 @@ bindsym {
 	## rofi
 	$mod+space exec "rofi -show combi -modes combi,drun,ssh -combi-modes drun,ssh"
 	$mod+c exec "cliphist list | rofi -dmenu | cliphist decode | wl-copy"
-	$mod+p exec "rofi-rbw"
 	$mod+e exec "rofimoji"
+	$mod+p exec "rofi-rbw"
+	$mod+o exec "rofyk"
 	$mod+m exec LC_NUMERIC=en_US.UTF-8 rofi -show calc -modi calc -no-show-match -no-sort -calc-command "echo -n '{result}' | xsel -b"
 }
 
@@ -164,7 +165,7 @@ bindsym {
  	$mod+Shift+7 move container to workspace number 7; workspace number 7
  	$mod+Shift+8 move container to workspace number 8; workspace number 8
  	$mod+Shift+9 move container to workspace number 9; workspace number 9
- 	$mod+Shift+0 move container to workspace number 0; workspace number 10
+ 	$mod+Shift+0 move container to workspace number 10; workspace number 10
 }
 
 # cycle between workspaces
@@ -184,8 +185,8 @@ bindsym {
 	XF86MonBrightnessUp exec brightnessctl s +20% # increase screen brightness
 	XF86MonBrightnessDown exec brightnessctl s 20%- # decrease screen brightness
 	#print key
-	--release Print exec "grimshot save area"
-	--release Shift+Print exec "grimshot area"
+	Print exec "slurp | grim -g - $(xdg-user-dir PICTURES)/$(date +'screenshot_%Y-%m-%d-%H%M%S.png')"
+	Shift+Print exec "slurp | grim -g - | wl-copy"
 }
 
 # App handling
@@ -205,8 +206,8 @@ exec --no-startup-id {
 	/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 	nm-applet
 	workstyle
-	gammastep
 	swayidle -w timeout 300 'swaylock -f -c 000000' timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' before-sleep 'swaylock -f -c 000000'
+	swayidle lock 'swaymsg "output * dpms on" && swaylock' unlock 'kill -s 1 $(pgrep swaylock)'
 }
 
 include /etc/sway/config.d/*
