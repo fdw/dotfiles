@@ -7,13 +7,6 @@ XDG_DATA_HOME ?= "${HOME}/.local/share"
 
 install: install-profile install-zsh install-nvim install-git install-less install-dircolors install-i3 install-polybar install-tig install-rofi install-kitty install-yazi install-zathura install-btop install-dunst
 
-install-autorandr:
-	$(call check_installed,autorandr,autorandr)
-	@echo "Installing generic autorandr config"
-	@mkdir -p "$(XDG_CONFIG_HOME)/autorandr/postswitch.d"
-	@ln -s "${CURDIR}/autorandr/postswitch.d/10-background" "$(XDG_CONFIG_HOME)/autorandr/postswitch.d/10-background"
-	@ln -s "${CURDIR}/autorandr/postswitch.d/10-polybar" "$(XDG_CONFIG_HOME)/autorandr/postswitch.d/10-polybar"
-
 install-btop:
 	@echo "Installing btop"
 	@ln -fs "${CURDIR}/btop.conf" "${HOME}/.config/btop/btop.conf"
@@ -35,21 +28,6 @@ install-git:
 	@mkdir -p "$(XDG_CONFIG_HOME)/git"
 	@ln -fs "${CURDIR}/git/config" "$(XDG_CONFIG_HOME)/git/config"
 	@ln -fs "${CURDIR}/git/ignore" "$(XDG_CONFIG_HOME)/git/ignore"
-
-install-i3: install-polybar install-rofi
-	$(call check_installed,clipster,clipster)
-	$(call check_installed,roficlip,roficlip)
-	$(call check_installed,rofi-rbw,rofi-rbw)
-	$(call check_installed,rofimoji,rofimoji)
-	$(call check_installed,xss-lock,xss-lock)
-	$(call check_installed,xset,xorg-xset)
-	$(call check_installed,autotiling-rs,autotiling-rs)
-	$(call check_installed,autorandr,autorandr)
-	$(call check_installed,feh,feh)
-	@echo "Installing i3 config"
-	@mkdir -p "$(XDG_CONFIG_HOME)/i3/"
-	@ln -fs "${CURDIR}/i3/config" "$(XDG_CONFIG_HOME)/i3/config"
-	@ln -fs "${CURDIR}/i3/autorandr-postswitch" "$(XDG_CONFIG_HOME)/autorandr/postswitch"
 
 install-intellij: install-nvim
 	@echo "Installing ideavimrc"
@@ -84,13 +62,6 @@ install-nvim:
 	@echo "Installing Neovim initrc"
 	@mkdir -p "$(XDG_CONFIG_HOME)/nvim"
 	@ln -fs "${CURDIR}/nvim/init.lua" "$(XDG_CONFIG_HOME)/nvim/init.lua"
-
-install-polybar:
-	$(call check_installed,polybar,polybar)
-	@echo "Installing polybar"
-	@mkdir -p "$(XDG_CONFIG_HOME)/polybar/"
-	@ln -fs "${CURDIR}/polybar/config.ini" "$(XDG_CONFIG_HOME)/polybar/config.ini"
-	@ln -fs "${CURDIR}/polybar/launch.sh" "$(XDG_CONFIG_HOME)/polybar/launch.sh"
 
 install-profile:
 	@echo "Installing .profile"

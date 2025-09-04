@@ -1,2 +1,0 @@
-#!/bin/bash
-feh --no-fehbg --bg-scale --randomize /usr/local/share/backgrounds/

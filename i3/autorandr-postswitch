@@ -1,3 +1,0 @@
-#!/bin/bash
-${XDG_CONFIG_HOME}/polybar/launch.sh
-feh --no-fehbg --bg-scale --randomize /usr/local/share/backgrounds/

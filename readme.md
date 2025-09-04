@@ -30,27 +30,18 @@ This repo contains dotfiles for my workspace that is focused on terminal based a
 * [Solarized Dark theme](https://github.com/maxmx03/solarized.nvim)
 * Neovim is set as the default editor
 
-### [i3wm](https://i3wm.org/)
-* Here, too, a sensible configuration
+### [Sway](https://swaywm.org/)
 * Solarized Dark theme
 * Nice window and session modes with helpful status bar hints and shortcuts
-* Polybar integration
-* Rofi integration
-* Nice workspace names with [workstyle](https://github.com/pierrechevalier83/workstyle)
-* Works with multiple monitors by using [autorandr](https://github.com/phillipberndt/autorandr)
-* Integrates [autotiling-rs](https://github.com/ammgws/autotiling-rs)
-
-### [Polybar](https://github.com/jaagr/polybar/)
-* Solarized Dark theme
-* Styled after Powerline
-
-### [Sway](https://swaywm.org/)
-* Similar configuration to i3
 * Waybar integration
 * Rofi integration
 * Nice workspace names with [workstyle](https://github.com/pierrechevalier83/workstyle)
 * Works with multiple monitors by using [`nwg-displays`](https://github.com/nwg-piotr/nwg-displays)
 * Integrates [autotiling-rs](https://github.com/ammgws/autotiling-rs)
+
+### [Waybar](https://github.com/Alexays/Waybar)
+* Solarized Dark theme
+* Styled after Powerline
 
 ### [Rofi](https://davedavenport.github.io/rofi/)
 * Solarized
@@ -60,6 +51,7 @@ This repo contains dotfiles for my workspace that is focused on terminal based a
 * [rofimoji](https://github.com/fdw/rofimoji) for some emoji goodness
 * [rofi-calc](https://github.com/svenstaro/rofi-calc)
 * [rofi-rbw](https://github.com/fdw/rofi-rbw) to integrate with Bitwarden (via [rbw](https://github.com/doy/rbw))
+* [rofyk](https://github.com/fdw/rofyk) to use TOTP on the Yubikey
 
 ### [yazi](https://github.com/sxyazi/yazi/)
 * Sensible configuration
