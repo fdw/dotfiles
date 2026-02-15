@@ -372,7 +372,7 @@ require('lazy').setup({
   },
 
   {
-    'ggandor/leap.nvim',
+    url = "https://codeberg.org/andyg/leap.nvim",
     config = function()
       vim.keymap.set('n',        's', '<Plug>(leap)')
       vim.keymap.set({'x', 'o'}, 's', '<Plug>(leap-forward)')
