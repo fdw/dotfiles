@@ -34,9 +34,9 @@ display = [
 
 [open]
 prepend_rules = [
-  { name = "*.epub", use = "display" },
-  { name = "*.pdf", use = "display" }
+  { url = "*.epub", use = "display" },
+  { url = "*.pdf", use = "display" }
 ]
 append_rules = [
-  { name = "*", use = "generic_open" },
+  { url = "*", use = "generic_open" },
 ]
