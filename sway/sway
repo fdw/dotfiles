@@ -81,7 +81,7 @@ workspace_layout tabbed
 floating_modifier $mod
 
 ## change layout etc of workspaces, windows & containers
-set $meta_workspace "split <u>h</u>orizontally | split <u>v</u>vertically | <u>g</u>rid mode | <u>t</u>abbed mode | <u>l</u>ist mode | <u>f</u>loat"
+set $meta_workspace "split <u>h</u>orizontally | split <u>v</u>ertically | <u>g</u>rid mode | <u>t</u>abbed mode | <u>l</u>ist mode | <u>f</u>loat"
 bindsym $mod+w mode $meta_workspace
 mode --pango_markup $meta_workspace
 {
