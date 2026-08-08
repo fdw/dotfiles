@@ -15,6 +15,7 @@ bindsym {
 	$mod+x kill
 	$mod+Return exec $term
 	## rofi
+	$mod+s exec "rofi -show system -modi system:rofi-power-menu"
 	$mod+space exec "rofi -show combi -modes combi,drun,ssh -combi-modes drun,ssh"
 	$mod+c exec "cliphist list | rofi -dmenu | cliphist decode | wl-copy"
 	$mod+e exec "rofimoji"
@@ -32,22 +33,6 @@ mode --pango_markup $termmenu
 	bindsym r exec "$term -e ranger"; mode "default"
 	bindsym v exec "$term -e nvim"; mode "default"
 	bindsym Return exec $term; mode "default"
-	bindsym Escape mode "default"
-}
-
-# Power menu
-set $sysmenu "<u>r</u>estart | <u>l</u>ock | lo<u>g</u> out | <u>s</u>uspend | <u>h</u>ibernate | re<u>b</u>oot | <u>p</u>oweroff"
-bindsym $mod+s mode $sysmenu
-mode --pango_markup $sysmenu
-{
-	bindsym r reload; exec pkill -USR1 polybar;
-	bindsym g exit
-	bindsym p exec --no-startup-id "systemctl poweroff"; mode "default"
-	bindsym b exec --no-startup-id "systemctl reboot"; mode "default"
-	bindsym h exec --no-startup-id "systemctl hibernate"; mode "default"
-	bindsym s exec --no-startup-id "systemctl suspend"; mode "default"
-	bindsym l exec --no-startup-id "loginctl lock-session"; mode "default"
-	bindsym Return mode "default"
 	bindsym Escape mode "default"
 }
 
