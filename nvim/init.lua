@@ -311,12 +311,11 @@ require('lazy').setup({
   },
 
   { -- colorscheme
-    'maxmx03/solarized.nvim',
+    'folke/tokyonight.nvim',
     lazy = false,
     priority = 1000,
     config = function()
-      vim.o.background = 'dark'
-      vim.cmd.colorscheme 'solarized'
+      vim.cmd([[colorscheme tokyonight]])
     end,
   },
 

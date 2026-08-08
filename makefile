@@ -29,6 +29,14 @@ install-git:
 	@ln -fs "${CURDIR}/git/config" "$(XDG_CONFIG_HOME)/git/config"
 	@ln -fs "${CURDIR}/git/ignore" "$(XDG_CONFIG_HOME)/git/ignore"
 
+install-hyprland:
+	@echo "Installing hyprland config"
+	@mkdir -p "$(XDG_CONFIG_HOME)/hypr"
+	@ln -fs "${CURDIR}/hypr/hyprland.lua" "$(XDG_CONFIG_HOME)/hypr/hyprland.lua"
+	@ln -fs "${CURDIR}/hypr/hypridle.conf" "$(XDG_CONFIG_HOME)/hypr/hypridle.conf"
+	@ln -fs "${CURDIR}/hypr/hyprpaper.conf" "$(XDG_CONFIG_HOME)/hypr/hyprpaper.conf"
+	@ln -fs "${CURDIR}/hypr/scripts/lid.sh" "$(XDG_CONFIG_HOME)/hypr/scripts/lid.sh"
+
 install-intellij: install-nvim
 	@echo "Installing ideavimrc"
 	@mkdir -p "$(XDG_CONFIG_HOME)/ideavim"
@@ -37,7 +45,8 @@ install-intellij: install-nvim
 install-kitty:
 	@echo "Installing kitty config"
 	@mkdir -p "$(XDG_CONFIG_HOME)/kitty"
-	@ln -fs "${CURDIR}/kitty.conf" "$(XDG_CONFIG_HOME)/kitty/kitty.conf"
+	@ln -fs "${CURDIR}/kitty/kitty.conf" "$(XDG_CONFIG_HOME)/kitty/kitty.conf"
+	@ln -fs "${CURDIR}/kitty/tokyonight.conf" "$(XDG_CONFIG_HOME)/kitty/tokyonight.conf"
 
 install-less:
 	@echo "Installing .lesskey"
@@ -71,7 +80,11 @@ install-rofi:
 	$(call check_installed,rofi,rofi)
 	@echo "Installing rofi/config"
 	@mkdir -p "$(XDG_CONFIG_HOME)/rofi"
-	@ln -fs "${CURDIR}/rofi.rasi" "$(XDG_CONFIG_HOME)/rofi/config.rasi"
+	@ln -fs "${CURDIR}/rofi/config.rasi" "$(XDG_CONFIG_HOME)/rofi/config.rasi"
+	@ln -fs "${CURDIR}/rofi/tokyonight-base.rasi" "$(XDG_CONFIG_HOME)/rofi/tokyonight-base.rasi"
+	@ln -fs "${CURDIR}/rofi/tokyonight-launcher.rasi" "$(XDG_CONFIG_HOME)/rofi/tokyonight-launcher.rasi"
+	@ln -fs "${CURDIR}/rofi/tokyonight-rofimoji.rasi" "$(XDG_CONFIG_HOME)/rofi/tokyonight-rofimoji.rasi"
+	@ln -fs "${CURDIR}/rofi/tokyonight-text.rasi" "$(XDG_CONFIG_HOME)/rofi/tokyonight-text.rasi"
 	@ln -fs "${CURDIR}/rofimoji.rc" "$(XDG_CONFIG_HOME)/rofimoji.rc"
 
 install-sway: install-waybar install-workstyle

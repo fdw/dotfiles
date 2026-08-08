@@ -2,11 +2,19 @@
   "layer": "top",
   "modules-left": [
     "clock",
+    "custom/weather"
+  ],
+  "modules-center": [
     "sway/workspaces",
-    "sway/mode"
+    "sway/mode",
+    "hyprland/workspaces"
   ],
   "modules-right": [
-    "wireplumber", "network#wifi", "network#lan", "battery", "tray"
+    "privacy",
+    "wireplumber",
+    "network",
+    "upower",
+    "tray"
   ],
   "clock": {
     "format": "{:%a, %d %b %H:%M}",
@@ -24,23 +32,28 @@
       }
     },
     "actions": {
-      "on-scroll-up": "shift_up",
-      "on-scroll-down": "shift_down"
+      "on-scroll-up": "shift_down",
+      "on-scroll-down": "shift_up"
     }
+  },
+  "custom/weather": {
+    "exec": "/usr/bin/waybar-weather",
+    "restart-interval": 60,
+    "return-type": "json",
+    "hide-empty-text": true,
+    "on-click": "pkill -USR1 waybar-weather"
+  },
+  "privacy": {
+    "icon-size": 0
   },
   "wireplumber": {
     "format": "{icon} {volume}% {node_name}",
     "format-icons": ["", "", ""],
   },
-  "network#wifi": {
-    "interface": "wlp0s20f3",
-    "format": "  {essid}",
+  "network": {
+    "format-wifi": "  {essid}",
+    "format-ethernet": " 󰈁",
     "format-tooltip": "{ipaddr}"
-  },
-  "network#lan": {
-    "interface": "enp5s0u2u4",
-    "format": " 󰈁",
-    "tooltip-format": "{ipaddr}"
   },
   "battery": {
     "format-discharging": "{icon} {time} ({capacity})",
@@ -48,5 +61,11 @@
     "format-full": "",
     "format-icons": ["", "", "", "", ""],
     "tooltip-format": "{power}"
+  },
+  "upower": {
+    "format": "{percentage} ({time})",
+    "tooltip-format": "{percentage} ({time})",
+    "icon-size": 0,
+    "show-icon": false
   }
 }

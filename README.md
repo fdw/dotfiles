@@ -4,7 +4,7 @@
 
 ![Screenshot](screenshot.png)
 
-This repo contains dotfiles for my workspace that is focused on terminal based apps (neovim, yazi, zoxide) and a lightweight window manager (i3, rofi, polybar or sway, rofi, waybar). Everything is meant to integrate with everything else, starting from the theme: Solarized Dark.
+This repo contains dotfiles for my workspace that is focused on terminal based apps (neovim, yazi, zoxide) and a window manager (sway or hyprland, rofi, waybar). Everything is meant to integrate with everything else, starting from the theme: Tokyonight.
 
 ## Detailed Content
 
@@ -27,26 +27,28 @@ This repo contains dotfiles for my workspace that is focused on terminal based a
 ### vimrc/nvimrc for [Neovim](https://neovim.io/)
 * Based on [Kickstart](https://github.com/nvim-lua/kickstart.nvim)
 * [Vim-Sneak](https://github.com/justinmk/vim-sneak)
-* [Solarized Dark theme](https://github.com/maxmx03/solarized.nvim)
+* [Tokyonight theme](https://github.com/folke/tokyonight.nvim)
 * Neovim is set as the default editor
 
+### [Hyprland](https://hypr.land/)
+* Waybar integration
+* Rofi integration
+* Works with multiple monitors by using [`nwg-displays`](https://github.com/nwg-piotr/nwg-displays)
+* Scrolling layout optimized for a laptop with widescreen display
+
 ### [Sway](https://swaywm.org/)
-* Solarized Dark theme
 * Nice window and session modes with helpful status bar hints and shortcuts
 * Waybar integration
 * Rofi integration
 * Nice workspace names with [workstyle](https://github.com/pierrechevalier83/workstyle)
 * Works with multiple monitors by using [`nwg-displays`](https://github.com/nwg-piotr/nwg-displays)
-* Integrates [autotiling-rs](https://github.com/ammgws/autotiling-rs)
 
 ### [Waybar](https://github.com/Alexays/Waybar)
-* Solarized Dark theme
-* Styled after Powerline
+* Custom Tokyonight theme
 
 ### [Rofi](https://davedavenport.github.io/rofi/)
-* Solarized
+* Custom Tokyonight theme
 * Uses a combi mode for drun and ssh
-* Sidebar offers each of these modi seperately
 * [clipster](https://github.com/mrichar1/clipster) & [roficlip](https://github.com/gilbertw1/roficlip)
 * [rofimoji](https://github.com/fdw/rofimoji) for some emoji goodness
 * [rofi-calc](https://github.com/svenstaro/rofi-calc)
@@ -63,7 +65,7 @@ This repo contains dotfiles for my workspace that is focused on terminal based a
 * Set up to use [khard](https://github.com/scheibler/khard) as an address book
 
 ### [kitty](https://github.com/kovidgoyal/kitty)
-* Solarized Dark theme
+* Tokyonight theme
 * Separate escape code for ctrl+enter that works with zsh's autosuggestions
 
 ### gitconfig
@@ -90,7 +92,7 @@ This repo contains dotfiles for my workspace that is focused on terminal based a
 * Styled for my taste and needs
 
 ### [Dunst](https://github.com/dunst-project/dunst)
-* Styled in solarized
+* Styled in Tokyonight
 
 ## Installation
 ```

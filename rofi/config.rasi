@@ -1,0 +1,9 @@
+configuration {
+	font: "CaskaydiaCove Nerd Font 10";
+	terminal: "kitty";
+	drun-match-fields: "name";
+	display-drun: "";
+	sidebar-mode: true;
+	icon-theme: "Tokyonight-Dark-Cyan";
+}
+@theme "~/.config/rofi/tokyonight-launcher.rasi"

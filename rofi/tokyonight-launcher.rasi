@@ -1,0 +1,30 @@
+/*******************************************************************************
+ * Tokyo Night Launcher Theme — icon-based launcher (drun, combi, ssh).
+ * Inherits palette + shared widgets from base; adds icons + window width.
+ *******************************************************************************/
+
+@theme "~/.config/rofi/tokyonight-base.rasi"
+
+configuration {
+    show-icons: true;
+}
+
+window {
+    width:              900px;
+}
+
+mainbox {
+    children:           [ inputbar, message, listview, mode-switcher ];
+}
+
+listview {
+    lines:              8;
+}
+
+element {
+    children:           [ element-icon, element-text ];
+}
+
+element-icon {
+    size:               24px;
+}

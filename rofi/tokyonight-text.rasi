@@ -1,0 +1,30 @@
+/*******************************************************************************
+ * Tokyo Night Text Theme — text-only launchers (calc, rbw, cliphist, power-menu).
+ * Inherits palette + shared widgets from base; strips icons, widens window.
+ *******************************************************************************/
+
+@theme "~/.config/rofi/tokyonight-base.rasi"
+
+configuration {
+    show-icons: false;
+}
+
+window {
+    width:              1000px;
+}
+
+mainbox {
+    children:           [ inputbar, message, listview ];
+}
+
+listview {
+    lines:              10;
+}
+
+element {
+    children:           [ element-text ];
+}
+
+element-text {
+    horizontal-align:   0.0;
+}

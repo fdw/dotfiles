@@ -1,0 +1,57 @@
+@theme "~/.config/rofi/tokyonight-base.rasi"
+
+configuration {
+  show-icons: true;
+}
+
+textbox {
+  vertical-align:   0.5;
+  horizontal-align: 0.5;
+}
+
+mainbox {
+  children: [ inputbar, message, listview, mode-switcher ];
+  spacing: 12px;
+}
+
+message {
+  background-color: @bg1;
+  border-radius:    8px;
+  padding:          8px 12px;
+}
+
+window {
+  width:   900px;
+  padding: 16px;
+}
+
+listview {
+  columns:       9;
+  lines:         7;
+  cycle:         true;
+  dynamic:       true;
+  layout:        vertical;
+  flow:           horizontal;
+  reverse:       false;
+  fixed-height:  true;
+  fixed-columns: true;
+  spacing:       4px;
+}
+
+element {
+  orientation: vertical;
+  padding:     4px;
+  spacing:     0;
+  border:      0px;
+  children:    [ element-icon ];
+}
+
+element-icon {
+  size:             48px;
+  vertical-align:   0.5;
+  horizontal-align: 0.5;
+}
+
+element-text {
+  enabled: false;
+}

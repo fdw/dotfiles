@@ -1,65 +1,73 @@
 [global]
-  follow = mouse
+    follow = mouse
 
-  width = 400
-  height = (0, 200)
-  origin = top-center
-  offset = (0, 30)
+    # --- Geometry & Position ---
+    width = (300, 420)
+    height = (0, 200)
+    origin = top-center
+    offset = (0, 35)
 
-  indicate_hidden = true
-  separator_height = 4
-  padding = 8
-  horizontal_padding = 8
-  frame_width = 2
-  corner_radius = 5
-  sort = true
-  idle_threshold = 120
+    indicate_hidden = yes
+    separator_height = 2
+    separator_color = "#292e42"
+    padding = 12
+    horizontal_padding = 16
+    text_icon_padding = 12
+    frame_width = 2
+    corner_radius = 8
+    sort = yes
+    idle_threshold = 120
 
-  ### Text ###
+    # --- Text ---
+    font = CaskaydiaCove Nerd Font 10
+    line_height = 2
+    markup = full
+    format = "%s\n%b"
+    alignment = left
+    show_age_threshold = 60
+    word_wrap = yes
+    ignore_newline = no
+    stack_duplicates = true
+    hide_duplicate_count = false
 
-  font = "FuraCode Nerd Font 9"
-  line_height = 0
-  markup = full
+    show_indicators = yes
 
-  format = "<b>%s</b>\n%b"
+    # --- Icons & Actions ---
+    icon_position = left
+    min_icon_size = 32
+    max_icon_size = 48
+    sticky_history = yes
+    history_length = 20
+    dmenu = /usr/bin/rofi -dmenu -p dunst:
+    title = Dunst
+    class = Dunst
 
-  alignment = left
-  show_age_threshold = 60
-  word_wrap = yes
-  ignore_newline = no
-  stack_duplicates = true
-  hide_duplicate_count = false
-
-  show_indicators = yes
-
-  icon_position = left
-  sticky_history = yes
-  history_length = 20
-  dmenu = /usr/bin/rofi -dmenu -p dunst:
-  title = Dunst
-  class = Dunst
-
-  mouse_left_click = do_action
-  mouse_middle_click = none
-  mouse_right_click = close_current
+    mouse_left_click = do_action
+    mouse_middle_click = none
+    mouse_right_click = close_current
 
 [experimental]
-per_monitor_dpi = true
+    per_monitor_dpi = true
+
+# --- Urgency Profiles (Tokyo Night) ---
 
 [urgency_low]
-  background = "#002b36"
-  foreground = "#586e75"
-  frame_color = "#586e75"
-  timeout = 10
+    # Subtle dark background with calm blue accents
+    background = "#16161e"
+    foreground = "#a9b1d6"
+    frame_color = "#3b4261"
+    timeout = 8
 
 [urgency_normal]
-  background = "#002b36"
-  foreground = "#839496"
-  frame_color = "#839496"
-  timeout = 10
+    # Classic Tokyo Night Storm with Cyan highlight
+    background = "#1a1b26"
+    foreground = "#c0caf5"
+    frame_color = "#7dcfff"
+    timeout = 10
 
 [urgency_critical]
-  background = "#002b36"
-  foreground = "#93a1a1"
-  frame_color = "#93a1a1"
-  timeout = 0
+    # Dark background with bold Red border and Red text accent
+    background = "#1a1b26"
+    foreground = "#f7768e"
+    frame_color = "#f7768e"
+    timeout = 0

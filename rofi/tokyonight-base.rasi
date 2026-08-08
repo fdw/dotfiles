@@ -1,0 +1,133 @@
+/*******************************************************************************
+ * Tokyo Night Base Theme — palette + shared widgets.
+ * Leaf themes (launcher, text, rofimoji) inherit this and override specifics.
+ *******************************************************************************/
+
+* {
+    /* Tokyo Night Night Palette (with 90% opacity for Hyprland blur) */
+    bg0:     #1a1b26e6;
+    bg1:     #24283be6;
+    bg2:     #2f3549;
+    fg0:     #c0caf5;
+    fg1:     #a9b1d6;
+    dim:     #565f89;
+    accent:  #7aa2f7;
+    cyan:    #7dcfff;
+    magenta: #bb9af7;
+    green:   #9ece6a;
+    red:     #f7768e;
+
+    background-color:   transparent;
+    text-color:         @fg0;
+
+    margin:             0;
+    padding:            0;
+    spacing:            0;
+    font:               "JetBrainsMono Nerd Font 11";
+}
+
+window {
+    background-color:   @bg0;
+    border:             2px;
+    border-color:       @accent;
+    border-radius:      12px;
+    padding:            16px;
+}
+
+mainbox {
+    children:           [ inputbar, message, listview, mode-switcher ];
+    spacing:            12px;
+}
+
+/* ==================== INPUT BAR ==================== */
+
+inputbar {
+    background-color:   @bg1;
+    border-radius:      8px;
+    padding:            8px 12px;
+    children:           [ prompt, entry ];
+    spacing:            10px;
+}
+
+prompt {
+    background-color:   @accent;
+    text-color:         #1a1b26;
+    padding:            4px 10px;
+    border-radius:      6px;
+    font:               "JetBrainsMono Nerd Font Bold 10";
+}
+
+entry {
+    vertical-align:     0.5;
+    placeholder:        "Search...";
+    placeholder-color:  @dim;
+    text-color:         @fg0;
+}
+
+/* ==================== MESSAGE (rofi-calc live result) ==================== */
+
+message {
+    background-color:   @bg1;
+    border-radius:      8px;
+    padding:            8px 12px;
+}
+
+message text {
+    text-color:         @green;
+    font:               "JetBrainsMono Nerd Font Bold 11";
+}
+
+/* ==================== LIST VIEW ==================== */
+
+listview {
+    columns:            1;
+    fixed-height:       false;
+    spacing:            6px;
+    cycle:              true;
+    dynamic:            true;
+}
+
+element {
+    padding:            8px 12px;
+    border-radius:      6px;
+    spacing:            10px;
+    border:             0px;
+}
+
+/* Active item: green left-accent border + green emphasis text */
+element selected {
+    background-color:   @bg2;
+    text-color:         @green;
+    border:             0px 0px 0px 4px;
+    border-color:       @green;
+    border-radius:      2px 6px 6px 2px;
+}
+
+element-icon {
+    vertical-align:     0.5;
+}
+
+element-text {
+    vertical-align:     0.5;
+    text-color:         inherit;
+    highlight:          bold #9ece6a;
+}
+
+/* ==================== MODE SWITCHER ==================== */
+
+mode-switcher {
+    spacing:            8px;
+}
+
+button {
+    padding:            6px;
+    border-radius:      6px;
+    background-color:   @bg1;
+    text-color:         @fg1;
+    horizontal-align:   0.5;
+}
+
+button selected {
+    background-color:   @accent;
+    text-color:         #1a1b26;
+}
