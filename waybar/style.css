@@ -24,7 +24,8 @@ button {
 #tray,
 #upower,
 #privacy,
-#custom-weather {
+#custom-weather,
+#mpris {
   margin: 3px 2px;
   padding: 2px 10px;
   background-color: #16161e;

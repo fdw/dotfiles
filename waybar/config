@@ -5,12 +5,11 @@
     "custom/weather"
   ],
   "modules-center": [
-    "sway/workspaces",
-    "sway/mode",
     "hyprland/workspaces"
   ],
   "modules-right": [
     "privacy",
+    "mpris",
     "wireplumber",
     "network",
     "upower",
@@ -45,6 +44,20 @@
   },
   "privacy": {
     "icon-size": 0
+  },
+  "mpris": {
+    "format": "{player_icon}  {artist} - {title}",
+    "format-paused": "{status_icon}  {artist} - {title}",
+    "player-icons": {
+      "default": "♪",
+      "firefox": "󰈹",
+      "spotify": "󰓇",
+      "mpv": "󰝚"
+    },
+    "status-icons": {
+      "paused": "⏸"
+    },
+    "ignored-players": []
   },
   "wireplumber": {
     "format": "{icon} {volume}% {node_name}",
