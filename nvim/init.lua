@@ -46,7 +46,7 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 
 -- [[ Install `lazy.nvim` plugin manager ]]
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
-if not vim.loop.fs_stat(lazypath) then
+if not (vim.uv or vim.loop).fs_stat(lazypath) then
   local lazyrepo = 'https://github.com/folke/lazy.nvim.git'
   vim.fn.system { 'git', 'clone', '--filter=blob:none', '--branch=stable', lazyrepo, lazypath }
 end ---@diagnostic disable-next-line: undefined-field
@@ -150,11 +150,10 @@ require('lazy').setup({
   { -- LSP Configuration & Plugins
     'neovim/nvim-lspconfig',
     dependencies = {
-      'williamboman/mason.nvim',
-      'williamboman/mason-lspconfig.nvim',
-      'WhoIsSethDaniel/mason-tool-installer.nvim',
+      'mason-org/mason.nvim',
+      'mason-org/mason-lspconfig.nvim',
       { 'j-hui/fidget.nvim', opts = {} },
-      { 'folke/neodev.nvim', opts = {} },
+      { 'folke/lazydev.nvim', opts = {} },
     },
     config = function()
       vim.api.nvim_create_autocmd('LspAttach', {
@@ -192,13 +191,10 @@ require('lazy').setup({
 
       -- Enable the following language servers
       local servers = {
-        -- clangd = {},
-        -- gopls = {},
+        jsonls = {},
+        yamlls = {},
+        marksman = {},
         pyright = {},
-        -- rust_analyzer = {},
-        tsserver = {},
-        --
-
         lua_ls = {
           settings = {
             Lua = {
@@ -213,6 +209,7 @@ require('lazy').setup({
       require('mason').setup()
 
       require('mason-lspconfig').setup {
+        auto_install = true,
         handlers = {
           function(server_name)
             local server = servers[server_name] or {}
@@ -385,7 +382,18 @@ require('lazy').setup({
       override_del = true,
       exclude = { "ns", "nS" },
     }
-  }
+  },
+
+  { -- Diagnostics browser
+    'folke/trouble.nvim',
+    cmd = 'Trouble',
+    keys = {
+      { '<leader>xx', '<cmd>Trouble diagnostics toggle<CR>', desc = 'Diagnostics (workspace)' },
+      { '<leader>xb', '<cmd>Trouble diagnostics toggle filter.buf<CR>', desc = 'Diagnostics (buffer)' },
+      { '<leader>xr', '<cmd>Trouble lsp_references toggle<CR>', desc = 'LSP [R]eferences' },
+    },
+    opts = {},
+  },
 }, {
   ui = {
   },
