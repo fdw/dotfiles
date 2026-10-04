@@ -4,7 +4,7 @@
 
 ![Screenshot](screenshot.png)
 
-This repo contains dotfiles for my workspace that is focused on terminal based apps (neovim, yazi, zoxide) and a window manager (sway or hyprland, rofi, waybar). Everything is meant to integrate with everything else, starting from the theme: Tokyonight.
+This repo contains dotfiles for my workspace that is focused on terminal based apps (neovim, yazi, zoxide) and a window manager (hyprland, rofi, waybar). Everything is meant to integrate with everything else, starting from the theme: Tokyonight.
 
 ## Detailed Content
 
@@ -35,13 +35,6 @@ This repo contains dotfiles for my workspace that is focused on terminal based a
 * Rofi integration
 * Works with multiple monitors by using [`nwg-displays`](https://github.com/nwg-piotr/nwg-displays)
 * Scrolling layout optimized for a laptop with widescreen display
-
-### [Sway](https://swaywm.org/)
-* Nice window and session modes with helpful status bar hints and shortcuts
-* Waybar integration
-* Rofi integration
-* Nice workspace names with [workstyle](https://github.com/pierrechevalier83/workstyle)
-* Works with multiple monitors by using [`nwg-displays`](https://github.com/nwg-piotr/nwg-displays)
 
 ### [Waybar](https://github.com/Alexays/Waybar)
 * Custom Tokyonight theme

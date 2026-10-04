@@ -87,16 +87,6 @@ install-rofi:
 	@ln -fs "${CURDIR}/rofi/tokyonight-text.rasi" "$(XDG_CONFIG_HOME)/rofi/tokyonight-text.rasi"
 	@ln -fs "${CURDIR}/rofimoji.rc" "$(XDG_CONFIG_HOME)/rofimoji.rc"
 
-install-sway: install-waybar install-workstyle
-	$(call check_installed,sway,sway)
-	$(call check_installed,wpaperd,wpaperd)
-	$(call check_installed,kanshi,kanshi)
-	@echo "Installing sway config"
-	@mkdir -p "$(XDG_CONFIG_HOME)/sway"
-	@ln -fs "${CURDIR}/sway/sway" "$(XDG_CONFIG_HOME)/sway/config"
-	@mkdir -p "$(XDG_CONFIG_HOME)/wpaperd"
-	@ln -fs "${CURDIR}/sway/wallpaper.toml" "$(XDG_CONFIG_HOME)/wpaperd/wallpaper.toml"
-
 install-tig:
 	@echo "Installing .tigrc"
 	@ln -fs "${CURDIR}/tigrc" "${HOME}/.tigrc"
